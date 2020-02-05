@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.UI", "FarnahadManufacturing.UI\FarnahadManufacturing.UI.csproj", "{7BFE58D6-DFC1-4A82-9E20-58BD08C63A9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Model", "FarnahadManufacturing.Model\FarnahadManufacturing.Model.csproj", "{1F3ED6B0-F750-4879-8E25-F6A0322C5435}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BFE58D6-DFC1-4A82-9E20-58BD08C63A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFE58D6-DFC1-4A82-9E20-58BD08C63A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFE58D6-DFC1-4A82-9E20-58BD08C63A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFE58D6-DFC1-4A82-9E20-58BD08C63A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3ED6B0-F750-4879-8E25-F6A0322C5435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3ED6B0-F750-4879-8E25-F6A0322C5435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3ED6B0-F750-4879-8E25-F6A0322C5435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3ED6B0-F750-4879-8E25-F6A0322C5435}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BD8AF23-3674-4FD8-9631-2C2778E49357}
+	EndGlobalSection
+EndGlobal

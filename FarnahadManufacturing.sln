@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Base", "FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj", "{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Data", "FarnahadManufacturing.Data\FarnahadManufacturing.Data.csproj", "{5D16F9C4-AED6-4C87-ABE5-28982DF64217}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D16F9C4-AED6-4C87-ABE5-28982DF64217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D16F9C4-AED6-4C87-ABE5-28982DF64217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D16F9C4-AED6-4C87-ABE5-28982DF64217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D16F9C4-AED6-4C87-ABE5-28982DF64217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

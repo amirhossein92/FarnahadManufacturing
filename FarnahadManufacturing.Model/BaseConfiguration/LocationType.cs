@@ -41,5 +41,16 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
                 OnPropertyChanged();
             }
         }
+
+        private bool _readOnly;
+        public bool ReadOnly
+        {
+            get => _readOnly;
+            set
+            {
+                _readOnly = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

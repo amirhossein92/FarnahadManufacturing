@@ -51,6 +51,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configs\BaseConfiguration\AddressTypeConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\CategoryConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\ContactTypeConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\FobTypeConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\LocationTypeConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\PaymentTermConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\ShippingTermConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\UomTypeConfiguration.cs" />
+    <Compile Include="Configs\Configuration\AddressConfiguration.cs" />
+    <Compile Include="Configs\Configuration\CarrierConfiguration.cs" />
+    <Compile Include="Configs\Configuration\CarrierServiceConfiguration.cs" />
+    <Compile Include="Configs\Configuration\CompanyConfiguration.cs" />
+    <Compile Include="Configs\Configuration\ContactInformationConfiguration.cs" />
+    <Compile Include="Configs\Configuration\LocationConfiguration.cs" />
+    <Compile Include="Configs\Configuration\LocationGroupConfiguration.cs" />
+    <Compile Include="Configs\Configuration\ProductCategoryConfiguration.cs" />
+    <Compile Include="Configs\Configuration\ProductTreeConfiguration.cs" />
+    <Compile Include="Configs\Configuration\UserConfiguration.cs" />
+    <Compile Include="Configs\Configuration\UomConfiguration.cs" />
+    <Compile Include="Configs\Configuration\TrackingConfiguration.cs" />
+    <Compile Include="Configs\Configuration\AddressTypeConfiguration.cs" />
     <Compile Include="FarnahadManufacturingDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +79,13 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FarnahadManufacturing.Model\FarnahadManufacturing.Model.csproj">
+      <Project>{1F3ED6B0-F750-4879-8E25-F6A0322C5435}</Project>
+      <Name>FarnahadManufacturing.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

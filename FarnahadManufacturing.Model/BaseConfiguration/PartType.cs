@@ -7,6 +7,7 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    // TODO: get enum items
     public enum PartType
     {
 

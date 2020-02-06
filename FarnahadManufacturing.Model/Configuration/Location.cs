@@ -32,6 +32,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        // TODO: make sure about this
         private string _number;
         public string Number
         {
@@ -98,7 +99,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // TODO: Default Customer : Customer
+        // TODO: Default Customer : int?
 
         private bool _availableForSale;
         public bool AvailableForSale

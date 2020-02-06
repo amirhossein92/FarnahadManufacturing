@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="BaseConfiguration\AddressType.cs" />
     <Compile Include="BaseConfiguration\Category.cs" />
+    <Compile Include="BaseConfiguration\City.cs" />
     <Compile Include="BaseConfiguration\ContactType.cs" />
+    <Compile Include="BaseConfiguration\Country.cs" />
     <Compile Include="BaseConfiguration\FobType.cs" />
     <Compile Include="BaseConfiguration\LocationType.cs" />
     <Compile Include="BaseConfiguration\PartType.cs" />

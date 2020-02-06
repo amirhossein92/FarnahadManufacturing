@@ -20,7 +20,9 @@ namespace FarnahadManufacturing.Data
 
         public virtual DbSet<AddressType> AddressTypes { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<ContactType> ContactTypes { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<FobType> FobTypes { get; set; }
         public virtual DbSet<LocationType> LocationTypes { get; set; }
         public virtual DbSet<PaymentTerm> PaymentTerms { get; set; }
@@ -46,7 +48,9 @@ namespace FarnahadManufacturing.Data
 
             modelBuilder.Configurations.Add(new AddressTypeConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new ContactTypeConfiguration());
+            modelBuilder.Configurations.Add(new CountryConfiguration());
             modelBuilder.Configurations.Add(new FobTypeConfiguration());
             modelBuilder.Configurations.Add(new LocationTypeConfiguration());
             modelBuilder.Configurations.Add(new PaymentTermConfiguration());

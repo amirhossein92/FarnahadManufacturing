@@ -6,5 +6,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class LocationGroupConfiguration : EntityTypeConfiguration<LocationGroup>
     {
+        public LocationGroupConfiguration()
+        {
+            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+        }
     }
 }

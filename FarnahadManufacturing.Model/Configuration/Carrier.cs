@@ -74,5 +74,16 @@ namespace FarnahadManufacturing.Model.Configuration
                 OnPropertyChanged();
             }
         }
+
+        private List<Company> _companies;
+        public List<Company> Companies
+        {
+            get => _companies;
+            set
+            {
+                _companies = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

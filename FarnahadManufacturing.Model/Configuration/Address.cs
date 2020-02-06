@@ -66,8 +66,41 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private string _city;
-        public string City
+        private int _countryId;
+        public int CountryId
+        {
+            get => _countryId;
+            set
+            {
+                _countryId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Country _country;
+        public Country Country
+        {
+            get => _country;
+            set
+            {
+                _country = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _cityId;
+        public int CityId
+        {
+            get => _cityId;
+            set
+            {
+                _cityId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private City _city;
+        public City City
         {
             get => _city;
             set
@@ -95,17 +128,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _zipCode = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private string _country;
-        public string Country
-        {
-            get => _country;
-            set
-            {
-                _country = value;
                 OnPropertyChanged();
             }
         }
@@ -161,6 +183,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _contactInformations = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Company> _companies;
+        public List<Company> Companies
+        {
+            get => _companies;
+            set
+            {
+                _companies = value;
                 OnPropertyChanged();
             }
         }

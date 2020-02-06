@@ -6,5 +6,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class ContactInformationConfiguration : EntityTypeConfiguration<ContactInformation>
     {
+        public ContactInformationConfiguration()
+        {
+            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+        }
     }
 }

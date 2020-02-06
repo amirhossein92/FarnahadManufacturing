@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
+using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
@@ -49,6 +50,17 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             set
             {
                 _readOnly = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Location> _locations;
+        public List<Location> Locations
+        {
+            get => _locations;
+            set
+            {
+                _locations = value;
                 OnPropertyChanged();
             }
         }

@@ -6,5 +6,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class CompanyConfiguration : EntityTypeConfiguration<Company>
     {
+        public CompanyConfiguration()
+        {
+            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+        }
     }
 }

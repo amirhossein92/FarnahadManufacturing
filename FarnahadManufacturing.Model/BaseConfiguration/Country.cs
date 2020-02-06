@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
-using FarnahadManufacturing.Model.BaseConfiguration;
+using FarnahadManufacturing.Model.Configuration;
 
-namespace FarnahadManufacturing.Model.Configuration
+namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    public class ContactInformation : FmModelBase
+    public class Country : FmModelBase
     {
         private int _id;
         public int Id
@@ -43,35 +43,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _contactTypeId;
-        public int ContactTypeId
+        private List<City> _cities;
+        public List<City> Cities
         {
-            get => _contactTypeId;
+            get => _cities;
             set
             {
-                _contactTypeId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private ContactType _contactType;
-        public ContactType ContactType
-        {
-            get => _contactType;
-            set
-            {
-                _contactType = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private bool _isDefault;
-        public bool IsDefault
-        {
-            get => _isDefault;
-            set
-            {
-                _isDefault = value;
+                _cities = value;
                 OnPropertyChanged();
             }
         }

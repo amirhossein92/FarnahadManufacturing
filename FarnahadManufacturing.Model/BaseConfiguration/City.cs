@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
-using FarnahadManufacturing.Model.BaseConfiguration;
+using FarnahadManufacturing.Model.Configuration;
 
-namespace FarnahadManufacturing.Model.Configuration
+namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    public class ContactInformation : FmModelBase
+    public class City : FmModelBase
     {
         private int _id;
         public int Id
@@ -32,6 +32,28 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        private int _countryId;
+        public int CountryId
+        {
+            get => _countryId;
+            set
+            {
+                _countryId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Country _country;
+        public Country Country
+        {
+            get => _country;
+            set
+            {
+                _country = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _description;
         public string Description
         {
@@ -39,39 +61,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _description = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _contactTypeId;
-        public int ContactTypeId
-        {
-            get => _contactTypeId;
-            set
-            {
-                _contactTypeId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private ContactType _contactType;
-        public ContactType ContactType
-        {
-            get => _contactType;
-            set
-            {
-                _contactType = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private bool _isDefault;
-        public bool IsDefault
-        {
-            get => _isDefault;
-            set
-            {
-                _isDefault = value;
                 OnPropertyChanged();
             }
         }

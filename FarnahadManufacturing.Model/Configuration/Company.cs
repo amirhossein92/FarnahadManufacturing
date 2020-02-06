@@ -42,8 +42,8 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _defaultCarrierId;
-        public int DefaultCarrierId
+        private int? _defaultCarrierId;
+        public int? DefaultCarrierId
         {
             get => _defaultCarrierId;
             set

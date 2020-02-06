@@ -75,5 +75,16 @@ namespace FarnahadManufacturing.Model.Configuration
                 OnPropertyChanged();
             }
         }
+
+        private List<Location> _locations;
+        public List<Location> Locations
+        {
+            get => _locations;
+            set
+            {
+                _locations = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

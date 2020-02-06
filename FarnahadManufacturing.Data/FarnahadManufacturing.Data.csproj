@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="Configs\BaseConfiguration\AddressTypeConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\CategoryConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\CityConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\ContactTypeConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\CountryConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\FobTypeConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\LocationTypeConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\PaymentTermConfiguration.cs" />

@@ -41,5 +41,16 @@ namespace FarnahadManufacturing.Model.Configuration
                 OnPropertyChanged();
             }
         }
+
+        private List<Carrier> _carriers;
+        public List<Carrier> Carriers
+        {
+            get => _carriers;
+            set
+            {
+                _carriers = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

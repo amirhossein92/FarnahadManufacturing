@@ -8,6 +8,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public CarrierConfiguration()
         {
+            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
             this.Property(item => item.Scac).HasMaxLength(4);
         }
     }

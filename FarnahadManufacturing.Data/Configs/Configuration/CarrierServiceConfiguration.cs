@@ -7,6 +7,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public CarrierServiceConfiguration()
         {
+            this.ToTable("CarrierService", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
             this.Property(item => item.Code).IsRequired().HasMaxLength(16);
         }

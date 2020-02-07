@@ -8,11 +8,11 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
-    public class PartConfiguration : EntityTypeConfiguration<Part>
+    public class CustomerConfiguration : EntityTypeConfiguration<Customer>
     {
-        public PartConfiguration()
+        public CustomerConfiguration()
         {
-            this.ToTable("Part", FmDbSchema.Configuration.ToString());
+            this.ToTable("Customer", FmDbSchema.Configuration.ToString());
         }
     }
 }

@@ -8,12 +8,11 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
 {
-    public class CountryConfiguration : EntityTypeConfiguration<Country>
+    public class PaymentMethodConfiguration : EntityTypeConfiguration<PaymentMethod>
     {
-        public CountryConfiguration()
+        public PaymentMethodConfiguration()
         {
-            this.ToTable("Country", FmDbSchema.BaseConfiguration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.ToTable("PaymentMethod", FmDbSchema.BaseConfiguration.ToString());
         }
     }
 }

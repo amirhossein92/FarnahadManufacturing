@@ -7,6 +7,7 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
     {
         public ContactTypeConfiguration()
         {
+            this.ToTable("ContactType", FmDbSchema.BaseConfiguration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
         }
     }

@@ -8,6 +8,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public CompanyConfiguration()
         {
+            this.ToTable("Company", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
         }
     }

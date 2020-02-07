@@ -25,6 +25,7 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<FobType> FobTypes { get; set; }
         public virtual DbSet<LocationType> LocationTypes { get; set; }
+        public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
         public virtual DbSet<PaymentTerm> PaymentTerms { get; set; }
         public virtual DbSet<ShippingTerm> ShippingTerms { get; set; }
         public virtual DbSet<UomType> UomTypes { get; set; }
@@ -34,15 +35,16 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<CarrierService> CarrierServices { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<ContactInformation> ContactInformations { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<LocationGroup> LocationGroups { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
-        public virtual DbSet<Vendor> Vendors { get; set; }
         public virtual DbSet<Uom> Uoms { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -55,6 +57,7 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new CountryConfiguration());
             modelBuilder.Configurations.Add(new FobTypeConfiguration());
             modelBuilder.Configurations.Add(new LocationTypeConfiguration());
+            modelBuilder.Configurations.Add(new PaymentMethodConfiguration());
             modelBuilder.Configurations.Add(new PaymentTermConfiguration());
             modelBuilder.Configurations.Add(new ShippingTermConfiguration());
             modelBuilder.Configurations.Add(new UomTypeConfiguration());
@@ -64,15 +67,16 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new CarrierServiceConfiguration());
             modelBuilder.Configurations.Add(new CompanyConfiguration());
             modelBuilder.Configurations.Add(new ContactInformationConfiguration());
+            modelBuilder.Configurations.Add(new CustomerConfiguration());
             modelBuilder.Configurations.Add(new LocationConfiguration());
             modelBuilder.Configurations.Add(new LocationGroupConfiguration());
             modelBuilder.Configurations.Add(new PartConfiguration());
-            modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
+            modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
             modelBuilder.Configurations.Add(new TrackingConfiguration());
-            modelBuilder.Configurations.Add(new VendorConfiguration());
             modelBuilder.Configurations.Add(new UomConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new VendorConfiguration());
         }
     }
 }

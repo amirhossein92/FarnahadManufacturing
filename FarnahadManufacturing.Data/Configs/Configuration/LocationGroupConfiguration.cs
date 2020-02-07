@@ -8,6 +8,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public LocationGroupConfiguration()
         {
+            this.ToTable("LocationGroup", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
         }
     }

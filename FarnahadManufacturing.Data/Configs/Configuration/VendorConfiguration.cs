@@ -10,5 +10,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class VendorConfiguration : EntityTypeConfiguration<Vendor>
     {
+        public VendorConfiguration()
+        {
+            this.ToTable("Vendor", FmDbSchema.Configuration.ToString());
+        }
     }
 }

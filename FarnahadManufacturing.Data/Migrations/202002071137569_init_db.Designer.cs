@@ -13,7 +13,7 @@ namespace FarnahadManufacturing.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202002070822099_init_db"; }
+            get { return "202002071137569_init_db"; }
         }
         
         string IMigrationMetadata.Source

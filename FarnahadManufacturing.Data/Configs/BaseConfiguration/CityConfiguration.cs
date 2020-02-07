@@ -13,6 +13,8 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         public CityConfiguration()
         {
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.HasRequired(item => item.Country).WithMany(item => item.Cities)
+                .HasForeignKey(item => item.CountryId).WillCascadeOnDelete(false);
         }
     }
 }

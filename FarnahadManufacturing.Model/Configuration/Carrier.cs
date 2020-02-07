@@ -31,13 +31,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private string _Scac;
+        private string _scac;
         public string Scac
         {
-            get => _Scac;
+            get => _scac;
             set
             {
-                _Scac = value;
+                _scac = value;
                 OnPropertyChanged();
             }
         }

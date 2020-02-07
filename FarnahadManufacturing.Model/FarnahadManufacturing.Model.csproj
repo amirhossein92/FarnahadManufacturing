@@ -58,13 +58,16 @@
     <Compile Include="Configuration\CarrierService.cs" />
     <Compile Include="Configuration\Company.cs" />
     <Compile Include="Configuration\ContactInformation.cs" />
+    <Compile Include="Configuration\Customer.cs" />
     <Compile Include="Configuration\Location.cs" />
     <Compile Include="Configuration\LocationGroup.cs" />
+    <Compile Include="Configuration\Part.cs" />
+    <Compile Include="Configuration\Product.cs" />
     <Compile Include="Configuration\ProductCategory.cs" />
-    <Compile Include="Configuration\ProductTree.cs" />
     <Compile Include="Configuration\Tracking.cs" />
     <Compile Include="Configuration\Uom.cs" />
     <Compile Include="Configuration\User.cs" />
+    <Compile Include="Configuration\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

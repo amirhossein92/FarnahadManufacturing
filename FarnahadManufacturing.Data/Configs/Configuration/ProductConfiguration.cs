@@ -4,7 +4,7 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
-    public class ProductTreeConfiguration : EntityTypeConfiguration<ProductTree>
+    public class ProductConfiguration : EntityTypeConfiguration<Product>
     {
     }
 }

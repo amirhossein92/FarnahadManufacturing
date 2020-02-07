@@ -76,13 +76,24 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<Address> _addresses;
-        public List<Address> Addresses
+        private int _addressId;
+        public int AddressId
         {
-            get => _addresses;
+            get => _addressId;
             set
             {
-                _addresses = value;
+                _addressId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Address _address;
+        public Address Address
+        {
+            get => _address;
+            set
+            {
+                _address = value;
                 OnPropertyChanged();
             }
         }

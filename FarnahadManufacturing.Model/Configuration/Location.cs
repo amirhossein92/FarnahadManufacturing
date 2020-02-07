@@ -99,7 +99,27 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // TODO: Default Customer : int?
+        private int? _defaultCustomerId;
+        public int? DefaultCustomerId
+        {
+            get => _defaultCustomerId;
+            set
+            {
+                _defaultCustomerId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Customer _defaultCustomer;
+        public Customer DefaultCustomer
+        {
+            get => _defaultCustomer;
+            set
+            {
+                _defaultCustomer = value;
+                OnPropertyChanged();
+            }
+        }
 
         private bool _availableForSale;
         public bool AvailableForSale

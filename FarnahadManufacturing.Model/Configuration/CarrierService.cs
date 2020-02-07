@@ -42,13 +42,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<Carrier> _carriers;
-        public List<Carrier> Carriers
+        private Carrier _carrier;
+        public Carrier Carrier
         {
-            get => _carriers;
+            get => _carrier;
             set
             {
-                _carriers = value;
+                _carrier = value;
                 OnPropertyChanged();
             }
         }

@@ -36,9 +36,11 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<ContactInformation> ContactInformations { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<LocationGroup> LocationGroups { get; set; }
+        public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
-        public virtual DbSet<ProductTree> ProductTrees { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
         public virtual DbSet<Uom> Uoms { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -64,9 +66,11 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new ContactInformationConfiguration());
             modelBuilder.Configurations.Add(new LocationConfiguration());
             modelBuilder.Configurations.Add(new LocationGroupConfiguration());
+            modelBuilder.Configurations.Add(new PartConfiguration());
             modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
-            modelBuilder.Configurations.Add(new ProductTreeConfiguration());
+            modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new TrackingConfiguration());
+            modelBuilder.Configurations.Add(new VendorConfiguration());
             modelBuilder.Configurations.Add(new UomConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
         }

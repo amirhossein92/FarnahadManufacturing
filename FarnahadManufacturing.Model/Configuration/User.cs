@@ -86,13 +86,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<User> _members;
-        public List<User> Members
+        private List<LocationGroup> _locationGroup;
+        public List<LocationGroup> LocationGroup
         {
-            get => _members;
+            get => _locationGroup;
             set
             {
-                _members = value;
+                _locationGroup = value;
                 OnPropertyChanged();
             }
         }

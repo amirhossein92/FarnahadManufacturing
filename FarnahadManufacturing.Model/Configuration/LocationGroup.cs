@@ -54,13 +54,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<User> _members;
-        public List<User> Members
+        private List<User> _users;
+        public List<User> Users
         {
-            get => _members;
+            get => _users;
             set
             {
-                _members = value;
+                _users = value;
                 OnPropertyChanged();
             }
         }

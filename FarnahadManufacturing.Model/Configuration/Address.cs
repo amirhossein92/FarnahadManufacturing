@@ -33,13 +33,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private string _description;
-        public string Description
+        private string _addressDetail;
+        public string AddressDetail
         {
-            get => _description;
+            get => _addressDetail;
             set
             {
-                _description = value;
+                _addressDetail = value;
                 OnPropertyChanged();
             }
         }
@@ -66,8 +66,30 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _cityId;
-        public int CityId
+        private int? _countryId;
+        public int? CountryId
+        {
+            get => _countryId;
+            set
+            {
+                _countryId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Country _country;
+        public Country Country
+        {
+            get => _country;
+            set
+            {
+                _country = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int? _cityId;
+        public int? CityId
         {
             get => _cityId;
             set
@@ -88,7 +110,6 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // Can be a class
         private string _province;
         public string Province
         {
@@ -118,18 +139,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _residentialAddress = value;
-                OnPropertyChanged();
-            }
-        }
-
-        // Should be moved to company
-        private bool _isDefaultAddress;
-        public bool IsDefaultAddress
-        {
-            get => _isDefaultAddress;
-            set
-            {
-                _isDefaultAddress = value;
                 OnPropertyChanged();
             }
         }

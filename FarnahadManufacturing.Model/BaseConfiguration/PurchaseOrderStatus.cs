@@ -7,9 +7,16 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    // TODO: get enum items
     public enum PurchaseOrderStatus
     {
-
+        BidRequest,
+        ClosedShort,
+        Fulfilled,
+        Issued,
+        Partial,
+        Picked,
+        Picking,
+        Shipped,
+        Void
     }
 }

@@ -7,16 +7,17 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    // TODO: get enum items
     public enum PartType
     {
-        CapitalEquipment,
-        InternalUse,
         Inventory,
-        Labor,
-        NonInventory,
-        Overhead,
         Service,
-        Shipping
+        Labor,
+        Overhead,
+        NonInventory,
+        InternalUse,
+        CapitalEquipment,
+        Shipping,
+        Tax,
+        Misc
     }
 }

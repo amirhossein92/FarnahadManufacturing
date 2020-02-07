@@ -7,9 +7,8 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
-    public class Customer : Company
+    public class TaxRate : FmModelBase
     {
-        // TODO: Not sure about the inheritance => what if Customer is Person and not company!
-        // TODO: Other Parameters
+        // TODO: Fill parameters
     }
 }

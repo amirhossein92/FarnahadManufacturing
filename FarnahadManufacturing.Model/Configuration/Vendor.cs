@@ -9,17 +9,6 @@ namespace FarnahadManufacturing.Model.Configuration
 {
     public class Vendor : Company
     {
-        private int _id;
-        public int Id
-        {
-            get => _id;
-            set
-            {
-                _id = value;
-                OnPropertyChanged();
-            }
-        }
-
         private string _accountNumber;
         public string AccountNumber
         {

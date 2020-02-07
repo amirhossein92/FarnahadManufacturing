@@ -32,25 +32,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private string _description;
-        public string Description
+        private string _value;
+        public string Value
         {
-            get => _description;
+            get => _value;
             set
             {
-                _description = value;
-                OnPropertyChanged();
-            }
-        }
-
-        // Can be enum
-        private int _contactTypeId;
-        public int ContactTypeId
-        {
-            get => _contactTypeId;
-            set
-            {
-                _contactTypeId = value;
+                _value = value;
                 OnPropertyChanged();
             }
         }

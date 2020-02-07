@@ -53,6 +53,39 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        private string _initial;
+        public string Initial
+        {
+            get => _initial;
+            set
+            {
+                _initial = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _email;
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _phoneNumber;
+        public string PhoneNumber
+        {
+            get => _phoneNumber;
+            set
+            {
+                _phoneNumber = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _password;
         public string Password
         {

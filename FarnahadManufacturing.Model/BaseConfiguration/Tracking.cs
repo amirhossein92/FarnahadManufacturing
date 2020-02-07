@@ -9,15 +9,12 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     public class Tracking : FmModelBase
     {
-        // Move this to baseConfigurations and the following default data
         // 4 Default Tracking Types =>
         // LOT Numbers : text
         // Revision Level : text
         // Expiration Date : datetime
         // Serial Number : serial number
-        // Types: 
-        
-        // Another Class contains only the next value, part id and tracking id
+
         private int _id;
         public int Id
         {
@@ -62,17 +59,15 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
-        private string _type;
-        public string Type
+        private TrackingType _trackingType;
+        public TrackingType TrackingType
         {
-            get => _type;
+            get => _trackingType;
             set
             {
-                _type = value;
+                _trackingType = value;
                 OnPropertyChanged();
             }
         }
-
-        // TODO: Complete tracking...
     }
 }

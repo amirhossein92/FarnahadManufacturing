@@ -41,5 +41,16 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
                 OnPropertyChanged();
             }
         }
+
+        private Category _parentCategory;
+        public Category ParentCategory
+        {
+            get => _parentCategory;
+            set
+            {
+                _parentCategory = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

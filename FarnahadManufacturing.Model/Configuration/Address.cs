@@ -88,6 +88,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        // Can be a class
         private string _province;
         public string Province
         {
@@ -121,6 +122,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        // Should be moved to company
         private bool _isDefaultAddress;
         public bool IsDefaultAddress
         {

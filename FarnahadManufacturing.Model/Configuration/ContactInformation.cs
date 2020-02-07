@@ -43,6 +43,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        // Can be enum
         private int _contactTypeId;
         public int ContactTypeId
         {

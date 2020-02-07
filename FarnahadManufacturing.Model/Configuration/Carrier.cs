@@ -31,6 +31,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        // Standard Carrier Alpha Code
         private string _scac;
         public string Scac
         {

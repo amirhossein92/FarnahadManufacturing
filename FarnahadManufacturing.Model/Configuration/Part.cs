@@ -197,28 +197,6 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _lengthUomId;
-        public int LengthUomId
-        {
-            get => _lengthUomId;
-            set
-            {
-                _lengthUomId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private Uom _lengthUom;
-        public Uom LengthUom
-        {
-            get => _lengthUom;
-            set
-            {
-                _lengthUom = value;
-                OnPropertyChanged();
-            }
-        }
-
         private double? _width;
         public double? Width
         {
@@ -226,28 +204,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _width = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _widthUomId;
-        public int WidthUomId
-        {
-            get => _widthUomId;
-            set
-            {
-                _widthUomId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private Uom _widthUom;
-        public Uom WidthUom
-        {
-            get => _widthUom;
-            set
-            {
-                _widthUom = value;
                 OnPropertyChanged();
             }
         }
@@ -263,24 +219,24 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _heightUomId;
-        public int HeightUomId
+        private int _distanceUomId;
+        public int DistanceUomId
         {
-            get => _heightUomId;
+            get => _distanceUomId;
             set
             {
-                _heightUomId = value;
+                _distanceUomId = value;
                 OnPropertyChanged();
             }
         }
 
-        private Uom _heightUom;
-        public Uom HeightUom
+        private Uom _distanceUom;
+        public Uom DistanceUom
         {
-            get => _heightUom;
+            get => _distanceUom;
             set
             {
-                _heightUom = value;
+                _distanceUom = value;
                 OnPropertyChanged();
             }
         }

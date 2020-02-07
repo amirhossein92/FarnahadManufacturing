@@ -5,10 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
 
-namespace FarnahadManufacturing.Model.Configuration
+namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     public class Tracking : FmModelBase
     {
+        // Move this to baseConfigurations and the following default data
+        // 4 Default Tracking Types =>
+        // LOT Numbers : text
+        // Revision Level : text
+        // Expiration Date : datetime
+        // Serial Number : serial number
+        // Types: 
+        
+        // Another Class contains only the next value, part id and tracking id
         private int _id;
         public int Id
         {
@@ -49,6 +58,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _description = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _type;
+        public string Type
+        {
+            get => _type;
+            set
+            {
+                _type = value;
                 OnPropertyChanged();
             }
         }

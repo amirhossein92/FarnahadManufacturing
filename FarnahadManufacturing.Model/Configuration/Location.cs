@@ -32,9 +32,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // TODO: make sure about this
-        private string _number;
-        public string Number
+        // TODO: Can be auto-generated
+        private int _number;
+        public int Number
         {
             get => _number;
             set

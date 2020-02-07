@@ -10,6 +10,13 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     // TODO: get enum items
     public enum PartType
     {
-
+        CapitalEquipment,
+        InternalUse,
+        Inventory,
+        Labor,
+        NonInventory,
+        Overhead,
+        Service,
+        Shipping
     }
 }

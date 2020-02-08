@@ -10,6 +10,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         {
             this.ToTable("ContactInformation", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.Property(item => item.Value).IsRequired().HasMaxLength(64);
+            this.HasRequired(item => item.Address)
+                .WithMany(address => address.ContactInformations)
+                .HasForeignKey(item => item.AddressId);
         }
     }
 }

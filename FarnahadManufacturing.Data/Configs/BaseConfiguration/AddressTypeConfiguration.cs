@@ -9,6 +9,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         {
             this.ToTable("AddressType", FmDbSchema.BaseConfiguration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.HasMany(item => item.Addresses)
+                .WithRequired(address => address.AddressType)
+                .HasForeignKey(address => address.AddressTypeId);
         }
     }
 }

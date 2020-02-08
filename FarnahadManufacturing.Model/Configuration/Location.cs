@@ -164,5 +164,16 @@ namespace FarnahadManufacturing.Model.Configuration
                 OnPropertyChanged();
             }
         }
+
+        private List<Part> _parts;
+        public List<Part> Parts
+        {
+            get => _parts;
+            set
+            {
+                _parts = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

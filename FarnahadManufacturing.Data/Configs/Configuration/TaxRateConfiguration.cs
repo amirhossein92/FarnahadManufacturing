@@ -13,6 +13,12 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         public TaxRateConfiguration()
         {
             this.ToTable("TaxRate", FmDbSchema.Configuration.ToString());
+            this.Property(item => item.Title).HasMaxLength(128).IsRequired();
+            this.Property(item => item.Abbreviation).HasMaxLength(4).IsRequired();
+            this.HasMany(item => item.Customers)
+                .WithRequired(customer => customer.TaxRate)
+                .HasForeignKey(customer => customer.TaxRateId);
+
         }
     }
 }

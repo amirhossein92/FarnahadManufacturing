@@ -153,13 +153,24 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
-        private List<Company> _companies;
-        public List<Company> Companies
+        private List<Customer> _customers;
+        public List<Customer> Customers
         {
-            get => _companies;
+            get => _customers;
             set
             {
-                _companies = value;
+                _customers = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Vendor> _vendors;
+        public List<Vendor> Vendors
+        {
+            get => _vendors;
+            set
+            {
+                _vendors = value;
                 OnPropertyChanged();
             }
         }

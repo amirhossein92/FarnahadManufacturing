@@ -13,7 +13,12 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         public TrackingPartConfiguration()
         {
             this.ToTable("TrackingPart", FmDbSchema.Configuration.ToString());
-            // TODO: Config many to many relation
+            this.HasRequired(item => item.Tracking)
+                .WithMany(tracking => tracking.TrackingParts)
+                .HasForeignKey(item => item.TrackingId);
+            this.HasRequired(item => item.Part)
+                .WithMany(part => part.TrackingParts)
+                .HasForeignKey(item => item.PartId);
         }
     }
 }

@@ -9,6 +9,28 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         public ProductConfiguration()
         {
             this.ToTable("Product", FmDbSchema.Configuration.ToString());
+            this.Property(item => item.Title).HasMaxLength(128).IsRequired();
+            this.HasRequired(item => item.Part)
+                .WithMany(part => part.Products)
+                .HasForeignKey(item => item.PartId);
+            this.HasRequired(item => item.Uom)
+                .WithMany(uom => uom.Products)
+                .HasForeignKey(item => item.UomId);
+            this.HasOptional(item => item.Category)
+                .WithMany(category => category.Products)
+                .HasForeignKey(item => item.CategoryId);
+            this.Property(item => item.Upc).HasMaxLength(32);
+            this.Property(item => item.Sku).HasMaxLength(32);
+            // TODO: Check this with Mr. Ghaderian
+            this.HasRequired(item => item.DistanceUom)
+                .WithMany(uom => uom.ProductsDistanceUom)
+                .HasForeignKey(item => item.DistanceUomId);
+            this.HasRequired(item => item.WeightUom)
+                .WithMany(uom => uom.ProductsWeightUom)
+                .HasForeignKey(item => item.WeightUomId);
+            this.HasMany(item => item.ProductPrices)
+                .WithRequired(productPrice => productPrice.Product)
+                .HasForeignKey(productPrice => productPrice.ProductId);
             this.HasMany(item => item.ProductCategories)
                 .WithMany(item => item.Products)
                 .Map(item =>

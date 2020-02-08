@@ -36,12 +36,14 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<ContactInformation> ContactInformations { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CustomerGroup> CustomerGroups { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<LocationGroup> LocationGroups { get; set; }
         public virtual DbSet<MyCompany> MyCompanies { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
+        public virtual DbSet<ProductPrice> ProductPrices { get; set; }
         public virtual DbSet<TaxRate> TaxRates { get; set; }
         public virtual DbSet<TrackingPart> TrackingParts { get; set; }
         public virtual DbSet<Uom> Uoms { get; set; }
@@ -70,12 +72,14 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new CompanyConfiguration());
             modelBuilder.Configurations.Add(new ContactInformationConfiguration());
             modelBuilder.Configurations.Add(new CustomerConfiguration());
+            modelBuilder.Configurations.Add(new CustomerGroupConfiguration());
             modelBuilder.Configurations.Add(new LocationConfiguration());
             modelBuilder.Configurations.Add(new LocationGroupConfiguration());
             modelBuilder.Configurations.Add(new MyCompanyConfiguration());
             modelBuilder.Configurations.Add(new PartConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
+            modelBuilder.Configurations.Add(new ProductPriceConfiguration());
             modelBuilder.Configurations.Add(new TaxRateConfiguration());
             modelBuilder.Configurations.Add(new TrackingPartConfiguration());
             modelBuilder.Configurations.Add(new UomConfiguration());

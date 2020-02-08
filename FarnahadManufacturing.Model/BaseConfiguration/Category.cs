@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
+using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
@@ -42,6 +43,17 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        private int? _parentCategoryId;
+        public int? ParentCategoryId
+        {
+            get => _parentCategoryId;
+            set
+            {
+                _parentCategoryId = value;
+                OnPropertyChanged();
+            }
+        }
+
         private Category _parentCategory;
         public Category ParentCategory
         {
@@ -49,6 +61,39 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             set
             {
                 _parentCategory = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Customer> _customers;
+        public List<Customer> Customers
+        {
+            get => _customers;
+            set
+            {
+                _customers = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<LocationGroup> _locationGroups;
+        public List<LocationGroup> LocationGroups
+        {
+            get => _locationGroups;
+            set
+            {
+                _locationGroups = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Product> _products;
+        public List<Product> Products
+        {
+            get => _products;
+            set
+            {
+                _products = value;
                 OnPropertyChanged();
             }
         }

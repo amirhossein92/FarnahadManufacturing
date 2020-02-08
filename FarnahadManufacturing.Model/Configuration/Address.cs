@@ -132,13 +132,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private bool _residentialAddress;
-        public bool ResidentialAddress
+        private bool _isResidentialAddress;
+        public bool IsResidentialAddress
         {
-            get => _residentialAddress;
+            get => _isResidentialAddress;
             set
             {
-                _residentialAddress = value;
+                _isResidentialAddress = value;
                 OnPropertyChanged();
             }
         }
@@ -172,6 +172,28 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _contactInformations = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Company> _companies;
+        public List<Company> Companies
+        {
+            get => _companies;
+            set
+            {
+                _companies = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Company> _companiesDefaultAddress;
+        public List<Company> CompaniesDefaultAddress
+        {
+            get => _companiesDefaultAddress;
+            set
+            {
+                _companiesDefaultAddress = value;
                 OnPropertyChanged();
             }
         }

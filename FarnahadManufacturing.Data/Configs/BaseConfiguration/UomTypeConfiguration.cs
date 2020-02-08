@@ -9,6 +9,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         {
             this.ToTable("UomType", FmDbSchema.BaseConfiguration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.HasMany(item => item.Uoms)
+                .WithRequired(uom => uom.UomType)
+                .HasForeignKey(uom => uom.UomTypeId);
         }
     }
 }

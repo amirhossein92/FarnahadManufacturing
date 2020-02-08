@@ -67,28 +67,25 @@
     <Compile Include="Configs\Configuration\CompanyConfiguration.cs" />
     <Compile Include="Configs\Configuration\ContactInformationConfiguration.cs" />
     <Compile Include="Configs\Configuration\CustomerConfiguration.cs" />
+    <Compile Include="Configs\Configuration\CustomerGroupConfiguration.cs" />
     <Compile Include="Configs\Configuration\LocationConfiguration.cs" />
     <Compile Include="Configs\Configuration\LocationGroupConfiguration.cs" />
     <Compile Include="Configs\Configuration\MyCompanyConfiguration.cs" />
     <Compile Include="Configs\Configuration\PartConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductCategoryConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductConfiguration.cs" />
+    <Compile Include="Configs\Configuration\ProductPriceConfiguration.cs" />
     <Compile Include="Configs\Configuration\TaxRateConfiguration.cs" />
     <Compile Include="Configs\Configuration\TrackingPartConfiguration.cs" />
     <Compile Include="Configs\Configuration\UserConfiguration.cs" />
     <Compile Include="Configs\Configuration\UomConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\TrackingConfiguration.cs" />
-    <Compile Include="Configs\Configuration\AddressTypeConfiguration.cs" />
     <Compile Include="Configs\Configuration\VendorConfiguration.cs" />
     <Compile Include="Configs\FmDbSchema.cs" />
     <Compile Include="FarnahadManufacturingDbContext.cs" />
-    <Compile Include="Migrations\202002071137569_init_db.cs" />
-    <Compile Include="Migrations\202002071137569_init_db.designer.cs">
-      <DependentUpon>202002071137569_init_db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002071158399_fixed_many_to_many_schema.cs" />
-    <Compile Include="Migrations\202002071158399_fixed_many_to_many_schema.designer.cs">
-      <DependentUpon>202002071158399_fixed_many_to_many_schema.cs</DependentUpon>
+    <Compile Include="Migrations\202002082005520_init_new_db.cs" />
+    <Compile Include="Migrations\202002082005520_init_new_db.designer.cs">
+      <DependentUpon>202002082005520_init_new_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,11 +101,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002071137569_init_db.resx">
-      <DependentUpon>202002071137569_init_db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071158399_fixed_many_to_many_schema.resx">
-      <DependentUpon>202002071158399_fixed_many_to_many_schema.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002082005520_init_new_db.resx">
+      <DependentUpon>202002082005520_init_new_db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

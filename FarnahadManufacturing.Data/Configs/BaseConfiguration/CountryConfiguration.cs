@@ -14,6 +14,12 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         {
             this.ToTable("Country", FmDbSchema.BaseConfiguration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.HasMany(item => item.Cities)
+                .WithRequired(city => city.Country)
+                .HasForeignKey(city => city.CountryId);
+            this.HasMany(item => item.Addresses)
+                .WithOptional(address => address.Country)
+                .HasForeignKey(address => address.CountryId);
         }
     }
 }

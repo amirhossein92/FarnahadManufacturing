@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    public enum TrackingType
+    public enum TrackingValueType
     {
         Text,
         Date,

@@ -10,6 +10,20 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         {
             this.ToTable("LocationGroup", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.HasOptional(item => item.Category)
+                .WithMany(category => category.LocationGroups)
+                .HasForeignKey(item => item.CategoryId);
+            this.HasMany(item => item.Users)
+                .WithMany(user => user.LocationGroups)
+                .Map(item =>
+                {
+                    item.ToTable("UserLocationGroup", FmDbSchema.Configuration.ToString());
+                    item.MapLeftKey("LocationGroupId");
+                    item.MapRightKey("UserId");
+                });
+            this.HasMany(item => item.Locations)
+                .WithRequired(location => location.LocationGroup)
+                .HasForeignKey(location => location.LocationGroupId);
         }
     }
 }

@@ -9,7 +9,16 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         public ProductCategoryConfiguration()
         {
             this.ToTable("ProductCategory", FmDbSchema.Configuration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.Property(item => item.Title).HasMaxLength(128).IsRequired();
+            // TODO: How to define one to one relation to itself
+            this.HasMany(item => item.Products)
+                .WithMany(item => item.ProductCategories)
+                .Map(item =>
+                {
+                    item.ToTable("ProductProductCategory", FmDbSchema.Configuration.ToString());
+                    item.MapLeftKey("ProductCategoryId");
+                    item.MapRightKey("ProductId");
+                });
         }
     }
 }

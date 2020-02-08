@@ -98,7 +98,6 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-
         private bool _isActive;
         public bool IsActive
         {
@@ -106,6 +105,72 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _isActive = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Part> _parts;
+        public List<Part> Parts
+        {
+            get => _parts;
+            set
+            {
+                _parts = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Part> _partsDistanceUom;
+        public List<Part> PartsDistanceUom
+        {
+            get => _partsDistanceUom;
+            set
+            {
+                _partsDistanceUom = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Part> _partsWeightUom;
+        public List<Part> PartsWeightUom
+        {
+            get => _partsWeightUom;
+            set
+            {
+                _partsWeightUom = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Product> _products;
+        public List<Product> Products
+        {
+            get => _products;
+            set
+            {
+                _products = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Product> _productsDistanceUom;
+        public List<Product> ProductsDistanceUom
+        {
+            get => _productsDistanceUom;
+            set
+            {
+                _productsDistanceUom = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Product> _productsWeightUom;
+        public List<Product> ProductsWeightUom
+        {
+            get => _productsWeightUom;
+            set
+            {
+                _productsWeightUom = value;
                 OnPropertyChanged();
             }
         }

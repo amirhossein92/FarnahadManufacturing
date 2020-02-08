@@ -32,8 +32,8 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _categoryId;
-        public int CategoryId
+        private int? _categoryId;
+        public int? CategoryId
         {
             get => _categoryId;
             set

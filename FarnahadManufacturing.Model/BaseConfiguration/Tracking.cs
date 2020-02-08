@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
+using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
@@ -59,13 +60,24 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
-        private TrackingType _trackingType;
-        public TrackingType TrackingType
+        private TrackingValueType _trackingValueType;
+        public TrackingValueType TrackingValueType
         {
-            get => _trackingType;
+            get => _trackingValueType;
             set
             {
-                _trackingType = value;
+                _trackingValueType = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<TrackingPart> _trackingParts;
+        public List<TrackingPart> TrackingParts
+        {
+            get => _trackingParts;
+            set
+            {
+                _trackingParts = value;
                 OnPropertyChanged();
             }
         }

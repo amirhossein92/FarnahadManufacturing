@@ -98,13 +98,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<Tracking> _trackings;
-        public List<Tracking> Trackings
+        private List<TrackingPart> _trackingParts;
+        public List<TrackingPart> TrackingParts
         {
-            get => _trackings;
+            get => _trackingParts;
             set
             {
-                _trackings = value;
+                _trackingParts = value;
                 OnPropertyChanged();
             }
         }
@@ -292,6 +292,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _isActive = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Product> _products;
+        public List<Product> Products
+        {
+            get => _products;
+            set
+            {
+                _products = value;
                 OnPropertyChanged();
             }
         }

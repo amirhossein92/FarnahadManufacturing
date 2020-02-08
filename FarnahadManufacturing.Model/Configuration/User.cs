@@ -119,13 +119,24 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<LocationGroup> _locationGroup;
-        public List<LocationGroup> LocationGroup
+        private List<LocationGroup> _locationGroups;
+        public List<LocationGroup> LocationGroups
         {
-            get => _locationGroup;
+            get => _locationGroups;
             set
             {
-                _locationGroup = value;
+                _locationGroups = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Customer> _customers;
+        public List<Customer> Customers
+        {
+            get => _customers;
+            set
+            {
+                _customers = value;
                 OnPropertyChanged();
             }
         }

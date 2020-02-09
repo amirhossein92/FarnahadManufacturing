@@ -10,8 +10,8 @@
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FlowDirection="RightToLeft">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800">
+    <Grid FlowDirection="RightToLeft">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />

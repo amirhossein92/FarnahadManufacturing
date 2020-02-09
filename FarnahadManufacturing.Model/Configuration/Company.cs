@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// شرکت
+    /// </summary>
     public class Company : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// لوگو شرکت
+        /// </summary>
         private byte[] _logo;
         public byte[] Logo
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// حمل و نقل دهنده پیش فرض
+        /// </summary>
         private int? _defaultCarrierId;
         public int? DefaultCarrierId
         {
@@ -54,6 +66,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// حمل و نقل دهنده پیش فرض
+        /// </summary>
         private Carrier _defaultCarrier;
         public Carrier DefaultCarrier
         {
@@ -65,6 +80,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// خدمت حمل و نقل پیش فرض
+        /// </summary>
         private int? _defaultCarrierServiceId;
         public int? DefaultCarrierServiceId
         {
@@ -76,6 +94,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// خدمت حمل و نقل پیش فرض
+        /// </summary>
         private CarrierService _defaultCarrierService;
         public CarrierService DefaultCarrierService
         {
@@ -87,6 +108,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شرایط تحویل کالای پیش فرض
+        /// </summary>
         private int? _defaultShippingTermId;
         public int? DefaultShippingTermId
         {
@@ -98,6 +122,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شرایط تحویل کالای پیش فرض
+        /// </summary>
         private ShippingTerm _defaultShippingTerm;
         public ShippingTerm DefaultShippingTerm
         {
@@ -109,6 +136,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// آدرس پیش فرض
+        /// </summary>
         private int? _defaultAddressId;
         public int? DefaultAddressId
         {
@@ -120,6 +150,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// آدرس پیش فرض
+        /// </summary>
         private Address _defaultAddress;
         public Address DefaultAddress
         {

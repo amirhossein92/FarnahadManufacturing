@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// خدمات حمل و نقل
+    /// </summary>
     public class CarrierService : FmModelBase
     {
         private int _id;
@@ -20,6 +23,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -31,6 +37,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کد
+        /// </summary>
         private string _code;
         public string Code
         {
@@ -42,6 +51,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// حمل و نقل
+        /// </summary>
         private int _carrierId;
         public int CarrierId
         {
@@ -53,6 +65,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// حمل و نقل
+        /// </summary>
         private Carrier _carrier;
         public Carrier Carrier
         {

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// نوع ردیابی
+    /// </summary>
     public enum TrackingValueType
     {
         Text,

@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// گروه بندی محل ها: تقسیم بندی بر اساس نیاز کاربر مثلا بر اساس شهر
+    /// </summary>
     public class LocationGroup : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// تقسیم بندی
+        /// </summary>
         private int? _categoryId;
         public int? CategoryId
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// تقسیم بندی
+        /// </summary>
         private Category _category;
         public Category Category
         {
@@ -54,6 +66,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کاربران
+        /// </summary>
         private List<User> _users;
         public List<User> Users
         {
@@ -65,6 +80,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// گروه مشتری
+    /// </summary>
     public class CustomerGroup : FmModelBase
     {
         // TODO: Check if other parameter is needed
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {

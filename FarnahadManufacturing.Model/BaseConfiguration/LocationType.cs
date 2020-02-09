@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// نوع محل مثلا انبار، فروشگاه و غیره
+    /// </summary>
     public class LocationType : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// غیر قابل تغییر
+        /// </summary>
         private bool _readOnly;
         public bool ReadOnly
         {

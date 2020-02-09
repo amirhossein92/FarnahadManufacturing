@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// کالا
+    /// </summary>
     public class Part : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شماره کالا
+        /// </summary>
         private string _number;
         public string Number
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -54,6 +66,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// (Universal Product Code) کد جهانی کالا
+        /// </summary>
         private string _upc;
         public string Upc
         {
@@ -65,6 +80,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نوع کالا
+        /// </summary>
         private PartType _partType;
         public PartType PartType
         {
@@ -76,6 +94,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری
+        /// </summary>
         private int _uomId;
         public int UomId
         {
@@ -87,6 +108,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری
+        /// </summary>
         private Uom _uom;
         public Uom Uom
         {
@@ -98,6 +122,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// ردیابی کالا
+        /// </summary>
         private List<TrackingPart> _trackingParts;
         public List<TrackingPart> TrackingParts
         {
@@ -109,6 +136,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// محل پیش فرض
+        /// </summary>
         private int? _defaultLocationId;
         public int? DefaultLocationId
         {
@@ -120,6 +150,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// محل پیش فرض
+        /// </summary>
         private Location _defaultLocation;
         public Location DefaultLocation
         {
@@ -131,6 +164,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فروشنده پیش فرض
+        /// </summary>
         private int? _defaultVendorId;
         public int? DefaultVendorId
         {
@@ -142,6 +178,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فروشنده پیش فرض
+        /// </summary>
         private Vendor _defaultVendor;
         public Vendor DefaultVendor
         {
@@ -153,6 +192,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// قابل استفاده در واحد اندازه گیری دیگر
+        /// </summary>
         private bool _pickInPartUomOnly;
         public bool PickInPartUomOnly
         {
@@ -164,6 +206,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// جزئیات
+        /// </summary>
         private string _details;
         public string Details
         {
@@ -175,6 +220,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عکس کالا
+        /// </summary>
         private byte[] _picture;
         public byte[] Picture
         {
@@ -186,6 +234,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// طول
+        /// </summary>
         private double? _length;
         public double? Length
         {
@@ -197,6 +248,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عرض
+        /// </summary>
         private double? _width;
         public double? Width
         {
@@ -208,6 +262,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// ارتفاع
+        /// </summary>
         private double? _height;
         public double? Height
         {
@@ -219,6 +276,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری فاصله
+        /// </summary>
         private int _distanceUomId;
         public int DistanceUomId
         {
@@ -230,6 +290,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری فاصله
+        /// </summary>
         private Uom _distanceUom;
         public Uom DistanceUom
         {
@@ -241,6 +304,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// وزن
+        /// </summary>
         private double? _weight;
         public double? Weight
         {
@@ -252,6 +318,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری وزن
+        /// </summary>
         private int _weightUomId;
         public int WeightUomId
         {
@@ -263,6 +332,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری وزن
+        /// </summary>
         private Uom _weightUom;
         public Uom WeightUom
         {
@@ -274,6 +346,10 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        // TODO: change it to partCost list
+        /// <summary>
+        /// هزینه
+        /// </summary>
         private double? _cost;
         public double? Cost
         {
@@ -285,6 +361,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

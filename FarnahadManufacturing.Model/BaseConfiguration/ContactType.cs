@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// نوع ارتباط
+    /// </summary>
     public enum ContactType
     {
         Home,

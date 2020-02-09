@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// ردیابی
+    /// </summary>
     public class Tracking : FmModelBase
     {
         // 4 Default Tracking Types =>
@@ -27,6 +30,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -38,6 +44,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// مخفف
+        /// </summary>
         private string _abbreviation;
         public string Abbreviation
         {
@@ -49,6 +58,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -60,6 +72,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// نوع ردیابی
+        /// </summary>
         private TrackingValueType _trackingValueType;
         public TrackingValueType TrackingValueType
         {

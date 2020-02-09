@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// حمل و نقل
+    /// </summary>
     public class Carrier : FmModelBase
     {
         private int _id;
@@ -20,6 +23,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -31,7 +37,7 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // Standard Carrier Alpha Code
+        // Standard Carrier Alpha Code - it is just for US => it should be changed...
         private string _scac;
         public string Scac
         {
@@ -43,6 +49,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -54,6 +63,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

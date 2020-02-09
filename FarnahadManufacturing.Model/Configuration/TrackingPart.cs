@@ -1,9 +1,12 @@
-using System;
+﻿using System;
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// ردیابی کالا
+    /// </summary>
     public class TrackingPart : FmModelBase
     {
         private int _id;
@@ -17,6 +20,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// ردیابی
+        /// </summary>
         private int _trackingId;
         public int TrackingId
         {
@@ -28,6 +34,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// ردیابی
+        /// </summary>
         private Tracking _tracking;
         public Tracking Tracking
         {
@@ -39,6 +48,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کالا
+        /// </summary>
         private int _partId;
         public int PartId
         {
@@ -50,6 +62,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کالا
+        /// </summary>
         private Part _part;
         public Part Part
         {
@@ -61,6 +76,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مقدار بعدی
+        /// </summary>
         private string _nextValue;
         public string NextValue
         {

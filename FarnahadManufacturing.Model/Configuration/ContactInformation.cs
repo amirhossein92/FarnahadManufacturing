@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// اطلاعات تماس
+    /// </summary>
     public class ContactInformation : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مقدار
+        /// </summary>
         private string _value;
         public string Value
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نوع ارتباط
+        /// </summary>
         private ContactType _contactType;
         public ContactType ContactType
         {
@@ -54,6 +66,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// پیش فرض
+        /// </summary>
         private bool _isDefault;
         public bool IsDefault
         {
@@ -65,6 +80,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// آدرس
+        /// </summary>
         private int _addressId;
         public int AddressId
         {
@@ -75,7 +93,10 @@ namespace FarnahadManufacturing.Model.Configuration
                 OnPropertyChanged();
             }
         }
-
+        
+        /// <summary>
+        /// آدرس
+        /// </summary>
         private Address _address;
         public Address Address
         {

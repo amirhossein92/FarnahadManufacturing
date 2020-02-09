@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// نوع کالا
+    /// </summary>
     public enum PartType
     {
         Inventory,

@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// دسته بندی محصولات
+    /// </summary>
     public class ProductCategory : FmModelBase
     {
         private int _id;
@@ -20,6 +23,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -31,6 +37,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -42,6 +51,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شاخه اصلی
+        /// </summary>
         private int? _parentProductCategoryId;
         public int? ParentProductCategoryId
         {
@@ -53,6 +65,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شاخه اصلی
+        /// </summary>
         private ProductCategory _parentProductCategory;
         public ProductCategory ParentProductCategory
         {

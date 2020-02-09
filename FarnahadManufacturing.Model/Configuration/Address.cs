@@ -9,6 +9,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// آدرس
+    /// </summary>
     public class Address : FmModelBase
     {
         private int _id;
@@ -22,6 +25,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -33,6 +39,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// آدرس
+        /// </summary>
         private string _addressDetail;
         public string AddressDetail
         {
@@ -44,6 +53,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نوع آدرس
+        /// </summary>
         private int _addressTypeId;
         public int AddressTypeId
         {
@@ -55,6 +67,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نوع آدرس
+        /// </summary>
         private AddressType _addressType;
         public AddressType AddressType
         {
@@ -66,6 +81,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کشور
+        /// </summary>
         private int? _countryId;
         public int? CountryId
         {
@@ -77,6 +95,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کشور
+        /// </summary>
         private Country _country;
         public Country Country
         {
@@ -88,6 +109,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شهر
+        /// </summary>
         private int? _cityId;
         public int? CityId
         {
@@ -99,6 +123,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شهر
+        /// </summary>
         private City _city;
         public City City
         {
@@ -110,6 +137,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// استان
+        /// </summary>
         private string _province;
         public string Province
         {
@@ -121,6 +151,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کدپستی
+        /// </summary>
         private string _zipCode;
         public string ZipCode
         {
@@ -132,6 +165,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// آدرس مسکونی
+        /// </summary>
         private bool _isResidentialAddress;
         public bool IsResidentialAddress
         {
@@ -143,6 +179,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عرض جغرافیایی
+        /// </summary>
         private double? _latitude;
         public double? Latitude
         {
@@ -154,6 +193,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// طول جغرافیایی
+        /// </summary>
         private double? _longitude;
         public double? Longitude
         {

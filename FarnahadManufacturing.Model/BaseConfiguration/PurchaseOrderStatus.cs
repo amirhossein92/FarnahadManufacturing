@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// وضعیت سفارش خرید
+    /// </summary>
     public enum PurchaseOrderStatus
     {
         BidRequest,

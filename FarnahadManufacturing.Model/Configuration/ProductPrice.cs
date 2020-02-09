@@ -7,6 +7,10 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// قیمت محصولات
+    /// نباید قابل ویرایش باشه این جدول
+    /// </summary>
     public class ProductPrice : FmModelBase
     {
         private int _id;
@@ -20,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// محصول
+        /// </summary>
         private int _productId;
         public int ProductId
         {
@@ -31,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// محصول
+        /// </summary>
         private Product _product;
         public Product Product
         {
@@ -42,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// قیمت
+        /// </summary>
         private double _price;
         public double Price
         {

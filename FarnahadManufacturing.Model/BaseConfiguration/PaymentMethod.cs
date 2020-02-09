@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// نحوه پرداخت 
+    /// </summary>
     public class PaymentMethod : FmModelBase
     {
         private int _id;

@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// کاربر
+    /// </summary>
     public class User : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نام
+        /// </summary>
         private string _firstName;
         public string FirstName
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نام خانوادگی
+        /// </summary>
         private string _lastName;
         public string LastName
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نام کاربری
+        /// </summary>
         private string _userName;
         public string UserName
         {
@@ -54,6 +66,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مخفف
+        /// </summary>
         private string _initial;
         public string Initial
         {
@@ -65,6 +80,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// پست الکترونیکی
+        /// </summary>
         private string _email;
         public string Email
         {
@@ -76,6 +94,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شماره تلفن
+        /// </summary>
         private string _phoneNumber;
         public string PhoneNumber
         {
@@ -87,6 +108,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// رمز عبور
+        /// </summary>
         private string _password;
         public string Password
         {
@@ -109,6 +133,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

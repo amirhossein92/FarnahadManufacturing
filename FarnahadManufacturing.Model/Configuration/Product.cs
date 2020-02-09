@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// محصول
+    /// </summary>
     public class Product : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -32,6 +38,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کالا
+        /// </summary>
         private int _partId;
         public int PartId
         {
@@ -43,6 +52,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کالا
+        /// </summary>
         private Part _part;
         public Part Part
         {
@@ -54,6 +66,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -65,6 +80,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// جزئیات محصول
+        /// </summary>
         private string _detail;
         public string Detail
         {
@@ -76,6 +94,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری
+        /// </summary>
         private int _uomId;
         public int UomId
         {
@@ -87,6 +108,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری
+        /// </summary>
         private Uom _uom;
         public Uom Uom
         {
@@ -98,6 +122,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// قابل فروش در واحد اندازه گیری دیگر
+        /// </summary>
         private bool _allowToSellInOtherUom;
         public bool AllowToSellInOtherUom
         {
@@ -109,6 +136,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// دسته بندی
+        /// </summary>
         private int? _categoryId;
         public int? CategoryId
         {
@@ -120,6 +150,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// دسته بندی
+        /// </summary>
         private Category _category;
         public Category Category
         {
@@ -131,6 +164,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عکس محصول
+        /// </summary>
         private byte[] _picture;
         public byte[] Picture
         {
@@ -142,6 +178,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مشمول مالیات
+        /// </summary>
         private bool _isTaxable;
         public bool IsTaxable
         {
@@ -153,6 +192,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نمایش در سفارش خرید
+        /// </summary>
         private bool _showOnSaleOrder;
         public bool ShowOnSaleOrder
         {
@@ -164,6 +206,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// کد جهانی محصول (Universal Product Code)
+        /// </summary>
         private string _upc;
         public string Upc
         {
@@ -175,6 +220,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// Stop Keeping Unit
+        /// </summary>
         private string _sku;
         public string Sku
         {
@@ -188,6 +236,9 @@ namespace FarnahadManufacturing.Model.Configuration
 
         // TODO: SO ITEM TYPE
 
+        /// <summary>
+        /// طول
+        /// </summary>
         private double? _length;
         public double? Length
         {
@@ -199,6 +250,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عرض
+        /// </summary>
         private double? _width;
         public double? Width
         {
@@ -210,6 +264,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// ارتفاع
+        /// </summary>
         private double? _height;
         public double? Height
         {
@@ -221,6 +278,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری فاصله
+        /// </summary>
         private int _distanceUomId;
         public int DistanceUomId
         {
@@ -232,6 +292,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری فاصله
+        /// </summary>
         private Uom _distanceUom;
         public Uom DistanceUom
         {
@@ -243,6 +306,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// وزن
+        /// </summary>
         private double? _weight;
         public double? Weight
         {
@@ -254,6 +320,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری وزن
+        /// </summary>
         private int _weightUomId;
         public int WeightUomId
         {
@@ -265,6 +334,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// واحد اندازه گیری وزن
+        /// </summary>
         private Uom _weightUom;
         public Uom WeightUom
         {
@@ -276,6 +348,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

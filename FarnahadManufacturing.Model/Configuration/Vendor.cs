@@ -7,8 +7,14 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// فروشنده
+    /// </summary>
     public class Vendor : Company
     {
+        /// <summary>
+        /// شماره حساب
+        /// </summary>
         private string _accountNumber;
         public string AccountNumber
         {
@@ -20,6 +26,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// حداقل میزان سفارش
+        /// </summary>
         private double? _minOrderAmount;
         public double? MinOrderAmount
         {
@@ -31,6 +40,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شرایط پرداخت پیش فرض
+        /// </summary>
         private int? _defaultPaymentTermId;
         public int? DefaultPaymentTermId
         {
@@ -42,6 +54,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شرایط پرداخت پیش فرض
+        /// </summary>
         private PaymentTerm _defaultPaymentTerm;
         public PaymentTerm DefaultPaymentTerm
         {

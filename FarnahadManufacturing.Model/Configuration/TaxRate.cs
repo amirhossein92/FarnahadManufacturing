@@ -7,6 +7,9 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// نرخ مالیات
+    /// </summary>
     public class TaxRate : FmModelBase
     {
         private int _id;
@@ -20,6 +23,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -31,6 +37,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مخفف
+        /// </summary>
         private string _abbreviation;
         public string Abbreviation
         {
@@ -42,6 +51,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// براساس درصد
+        /// </summary>
         private bool _isPercentageSelected;
         public bool IsPercentageSelected
         {
@@ -53,6 +65,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// درصد
+        /// </summary>
         private double? _percentage;
         public double? Percentage
         {
@@ -64,6 +79,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نرخ ثابت
+        /// </summary>
         private double? _flatRate;
         public double? FlatRate
         {
@@ -75,6 +93,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

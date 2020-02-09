@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// محل
+    /// </summary>
     public class Location : FmModelBase
     {
         private int _id;
@@ -21,6 +24,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -33,6 +39,9 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         // TODO: Can be auto-generated
+        /// <summary>
+        /// شماره
+        /// </summary>
         private int _number;
         public int Number
         {
@@ -44,6 +53,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {
@@ -55,6 +67,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نوع محل
+        /// </summary>
         private int _locationTypeId;
         public int LocationTypeId
         {
@@ -66,6 +81,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نوع محل
+        /// </summary>
         private LocationType _locationType;
         public LocationType LocationType
         {
@@ -77,6 +95,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// گروه محل
+        /// </summary>
         private int _locationGroupId;
         public int LocationGroupId
         {
@@ -88,6 +109,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// گروه محل
+        /// </summary>
         private LocationGroup _locationGroup;
         public LocationGroup LocationGroup
         {
@@ -99,6 +123,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مشتری پیش فرض
+        /// </summary>
         private int? _defaultCustomerId;
         public int? DefaultCustomerId
         {
@@ -110,6 +137,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// مشتری پیش فرض
+        /// </summary>
         private Customer _defaultCustomer;
         public Customer DefaultCustomer
         {
@@ -121,6 +151,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// در دسترس برای فروش 
+        /// </summary>
         private bool _availableForSale;
         public bool AvailableForSale
         {
@@ -132,6 +165,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// در دسترس برای گرفتن کالا
+        /// </summary>
         private bool _pickable;
         public bool Pickable
         {
@@ -143,6 +179,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// در دسترس برای دریافت کالا
+        /// </summary>
         private bool _receivable;
         public bool Receivable
         {
@@ -154,6 +193,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {

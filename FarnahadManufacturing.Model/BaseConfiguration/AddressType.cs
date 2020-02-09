@@ -8,6 +8,9 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// نوع آدرس
+    /// </summary>
     public class AddressType : FmModelBase
     {
         // Bill To
@@ -26,6 +29,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// عنوان
+        /// </summary>
         private string _title;
         public string Title
         {
@@ -37,6 +43,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// توضیحات
+        /// </summary>
         private string _description;
         public string Description
         {

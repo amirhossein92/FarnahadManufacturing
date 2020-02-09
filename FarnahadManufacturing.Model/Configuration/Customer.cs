@@ -8,9 +8,15 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
+    /// <summary>
+    /// مشتری
+    /// </summary>
     public class Customer : Company
     {
         // TODO: Not sure about the inheritance => what if Customer is Person and not company!
+        /// <summary>
+        /// حد اعتبار
+        /// </summary>
         private double? _creditLimit;
         public double? CreditLimit
         {
@@ -24,7 +30,9 @@ namespace FarnahadManufacturing.Model.Configuration
 
         // TODO: Status?
         // TODO: IssueStatus?
-
+        /// <summary>
+        /// شرایط پرداخت پیش فرض
+        /// </summary>
         private int? _defaultPaymentTermId;
         public int? DefaultPaymentTermId
         {
@@ -36,6 +44,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شرایط پرداخت پیش فرض
+        /// </summary>
         private PaymentTerm _defaultPaymentTerm;
         public PaymentTerm DefaultPaymentTerm
         {
@@ -47,6 +58,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فروشنده
+        /// </summary>
         private int? _salespersonId;
         public int? SalespersonId
         {
@@ -58,6 +72,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// فروشنده
+        /// </summary>
         private User _salesperson;
         public User Salesperson
         {
@@ -69,6 +86,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// دسته بندی
+        /// </summary>
         private int? _categoryId;
         public int? CategoryId
         {
@@ -80,6 +100,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// دسته بندی
+        /// </summary>
         private Category _category;
         public Category Category
         {
@@ -91,6 +114,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شماره حساب
+        /// </summary>
         private string _accountNumber;
         public string AccountNumber
         {
@@ -104,6 +130,9 @@ namespace FarnahadManufacturing.Model.Configuration
 
         // TODO: Default Priority?
 
+        /// <summary>
+        /// نرخ مالیاتی
+        /// </summary>
         private int _taxRateId;
         public int TaxRateId
         {
@@ -115,6 +144,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// نرخ مالیاتی
+        /// </summary>
         private TaxRate _taxRate;
         public TaxRate TaxRate
         {
@@ -126,6 +158,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// معاف از مالیات
+        /// </summary>
         private bool _isTaxExempt;
         public bool IsTaxExempt
         {
@@ -137,6 +172,9 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        /// <summary>
+        /// شماره معاف از مالیات
+        /// </summary>
         private string _taxExemptNumber;
         public string TaxExemptNumber
         {

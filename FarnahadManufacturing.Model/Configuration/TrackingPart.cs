@@ -1,3 +1,4 @@
+using System;
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.BaseConfiguration;
 
@@ -67,6 +68,39 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _nextValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _createdByUserId;
+        public int CreatedByUserId
+        {
+            get => _createdByUserId;
+            set
+            {
+                _createdByUserId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private User _createdByUser;
+        public User CreatedByUser
+        {
+            get => _createdByUser;
+            set
+            {
+                _createdByUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private DateTime _createdDateTime;
+        public DateTime CreatedDateTime
+        {
+            get => _createdDateTime;
+            set
+            {
+                _createdDateTime = value;
                 OnPropertyChanged();
             }
         }

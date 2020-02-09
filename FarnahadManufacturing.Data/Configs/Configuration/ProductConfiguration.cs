@@ -12,7 +12,8 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.Property(item => item.Title).HasMaxLength(128).IsRequired();
             this.HasRequired(item => item.Part)
                 .WithMany(part => part.Products)
-                .HasForeignKey(item => item.PartId);
+                .HasForeignKey(item => item.PartId)
+                .WillCascadeOnDelete(false);
             this.HasRequired(item => item.Uom)
                 .WithMany(uom => uom.Products)
                 .HasForeignKey(item => item.UomId);
@@ -24,10 +25,12 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             // TODO: Check this with Mr. Ghaderian
             this.HasRequired(item => item.DistanceUom)
                 .WithMany(uom => uom.ProductsDistanceUom)
-                .HasForeignKey(item => item.DistanceUomId);
+                .HasForeignKey(item => item.DistanceUomId)
+                .WillCascadeOnDelete(false);
             this.HasRequired(item => item.WeightUom)
                 .WithMany(uom => uom.ProductsWeightUom)
-                .HasForeignKey(item => item.WeightUomId);
+                .HasForeignKey(item => item.WeightUomId)
+                .WillCascadeOnDelete(false);
             this.HasMany(item => item.ProductPrices)
                 .WithRequired(productPrice => productPrice.Product)
                 .HasForeignKey(productPrice => productPrice.ProductId);
@@ -39,6 +42,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("ProductId");
                     item.MapRightKey("ProductCategoryId");
                 });
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.Products)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

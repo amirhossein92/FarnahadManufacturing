@@ -16,6 +16,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasMany(item => item.Companies)
                 .WithOptional(company => company.DefaultCarrierService)
                 .HasForeignKey(company => company.DefaultCarrierServiceId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.CarrierServices)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

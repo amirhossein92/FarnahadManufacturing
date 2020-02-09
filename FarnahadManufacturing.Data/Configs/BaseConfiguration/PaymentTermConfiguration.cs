@@ -15,6 +15,10 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
             this.HasMany(item => item.Vendors)
                 .WithOptional(vendor => vendor.DefaultPaymentTerm)
                 .HasForeignKey(vendor => vendor.DefaultPaymentTermId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.PaymentTerms)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

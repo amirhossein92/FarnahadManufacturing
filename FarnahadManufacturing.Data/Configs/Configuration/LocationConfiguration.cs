@@ -22,6 +22,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasMany(item => item.Parts)
                 .WithOptional(part => part.DefaultLocation)
                 .HasForeignKey(part => part.DefaultLocationId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.Locations)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

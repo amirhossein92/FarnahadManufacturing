@@ -31,7 +31,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             //        item.MapLeftKey("CompanyId");
             //        item.MapRightKey("AddressId");
             //    });
-
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.Companies)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

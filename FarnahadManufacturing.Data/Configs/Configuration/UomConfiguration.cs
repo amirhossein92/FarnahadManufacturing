@@ -33,6 +33,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasMany(item => item.ProductsWeightUom)
                 .WithRequired(product => product.WeightUom)
                 .HasForeignKey(product => product.WeightUomId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.Uoms)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

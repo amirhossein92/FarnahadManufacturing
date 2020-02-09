@@ -7,13 +7,13 @@ namespace FarnahadManufacturing.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class init_new_db : IMigrationMetadata
+    public sealed partial class init_db : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init_new_db));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init_db));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002082005520_init_new_db"; }
+            get { return "202002091538331_init_db"; }
         }
         
         string IMigrationMetadata.Source

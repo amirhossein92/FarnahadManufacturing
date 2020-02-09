@@ -31,13 +31,19 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             // TODO: Check this with Mr. Ghaderian
             this.HasRequired(item => item.DistanceUom)
                 .WithMany(uom => uom.PartsDistanceUom)
-                .HasForeignKey(item => item.DistanceUomId);
+                .HasForeignKey(item => item.DistanceUomId)
+                .WillCascadeOnDelete(false);
             this.HasRequired(item => item.WeightUom)
                 .WithMany(uom => uom.PartsWeightUom)
-                .HasForeignKey(item => item.WeightUomId);
+                .HasForeignKey(item => item.WeightUomId)
+                .WillCascadeOnDelete(false);
             this.HasMany(item => item.Products)
                 .WithRequired(product => product.Part)
                 .HasForeignKey(product => product.PartId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.Parts)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

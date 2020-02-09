@@ -14,7 +14,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.Property(item => item.UserName).IsRequired().HasMaxLength(128);
             this.Property(item => item.Password).IsRequired().HasMaxLength(128);
             this.Property(item => item.PasswordSalt).IsRequired().HasMaxLength(128);
-            this.HasMany(item => item.LocationGroups)
+            this.HasMany(item => item.LocationGroupMembers)
                 .WithMany(item => item.Users)
                 .Map(item =>
                 {
@@ -22,7 +22,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("UserId");
                     item.MapRightKey("LocationGroupId");
                 });
-            this.HasMany(item => item.Customers)
+            this.HasMany(item => item.CustomerSalespersons)
                 .WithOptional(customer => customer.Salesperson)
                 .HasForeignKey(customer => customer.SalespersonId);
         }

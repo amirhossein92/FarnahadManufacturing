@@ -12,6 +12,10 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
             this.HasMany(item => item.Locations)
                 .WithRequired(location => location.LocationType)
                 .HasForeignKey(location => location.LocationTypeId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.LocationTypes)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

@@ -19,6 +19,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("ProductCategoryId");
                     item.MapRightKey("ProductId");
                 });
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.ProductCategories)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

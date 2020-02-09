@@ -23,6 +23,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("CustomerGroupId");
                     item.MapRightKey("CustomerId");
                 });
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.CustomerGroups)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

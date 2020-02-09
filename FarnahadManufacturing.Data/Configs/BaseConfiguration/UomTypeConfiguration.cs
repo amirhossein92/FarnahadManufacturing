@@ -12,6 +12,10 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
             this.HasMany(item => item.Uoms)
                 .WithRequired(uom => uom.UomType)
                 .HasForeignKey(uom => uom.UomTypeId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.UomTypes)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

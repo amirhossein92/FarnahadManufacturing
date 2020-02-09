@@ -12,6 +12,10 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
             this.HasMany(item => item.Companies)
                 .WithOptional(company => company.DefaultShippingTerm)
                 .HasForeignKey(company => company.DefaultShippingTermId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.ShippingTerms)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

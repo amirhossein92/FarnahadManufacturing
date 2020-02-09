@@ -9,6 +9,10 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         {
             this.ToTable("FobType", FmDbSchema.BaseConfiguration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.FobTypes)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

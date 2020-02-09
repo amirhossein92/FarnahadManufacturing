@@ -17,7 +17,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                 .WithMany(paymentTerm => paymentTerm.Customers)
                 .HasForeignKey(item => item.DefaultPaymentTermId);
             this.HasOptional(item => item.Salesperson)
-                .WithMany(user => user.Customers)
+                .WithMany(user => user.CustomerSalespersons)
                 .HasForeignKey(item => item.SalespersonId);
             this.HasOptional(item => item.Category)
                 .WithMany(user => user.Customers)

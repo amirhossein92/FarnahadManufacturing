@@ -14,7 +14,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                 .WithMany(category => category.LocationGroups)
                 .HasForeignKey(item => item.CategoryId);
             this.HasMany(item => item.Users)
-                .WithMany(user => user.LocationGroups)
+                .WithMany(user => user.LocationGroupMembers)
                 .Map(item =>
                 {
                     item.ToTable("UserLocationGroup", FmDbSchema.Configuration.ToString());
@@ -24,6 +24,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasMany(item => item.Locations)
                 .WithRequired(location => location.LocationGroup)
                 .HasForeignKey(location => location.LocationGroupId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.LocationGroups)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

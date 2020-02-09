@@ -14,6 +14,10 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
             this.HasMany(item => item.TrackingParts)
                 .WithRequired(trackingPart => trackingPart.Tracking)
                 .HasForeignKey(trackingPart => trackingPart.TrackingId);
+            this.HasRequired(item => item.CreatedByUser)
+                .WithMany(user => user.Trackings)
+                .HasForeignKey(item => item.CreatedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

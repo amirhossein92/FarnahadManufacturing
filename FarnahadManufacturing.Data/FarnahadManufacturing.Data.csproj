@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202002091801220_added_partCost.designer.cs">
       <DependentUpon>202002091801220_added_partCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002091804432_fixed_companyAddress.cs" />
+    <Compile Include="Migrations\202002091804432_fixed_companyAddress.designer.cs">
+      <DependentUpon>202002091804432_fixed_companyAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002091801220_added_partCost.resx">
       <DependentUpon>202002091801220_added_partCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002091804432_fixed_companyAddress.resx">
+      <DependentUpon>202002091804432_fixed_companyAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

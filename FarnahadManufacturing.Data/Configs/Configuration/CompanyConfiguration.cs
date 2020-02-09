@@ -20,17 +20,16 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                 .WithMany(shippingTerm => shippingTerm.Companies)
                 .HasForeignKey(item => item.DefaultShippingTermId);
             this.HasOptional(item => item.DefaultAddress)
-                .WithMany(address => address.Companies)
+                .WithMany(address => address.CompaniesDefaultAddress)
                 .HasForeignKey(item => item.DefaultAddressId);
-            // TODO: This makes error
-            //this.HasMany(item => item.Addresses)
-            //    .WithMany(address => address.Companies)
-            //    .Map(item =>
-            //    {
-            //        item.ToTable("CompanyAddress", FmDbSchema.Configuration.ToString());
-            //        item.MapLeftKey("CompanyId");
-            //        item.MapRightKey("AddressId");
-            //    });
+            this.HasMany(item => item.Addresses)
+                .WithMany(address => address.Companies)
+                .Map(item =>
+                {
+                    item.ToTable("CompanyAddress", FmDbSchema.Configuration.ToString());
+                    item.MapLeftKey("CompanyId");
+                    item.MapRightKey("AddressId");
+                });
             this.HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Companies)
                 .HasForeignKey(item => item.CreatedByUserId)

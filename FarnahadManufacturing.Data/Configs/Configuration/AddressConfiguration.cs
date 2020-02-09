@@ -21,19 +21,6 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasMany(item => item.ContactInformations)
                 .WithRequired(contactInformation => contactInformation.Address)
                 .HasForeignKey(contactInformation => contactInformation.AddressId);
-            // TODO: What to do about default address
-            //this.HasMany(item => item.CompaniesDefaultAddress)
-            //    .WithOptional(company => company.DefaultAddress)
-            //    .HasForeignKey(company => company.DefaultAddressId);
-            // TODO: This makes error
-            //this.HasMany(item => item.Companies)
-            //    .WithMany(address => address.Addresses)
-            //    .Map(item =>
-            //    {
-            //        item.ToTable("CompanyAddress", FmDbSchema.Configuration.ToString());
-            //        item.MapLeftKey("AddressId");
-            //        item.MapRightKey("CompanyId");
-            //    });
             this.HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Addresses)
                 .HasForeignKey(item => item.CreatedByUserId)

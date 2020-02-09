@@ -72,6 +72,7 @@
     <Compile Include="Configs\Configuration\LocationGroupConfiguration.cs" />
     <Compile Include="Configs\Configuration\MyCompanyConfiguration.cs" />
     <Compile Include="Configs\Configuration\PartConfiguration.cs" />
+    <Compile Include="Configs\Configuration\PartCostConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductCategoryConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductPriceConfiguration.cs" />
@@ -86,6 +87,10 @@
     <Compile Include="Migrations\202002091538331_init_db.cs" />
     <Compile Include="Migrations\202002091538331_init_db.designer.cs">
       <DependentUpon>202002091538331_init_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002091801220_added_partCost.cs" />
+    <Compile Include="Migrations\202002091801220_added_partCost.designer.cs">
+      <DependentUpon>202002091801220_added_partCost.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +108,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002091538331_init_db.resx">
       <DependentUpon>202002091538331_init_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002091801220_added_partCost.resx">
+      <DependentUpon>202002091801220_added_partCost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

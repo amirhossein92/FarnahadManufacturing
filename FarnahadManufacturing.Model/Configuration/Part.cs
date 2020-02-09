@@ -346,21 +346,6 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // TODO: change it to partCost list
-        /// <summary>
-        /// هزینه
-        /// </summary>
-        private double? _cost;
-        public double? Cost
-        {
-            get => _cost;
-            set
-            {
-                _cost = value;
-                OnPropertyChanged();
-            }
-        }
-
         /// <summary>
         /// فعال
         /// </summary>
@@ -371,6 +356,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _isActive = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartCost> _partCosts;
+        public List<PartCost> PartCosts
+        {
+            get => _partCosts;
+            set
+            {
+                _partCosts = value;
                 OnPropertyChanged();
             }
         }

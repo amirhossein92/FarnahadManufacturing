@@ -67,6 +67,7 @@
     <Compile Include="Configuration\LocationGroup.cs" />
     <Compile Include="Configuration\MyCompany.cs" />
     <Compile Include="Configuration\Part.cs" />
+    <Compile Include="Configuration\PartCost.cs" />
     <Compile Include="Configuration\Product.cs" />
     <Compile Include="Configuration\ProductCategory.cs" />
     <Compile Include="Configuration\ProductPrice.cs" />

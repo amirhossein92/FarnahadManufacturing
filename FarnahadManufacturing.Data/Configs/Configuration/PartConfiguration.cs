@@ -40,6 +40,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasMany(item => item.Products)
                 .WithRequired(product => product.Part)
                 .HasForeignKey(product => product.PartId);
+            this.HasMany(item => item.PartCosts)
+                .WithRequired(partCost => partCost.Part)
+                .HasForeignKey(product => product.PartId);
             this.HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Parts)
                 .HasForeignKey(item => item.CreatedByUserId)

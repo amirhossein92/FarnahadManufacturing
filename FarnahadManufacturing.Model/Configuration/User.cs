@@ -389,6 +389,17 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        private List<PartCost> _partCosts;
+        public List<PartCost> PartCosts
+        {
+            get => _partCosts;
+            set
+            {
+                _partCosts = value;
+                OnPropertyChanged();
+            }
+        }
+
         private List<Product> _products;
         public List<Product> Products
         {

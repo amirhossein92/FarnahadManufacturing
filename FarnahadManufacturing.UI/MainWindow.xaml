@@ -78,7 +78,7 @@
                     </dxa:AccordionItem>
                     <dxa:AccordionItem Header="شرکت"/>
                     <dxa:AccordionItem Header="واحد اندازه گیری"/>
-                    <dxa:AccordionItem Header="انتقال دهنده ها"/>
+                    <dxa:AccordionItem Header="پیک ها"/>
                     <dxa:AccordionItem Header="دسته بندی محصولات"/>
                     <dxa:AccordionItem Header="کاربر">
                         <dxa:AccordionItem.Items>

@@ -53,7 +53,7 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
-        /// حمل و نقل دهنده پیش فرض
+        /// پیک پیش فرض
         /// </summary>
         private int? _defaultCarrierId;
         public int? DefaultCarrierId
@@ -67,7 +67,7 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
-        /// حمل و نقل دهنده پیش فرض
+        /// پیک پیش فرض
         /// </summary>
         private Carrier _defaultCarrier;
         public Carrier DefaultCarrier
@@ -81,7 +81,7 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
-        /// خدمت حمل و نقل پیش فرض
+        /// نوع پیک پیش فرض
         /// </summary>
         private int? _defaultCarrierServiceId;
         public int? DefaultCarrierServiceId
@@ -95,7 +95,7 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
-        /// خدمت حمل و نقل پیش فرض
+        /// نوع پیک پیش فرض
         /// </summary>
         private CarrierService _defaultCarrierService;
         public CarrierService DefaultCarrierService

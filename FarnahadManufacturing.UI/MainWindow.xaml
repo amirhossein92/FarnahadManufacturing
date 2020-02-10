@@ -35,7 +35,8 @@
                 </dxb:BarSubItem>
             </dxb:MainMenuControl.Items>
         </dxb:MainMenuControl>
-        <dxb:ToolBarControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
+        <dxb:ToolBarControl x:Name="ToolBarControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                            BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
                             IsMultiLine="True">
             <dxb:ToolBarControl.Items>
                 <dxb:BarButtonItem Content="جدید" Glyph="Assets/AccordionIcons/Icon_32x32.png"/>

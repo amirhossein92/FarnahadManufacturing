@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Docking;
+using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
 
@@ -26,6 +30,20 @@ namespace FarnahadManufacturing.UI
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            ActiveToolBarService.SubscribeOnActiveToolBarChange += ActiveToolBarItemsOnCollectionChanged;
+        }
+
+        private void ActiveToolBarItemsOnCollectionChanged(object sender, ActiveToolBarEventArg e)
+        {
+            var items = (Dictionary<string, IBarItem>)sender;
+            ToolBarControl.Items.Clear();
+            foreach (var item in items)
+                ToolBarControl.Items.Add(item.Value);
         }
 
         private void Country_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)

@@ -39,10 +39,10 @@
                             BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
                             IsMultiLine="True">
             <dxb:ToolBarControl.Items>
-                <dxb:BarButtonItem Content="جدید" Glyph="Assets/AccordionIcons/Icon_32x32.png"/>
-                <dxb:BarButtonItem Content="ذخیره" Glyph="Assets/AccordionIcons/Icon_32x32.png"/>
+                <dxb:BarButtonItem Content="جدید" Glyph="Assets/AccordionIcons/Icon_32x32.png" IsEnabled="False"/>
+                <dxb:BarButtonItem Content="ذخیره" Glyph="Assets/AccordionIcons/Icon_32x32.png" IsEnabled="False"/>
                 <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem Content="پاک کردن" Glyph="Assets/AccordionIcons/Icon_32x32.png"/>
+                <dxb:BarButtonItem Content="پاک کردن" Glyph="Assets/AccordionIcons/Icon_32x32.png" IsEnabled="False"/>
             </dxb:ToolBarControl.Items>
         </dxb:ToolBarControl>
         <dxa:AccordionControl Grid.Row="2" Grid.Column="0">
@@ -96,10 +96,10 @@
                 </dxa:AccordionItem>
             </dxa:AccordionControl.Items>
         </dxa:AccordionControl>
-        <dxdo:DockLayoutManager Grid.Row="2" Grid.Column="1"
+        <dxdo:DockLayoutManager x:Name="DockLayoutManager" Grid.Row="2" Grid.Column="1"
                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <dxdo:LayoutGroup>
-                <dxdo:DocumentGroup x:Name="MyDocumentGroup" />
+            <dxdo:LayoutGroup AllowClose="True">
+                <dxdo:DocumentGroup x:Name="MyDocumentGroup" ClosingBehavior="ImmediatelyRemove"/>
             </dxdo:LayoutGroup>
         </dxdo:DockLayoutManager>
         <dxb:StatusBarControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"

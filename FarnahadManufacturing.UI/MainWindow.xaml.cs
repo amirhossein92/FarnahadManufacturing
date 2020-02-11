@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Docking;
+using DevExpress.Xpf.Docking.Base;
 using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
@@ -24,9 +25,6 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -37,6 +35,12 @@ namespace FarnahadManufacturing.UI
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            DockLayoutManager.DockItemClosed += DockLayoutManagerOnDockItemClosed;
+        }
+
+        private void DockLayoutManagerOnDockItemClosed(object sender, DockItemClosedEventArgs e)
+        {
+            Console.WriteLine($"*** Closed {e.Item}");
         }
 
         private void SetToolBar(Dictionary<string, IBarItem> toolBarItems)
@@ -63,22 +67,16 @@ namespace FarnahadManufacturing.UI
                 var panel = new DocumentPanel();
                 panel.TabCaption = tabHeader;
                 panel.AllowClose = true;
+                panel.ShowCloseButton = true;
                 panel.Content = Activator.CreateInstance<T>();
                 panel.IsVisibleChanged += PanelOnIsVisibleChanged;
-                panel.Unloaded += PanelOnUnloaded;
-                MyDocumentGroup.Items.Add(panel);
+                MyDocumentGroup.Add(panel);
                 panel.IsActive = true;
             }
             else
             {
                 ActivateTheUserControl<T>();
             }
-        }
-
-        private void PanelOnUnloaded(object sender, RoutedEventArgs e)
-        {
-            var documentPanel = e.Source as DocumentPanel;
-            MyDocumentGroup.Items.Remove(documentPanel);
         }
 
         private DocumentPanel _activeDocumentPanel;
@@ -108,7 +106,7 @@ namespace FarnahadManufacturing.UI
             foreach (var item in MyDocumentGroup.Items)
             {
                 if (item is DocumentPanel documentPanel && documentPanel.Content is T)
-                    item.IsActive = true;
+                    documentPanel.IsActive = true;
             }
         }
     }

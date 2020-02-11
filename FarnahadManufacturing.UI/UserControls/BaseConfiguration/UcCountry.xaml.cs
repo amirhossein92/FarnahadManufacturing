@@ -34,12 +34,12 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
             _countries = new ObservableCollection<Country>();
             LoadToolBarItems();
+            LoadSearchGridControlData();
+            IsNotEditingAndAdding();
         }
 
         private void UserControlOnLoaded(object sender, RoutedEventArgs e)
         {
-            LoadSearchGridControlData();
-            IsNotEditingAndAdding();
         }
 
         private void LoadToolBarItems()

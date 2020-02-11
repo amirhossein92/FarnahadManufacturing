@@ -40,13 +40,13 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
             _cities = new ObservableCollection<City>();
             LoadToolBarItems();
+            LoadSearchGridControlData();
+            LoadCountryComboBox();
+            IsNotEditingAndAdding();
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            LoadSearchGridControlData();
-            LoadCountryComboBox();
-            IsNotEditingAndAdding();
         }
 
         private void LoadCountryComboBox()

@@ -58,13 +58,7 @@
             </layout:FmFilterLayoutPanel>
             <dxdo:DocumentPanel ItemWidth="4*">
                 <dxlc:LayoutControl Orientation="Vertical">
-                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کشور">
-                        <layout:FmHeaderLayoutGroup.HeaderTemplate>
-                            <DataTemplate>
-                                <TextBlock>YES We Did</TextBlock>
-                            </DataTemplate>
-                        </layout:FmHeaderLayoutGroup.HeaderTemplate>
-                    </layout:FmHeaderLayoutGroup>
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کشور"/>
                     <dxlc:LayoutGroup x:Name="MainLayoutGroup" Orientation="Vertical" IsEnabled="False">
                         <dxlc:LayoutItem Label="Name: ">
                             <input:FmTextEdit x:Name="NameTextEdit" />

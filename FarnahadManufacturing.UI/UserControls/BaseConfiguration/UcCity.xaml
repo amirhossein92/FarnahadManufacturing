@@ -5,9 +5,76 @@
                              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                              xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.BaseConfiguration"
                              xmlns:userControl="clr-namespace:FarnahadManufacturing.UI.Base.UserControl"
+                             xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+                             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                             xmlns:layout="clr-namespace:FarnahadManufacturing.UI.Base.Layout"
+                             xmlns:input="clr-namespace:FarnahadManufacturing.UI.Base.Input"
+                             xmlns:buttons="clr-namespace:FarnahadManufacturing.UI.Base.Buttons"
+                             xmlns:gridControl="clr-namespace:FarnahadManufacturing.UI.Base.GridControl"
+                             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                             xmlns:label="clr-namespace:FarnahadManufacturing.UI.Base.Label"
+                             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
                              mc:Ignorable="d"
                              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Label>City...</Label>
-    </Grid>
+    <dxdo:DockLayoutManager>
+        <dxdo:LayoutGroup>
+            <layout:FmFilterLayoutPanel ItemWidth="*">
+                <dxlc:LayoutGroup Orientation="Vertical">
+                    <dxlc:LayoutItem Label="عنوان: " LabelPosition="Left" HorizontalContentAlignment="Right">
+                        <input:FmTextEdit x:Name="SearchTitleTextEdit" Width="125" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="کشور: " LabelPosition="Left" HorizontalContentAlignment="Right">
+                        <input:FmTextEdit x:Name="SearchCountryTextEdit" Width="125" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem HorizontalContentAlignment="Right">
+                        <buttons:FmSimpleButton Content="جست و جو"
+                                                Click="SearchButtonOnClick" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem VerticalAlignment="Stretch">
+                        <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                                                         MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                            <gridControl:FmSearchGridControl.Columns>
+                                <dxg:GridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="75" />
+                                <dxg:GridColumn Header="کشور" FieldName="Country.Title" ReadOnly="True" Width="75" />
+                                <dxg:GridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" Width="75" />
+                            </gridControl:FmSearchGridControl.Columns>
+                        </gridControl:FmSearchGridControl>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutGroup>
+                        <dxlc:LayoutItem HorizontalContentAlignment="Left">
+                            <buttons:FmSimpleButton x:Name="PreviousPageButton" Content="قبلی"
+                                                    Click="PreviousPageButtonOnClick" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem HorizontalContentAlignment="Center">
+                            <label:FmLabel x:Name="RecordsCountFmLabel" Text="تعداد رکوردها" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmSimpleButton x:Name="NextPageButton" Content="بعدی"
+                                                    Click="NextPageButtonOnClick" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutItem HorizontalContentAlignment="Right">
+                        <buttons:FmSimpleButton Content="نمایش" Width="75"
+                                                Click="ViewButtonOnClick" />
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+            </layout:FmFilterLayoutPanel>
+            <dxdo:DocumentPanel ItemWidth="4*">
+                <dxlc:LayoutControl Orientation="Vertical">
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="شهر"/>
+                    <dxlc:LayoutGroup x:Name="MainLayoutGroup" Orientation="Vertical" IsEnabled="False">
+                        <dxlc:LayoutItem Label="Name: ">
+                            <input:FmTextEdit x:Name="TitleTextEdit" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Country: ">
+                            <input:FmComboBoxEdit x:Name="CountryComboBox"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="Description: " LabelPosition="Top">
+                            <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+            </dxdo:DocumentPanel>
+        </dxdo:LayoutGroup>
+    </dxdo:DockLayoutManager>
 </userControl:UserControlBase>

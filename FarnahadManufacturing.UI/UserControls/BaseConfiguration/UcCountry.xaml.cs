@@ -21,10 +21,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
     public partial class UcCountry : UserControlBase
     {
-
         private ObservableCollection<Country> _countries;
         private Country _activeCountry;
-        private const int PageRecordNumber = 10;
         private int _currentPage = 1;
         private int _totalRecordsCount;
         private string _userControlTitle = "کشور";
@@ -35,7 +33,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             this.Loaded += UserControlOnLoaded;
 
             _countries = new ObservableCollection<Country>();
-            UpdateToolBar();
+            LoadToolBarItems();
         }
 
         private void UserControlOnLoaded(object sender, RoutedEventArgs e)
@@ -44,7 +42,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             IsNotEditingAndAdding();
         }
 
-        private void UpdateToolBar()
+        private void LoadToolBarItems()
         {
             var addButton = new BarButtonItem
             {
@@ -72,12 +70,10 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             ToolBarItems.Add(addButton.Name, addButton);
             ToolBarItems.Add(saveButton.Name, saveButton);
             ToolBarItems.Add(deleteButton.Name, deleteButton);
-            //ToolBarUtility.AddBarItems(ToolBarItems);
         }
 
         private void AddButtonOnItemClick(object sender, ItemClickEventArgs e)
         {
-            MainLayoutGroup.IsEnabled = true;
             _activeCountry = new Country();
             FillData(_activeCountry);
             IsAdding();
@@ -137,14 +133,10 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     countryQueryable = countryQueryable.Where(item => item.Title.Contains(searchTitle) ||
                                                                       item.Description.Contains(searchTitle));
                 _totalRecordsCount = countryQueryable.Count();
-                var countries = countryQueryable.Skip((_currentPage - 1) * PageRecordNumber).Take(PageRecordNumber)
-                    .ToList();
-
-                _countries = new ObservableCollection<Country>(countries);
+                _countries = countryQueryable.Paginate(_currentPage);
                 SearchGridControl.ItemsSource = _countries;
-                var fromRecordNumber = (_currentPage - 1) * PageRecordNumber + 1;
-                var toRecordNumber = fromRecordNumber + countries.Count - 1;
-                RecordsCountFmLabel.Text = $"{fromRecordNumber}-{toRecordNumber} از {_totalRecordsCount}";
+                RecordsCountFmLabel.Text =
+                    PaginationUtility.GetRecordsDetailText(_currentPage, _countries.Count, _totalRecordsCount);
             }
         }
 
@@ -171,7 +163,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void EditData(Country country)
         {
-            MainLayoutGroup.IsEnabled = true;
             _activeCountry = country;
             FillData(_activeCountry);
             IsEditing();
@@ -188,7 +179,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            if (_currentPage <= (_totalRecordsCount / PageRecordNumber))
+            if (_currentPage <= (_totalRecordsCount / ApplicationSetting.PageRecordNumber))
             {
                 _currentPage++;
                 LoadSearchGridControlData(SearchTitleTextEdit.Text);
@@ -209,6 +200,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void IsAdding()
         {
+            MainLayoutGroup.IsEnabled = true;
             ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
             ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", true);
             ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", false);
@@ -217,6 +209,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void IsEditing()
         {
+            MainLayoutGroup.IsEnabled = true;
             ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
             ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", true);
             ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", true);

@@ -7,7 +7,7 @@ using DevExpress.Xpf.Bars;
 
 namespace FarnahadManufacturing.UI.Base.UserControl
 {
-    public class UserControlBase : System.Windows.Controls.UserControl
+    public abstract class UserControlBase : System.Windows.Controls.UserControl
     {
         public UserControlBase()
         {
@@ -15,5 +15,8 @@ namespace FarnahadManufacturing.UI.Base.UserControl
         }
 
         public Dictionary<string, IBarItem> ToolBarItems { get; set; }
+
+        protected abstract void SetToolBarItems();
+        protected abstract void InitialData();
     }
 }

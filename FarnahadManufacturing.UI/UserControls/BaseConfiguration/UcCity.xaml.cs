@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
+using DevExpress.Xpf.Utils;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.UI.Base.UserControl;
@@ -38,15 +39,50 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
             Loaded += OnLoaded;
 
+            SetToolBarItems();
+            InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        protected sealed override void InitialData()
+        {
             _cities = new ObservableCollection<City>();
-            LoadToolBarItems();
             LoadSearchGridControlData();
             LoadCountryComboBox();
             IsNotEditingAndAdding();
         }
 
-        private void OnLoaded(object sender, RoutedEventArgs e)
+        protected sealed override void SetToolBarItems()
         {
+            var addButton = new BarButtonItem
+            {
+                Name = "Add",
+                Content = "اضافه",
+                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
+            };
+            addButton.ItemClick += AddButtonOnItemClick;
+            var saveButton = new BarButtonItem
+            {
+                Name = "Save",
+                Content = "ذخیره",
+                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
+
+            };
+            saveButton.ItemClick += SaveButtonOnItemClick;
+            var deleteButton = new BarButtonItem
+            {
+                Name = "Delete",
+                Content = "حذف",
+                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
+
+            };
+            deleteButton.ItemClick += DeleteButtonOnItemClick;
+            ToolBarItems.Add(addButton.Name, addButton);
+            ToolBarItems.Add(saveButton.Name, saveButton);
+            ToolBarItems.Add(deleteButton.Name, deleteButton);
         }
 
         private void LoadCountryComboBox()
@@ -78,36 +114,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
         }
 
-        private void LoadToolBarItems()
-        {
-            var addButton = new BarButtonItem
-            {
-                Name = "Add",
-                Content = "اضافه",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-            };
-            addButton.ItemClick += AddButtonOnItemClick;
-            var saveButton = new BarButtonItem
-            {
-                Name = "Save",
-                Content = "ذخیره",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-
-            };
-            saveButton.ItemClick += SaveButtonOnItemClick;
-            var deleteButton = new BarButtonItem
-            {
-                Name = "Delete",
-                Content = "حذف",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-
-            };
-            deleteButton.ItemClick += DeleteButtonOnItemClick;
-            ToolBarItems.Add(addButton.Name, addButton);
-            ToolBarItems.Add(saveButton.Name, saveButton);
-            ToolBarItems.Add(deleteButton.Name, deleteButton);
-        }
-
         private void AddButtonOnItemClick(object sender, ItemClickEventArgs e)
         {
             _activeCity = new City();
@@ -137,15 +143,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 }
             }
 
-            MessageBox.Show("ذخیره با موفقیت انجام شد", "ذخیره", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBoxService.SaveConfirmation(_activeCity.Title);
             LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
             IsEditing();
         }
 
         private void DeleteButtonOnItemClick(object sender, ItemClickEventArgs e)
         {
-            if (MessageBox.Show("آیا از حذف شدن اطمینان دارید؟", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBoxService.AskForDelete(_activeCity.Title) == DialogResult.Yes)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {

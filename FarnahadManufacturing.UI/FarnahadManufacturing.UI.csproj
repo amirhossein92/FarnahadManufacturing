@@ -96,6 +96,7 @@
     <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
     <Compile Include="Base\UserControl\UserControlBase.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
+    <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\PaginationUtility.cs" />
     <Compile Include="Common\ToolBarUtility.cs" />
     <Compile Include="Common\HeaderService.cs" />

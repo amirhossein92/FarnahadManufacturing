@@ -32,17 +32,15 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
             this.Loaded += UserControlOnLoaded;
 
-            _countries = new ObservableCollection<Country>();
-            LoadToolBarItems();
-            LoadSearchGridControlData();
-            IsNotEditingAndAdding();
+            SetToolBarItems();
+            InitialData();
         }
 
         private void UserControlOnLoaded(object sender, RoutedEventArgs e)
         {
         }
 
-        private void LoadToolBarItems()
+        protected sealed override void SetToolBarItems()
         {
             var addButton = new BarButtonItem
             {
@@ -70,6 +68,13 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             ToolBarItems.Add(addButton.Name, addButton);
             ToolBarItems.Add(saveButton.Name, saveButton);
             ToolBarItems.Add(deleteButton.Name, deleteButton);
+        }
+
+        protected sealed override void InitialData()
+        {
+            _countries = new ObservableCollection<Country>();
+            LoadSearchGridControlData();
+            IsNotEditingAndAdding();
         }
 
         private void AddButtonOnItemClick(object sender, ItemClickEventArgs e)
@@ -101,15 +106,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 }
             }
 
-            MessageBox.Show("ذخیره با موفقیت انجام شد", "ذخیره", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBoxService.SaveConfirmation(_activeCountry.Title);
             LoadSearchGridControlData(SearchTitleTextEdit.Text);
             IsEditing();
         }
 
         private void DeleteButtonOnItemClick(object sender, ItemClickEventArgs e)
         {
-            if (MessageBox.Show("آیا از حذف شدن اطمینان دارید؟", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBoxService.AskForDelete(_activeCountry.Title) == DialogResult.Yes)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {

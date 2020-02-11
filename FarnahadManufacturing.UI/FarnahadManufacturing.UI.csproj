@@ -93,7 +93,8 @@
     <Compile Include="Base\Label\FmLabel.cs" />
     <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
     <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
-    <Compile Include="Common\ActiveToolBarService.cs" />
+    <Compile Include="Base\UserControl\UserControlBase.cs" />
+    <Compile Include="Common\ToolBarUtility.cs" />
     <Compile Include="Common\HeaderService.cs" />
     <Compile Include="UserControls\BaseConfiguration\UcCity.xaml.cs">
       <DependentUpon>UcCity.xaml</DependentUpon>

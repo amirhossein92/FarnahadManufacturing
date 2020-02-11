@@ -12,16 +12,14 @@ using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.LayoutControl;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
+using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
 using MessageBox = System.Windows.Forms.MessageBox;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    /// <summary>
-    /// Interaction logic for UcCountry.xaml
-    /// </summary>
-    public partial class UcCountry : UserControl
+    public partial class UcCountry : UserControlBase
     {
 
         private ObservableCollection<Country> _countries;
@@ -48,7 +46,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void UpdateToolBar()
         {
-            var toolBarItems = new Dictionary<string, IBarItem>();
             var addButton = new BarButtonItem
             {
                 Name = "Add",
@@ -72,11 +69,10 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
             };
             deleteButton.ItemClick += DeleteButtonOnItemClick;
-            toolBarItems.Add(addButton.Name, addButton);
-            toolBarItems.Add(saveButton.Name, saveButton);
-            toolBarItems.Add(deleteButton.Name, deleteButton);
-
-            ActiveToolBarService.AddBarItems(toolBarItems);
+            ToolBarItems.Add(addButton.Name, addButton);
+            ToolBarItems.Add(saveButton.Name, saveButton);
+            ToolBarItems.Add(deleteButton.Name, deleteButton);
+            //ToolBarUtility.AddBarItems(ToolBarItems);
         }
 
         private void AddButtonOnItemClick(object sender, ItemClickEventArgs e)
@@ -213,25 +209,25 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void IsAdding()
         {
-            ActiveToolBarService.ChangeToolBarItemStatus("Add", true);
-            ActiveToolBarService.ChangeToolBarItemStatus("Save", true);
-            ActiveToolBarService.ChangeToolBarItemStatus("Delete", false);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", true);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", false);
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(_userControlTitle);
         }
 
         private void IsEditing()
         {
-            ActiveToolBarService.ChangeToolBarItemStatus("Add", true);
-            ActiveToolBarService.ChangeToolBarItemStatus("Save", true);
-            ActiveToolBarService.ChangeToolBarItemStatus("Delete", true);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", true);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", true);
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(_userControlTitle, _activeCountry.Title);
         }
 
         private void IsNotEditingAndAdding()
         {
-            ActiveToolBarService.ChangeToolBarItemStatus("Add", true);
-            ActiveToolBarService.ChangeToolBarItemStatus("Save", false);
-            ActiveToolBarService.ChangeToolBarItemStatus("Delete", false);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", false);
+            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", false);
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(_userControlTitle);
         }
     }

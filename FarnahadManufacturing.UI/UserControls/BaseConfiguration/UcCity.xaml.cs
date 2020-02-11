@@ -12,13 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FarnahadManufacturing.UI.Base.UserControl;
 
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    /// <summary>
-    /// Interaction logic for UcCity.xaml
-    /// </summary>
-    public partial class UcCity : UserControl
+    public partial class UcCity : UserControlBase
     {
         public UcCity()
         {

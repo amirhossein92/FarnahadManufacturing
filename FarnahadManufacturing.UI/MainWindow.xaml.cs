@@ -16,9 +16,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Docking;
+using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI
 {
@@ -35,14 +37,12 @@ namespace FarnahadManufacturing.UI
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            ActiveToolBarService.SubscribeOnActiveToolBarChange += ActiveToolBarItemsOnCollectionChanged;
         }
 
-        private void ActiveToolBarItemsOnCollectionChanged(object sender, ActiveToolBarEventArg e)
+        private void SetToolBar(Dictionary<string, IBarItem> toolBarItems)
         {
-            var items = (Dictionary<string, IBarItem>)sender;
             ToolBarControl.Items.Clear();
-            foreach (var item in items)
+            foreach (var item in toolBarItems)
                 ToolBarControl.Items.Add(item.Value);
         }
 
@@ -56,7 +56,7 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcCity>("شهر ها");
         }
 
-        private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControl
+        private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase
         {
             if (!UserControlIsAlreadyOpen<T>())
             {
@@ -64,12 +64,36 @@ namespace FarnahadManufacturing.UI
                 panel.TabCaption = tabHeader;
                 panel.AllowClose = true;
                 panel.Content = Activator.CreateInstance<T>();
+                panel.IsVisibleChanged += PanelOnIsVisibleChanged;
+                panel.Unloaded += PanelOnUnloaded;
                 MyDocumentGroup.Items.Add(panel);
                 panel.IsActive = true;
             }
+            else
+            {
+                ActivateTheUserControl<T>();
+            }
         }
 
-        private bool UserControlIsAlreadyOpen<T>() where T : UserControl
+        private void PanelOnUnloaded(object sender, RoutedEventArgs e)
+        {
+            var documentPanel = e.Source as DocumentPanel;
+            MyDocumentGroup.Items.Remove(documentPanel);
+        }
+
+        private DocumentPanel _activeDocumentPanel;
+
+        private void PanelOnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if ((bool)e.OldValue != (bool)e.NewValue && (bool)e.NewValue)
+            {
+                _activeDocumentPanel = sender as DocumentPanel;
+                if (_activeDocumentPanel.Content is UserControlBase userControlBase)
+                    SetToolBar(userControlBase.ToolBarItems);
+            }
+        }
+
+        private bool UserControlIsAlreadyOpen<T>() where T : UserControlBase
         {
             foreach (var item in MyDocumentGroup.Items)
             {
@@ -77,6 +101,15 @@ namespace FarnahadManufacturing.UI
                     return true;
             }
             return false;
+        }
+
+        private void ActivateTheUserControl<T>() where T : UserControlBase
+        {
+            foreach (var item in MyDocumentGroup.Items)
+            {
+                if (item is DocumentPanel documentPanel && documentPanel.Content is T)
+                    item.IsActive = true;
+            }
         }
     }
 }

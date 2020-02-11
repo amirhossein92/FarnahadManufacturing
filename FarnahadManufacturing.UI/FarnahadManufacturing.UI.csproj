@@ -89,8 +89,12 @@
     <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
     <Compile Include="Base\Input\FmTextEdit.cs" />
+    <Compile Include="Base\Label\FmHeaderLabel.cs" />
     <Compile Include="Base\Label\FmLabel.cs" />
+    <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
+    <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
     <Compile Include="Common\ActiveToolBarService.cs" />
+    <Compile Include="Common\HeaderService.cs" />
     <Compile Include="UserControls\BaseConfiguration\UcCity.xaml.cs">
       <DependentUpon>UcCity.xaml</DependentUpon>
     </Compile>
@@ -148,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base\Dock\" />
-    <Folder Include="Base\Layout\" />
     <Folder Include="UserControls\Configuration\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,11 +13,12 @@
              xmlns:input="clr-namespace:FarnahadManufacturing.UI.Base.Input"
              xmlns:buttons="clr-namespace:FarnahadManufacturing.UI.Base.Buttons"
              xmlns:gridControl="clr-namespace:FarnahadManufacturing.UI.Base.GridControl"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.UI.Base.Layout"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <dxdo:DockLayoutManager>
         <dxdo:LayoutGroup>
-            <dxdo:LayoutPanel ItemWidth="*" Caption="فیلتر" AllowMove="False" AllowDrag="False">
+            <layout:FmFilterLayoutPanel ItemWidth="*">
                 <dxlc:LayoutGroup Orientation="Vertical">
                     <dxlc:LayoutItem Label="عنوان: " LabelPosition="Left" HorizontalContentAlignment="Right">
                         <input:FmTextEdit x:Name="SearchTitleTextEdit" Width="125" />
@@ -53,9 +54,16 @@
                                                 Click="ViewButtonOnClick" />
                     </dxlc:LayoutItem>
                 </dxlc:LayoutGroup>
-            </dxdo:LayoutPanel>
+            </layout:FmFilterLayoutPanel>
             <dxdo:DocumentPanel ItemWidth="4*">
-                <dxlc:LayoutControl>
+                <dxlc:LayoutControl Orientation="Vertical">
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کشور">
+                        <layout:FmHeaderLayoutGroup.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock>YES We Did</TextBlock>
+                            </DataTemplate>
+                        </layout:FmHeaderLayoutGroup.HeaderTemplate>
+                    </layout:FmHeaderLayoutGroup>
                     <dxlc:LayoutGroup x:Name="MainLayoutGroup" Orientation="Vertical" IsEnabled="False">
                         <dxlc:LayoutItem Label="Name: ">
                             <input:FmTextEdit x:Name="NameTextEdit" />

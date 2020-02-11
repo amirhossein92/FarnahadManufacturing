@@ -29,6 +29,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         private const int PageRecordNumber = 10;
         private int _currentPage = 1;
         private int _totalRecordsCount;
+        private string _userControlTitle = "کشور";
 
         public UcCountry()
         {
@@ -215,6 +216,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             ActiveToolBarService.ChangeToolBarItemStatus("Add", true);
             ActiveToolBarService.ChangeToolBarItemStatus("Save", true);
             ActiveToolBarService.ChangeToolBarItemStatus("Delete", false);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(_userControlTitle);
         }
 
         private void IsEditing()
@@ -222,6 +224,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             ActiveToolBarService.ChangeToolBarItemStatus("Add", true);
             ActiveToolBarService.ChangeToolBarItemStatus("Save", true);
             ActiveToolBarService.ChangeToolBarItemStatus("Delete", true);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(_userControlTitle, _activeCountry.Title);
         }
 
         private void IsNotEditingAndAdding()
@@ -229,6 +232,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             ActiveToolBarService.ChangeToolBarItemStatus("Add", true);
             ActiveToolBarService.ChangeToolBarItemStatus("Save", false);
             ActiveToolBarService.ChangeToolBarItemStatus("Delete", false);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(_userControlTitle);
         }
     }
 }

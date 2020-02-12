@@ -8,7 +8,7 @@ using FarnahadManufacturing.Base;
 namespace FarnahadManufacturing.Model.Configuration
 {
     /// <summary>
-    /// نوع پیک
+    /// خدمات پیک
     /// </summary>
     public class CarrierService : FmModelBase
     {

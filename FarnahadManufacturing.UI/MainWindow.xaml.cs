@@ -21,6 +21,7 @@ using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
+using FarnahadManufacturing.UI.UserControls.Configuration;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI
@@ -58,6 +59,11 @@ namespace FarnahadManufacturing.UI
         private void City_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcCity>("شهر ها");
+        }
+
+        private void Carrier_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcCarrier>("پیک ها");
         }
 
         private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase

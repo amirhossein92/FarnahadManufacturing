@@ -182,7 +182,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void EditData(City city)
         {
-            MainLayoutGroup.IsEnabled = true;
             _activeCity = city;
             FillData(_activeCity);
             IsEditing();

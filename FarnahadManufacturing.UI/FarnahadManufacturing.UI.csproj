@@ -95,16 +95,24 @@
     <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
     <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
     <Compile Include="Base\UserControl\UserControlBase.cs" />
+    <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
     <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\PaginationUtility.cs" />
     <Compile Include="Common\ToolBarUtility.cs" />
     <Compile Include="Common\HeaderService.cs" />
+    <Compile Include="Common\WindowService.cs" />
     <Compile Include="UserControls\BaseConfiguration\UcCity.xaml.cs">
       <DependentUpon>UcCity.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcCountry.xaml.cs">
       <DependentUpon>UcCountry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Configuration\UcCarrier.xaml.cs">
+      <DependentUpon>UcCarrier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Configuration\UcCarrierService.xaml.cs">
+      <DependentUpon>UcCarrierService.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +131,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\BaseConfiguration\UcCountry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcCarrier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcCarrierService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,7 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base\Dock\" />
-    <Folder Include="UserControls\Configuration\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\AccordionIcons\Icon_128x128.png" />
@@ -166,6 +181,10 @@
     <Resource Include="Assets\AccordionIcons\Icon_64x64.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj">
+      <Project>{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}</Project>
+      <Name>FarnahadManufacturing.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FarnahadManufacturing.Data\FarnahadManufacturing.Data.csproj">
       <Project>{5D16F9C4-AED6-4C87-ABE5-28982DF64217}</Project>
       <Name>FarnahadManufacturing.Data</Name>

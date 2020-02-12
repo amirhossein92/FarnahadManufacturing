@@ -52,23 +52,21 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 Name = "Add",
                 Content = "اضافه",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
+                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Add.svg"),
             };
             addButton.ItemClick += AddButtonOnToolBarItemClick;
             var saveButton = new BarButtonItem
             {
                 Name = "Save",
                 Content = "ذخیره",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-
+                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Save.svg"),
             };
             saveButton.ItemClick += SaveButtonOnToolBarItemClick;
             var deleteButton = new BarButtonItem
             {
                 Name = "Delete",
                 Content = "حذف",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-
+                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Delete.svg"),
             };
             deleteButton.ItemClick += DeleteButtonOnToolBarItemClick;
             ToolBarItems.Add(addButton.Name, addButton);

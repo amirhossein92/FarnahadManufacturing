@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using DevExpress.Utils.Svg;
 using DevExpress.Xpf.Bars;
+using DevExpress.Xpf.Core;
+using DevExpress.Xpf.Core.Native;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.LayoutControl;
 using FarnahadManufacturing.Data;
@@ -46,25 +51,23 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             {
                 Name = "Add",
                 Content = "اضافه",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
+                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Add.svg"),
             };
-            addButton.ItemClick += AddButtonOnItemClick;
+            addButton.ItemClick += AddButtonOnToolBarItemClick;
             var saveButton = new BarButtonItem
             {
                 Name = "Save",
                 Content = "ذخیره",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-
+                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Save.svg"),
             };
-            saveButton.ItemClick += SaveButtonOnItemClick;
+            saveButton.ItemClick += SaveButtonOnToolBarItemClick;
             var deleteButton = new BarButtonItem
             {
                 Name = "Delete",
                 Content = "حذف",
-                Glyph = new BitmapImage(new Uri("Assets/AccordionIcons/Icon_32x32.png", UriKind.Relative)),
-
+                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Delete.svg"),
             };
-            deleteButton.ItemClick += DeleteButtonOnItemClick;
+            deleteButton.ItemClick += DeleteButtonOnToolBarItemClick;
             ToolBarItems.Add(addButton.Name, addButton);
             ToolBarItems.Add(saveButton.Name, saveButton);
             ToolBarItems.Add(deleteButton.Name, deleteButton);
@@ -77,14 +80,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             IsNotEditingAndAdding();
         }
 
-        private void AddButtonOnItemClick(object sender, ItemClickEventArgs e)
+        private void AddButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
         {
             _activeCountry = new Country();
             FillData(_activeCountry);
             IsAdding();
         }
 
-        private void SaveButtonOnItemClick(object sender, ItemClickEventArgs e)
+        private void SaveButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
         {
             ReadData(ref _activeCountry);
             if (_activeCountry.Id > 0)
@@ -111,7 +114,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             IsEditing();
         }
 
-        private void DeleteButtonOnItemClick(object sender, ItemClickEventArgs e)
+        private void DeleteButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
         {
             if (MessageBoxService.AskForDelete(_activeCountry.Title) == DialogResult.Yes)
             {

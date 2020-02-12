@@ -39,59 +39,64 @@
                             BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
                             IsMultiLine="True">
             <dxb:ToolBarControl.Items>
-                <dxb:BarButtonItem Content="جدید" Glyph="Assets/AccordionIcons/Icon_32x32.png" IsEnabled="False"/>
-                <dxb:BarButtonItem Content="ذخیره" Glyph="Assets/AccordionIcons/Icon_32x32.png" IsEnabled="False"/>
+                <dxb:BarButtonItem Content="جدید" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Add.svg}" IsEnabled="False"/>
+                <dxb:BarButtonItem Content="ذخیره" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Delete.svg}" IsEnabled="False"/>
                 <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem Content="پاک کردن" Glyph="Assets/AccordionIcons/Icon_32x32.png" IsEnabled="False"/>
+                <dxb:BarButtonItem Content="پاک کردن" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Save.svg}" IsEnabled="False"/>
             </dxb:ToolBarControl.Items>
         </dxb:ToolBarControl>
         <dxa:AccordionControl Grid.Row="2" Grid.Column="0">
             <dxa:AccordionControl.Items>
-                <dxa:AccordionItem Header="مواد" Glyph="Assets/AccordionIcons/Icon_16x16.png">
+                <dxdo:SeparatorItem/>
+                <dxa:AccordionItem Header="مواد" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Large.svg}">
                     <dxa:AccordionItem.Items>
-                        <dxa:AccordionItem Header="کالا" MouseDoubleClick="Country_OnMouseDoubleClick" />
-                        <dxa:AccordionItem Header="محصولات" />
-                        <dxa:AccordionItem Header="انبار" />
-                        <dxa:AccordionItem Header="سفارش خرید" />
+                        <dxa:AccordionItem Header="کالا" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Small.svg}"
+                                           MouseDoubleClick="Country_OnMouseDoubleClick" />
+                        <dxa:AccordionItem Header="محصولات" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Product_Small.svg}"/>
+                        <dxa:AccordionItem Header="انبار" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Inventory_Small.svg}"/>
+                        <dxa:AccordionItem Header="سفارش خرید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/PurchaseOrder_Small.svg}"/>
                     </dxa:AccordionItem.Items>
                 </dxa:AccordionItem>
-                <dxa:AccordionItem Header="خرید" Glyph="Assets/AccordionIcons/Icon_16x16.png">
+                <dxa:AccordionItem Header="خرید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Large.svg}">
                     <dxa:AccordionItem.Items>
-                        <dxa:AccordionItem Header="فروشنده ها" />
-                        <dxa:AccordionItem Header="سفارش خرید" />
-                        <dxa:AccordionItem Header="دریافت کالا" />
+                        <dxa:AccordionItem Header="فروشنده ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Store_Small.svg}"/>
+                        <dxa:AccordionItem Header="سفارش خرید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Small.svg}" />
+                        <dxa:AccordionItem Header="دریافت کالا" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/TransferOrder_Small.svg}"/>
                     </dxa:AccordionItem.Items>
                 </dxa:AccordionItem>
-                <dxa:AccordionItem Header="ساخت و تولید" Glyph="Assets/AccordionIcons/Icon_16x16.png">
-                    <dxa:AccordionItem Header="دستورالعمل تولید" />
-                    <dxa:AccordionItem Header="سفارش ساخت" />
+                <dxa:AccordionItem Header="ساخت و تولید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Manufacturing_Large.svg}">
+                    <dxa:AccordionItem Header="دستورالعمل تولید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/BillOfItem_Small.svg}"/>
+                    <dxa:AccordionItem Header="سفارش ساخت" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ManufacturingOrder_Small.svg}"/>
                 </dxa:AccordionItem>
-                <dxa:AccordionItem Header="فروش" Glyph="Assets/AccordionIcons/Icon_16x16.png">
+                <dxa:AccordionItem Header="فروش" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Purchase_Large.svg}">
                 </dxa:AccordionItem>
-                <dxa:AccordionItem Header="حسابداری" Glyph="Assets/AccordionIcons/Icon_16x16.png">
+                <dxa:AccordionItem Header="حسابداری" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}">
                 </dxa:AccordionItem>
-                <dxa:AccordionItem Header="تنظیمات" Glyph="Assets/AccordionIcons/Icon_16x16.png">
-                    <dxa:AccordionItem Header="موقعیت">
+                <dxa:AccordionItem Header="تنظیمات" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Configuration_Large.svg}">
+                    <dxa:AccordionItem Header="موقعیت" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Location_Small.svg}">
                         <dxa:AccordionItem.Items>
-                            <dxa:AccordionItem Header="موقعیت ها"/>
-                            <dxa:AccordionItem Header="گروه موقعیت ها"/>
+                            <dxa:AccordionItem Header="موقعیت ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Locations_Small.svg}"/>
+                            <dxa:AccordionItem Header="گروه موقعیت ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/LocationGroup_Small.svg}"/>
                         </dxa:AccordionItem.Items>
                     </dxa:AccordionItem>
-                    <dxa:AccordionItem Header="شرکت"/>
-                    <dxa:AccordionItem Header="واحد اندازه گیری"/>
-                    <dxa:AccordionItem Header="پیک ها" MouseDoubleClick="Carrier_OnMouseDoubleClick"/>
-                    <dxa:AccordionItem Header="دسته بندی محصولات"/>
-                    <dxa:AccordionItem Header="کاربر">
+                    <dxa:AccordionItem Header="شرکت" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Company_Small.svg}"/>
+                    <dxa:AccordionItem Header="واحد اندازه گیری" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Uom_Small.svg}"/>
+                    <dxa:AccordionItem Header="پیک ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"
+                                       MouseDoubleClick="Carrier_OnMouseDoubleClick"/>
+                    <dxa:AccordionItem Header="دسته بندی محصولات" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}"/>
+                    <dxa:AccordionItem Header="کاربر" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Users_Small.svg}">
                         <dxa:AccordionItem.Items>
-                            <dxa:AccordionItem Header="کاربران"/>
-                            <dxa:AccordionItem Header="گروه کاربران"/>
+                            <dxa:AccordionItem Header="کاربران" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/User_Small.svg}"/>
+                            <dxa:AccordionItem Header="گروه کاربران" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/UserGroup_Small.svg}"/>
                         </dxa:AccordionItem.Items>
                     </dxa:AccordionItem>
                 </dxa:AccordionItem>
-                <dxa:AccordionItem Header="تنظیمات پایه" Glyph="Assets/AccordionIcons/Icon_16x16.png">
+                <dxa:AccordionItem Header="تنظیمات پایه" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ConfigurationBase_Large.svg}">
                     <dxa:AccordionItem.Items>
-                        <dxa:AccordionItem Header="شهر" MouseDoubleClick="City_OnMouseDoubleClick"/>
-                        <dxa:AccordionItem Header="کشور" MouseDoubleClick="Country_OnMouseDoubleClick"/>
+                        <dxa:AccordionItem Header="شهر" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
+                                           MouseDoubleClick="City_OnMouseDoubleClick"/>
+                        <dxa:AccordionItem Header="کشور" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                           MouseDoubleClick="Country_OnMouseDoubleClick"/>
                     </dxa:AccordionItem.Items>
                 </dxa:AccordionItem>
             </dxa:AccordionControl.Items>

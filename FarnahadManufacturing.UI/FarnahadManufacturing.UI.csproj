@@ -97,6 +97,7 @@
     <Compile Include="Base\UserControl\UserControlBase.cs" />
     <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
+    <Compile Include="Common\ImageUtility.cs" />
     <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\PaginationUtility.cs" />
     <Compile Include="Common\ToolBarUtility.cs" />
@@ -193,6 +194,41 @@
       <Project>{1F3ED6B0-F750-4879-8E25-F6A0322C5435}</Project>
       <Name>FarnahadManufacturing.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\NavigationBar\Accounting_Large.svg" />
+    <Resource Include="Icons\NavigationBar\City_Small.svg" />
+    <Resource Include="Icons\NavigationBar\ConfigurationBase_Large.svg" />
+    <Resource Include="Icons\NavigationBar\Country_Small.svg" />
+    <Resource Include="Icons\NavigationBar\User_Small.svg" />
+    <Resource Include="Icons\NavigationBar\UserGroup_Small.svg" />
+    <Resource Include="Icons\NavigationBar\BillOfItem_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Company_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Configuration_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Configuration_Large.svg" />
+    <Resource Include="Icons\NavigationBar\Carrier_Small.svg" />
+    <Resource Include="Icons\NavigationBar\LocationGroup_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Locations_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Location_Small.svg" />
+    <Resource Include="Icons\NavigationBar\ManufacturingOrder_Small.svg" />
+    <Resource Include="Icons\NavigationBar\ProductCategory_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Part_Large.svg" />
+    <Resource Include="Icons\NavigationBar\PurchaseOrder_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Product_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Inventory_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Part_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Manufacturing_Large.svg" />
+    <Resource Include="Icons\NavigationBar\Purchase_Large.svg" />
+    <Resource Include="Icons\NavigationBar\Purchase_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Sale_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Sale_Large.svg" />
+    <Resource Include="Icons\NavigationBar\Store_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Uom_Small.svg" />
+    <Resource Include="Icons\NavigationBar\TransferOrder_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Users_Small.svg" />
+    <Resource Include="Icons\ToolBar\Add.svg" />
+    <Resource Include="Icons\ToolBar\Delete.svg" />
+    <Resource Include="Icons\ToolBar\Save.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

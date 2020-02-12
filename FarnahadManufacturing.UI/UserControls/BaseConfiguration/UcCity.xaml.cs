@@ -228,27 +228,28 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         private void IsAdding()
         {
             MainLayoutGroup.IsEnabled = true;
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", true);
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", false);
+            ToolBarItems.ChangeToolBarItemStatus("Add", true);
+            ToolBarItems.ChangeToolBarItemStatus("Save", true);
+            ToolBarItems.ChangeToolBarItemStatus("Delete", false);
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(_userControlTitle);
         }
 
         private void IsEditing()
         {
             MainLayoutGroup.IsEnabled = true;
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", true);
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", true);
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(_userControlTitle, _activeCity.Title);
+            ToolBarItems.ChangeToolBarItemStatus("Add", true);
+            ToolBarItems.ChangeToolBarItemStatus("Save", true);
+            ToolBarItems.ChangeToolBarItemStatus("Delete", true);
+            FmHeaderLayoutGroup.HeaderTitle =
+                HeaderService.GenerateEditHeaderTitle(_userControlTitle, _activeCity.Title);
         }
 
         private void IsNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Add", true);
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Save", false);
-            ToolBarUtility.ChangeToolBarItemStatus(ToolBarItems, "Delete", false);
+            ToolBarItems.ChangeToolBarItemStatus("Add", true);
+            ToolBarItems.ChangeToolBarItemStatus("Save", false);
+            ToolBarItems.ChangeToolBarItemStatus("Delete", false);
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(_userControlTitle);
         }
     }

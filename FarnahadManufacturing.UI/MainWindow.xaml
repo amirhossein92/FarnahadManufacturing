@@ -1,114 +1,149 @@
 ﻿<dx:DXWindow x:Class="FarnahadManufacturing.UI.MainWindow"
-        xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
-        xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
-        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FarnahadManufacturing.UI"
-        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
-        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid FlowDirection="RightToLeft">
-        <Grid.RowDefinitions>
+             xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+             xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FarnahadManufacturing.UI"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.UI.Base.Layout"
+             xmlns:mainPage="clr-namespace:FarnahadManufacturing.UI.Base.MainPage"
+             xmlns:accordion="clr-namespace:FarnahadManufacturing.UI.Base.Accordion"
+             xmlns:dock="clr-namespace:FarnahadManufacturing.UI.Base.Dock"
+             mc:Ignorable="d"
+             Title="MainWindow" Height="450" Width="800">
+    <layout:FmGrid FlowDirection="RightToLeft">
+        <layout:FmGrid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
+        </layout:FmGrid.RowDefinitions>
+        <layout:FmGrid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <dxb:MainMenuControl Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <dxb:MainMenuControl.Items>
-                <dxb:BarSubItem Content="پرونده">
-                    <dxb:BarButtonItem Content="باز کردن" />
-                    <dxb:BarButtonItem Content="ذخیره" />
-                    <dxb:BarButtonItem Content="خروج" />
-                </dxb:BarSubItem>
-                <dxb:BarSubItem Content="ویرایش">
-                    <dxb:BarButtonItem Content="کپی" />
-                    <dxb:BarButtonItem Content="انتخاب همه" />
-                </dxb:BarSubItem>
-            </dxb:MainMenuControl.Items>
-        </dxb:MainMenuControl>
-        <dxb:ToolBarControl x:Name="ToolBarControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                            BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
-                            IsMultiLine="True">
-            <dxb:ToolBarControl.Items>
-                <dxb:BarButtonItem Content="جدید" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Add.svg}" IsEnabled="False"/>
-                <dxb:BarButtonItem Content="ذخیره" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Delete.svg}" IsEnabled="False"/>
-                <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem Content="پاک کردن" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Save.svg}" IsEnabled="False"/>
-            </dxb:ToolBarControl.Items>
-        </dxb:ToolBarControl>
-        <dxa:AccordionControl Grid.Row="2" Grid.Column="0">
-            <dxa:AccordionControl.Items>
-                <dxdo:SeparatorItem/>
-                <dxa:AccordionItem Header="مواد" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Large.svg}">
-                    <dxa:AccordionItem.Items>
-                        <dxa:AccordionItem Header="کالا" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Small.svg}"
-                                           MouseDoubleClick="Country_OnMouseDoubleClick" />
-                        <dxa:AccordionItem Header="محصولات" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Product_Small.svg}"/>
-                        <dxa:AccordionItem Header="انبار" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Inventory_Small.svg}"/>
-                        <dxa:AccordionItem Header="سفارش خرید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/PurchaseOrder_Small.svg}"/>
-                    </dxa:AccordionItem.Items>
-                </dxa:AccordionItem>
-                <dxa:AccordionItem Header="خرید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Large.svg}">
-                    <dxa:AccordionItem.Items>
-                        <dxa:AccordionItem Header="فروشنده ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Store_Small.svg}"/>
-                        <dxa:AccordionItem Header="سفارش خرید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Small.svg}" />
-                        <dxa:AccordionItem Header="دریافت کالا" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/TransferOrder_Small.svg}"/>
-                    </dxa:AccordionItem.Items>
-                </dxa:AccordionItem>
-                <dxa:AccordionItem Header="ساخت و تولید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Manufacturing_Large.svg}">
-                    <dxa:AccordionItem Header="دستورالعمل تولید" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/BillOfItem_Small.svg}"/>
-                    <dxa:AccordionItem Header="سفارش ساخت" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ManufacturingOrder_Small.svg}"/>
-                </dxa:AccordionItem>
-                <dxa:AccordionItem Header="فروش" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Purchase_Large.svg}">
-                </dxa:AccordionItem>
-                <dxa:AccordionItem Header="حسابداری" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}">
-                </dxa:AccordionItem>
-                <dxa:AccordionItem Header="تنظیمات" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Configuration_Large.svg}">
-                    <dxa:AccordionItem Header="موقعیت" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Location_Small.svg}">
-                        <dxa:AccordionItem.Items>
-                            <dxa:AccordionItem Header="موقعیت ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Locations_Small.svg}"/>
-                            <dxa:AccordionItem Header="گروه موقعیت ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/LocationGroup_Small.svg}"/>
-                        </dxa:AccordionItem.Items>
-                    </dxa:AccordionItem>
-                    <dxa:AccordionItem Header="شرکت" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Company_Small.svg}"/>
-                    <dxa:AccordionItem Header="واحد اندازه گیری" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Uom_Small.svg}"/>
-                    <dxa:AccordionItem Header="پیک ها" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"
-                                       MouseDoubleClick="Carrier_OnMouseDoubleClick"/>
-                    <dxa:AccordionItem Header="دسته بندی محصولات" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}"/>
-                    <dxa:AccordionItem Header="کاربر" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Users_Small.svg}">
-                        <dxa:AccordionItem.Items>
-                            <dxa:AccordionItem Header="کاربران" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/User_Small.svg}"/>
-                            <dxa:AccordionItem Header="گروه کاربران" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/UserGroup_Small.svg}"/>
-                        </dxa:AccordionItem.Items>
-                    </dxa:AccordionItem>
-                </dxa:AccordionItem>
-                <dxa:AccordionItem Header="تنظیمات پایه" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ConfigurationBase_Large.svg}">
-                    <dxa:AccordionItem.Items>
-                        <dxa:AccordionItem Header="شهر" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
-                                           MouseDoubleClick="City_OnMouseDoubleClick"/>
-                        <dxa:AccordionItem Header="کشور" Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
-                                           MouseDoubleClick="Country_OnMouseDoubleClick"/>
-                    </dxa:AccordionItem.Items>
-                </dxa:AccordionItem>
-            </dxa:AccordionControl.Items>
-        </dxa:AccordionControl>
-        <dxdo:DockLayoutManager x:Name="DockLayoutManager" Grid.Row="2" Grid.Column="1"
-                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <dxdo:LayoutGroup AllowClose="True">
-                <dxdo:DocumentGroup x:Name="MyDocumentGroup" ClosingBehavior="ImmediatelyRemove" DestroyOnClosingChildren="False"/>
-            </dxdo:LayoutGroup>
-        </dxdo:DockLayoutManager>
-        <dxb:StatusBarControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </layout:FmGrid.ColumnDefinitions>
+        <mainPage:FmMainMenuControl Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch">
+            <mainPage:FmMainMenuControl.Items>
+                <mainPage:FmBarSubItem Content="پرونده">
+                    <mainPage:FmBarButtonItem Content="باز کردن" />
+                    <mainPage:FmBarButtonItem Content="ذخیره" />
+                    <mainPage:FmBarButtonItem Content="خروج" />
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="ویرایش">
+                    <mainPage:FmBarButtonItem Content="کپی" />
+                    <mainPage:FmBarButtonItem Content="انتخاب همه" />
+                </mainPage:FmBarSubItem>
+            </mainPage:FmMainMenuControl.Items>
+        </mainPage:FmMainMenuControl>
+        <mainPage:FmToolBarControl x:Name="ToolBarControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                   BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
+                                   IsMultiLine="True">
+            <mainPage:FmToolBarControl.Items>
+                <mainPage:FmBarButtonItem Content="جدید" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Add.svg}"
+                                          IsEnabled="False" />
+                <mainPage:FmBarButtonItem Content="ذخیره" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Delete.svg}"
+                                          IsEnabled="False" />
+                <mainPage:FmBarItemSeparator />
+                <mainPage:FmBarButtonItem Content="پاک کردن" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Save.svg}"
+                                          IsEnabled="False" />
+            </mainPage:FmToolBarControl.Items>
+        </mainPage:FmToolBarControl>
+        <accordion:FmAccordionControl Grid.Row="2" Grid.Column="0">
+            <accordion:FmAccordionControl.Items>
+                <accordion:FmSeparatorItem />
+                <accordion:FmAccordionItem Header="مواد"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Large.svg}">
+                    <accordion:FmAccordionItem.Items>
+                        <accordion:FmAccordionItem Header="کالا"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Small.svg}"
+                                                   MouseDoubleClick="Country_OnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="محصولات"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Product_Small.svg}" />
+                        <accordion:FmAccordionItem Header="انبار"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Inventory_Small.svg}" />
+                        <accordion:FmAccordionItem Header="سفارش خرید"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/PurchaseOrder_Small.svg}" />
+                    </accordion:FmAccordionItem.Items>
+                </accordion:FmAccordionItem>
+                <accordion:FmAccordionItem Header="خرید"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Large.svg}">
+                    <accordion:FmAccordionItem.Items>
+                        <accordion:FmAccordionItem Header="فروشنده ها"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Store_Small.svg}" />
+                        <accordion:FmAccordionItem Header="سفارش خرید"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Small.svg}" />
+                        <accordion:FmAccordionItem Header="دریافت کالا"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/TransferOrder_Small.svg}" />
+                    </accordion:FmAccordionItem.Items>
+                </accordion:FmAccordionItem>
+                <accordion:FmAccordionItem Header="ساخت و تولید"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Manufacturing_Large.svg}">
+                    <accordion:FmAccordionItem Header="دستورالعمل تولید"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/BillOfItem_Small.svg}" />
+                    <accordion:FmAccordionItem Header="سفارش ساخت"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ManufacturingOrder_Small.svg}" />
+                </accordion:FmAccordionItem>
+                <accordion:FmAccordionItem Header="فروش"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Purchase_Large.svg}" />
+                <accordion:FmAccordionItem Header="حسابداری"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}" />
+                <accordion:FmAccordionItem Header="تنظیمات"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Configuration_Large.svg}">
+                    <accordion:FmAccordionItem Header="موقعیت"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Location_Small.svg}">
+                        <accordion:FmAccordionItem.Items>
+                            <accordion:FmAccordionItem Header="موقعیت ها"
+                                                       Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Locations_Small.svg}" />
+                            <accordion:FmAccordionItem Header="گروه موقعیت ها"
+                                                       Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/LocationGroup_Small.svg}" />
+                        </accordion:FmAccordionItem.Items>
+                    </accordion:FmAccordionItem>
+                    <accordion:FmAccordionItem Header="شرکت"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Company_Small.svg}" />
+                    <accordion:FmAccordionItem Header="واحد اندازه گیری"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Uom_Small.svg}" />
+                    <accordion:FmAccordionItem Header="پیک ها"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"
+                                               MouseDoubleClick="Carrier_OnMouseDoubleClick" />
+                    <accordion:FmAccordionItem Header="دسته بندی محصولات"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}" />
+                    <accordion:FmAccordionItem Header="کاربر"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Users_Small.svg}">
+                        <accordion:FmAccordionItem.Items>
+                            <accordion:FmAccordionItem Header="کاربران"
+                                                       Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/User_Small.svg}" />
+                            <accordion:FmAccordionItem Header="گروه کاربران"
+                                                       Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/UserGroup_Small.svg}" />
+                        </accordion:FmAccordionItem.Items>
+                    </accordion:FmAccordionItem>
+                </accordion:FmAccordionItem>
+                <accordion:FmAccordionItem Header="تنظیمات پایه"
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ConfigurationBase_Large.svg}">
+                    <accordion:FmAccordionItem.Items>
+                        <accordion:FmAccordionItem Header="شهر"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
+                                                   MouseDoubleClick="City_OnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="کشور"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="Country_OnMouseDoubleClick" />
+                    </accordion:FmAccordionItem.Items>
+                </accordion:FmAccordionItem>
+            </accordion:FmAccordionControl.Items>
+        </accordion:FmAccordionControl>
+        <dock:FmDockLayoutManager x:Name="DockLayoutManager" Grid.Row="2" Grid.Column="1"
+                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <dock:FmDockLayoutGroup AllowClose="True">
+                <dock:FmDockDocumentGroup x:Name="MyDocumentGroup" ClosingBehavior="ImmediatelyRemove"
+                                          DestroyOnClosingChildren="False" />
+            </dock:FmDockLayoutGroup>
+        </dock:FmDockLayoutManager>
+        <mainPage:FmStatusBarControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
-    </Grid>
+    </layout:FmGrid>
 </dx:DXWindow>

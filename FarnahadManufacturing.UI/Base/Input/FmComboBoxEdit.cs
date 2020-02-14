@@ -24,5 +24,6 @@ namespace FarnahadManufacturing.UI.Base.Input
             else if (!enabled && string.IsNullOrEmpty(comboBoxEdit.Text))
                 Text = ControlDefaultValue.ControlIsDisable;
         }
+
     }
 }

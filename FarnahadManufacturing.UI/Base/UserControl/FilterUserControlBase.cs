@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf;
 using DevExpress.Xpf.Bars;
 using FarnahadManufacturing.UI.Common;
@@ -13,7 +15,13 @@ namespace FarnahadManufacturing.UI.Base.UserControl
     {
         public FilterUserControlBase()
         {
-            SetToolBarItems();
+            this.Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (!this.IsInDesignMode())
+                SetToolBarItems();
         }
 
         protected int CurrentPage = 1;

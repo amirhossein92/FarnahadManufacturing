@@ -14,94 +14,94 @@
                              xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
                              xmlns:label="clr-namespace:FarnahadManufacturing.UI.Base.Label"
                              xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                             xmlns:dock="clr-namespace:FarnahadManufacturing.UI.Base.Dock"
+                             xmlns:columns="clr-namespace:FarnahadManufacturing.UI.Base.GridControl.Columns"
                              mc:Ignorable="d"
                              d:DesignHeight="450" d:DesignWidth="800">
-    <dxdo:DockLayoutManager>
-        <dxdo:LayoutGroup>
+    <dock:FmDockLayoutManager>
+        <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
-                <dxlc:LayoutGroup Orientation="Vertical">
-                    <dxlc:LayoutItem Label="عنوان: " LabelPosition="Left" HorizontalContentAlignment="Right">
-                        <input:FmTextEdit x:Name="SearchTitleTextEdit" Width="125" />
-                    </dxlc:LayoutItem>
-                    <dxlc:LayoutItem Label="وضعیت: " LabelPosition="Left" HorizontalContentAlignment="Right">
-                        <input:FmComboBoxEdit x:Name="SearchStatusComboBoxEdit" Width="100" />
-                    </dxlc:LayoutItem>
-                    <dxlc:LayoutItem HorizontalContentAlignment="Right">
-                        <buttons:FmSimpleButton Content="جست و جو"
-                                                Click="SearchButtonOnClick" />
-                    </dxlc:LayoutItem>
-                    <dxlc:LayoutItem VerticalAlignment="Stretch">
+                <layout:FmVerticalLayoutGroup>
+                    <layout:FmLayoutItem Label="عنوان: ">
+                        <input:FmTextEdit x:Name="SearchTitleTextEdit" />
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem Label="وضعیت: ">
+                        <input:FmComboBoxEdit x:Name="SearchStatusComboBoxEdit" />
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                        <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem VerticalAlignment="Stretch">
                         <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                             <gridControl:FmSearchGridControl.Columns>
-                                <dxg:GridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="75" />
-                                <dxg:GridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" Width="75" />
+                                <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
+                                <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmControlWidth="XXSmall"/>
                             </gridControl:FmSearchGridControl.Columns>
                         </gridControl:FmSearchGridControl>
-                    </dxlc:LayoutItem>
-                    <dxlc:LayoutGroup>
-                        <dxlc:LayoutItem HorizontalContentAlignment="Left">
+                    </layout:FmLayoutItem>
+                    <layout:FmHorizontalLayoutGroup>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Left">
                             <buttons:FmSimpleButton x:Name="PreviousPageButton" Content="قبلی"
                                                     Click="PreviousPageButtonOnClick" />
-                        </dxlc:LayoutItem>
-                        <dxlc:LayoutItem HorizontalContentAlignment="Center">
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Center">
                             <label:FmLabel x:Name="RecordsCountFmLabel" Text="تعداد رکوردها" />
-                        </dxlc:LayoutItem>
-                        <dxlc:LayoutItem HorizontalContentAlignment="Right">
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
                             <buttons:FmSimpleButton x:Name="NextPageButton" Content="بعدی"
                                                     Click="NextPageButtonOnClick" />
-                        </dxlc:LayoutItem>
-                    </dxlc:LayoutGroup>
-                    <dxlc:LayoutItem HorizontalContentAlignment="Right">
-                        <buttons:FmSimpleButton Content="نمایش" Width="75"
-                                                Click="ViewButtonOnClick" />
-                    </dxlc:LayoutItem>
-                </dxlc:LayoutGroup>
+                        </layout:FmLayoutItem>
+                    </layout:FmHorizontalLayoutGroup>
+                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                        <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                    </layout:FmLayoutItem>
+                </layout:FmVerticalLayoutGroup>
             </layout:FmFilterLayoutPanel>
             <dxdo:DocumentPanel ItemWidth="4*">
-                <dxlc:LayoutControl Orientation="Vertical">
+                <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="پیک"/>
-                    <dxlc:LayoutGroup x:Name="MainLayoutGroup" Orientation="Vertical" IsEnabled="False">
-                        <dxlc:LayoutItem Label="عنوان: ">
+                    <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
+                        <layout:FmLayoutItem Label="عنوان: ">
                             <input:FmTextEdit x:Name="TitleTextEdit" />
-                        </dxlc:LayoutItem>
-                        <dxlc:LayoutItem Label="کد استاندارد پیک: ">
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="کد استاندارد پیک: ">
                             <input:FmTextEdit x:Name="ScacTextEdit"/>
-                        </dxlc:LayoutItem>
-                        <dxlc:LayoutItem Label="توضیحات: " LabelPosition="Top">
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="توضیحات: " LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
-                        </dxlc:LayoutItem>
-                        <dxlc:LayoutItem>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem>
                             <dxe:CheckEdit x:Name="IsActiveCheckEdit" Content="فعال"/>
-                        </dxlc:LayoutItem>
+                        </layout:FmLayoutItem>
                         <dxlc:LayoutItem Background="LightGray" Height="20" Label="لیست خدمات"/>
-                        <dxlc:LayoutGroup>
-                            <dxlc:LayoutItem VerticalAlignment="Stretch">
-                                <dxg:GridControl x:Name="CarrierServiceGridControl">
-                                    <dxg:GridControl.Columns>
-                                        <dxg:GridColumn Header="عنوان" FieldName="Title"/>
-                                        <dxg:GridColumn Header="کد" FieldName="Code"/>
-                                    </dxg:GridControl.Columns>
-                                </dxg:GridControl>
-                            </dxlc:LayoutItem>
-                            <dxlc:LayoutGroup Orientation="Vertical" Width="40">
-                                <dxlc:LayoutItem>
+                        <layout:FmHorizontalLayoutGroup>
+                            <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                <gridControl:FmListGridControl x:Name="CarrierServiceGridControl">
+                                    <gridControl:FmListGridControl.Columns>
+                                        <columns:FmTextGridColumn Header="عنوان" FieldName="Title" Width="*"/>
+                                        <columns:FmTextGridColumn Header="کد" FieldName="Code" FmControlWidth="Normal"/>
+                                    </gridControl:FmListGridControl.Columns>
+                                </gridControl:FmListGridControl>
+                            </layout:FmLayoutItem>
+                            <layout:FmVerticalLayoutGroup Width="40">
+                                <layout:FmLayoutItem>
                                     <buttons:FmSimpleButton x:Name="AddItemButton" Content="+"
                                                             Click="AddItemButtonOnClick"/>
-                                </dxlc:LayoutItem>
-                                <dxlc:LayoutItem>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem>
                                     <buttons:FmSimpleButton x:Name="EditItemButton" Content="/" 
                                                             Click="EditItemButtonOnClick"/>
-                                </dxlc:LayoutItem>
-                                <dxlc:LayoutItem>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem>
                                     <buttons:FmSimpleButton x:Name="DeleteItemButton" Content="-" 
                                                             Click="DeleteItemButtonOnClick"/>
-                                </dxlc:LayoutItem>
-                            </dxlc:LayoutGroup>
-                        </dxlc:LayoutGroup>
-                    </dxlc:LayoutGroup>
-                </dxlc:LayoutControl>
+                                </layout:FmLayoutItem>
+                            </layout:FmVerticalLayoutGroup>
+                        </layout:FmHorizontalLayoutGroup>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
             </dxdo:DocumentPanel>
-        </dxdo:LayoutGroup>
-    </dxdo:DockLayoutManager>
+        </dock:FmDockLayoutGroup>
+    </dock:FmDockLayoutManager>
 </userControl:FilterUserControlBase>

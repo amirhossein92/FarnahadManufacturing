@@ -13,25 +13,25 @@
                                    mc:Ignorable="d"
                                    d:DesignHeight="150" d:DesignWidth="300"
                                    Height="150" Width="300">
-    <dxlc:LayoutControl>
-        <dxlc:LayoutGroup Orientation="Vertical">
+    <layout:FmLayoutControl>
+        <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="خدمات پیک" />
-            <dxlc:LayoutItem Label="عنوان: ">
+            <layout:FmLayoutItem Label="عنوان: ">
                 <input:FmTextEdit x:Name="TitleTextEdit" />
-            </dxlc:LayoutItem>
-            <dxlc:LayoutItem Label="کد: ">
+            </layout:FmLayoutItem>
+            <layout:FmLayoutItem Label="کد: ">
                 <input:FmTextEdit x:Name="CodeTextEdit" />
-            </dxlc:LayoutItem>
-            <dxlc:LayoutGroup VerticalAlignment="Bottom">
-                <dxlc:LayoutItem>
+            </layout:FmLayoutItem>
+            <layout:FmHorizontalLayoutGroup VerticalAlignment="Bottom">
+                <layout:FmLayoutItem>
                     <buttons:FmSimpleButton Content="ذخیره"
                                             Click="SaveButtonOnClick" />
-                </dxlc:LayoutItem>
-                <dxlc:LayoutItem>
+                </layout:FmLayoutItem>
+                <layout:FmLayoutItem>
                     <buttons:FmSimpleButton Content="لغو"
                                             Click="CancelButtonOnClick" />
-                </dxlc:LayoutItem>
-            </dxlc:LayoutGroup>
-        </dxlc:LayoutGroup>
-    </dxlc:LayoutControl>
+                </layout:FmLayoutItem>
+            </layout:FmHorizontalLayoutGroup>
+        </layout:FmVerticalLayoutGroup>
+    </layout:FmLayoutControl>
 </userControl:DialogUserControlBase>

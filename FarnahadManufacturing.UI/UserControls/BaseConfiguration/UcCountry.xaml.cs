@@ -109,7 +109,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 TotalRecordsCount = countryQueryable.Count();
                 _countries = countryQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _countries;
-                RecordsCountFmLabel.Text =
+                PaginationUserControl.RecordCountText =
                     PaginationUtility.GetRecordsDetailText(CurrentPage, _countries.Count, TotalRecordsCount);
             }
         }

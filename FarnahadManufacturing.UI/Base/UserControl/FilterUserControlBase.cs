@@ -15,11 +15,6 @@ namespace FarnahadManufacturing.UI.Base.UserControl
     {
         public FilterUserControlBase()
         {
-            this.Loaded += OnLoaded;
-        }
-
-        private void OnLoaded(object sender, RoutedEventArgs e)
-        {
             if (!this.IsInDesignMode())
                 SetToolBarItems();
         }

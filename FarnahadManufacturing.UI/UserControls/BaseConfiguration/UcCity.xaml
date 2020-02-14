@@ -41,19 +41,9 @@
                             </gridControl:FmSearchGridControl.Columns>
                         </gridControl:FmSearchGridControl>
                     </layout:FmLayoutItem>
-                    <layout:FmHorizontalLayoutGroup>
-                        <layout:FmLayoutItem HorizontalContentAlignment="Left">
-                            <buttons:FmSimpleButton Content="قبلی"
-                                                    Click="PreviousPageButtonOnClick" />
-                        </layout:FmLayoutItem>
-                        <layout:FmLayoutItem HorizontalContentAlignment="Center">
-                            <label:FmLabel x:Name="RecordsCountFmLabel" Text="تعداد رکوردها" />
-                        </layout:FmLayoutItem>
-                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                            <buttons:FmSimpleButton Content="بعدی"
-                                                    Click="NextPageButtonOnClick" />
-                        </layout:FmLayoutItem>
-                    </layout:FmHorizontalLayoutGroup>
+                    <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                        ClickOnNext="NextPageButtonOnClick"
+                        ClickOnPrevious="PreviousPageButtonOnClick" />
                     <layout:FmLayoutItem HorizontalContentAlignment="Right">
                         <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
                     </layout:FmLayoutItem>

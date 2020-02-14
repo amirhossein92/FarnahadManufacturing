@@ -71,7 +71,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 TotalRecordsCount = carrierQueryable.Count();
                 _carriers = carrierQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _carriers;
-                RecordsCountFmLabel.Text =
+                PaginationUserControl.RecordCountText =
                     PaginationUtility.GetRecordsDetailText(CurrentPage, _carriers.Count, TotalRecordsCount);
             }
         }

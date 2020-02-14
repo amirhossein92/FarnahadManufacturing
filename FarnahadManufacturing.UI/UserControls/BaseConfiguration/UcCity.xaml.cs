@@ -70,7 +70,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 TotalRecordsCount = cityQueryable.Count();
                 _cities = cityQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _cities;
-                RecordsCountFmLabel.Text =
+                PaginationUserControl.RecordCountText =
                     PaginationUtility.GetRecordsDetailText(CurrentPage, _cities.Count, TotalRecordsCount);
             }
         }

@@ -87,6 +87,11 @@
     <Compile Include="Base\Accordion\FmAccordionControl.cs" />
     <Compile Include="Base\Accordion\FmAccordionItem.cs" />
     <Compile Include="Base\Accordion\FmSeparatorItem.cs" />
+    <Compile Include="Base\Buttons\FmCancelSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniAddSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniEditSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmSaveSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmSearchSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmViewSimpleButton.cs" />
@@ -130,6 +135,7 @@
       <DependentUpon>SaveCancelUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base\UserControl\UserControlBase.cs" />
+    <Compile Include="Base\Window\FmDialogWindow.cs" />
     <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
     <Compile Include="Common\ImageUtility.cs" />

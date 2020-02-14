@@ -25,6 +25,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         public UcCarrierService()
         {
             InitializeComponent();
+            UserControlTitle = "خدمت پیک";
         }
 
         public UcCarrierService(CarrierService carrierService) : this()

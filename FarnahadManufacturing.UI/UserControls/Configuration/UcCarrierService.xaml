@@ -22,16 +22,9 @@
             <layout:FmLayoutItem Label="کد: ">
                 <input:FmTextEdit x:Name="CodeTextEdit" />
             </layout:FmLayoutItem>
-            <layout:FmHorizontalLayoutGroup VerticalAlignment="Bottom">
-                <layout:FmLayoutItem>
-                    <buttons:FmSimpleButton Content="ذخیره"
-                                            Click="SaveButtonOnClick" />
-                </layout:FmLayoutItem>
-                <layout:FmLayoutItem>
-                    <buttons:FmSimpleButton Content="لغو"
-                                            Click="CancelButtonOnClick" />
-                </layout:FmLayoutItem>
-            </layout:FmHorizontalLayoutGroup>
+            <userControl:SaveCancelUserControl 
+                ClickOnSave="SaveButtonOnClick"
+                ClickOnCancel="CancelButtonOnClick"/>
         </layout:FmVerticalLayoutGroup>
     </layout:FmLayoutControl>
 </userControl:DialogUserControlBase>

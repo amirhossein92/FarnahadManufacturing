@@ -40,19 +40,9 @@
                             </gridControl:FmSearchGridControl.Columns>
                         </gridControl:FmSearchGridControl>
                     </layout:FmLayoutItem>
-                    <layout:FmHorizontalLayoutGroup>
-                        <layout:FmLayoutItem HorizontalContentAlignment="Left">
-                            <buttons:FmSimpleButton x:Name="PreviousPageButton" Content="قبلی"
-                                                    Click="PreviousPageButtonOnClick" />
-                        </layout:FmLayoutItem>
-                        <layout:FmLayoutItem HorizontalContentAlignment="Center">
-                            <label:FmLabel x:Name="RecordsCountFmLabel" Text="تعداد رکوردها" />
-                        </layout:FmLayoutItem>
-                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                            <buttons:FmSimpleButton x:Name="NextPageButton" Content="بعدی"
-                                                    Click="NextPageButtonOnClick" />
-                        </layout:FmLayoutItem>
-                    </layout:FmHorizontalLayoutGroup>
+                    <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                       ClickOnPrevious="PreviousPageButtonOnClick"
+                                                       ClickOnNext="NextPageButtonOnClick" />
                     <layout:FmLayoutItem HorizontalContentAlignment="Right">
                         <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
                     </layout:FmLayoutItem>
@@ -84,20 +74,10 @@
                                     </gridControl:FmListGridControl.Columns>
                                 </gridControl:FmListGridControl>
                             </layout:FmLayoutItem>
-                            <layout:FmVerticalLayoutGroup Width="40">
-                                <layout:FmLayoutItem>
-                                    <buttons:FmSimpleButton x:Name="AddItemButton" Content="+"
-                                                            Click="AddItemButtonOnClick"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem>
-                                    <buttons:FmSimpleButton x:Name="EditItemButton" Content="/" 
-                                                            Click="EditItemButtonOnClick"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem>
-                                    <buttons:FmSimpleButton x:Name="DeleteItemButton" Content="-" 
-                                                            Click="DeleteItemButtonOnClick"/>
-                                </layout:FmLayoutItem>
-                            </layout:FmVerticalLayoutGroup>
+                            <userControl:AddEditDeleteListUserControl
+                                ClickOnAddItem="AddItemButtonOnClick"
+                                ClickOnEditItem="EditItemButtonOnClick"
+                                ClickOnDeleteItem="DeleteItemButtonOnClick" />
                         </layout:FmHorizontalLayoutGroup>
                     </layout:FmVerticalLayoutGroup>
                 </layout:FmLayoutControl>

@@ -22,56 +22,21 @@ using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.Configuration;
 using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
-using Application = System.Windows.Application;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    /// <summary>
-    /// Interaction logic for UcCarrier.xaml
-    /// </summary>
-    public partial class UcCarrier : UserControlBase
+    public partial class UcCarrier : FilterUserControlBase
     {
         private ObservableCollection<Carrier> _carriers;
         private ObservableCollection<CarrierService> _carrierServices;
         private Carrier _activeCarrier;
-        private int _currentPage = 1;
-        private int _totalRecordsCount;
-        private string _userControlTitle = "پیک";
 
         public UcCarrier()
         {
             InitializeComponent();
 
-            SetToolBarItems();
+            UserControlTitle = "پیک";
             InitialData();
-        }
-
-        protected sealed override void SetToolBarItems()
-        {
-            var addButton = new BarButtonItem
-            {
-                Name = "Add",
-                Content = "اضافه",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Add.svg"),
-            };
-            addButton.ItemClick += AddButtonOnToolBarItemClick;
-            var saveButton = new BarButtonItem
-            {
-                Name = "Save",
-                Content = "ذخیره",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Save.svg"),
-            };
-            saveButton.ItemClick += SaveButtonOnToolBarItemClick;
-            var deleteButton = new BarButtonItem
-            {
-                Name = "Delete",
-                Content = "حذف",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Delete.svg"),
-            };
-            deleteButton.ItemClick += DeleteButtonOnToolBarItemClick;
-            ToolBarItems.Add(addButton.Name, addButton);
-            ToolBarItems.Add(saveButton.Name, saveButton);
-            ToolBarItems.Add(deleteButton.Name, deleteButton);
         }
 
         protected sealed override void InitialData()
@@ -103,22 +68,22 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     var searchStatusIsActive = searchStatus as Tuple<bool, string>;
                     carrierQueryable = carrierQueryable.Where(item => item.IsActive == searchStatusIsActive.Item1);
                 }
-                _totalRecordsCount = carrierQueryable.Count();
-                _carriers = carrierQueryable.Paginate(_currentPage);
+                TotalRecordsCount = carrierQueryable.Count();
+                _carriers = carrierQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _carriers;
                 RecordsCountFmLabel.Text =
-                    PaginationUtility.GetRecordsDetailText(_currentPage, _carriers.Count, _totalRecordsCount);
+                    PaginationUtility.GetRecordsDetailText(CurrentPage, _carriers.Count, TotalRecordsCount);
             }
         }
 
-        private void AddButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnAddToolBarItem()
         {
             _activeCarrier = new Carrier();
             EditData(_activeCarrier);
             IsAdding();
         }
 
-        private void SaveButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnSaveToolBarItem()
         {
             ReadData(ref _activeCarrier);
             if (_activeCarrier.Id > 0)
@@ -173,7 +138,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             IsEditing();
         }
 
-        private void DeleteButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnDeleteToolBarItem()
         {
             if (MessageBoxService.AskForDelete(_activeCarrier.Title) == DialogResult.Yes)
             {
@@ -193,7 +158,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            _currentPage = 1;
+            CurrentPage = 1;
             LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
         }
 
@@ -209,18 +174,18 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            if (_currentPage > 1)
+            if (CurrentPage > 1)
             {
-                _currentPage--;
+                CurrentPage--;
                 LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
             }
         }
 
         private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            if (_currentPage <= (_totalRecordsCount / ApplicationSetting.PageRecordNumber))
+            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
             {
-                _currentPage++;
+                CurrentPage++;
                 LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
             }
         }
@@ -298,32 +263,23 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 _carrierServices.Remove(activeCarrierService);
         }
 
-        private void IsAdding()
+        protected override void OnAdding()
         {
             MainLayoutGroup.IsEnabled = true;
-            ToolBarItems.ChangeToolBarItemStatus("Add", true);
-            ToolBarItems.ChangeToolBarItemStatus("Save", true);
-            ToolBarItems.ChangeToolBarItemStatus("Delete", false);
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(_userControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
-        private void IsEditing()
+        protected override void OnEditing()
         {
             MainLayoutGroup.IsEnabled = true;
-            ToolBarItems.ChangeToolBarItemStatus("Add", true);
-            ToolBarItems.ChangeToolBarItemStatus("Save", true);
-            ToolBarItems.ChangeToolBarItemStatus("Delete", true);
             FmHeaderLayoutGroup.HeaderTitle =
-                HeaderService.GenerateEditHeaderTitle(_userControlTitle, _activeCarrier.Title);
+                HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeCarrier.Title);
         }
 
-        private void IsNotEditingAndAdding()
+        protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            ToolBarItems.ChangeToolBarItemStatus("Add", true);
-            ToolBarItems.ChangeToolBarItemStatus("Save", false);
-            ToolBarItems.ChangeToolBarItemStatus("Delete", false);
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(_userControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(UserControlTitle);
         }
     }
 }

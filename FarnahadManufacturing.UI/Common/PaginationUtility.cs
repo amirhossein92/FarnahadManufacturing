@@ -21,5 +21,10 @@ namespace FarnahadManufacturing.UI.Common
             var toRecordNumber = fromRecordNumber + currentPageCount - 1;
             return $"{fromRecordNumber}-{toRecordNumber} از {totalRecordsCount}";
         }
+
+        public static int MaximumPageNumber(int totalRecordsCount)
+        {
+            return (totalRecordsCount / ApplicationSetting.PageRecordNumber);
+        }
     }
 }

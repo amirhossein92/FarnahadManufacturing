@@ -17,6 +17,7 @@ namespace FarnahadManufacturing.UI.Base.UserControl
         }
 
         public Dictionary<string, IBarItem> ToolBarItems { get; set; }
+        public string UserControlTitle { get; set; }
 
         protected abstract void SetToolBarItems();
         protected abstract void InitialData();

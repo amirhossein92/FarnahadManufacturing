@@ -13,14 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FarnahadManufacturing.Model.Configuration;
+using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    /// <summary>
-    /// Interaction logic for UcCarrierService.xaml
-    /// </summary>
-    public partial class UcCarrierService : UserControl
+    public partial class UcCarrierService : DialogUserControlBase
     {
         private CarrierService _activeCarrierService;
 

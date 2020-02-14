@@ -11,10 +11,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.Utils;
@@ -22,24 +18,20 @@ using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.UI.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
-using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcCity : UserControlBase
+    public partial class UcCity : FilterUserControlBase
     {
         private ObservableCollection<City> _cities;
         private City _activeCity;
-        private int _currentPage = 1;
-        private int _totalRecordsCount;
-        private string _userControlTitle = "شهر";
 
         public UcCity()
         {
             InitializeComponent();
             Loaded += OnLoaded;
 
-            SetToolBarItems();
+            UserControlTitle = "شهر";
             InitialData();
         }
 
@@ -53,34 +45,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             LoadSearchGridControlData();
             LoadCountryComboBox();
             IsNotEditingAndAdding();
-        }
-
-        protected sealed override void SetToolBarItems()
-        {
-            var addButton = new BarButtonItem
-            {
-                Name = "Add",
-                Content = "اضافه",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Add.svg"),
-            };
-            addButton.ItemClick += AddButtonOnToolBarItemClick;
-            var saveButton = new BarButtonItem
-            {
-                Name = "Save",
-                Content = "ذخیره",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Save.svg"),
-            };
-            saveButton.ItemClick += SaveButtonOnToolBarItemClick;
-            var deleteButton = new BarButtonItem
-            {
-                Name = "Delete",
-                Content = "حذف",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Delete.svg"),
-            };
-            deleteButton.ItemClick += DeleteButtonOnToolBarItemClick;
-            ToolBarItems.Add(addButton.Name, addButton);
-            ToolBarItems.Add(saveButton.Name, saveButton);
-            ToolBarItems.Add(deleteButton.Name, deleteButton);
         }
 
         private void LoadCountryComboBox()
@@ -103,23 +67,22 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     cityQueryable = cityQueryable.Where(item => item.Title.Contains(searchTitle));
                 if (!string.IsNullOrEmpty(searchCountryTitle))
                     cityQueryable = cityQueryable.Where(item => item.Country.Title.Contains(searchCountryTitle));
-                _totalRecordsCount = cityQueryable.Count();
-                _cities = cityQueryable.Paginate(_currentPage);
+                TotalRecordsCount = cityQueryable.Count();
+                _cities = cityQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _cities;
                 RecordsCountFmLabel.Text =
-                    PaginationUtility.GetRecordsDetailText(_currentPage, _cities.Count, _totalRecordsCount);
-
+                    PaginationUtility.GetRecordsDetailText(CurrentPage, _cities.Count, TotalRecordsCount);
             }
         }
 
-        private void AddButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnAddToolBarItem()
         {
             _activeCity = new City();
             EditData(_activeCity);
             IsAdding();
         }
 
-        private void SaveButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnSaveToolBarItem()
         {
             ReadData(ref _activeCity);
             if (_activeCity.Id > 0)
@@ -146,7 +109,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             IsEditing();
         }
 
-        private void DeleteButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
+        protected override void OnDeleteToolBarItem()
         {
             if (MessageBoxService.AskForDelete(_activeCity.Title) == DialogResult.Yes)
             {
@@ -164,7 +127,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            _currentPage = 1;
+            CurrentPage = 1;
             LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
         }
 
@@ -201,18 +164,18 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            if (_currentPage > 1)
+            if (CurrentPage > 1)
             {
-                _currentPage--;
+                CurrentPage--;
                 LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
             }
         }
 
         private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            if (_currentPage <= (_totalRecordsCount / ApplicationSetting.PageRecordNumber))
+            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
             {
-                _currentPage++;
+                CurrentPage++;
                 LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
             }
         }
@@ -223,32 +186,23 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             EditData(city);
         }
 
-        private void IsAdding()
+        protected override void OnAdding()
         {
             MainLayoutGroup.IsEnabled = true;
-            ToolBarItems.ChangeToolBarItemStatus("Add", true);
-            ToolBarItems.ChangeToolBarItemStatus("Save", true);
-            ToolBarItems.ChangeToolBarItemStatus("Delete", false);
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(_userControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
-        private void IsEditing()
+        protected override void OnEditing()
         {
             MainLayoutGroup.IsEnabled = true;
-            ToolBarItems.ChangeToolBarItemStatus("Add", true);
-            ToolBarItems.ChangeToolBarItemStatus("Save", true);
-            ToolBarItems.ChangeToolBarItemStatus("Delete", true);
             FmHeaderLayoutGroup.HeaderTitle =
-                HeaderService.GenerateEditHeaderTitle(_userControlTitle, _activeCity.Title);
+                HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeCity.Title);
         }
 
-        private void IsNotEditingAndAdding()
+        protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            ToolBarItems.ChangeToolBarItemStatus("Add", true);
-            ToolBarItems.ChangeToolBarItemStatus("Save", false);
-            ToolBarItems.ChangeToolBarItemStatus("Delete", false);
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(_userControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(UserControlTitle);
         }
     }
 }

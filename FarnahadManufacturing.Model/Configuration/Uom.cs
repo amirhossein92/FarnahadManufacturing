@@ -13,6 +13,16 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Uom : FmModelBase
     {
+        public Uom()
+        {
+            Parts = new List<Part>();
+            PartsDistanceUom = new List<Part>();
+            PartsWeightUom = new List<Part>();
+            Products = new List<Product>();
+            ProductsDistanceUom = new List<Product>();
+            ProductsWeightUom = new List<Product>();
+        }
+
         private int _id;
         public int Id
         {

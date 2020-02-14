@@ -12,6 +12,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Vendor : Company
     {
+        public Vendor()
+        {
+            Parts = new List<Part>();
+        }
+
         /// <summary>
         /// شماره حساب
         /// </summary>

@@ -12,6 +12,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class CarrierService : FmModelBase
     {
+        public CarrierService()
+        {
+            Companies = new List<Company>();
+        }
+
         private int _id;
         public int Id
         {

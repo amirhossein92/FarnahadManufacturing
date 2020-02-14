@@ -22,7 +22,6 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                 .HasForeignKey(item => item.CategoryId);
             this.Property(item => item.Upc).HasMaxLength(32);
             this.Property(item => item.Sku).HasMaxLength(32);
-            // TODO: Check this with Mr. Ghaderian
             this.HasRequired(item => item.DistanceUom)
                 .WithMany(uom => uom.ProductsDistanceUom)
                 .HasForeignKey(item => item.DistanceUomId)

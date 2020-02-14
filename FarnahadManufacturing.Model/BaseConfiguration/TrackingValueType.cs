@@ -11,13 +11,13 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public enum TrackingValueType
     {
-        Text,
-        Date,
-        ExpirationDate,
-        SerialNumber,
-        Money,
-        Quantity,
-        Count,
-        Checkbox
+        Checkbox = 10,
+        Count = 20,
+        Date = 30,
+        ExpirationDate = 40,
+        Money = 50,
+        Quantity = 60,
+        SerialNumber = 70,
+        Text = 80,
     }
 }

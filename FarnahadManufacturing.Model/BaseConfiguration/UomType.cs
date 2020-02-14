@@ -13,6 +13,11 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class UomType : FmModelBase
     {
+        public UomType()
+        {
+            Uoms = new List<Uom>();
+        }
+
         private int _id;
         public int Id
         {

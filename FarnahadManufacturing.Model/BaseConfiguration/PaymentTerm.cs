@@ -13,6 +13,12 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class PaymentTerm : FmModelBase
     {
+        public PaymentTerm()
+        {
+            Customers = new List<Customer>();
+            Vendors = new List<Vendor>();
+        }
+
         private int _id;
         public int Id
         {

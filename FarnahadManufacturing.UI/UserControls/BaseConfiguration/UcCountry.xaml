@@ -5,9 +5,6 @@
                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                             xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.BaseConfiguration"
-                             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-                             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
                              xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
                              xmlns:label="clr-namespace:FarnahadManufacturing.UI.Base.Label"
                              xmlns:input="clr-namespace:FarnahadManufacturing.UI.Base.Input"
@@ -21,8 +18,8 @@
         <dxdo:LayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
                 <dxlc:LayoutGroup Orientation="Vertical">
-                    <dxlc:LayoutItem Label="عنوان: " LabelPosition="Left" HorizontalContentAlignment="Right">
-                        <input:FmTextEdit x:Name="SearchTitleTextEdit" Width="125" />
+                    <dxlc:LayoutItem Label="عنوان: ">
+                        <input:FmTextEdit x:Name="SearchTitleTextEdit" Width="Auto" HorizontalAlignment="Stretch" />
                     </dxlc:LayoutItem>
                     <dxlc:LayoutItem HorizontalContentAlignment="Right">
                         <buttons:FmSimpleButton Content="جست و جو"

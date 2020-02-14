@@ -12,6 +12,12 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class ProductCategory : FmModelBase
     {
+        public ProductCategory()
+        {
+            ProductCategories = new List<ProductCategory>();
+            Products = new List<Product>();
+        }
+
         private int _id;
         public int Id
         {
@@ -75,6 +81,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _parentProductCategory = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<ProductCategory> _productCategories;
+        public List<ProductCategory> ProductCategories
+        {
+            get => _productCategories;
+            set
+            {
+                _productCategories = value;
                 OnPropertyChanged();
             }
         }

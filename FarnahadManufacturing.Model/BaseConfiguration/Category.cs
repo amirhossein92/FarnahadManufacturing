@@ -13,6 +13,13 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class Category : FmModelBase
     {
+        public Category()
+        {
+            Customers = new List<Customer>();
+            LocationGroups = new List<LocationGroup>();
+            Products = new List<Product>();
+        }
+
         private int _id;
         public int Id
         {

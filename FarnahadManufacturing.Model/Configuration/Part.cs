@@ -13,6 +13,13 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Part : FmModelBase
     {
+        public Part()
+        {
+            TrackingParts = new List<TrackingPart>();
+            PartCosts = new List<PartCost>();
+            Products = new List<Product>();
+        }
+
         private int _id;
         public int Id
         {

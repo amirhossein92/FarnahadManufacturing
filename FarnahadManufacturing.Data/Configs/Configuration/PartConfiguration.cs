@@ -15,7 +15,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.ToTable("Part", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).HasMaxLength(128).IsRequired();
             this.Property(item => item.Number).HasMaxLength(64).IsRequired();
-            this.Property(item => item.Upc).HasMaxLength(32).IsRequired();
+            this.Property(item => item.Upc).HasMaxLength(32);
             this.HasRequired(item => item.Uom)
                 .WithMany(uom => uom.Parts)
                 .HasForeignKey(item => item.UomId);
@@ -28,7 +28,6 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             this.HasOptional(item => item.DefaultVendor)
                 .WithMany(vendor => vendor.Parts)
                 .HasForeignKey(item => item.DefaultVendorId);
-            // TODO: Check this with Mr. Ghaderian
             this.HasRequired(item => item.DistanceUom)
                 .WithMany(uom => uom.PartsDistanceUom)
                 .HasForeignKey(item => item.DistanceUomId)

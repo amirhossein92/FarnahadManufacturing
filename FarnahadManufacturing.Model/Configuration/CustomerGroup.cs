@@ -12,7 +12,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class CustomerGroup : FmModelBase
     {
-        // TODO: Check if other parameter is needed
+        public CustomerGroup()
+        {
+            Customers = new List<Customer>();
+        }
+
         private int _id;
         public int Id
         {

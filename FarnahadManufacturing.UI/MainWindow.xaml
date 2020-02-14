@@ -1,4 +1,4 @@
-﻿<Window x:Class="FarnahadManufacturing.UI.MainWindow"
+﻿<dx:DXWindow x:Class="FarnahadManufacturing.UI.MainWindow"
         xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
         xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
         xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
@@ -104,11 +104,11 @@
         <dxdo:DockLayoutManager x:Name="DockLayoutManager" Grid.Row="2" Grid.Column="1"
                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <dxdo:LayoutGroup AllowClose="True">
-                <dxdo:DocumentGroup x:Name="MyDocumentGroup" ClosingBehavior="ImmediatelyRemove"/>
+                <dxdo:DocumentGroup x:Name="MyDocumentGroup" ClosingBehavior="ImmediatelyRemove" DestroyOnClosingChildren="False"/>
             </dxdo:LayoutGroup>
         </dxdo:DockLayoutManager>
         <dxb:StatusBarControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
     </Grid>
-</Window>
+</dx:DXWindow>

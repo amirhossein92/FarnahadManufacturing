@@ -13,6 +13,10 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class AddressType : FmModelBase
     {
+        public AddressType()
+        {
+            Addresses = new List<Address>();
+        }
         // Bill To
         // Home
         // Main Office

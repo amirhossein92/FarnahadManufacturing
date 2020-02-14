@@ -15,6 +15,7 @@ namespace FarnahadManufacturing.Model.Configuration
         public Carrier()
         {
             CarrierServices = new List<CarrierService>();
+            Companies = new List<Company>();
         }
 
         private int _id;

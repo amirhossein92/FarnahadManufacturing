@@ -12,14 +12,14 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public enum PurchaseOrderStatus
     {
-        BidRequest,
-        ClosedShort,
-        Fulfilled,
-        Issued,
-        Partial,
-        Picked,
-        Picking,
-        Shipped,
-        Void
+        BidRequest = 10,
+        ClosedShort = 20,
+        Fulfilled = 30,
+        Issued = 40,
+        Partial = 50,
+        Picked = 60,
+        Picking = 70,
+        Shipped = 80,
+        Void = 90
     }
 }

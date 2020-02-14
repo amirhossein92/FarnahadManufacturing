@@ -13,6 +13,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Company : FmModelBase
     {
+        public Company()
+        {
+            Addresses = new List<Address>();
+        }
+
         private int _id;
         public int Id
         {

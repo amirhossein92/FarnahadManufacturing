@@ -12,6 +12,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class TaxRate : FmModelBase
     {
+        public TaxRate()
+        {
+            Customers = new List<Customer>();
+        }
+
         private int _id;
         public int Id
         {

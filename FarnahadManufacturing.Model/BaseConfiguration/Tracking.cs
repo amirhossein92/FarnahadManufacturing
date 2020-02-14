@@ -18,6 +18,10 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
         // Revision Level : text
         // Expiration Date : datetime
         // Serial Number : serial number
+        public Tracking()
+        {
+            TrackingParts = new List<TrackingPart>();
+        }
 
         private int _id;
         public int Id

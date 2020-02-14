@@ -13,14 +13,14 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public enum ContactType
     {
-        Home,
-        Work,
-        Mobile,
-        Fax,
-        Main,
-        Email,
-        Pager,
-        Other,
-        Web
+        Email = 10,
+        Fax = 20,
+        Home = 30,
+        Main = 40,
+        Mobile = 50,
+        Other = 60,
+        Pager = 70,
+        Web = 80,
+        Work = 90,
     }
 }

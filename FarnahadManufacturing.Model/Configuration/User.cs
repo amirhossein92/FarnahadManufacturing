@@ -13,6 +13,40 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class User : FmModelBase
     {
+        public User()
+        {
+            LocationGroupMembers = new List<LocationGroup>();
+            CustomerSalespersons = new List<Customer>();
+            AddressTypes = new List<AddressType>();
+            Categories = new List<Category>();
+            Cities = new List<City>();
+            Countries = new List<Country>();
+            FobTypes = new List<FobType>();
+            LocationTypes = new List<LocationType>();
+            PaymentMethods = new List<PaymentMethod>();
+            PaymentTerms = new List<PaymentTerm>();
+            ShippingTerms = new List<ShippingTerm>();
+            Trackings = new List<Tracking>();
+            UomTypes = new List<UomType>();
+
+            Addresses = new List<Address>();
+            Carriers = new List<Carrier>();
+            CarrierServices = new List<CarrierService>();
+            Companies = new List<Company>();
+            ContactInformations = new List<ContactInformation>();
+            CustomerGroups = new List<CustomerGroup>();
+            Locations = new List<Location>();
+            LocationGroups = new List<LocationGroup>();
+            Parts = new List<Part>();
+            PartCosts = new List<PartCost>();
+            Products = new List<Product>();
+            ProductCategories = new List<ProductCategory>();
+            ProductPrices = new List<ProductPrice>();
+            TaxRates = new List<TaxRate>();
+            TrackingParts = new List<TrackingPart>();
+            Uoms = new List<Uom>();
+        }
+
         private int _id;
         public int Id
         {

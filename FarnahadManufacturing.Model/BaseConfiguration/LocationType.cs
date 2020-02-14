@@ -13,6 +13,11 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class LocationType : FmModelBase
     {
+        public LocationType()
+        {
+            Locations = new List<Location>();
+        }
+
         private int _id;
         public int Id
         {

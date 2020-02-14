@@ -176,12 +176,6 @@
     <Folder Include="Base\Dock\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\AccordionIcons\Icon_128x128.png" />
-    <Resource Include="Assets\AccordionIcons\Icon_16x16.png" />
-    <Resource Include="Assets\AccordionIcons\Icon_32x32.png" />
-    <Resource Include="Assets\AccordionIcons\Icon_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj">
       <Project>{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}</Project>
       <Name>FarnahadManufacturing.Base</Name>

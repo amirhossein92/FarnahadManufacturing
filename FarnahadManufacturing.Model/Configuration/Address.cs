@@ -14,6 +14,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Address : FmModelBase
     {
+        public Address()
+        {
+            ContactInformations = new List<ContactInformation>();
+        }
+
         private int _id;
         public int Id
         {
@@ -218,24 +223,46 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<Company> _companies;
-        public List<Company> Companies
+        private int _companyId;
+        public int CompanyId
         {
-            get => _companies;
+            get => _companyId;
             set
             {
-                _companies = value;
+                _companyId = value;
                 OnPropertyChanged();
             }
         }
 
-        private List<Company> _companiesDefaultAddress;
-        public List<Company> CompaniesDefaultAddress
+        private Company _company;
+        public Company Company
         {
-            get => _companiesDefaultAddress;
+            get => _company;
             set
             {
-                _companiesDefaultAddress = value;
+                _company = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _companyDefaultAddressId;
+        public int CompanyDefaultAddressId
+        {
+            get => _companyDefaultAddressId;
+            set
+            {
+                _companyDefaultAddressId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Company _companyDefaultAddress;
+        public Company CompanyDefaultAddress
+        {
+            get => _companyDefaultAddress;
+            set
+            {
+                _companyDefaultAddress = value;
                 OnPropertyChanged();
             }
         }

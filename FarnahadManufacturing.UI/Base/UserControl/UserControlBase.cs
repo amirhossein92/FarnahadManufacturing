@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using DevExpress.Xpf.Bars;
 
 namespace FarnahadManufacturing.UI.Base.UserControl
@@ -11,6 +12,7 @@ namespace FarnahadManufacturing.UI.Base.UserControl
     {
         public UserControlBase()
         {
+            FlowDirection = FlowDirection.RightToLeft;
             ToolBarItems = new Dictionary<string, IBarItem>();
         }
 

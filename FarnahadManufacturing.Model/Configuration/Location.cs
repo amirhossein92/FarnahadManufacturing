@@ -13,6 +13,11 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Location : FmModelBase
     {
+        public Location()
+        {
+            Parts = new List<Part>();
+        }
+
         private int _id;
         public int Id
         {

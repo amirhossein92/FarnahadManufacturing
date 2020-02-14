@@ -12,15 +12,15 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public enum PartType
     {
-        Inventory,
-        Service,
-        Labor,
-        Overhead,
-        NonInventory,
-        InternalUse,
-        CapitalEquipment,
-        Shipping,
-        Tax,
-        Misc
+        CapitalEquipment = 10,
+        InternalUse = 20,
+        Inventory = 30,
+        Labor = 40,
+        Misc = 50,
+        NonInventory = 60,
+        Overhead = 70,
+        Service = 80,
+        Shipping = 90,
+        Tax = 100,
     }
 }

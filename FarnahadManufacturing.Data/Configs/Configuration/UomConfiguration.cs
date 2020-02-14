@@ -10,11 +10,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         {
             this.ToTable("Uom", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.Property(item => item.Abbreviation).HasMaxLength(4);
+            this.Property(item => item.Abbreviation).IsRequired().HasMaxLength(4);
             this.HasRequired(item => item.UomType)
                 .WithMany(uomType => uomType.Uoms)
                 .HasForeignKey(item => item.UomTypeId);
-            // TODO: How to configure other Uoms: DistanceUOM
             this.HasMany(item => item.Parts)
                 .WithRequired(part => part.Uom)
                 .HasForeignKey(part => part.UomId);

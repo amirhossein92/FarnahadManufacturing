@@ -13,6 +13,12 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class LocationGroup : FmModelBase
     {
+        public LocationGroup()
+        {
+            Users = new List<User>();
+            Locations = new List<Location>();
+        }
+
         private int _id;
         public int Id
         {

@@ -10,7 +10,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
         {
             this.ToTable("ProductCategory", FmDbSchema.Configuration.ToString());
             this.Property(item => item.Title).HasMaxLength(128).IsRequired();
-            // TODO: How to define one to one relation to itself
+            this.HasOptional(item => item.ParentProductCategory)
+                .WithMany(productCategory => productCategory.ProductCategories)
+                .HasForeignKey(item => item.ParentProductCategoryId);
             this.HasMany(item => item.Products)
                 .WithMany(item => item.ProductCategories)
                 .Map(item =>

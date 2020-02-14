@@ -13,6 +13,11 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class ShippingTerm : FmModelBase
     {
+        public ShippingTerm()
+        {
+            Companies = new List<Company>();
+        }
+
         private int _id;
         public int Id
         {

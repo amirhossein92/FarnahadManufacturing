@@ -13,6 +13,12 @@ namespace FarnahadManufacturing.Model.Configuration
     /// </summary>
     public class Product : FmModelBase
     {
+        public Product()
+        {
+            ProductPrices = new List<ProductPrice>();
+            ProductCategories = new List<ProductCategory>();
+        }
+
         private int _id;
         public int Id
         {

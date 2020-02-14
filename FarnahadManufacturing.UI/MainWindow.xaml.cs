@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
+using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Docking.Base;
 using FarnahadManufacturing.UI.Base.UserControl;
@@ -26,7 +27,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : DXWindow
     {
         public MainWindow()
         {
@@ -36,12 +37,6 @@ namespace FarnahadManufacturing.UI
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            DockLayoutManager.DockItemClosed += DockLayoutManagerOnDockItemClosed;
-        }
-
-        private void DockLayoutManagerOnDockItemClosed(object sender, DockItemClosedEventArgs e)
-        {
-            Console.WriteLine($"*** Closed {e.Item}");
         }
 
         private void SetToolBar(Dictionary<string, IBarItem> toolBarItems)

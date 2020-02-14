@@ -14,6 +14,12 @@ namespace FarnahadManufacturing.Model.Configuration
     public class Customer : Company
     {
         // TODO: Not sure about the inheritance => what if Customer is Person and not company!
+        public Customer()
+        {
+            CustomerGroups = new List<CustomerGroup>();
+            Locations = new List<Location>();
+        }
+
         /// <summary>
         /// حد اعتبار
         /// </summary>

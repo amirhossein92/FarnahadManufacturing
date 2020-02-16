@@ -9,6 +9,5 @@ namespace FarnahadManufacturing.UI.Common
     public static class ApplicationSetting
     {
         public static int PageRecordNumber = 10;
-
     }
 }

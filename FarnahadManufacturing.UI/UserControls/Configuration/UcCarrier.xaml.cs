@@ -123,8 +123,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             }
             else
             {
-                _activeCarrier.CreatedByUserId = 3;
-                _activeCarrier.CreatedDateTime = DateTime.Now;
+                _activeCarrier.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                _activeCarrier.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
                     _activeCarrier.CarrierServices.AddRange(_carrierServices);

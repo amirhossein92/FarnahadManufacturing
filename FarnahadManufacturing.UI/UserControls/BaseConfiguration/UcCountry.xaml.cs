@@ -67,8 +67,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
             else
             {
-                _activeCountry.CreatedByUserId = 3;
-                _activeCountry.CreatedDateTime = DateTime.Now;
+                _activeCountry.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                _activeCountry.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
                     dbContext.Countries.Add(_activeCountry);

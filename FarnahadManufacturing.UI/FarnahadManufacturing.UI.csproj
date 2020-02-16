@@ -143,6 +143,7 @@
     <Compile Include="Base\UserControl\UserControlBase.cs" />
     <Compile Include="Base\Window\FmDialogWindow.cs" />
     <Compile Include="Common\ApplicationDataStore.cs" />
+    <Compile Include="Common\ApplicationSessionService.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
     <Compile Include="Common\EncryptionUtility.cs" />
     <Compile Include="Common\ImageUtility.cs" />

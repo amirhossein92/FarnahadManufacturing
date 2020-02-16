@@ -95,8 +95,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
             else
             {
-                _activeCity.CreatedByUserId = 3;
-                _activeCity.CreatedDateTime = DateTime.Now;
+                _activeCity.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                _activeCity.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
                     dbContext.Cities.Add(_activeCity);

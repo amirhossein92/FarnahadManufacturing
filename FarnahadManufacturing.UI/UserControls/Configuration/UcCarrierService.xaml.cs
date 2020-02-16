@@ -48,8 +48,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             ReadData(ref _activeCarrierService);
             if (_activeCarrierService.Id <= 0)
             {
-                _activeCarrierService.CreatedByUserId = 3;
-                _activeCarrierService.CreatedDateTime = DateTime.Now;
+                _activeCarrierService.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                _activeCarrierService.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
             }
             ApplicationDataStore.SendData("CarrierService", _activeCarrierService);
             CloseWindow();

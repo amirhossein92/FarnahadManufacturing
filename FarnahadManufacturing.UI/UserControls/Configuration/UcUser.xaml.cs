@@ -99,14 +99,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 }
                 else
                 {
-                    _activeUser.CreatedDateTime = DateTime.Now;
+                    _activeUser.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                     using (var dbContext = new FarnahadManufacturingDbContext())
                     {
                         dbContext.Users.Add(_activeUser);
                         foreach (var locationGroup in _activeUser.LocationGroupMembers)
                         {
-                            locationGroup.CreatedByUserId = 3;
-                            locationGroup.CreatedDateTime = DateTime.Now;
+                            locationGroup.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                            locationGroup.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                         }
                         dbContext.SaveChanges();
                     }

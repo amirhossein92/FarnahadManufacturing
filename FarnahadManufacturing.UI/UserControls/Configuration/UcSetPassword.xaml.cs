@@ -52,6 +52,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                         {
                             ApplicationDataStore.SendData("CurrentPassword", password);
                             ApplicationDataStore.SendData("CurrentPasswordSalt", user.PasswordSalt);
+                            CloseWindow();
                         }
                         else
                         {
@@ -74,6 +75,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         }
 
         private void CancelButtonOnClick(object sender, RoutedEventArgs e)
+        {
+            CloseWindow();
+        }
+
+        private void CloseWindow()
         {
             var p = Parent as Grid;
             var b = p.Parent as Window;

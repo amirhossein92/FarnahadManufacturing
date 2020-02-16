@@ -1,0 +1,151 @@
+﻿<userControl:FilterUserControlBase xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+    x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Configuration"
+    xmlns:userControl="clr-namespace:FarnahadManufacturing.UI.Base.UserControl"
+    xmlns:dock="clr-namespace:FarnahadManufacturing.UI.Base.Dock"
+    xmlns:layout="clr-namespace:FarnahadManufacturing.UI.Base.Layout"
+    xmlns:input="clr-namespace:FarnahadManufacturing.UI.Base.Input"
+    xmlns:buttons="clr-namespace:FarnahadManufacturing.UI.Base.Buttons"
+    xmlns:gridControl="clr-namespace:FarnahadManufacturing.UI.Base.GridControl"
+    xmlns:columns="clr-namespace:FarnahadManufacturing.UI.Base.GridControl.Columns"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:tabControl="clr-namespace:FarnahadManufacturing.UI.Base.TabControl"
+    xmlns:listBox="clr-namespace:FarnahadManufacturing.UI.Base.ListBox"
+    xmlns:label="clr-namespace:FarnahadManufacturing.UI.Base.Label"
+    mc:Ignorable="d"
+    d:DesignHeight="450" d:DesignWidth="800">
+    <dock:FmDockLayoutManager>
+        <dock:FmDockLayoutGroup>
+            <layout:FmFilterLayoutPanel ItemWidth="*">
+                <layout:FmVerticalLayoutGroup>
+                    <layout:FmLayoutItem Label="نام کاربری: ">
+                        <input:FmTextEdit x:Name="SearchUserNameTextEdit" />
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem Label="نام: ">
+                        <input:FmTextEdit x:Name="SearchNameTextEdit" />
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                        <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem VerticalAlignment="Stretch">
+                        <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                                                         MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                            <gridControl:FmSearchGridControl.Columns>
+                                <columns:FmTextGridColumn Header="نام کاربری" FieldName="UserName" ReadOnly="True" Width="*" />
+                                <columns:FmTextGridColumn Header="نام خانوادگی" FieldName="LastName" ReadOnly="True" FmControlWidth="XXSmall"/>
+                            </gridControl:FmSearchGridControl.Columns>
+                        </gridControl:FmSearchGridControl>
+                    </layout:FmLayoutItem>
+                    <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                       ClickOnPrevious="PreviousPageButtonOnClick"
+                                                       ClickOnNext="NextPageButtonOnClick" />
+                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                        <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                    </layout:FmLayoutItem>
+                </layout:FmVerticalLayoutGroup>
+            </layout:FmFilterLayoutPanel>
+            <dxdo:DocumentPanel ItemWidth="4*">
+                <layout:FmLayoutControl Orientation="Vertical">
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کاربر"/>
+                    <tabControl:FmTabControl>
+                        <tabControl:FmTabItem Header="اطلاعات کلی">
+                            <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="نام: ">
+                                        <input:FmTextEdit x:Name="FirstNameTextEdit" />
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="نام خانوادگی: ">
+                                        <input:FmTextEdit x:Name="LastNameTextEdit" />
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="نام کاربری: ">
+                                        <input:FmTextEdit x:Name="UserNameTextEdit" />
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="مخفف: ">
+                                        <input:FmTextEdit x:Name="InitialTextEdit" />
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="پست الکترونیکی: ">
+                                        <input:FmTextEdit x:Name="EmailTextEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="شماره تلفن: ">
+                                        <input:FmTextEdit x:Name="PhoneNumberTextEdit" />
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem HorizontalContentAlignment="Left">
+                                        <buttons:FmSimpleButton Content="تنظیم رمز عبور"
+                                                        Click="SetPasswordOnClick"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                                        <input:FmCheckEdit x:Name="IsActiveCheckEdit" 
+                                                   Content="فعال"/>
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                                <layout:FmGroupBox Header="گروه کاربران">
+                                    <layout:FmHorizontalLayoutGroup>
+                                        <layout:FmLayoutItem Label="گروه کاربران موجود: " LabelPosition="Top"
+                                                                 VerticalAlignment="Stretch">
+                                            <listBox:FmListBoxEdit x:Name="AvailableGroupsListBoxEdit"
+                                                                   DisplayMember="Title" ValueMember="Id"/>
+                                        </layout:FmLayoutItem>
+                                        <layout:FmVerticalLayoutGroup VerticalAlignment="Center" Width="50">
+                                            <layout:FmLayoutItem>
+                                                <buttons:FmSimpleButton Content="+"/>
+                                            </layout:FmLayoutItem>
+                                            <layout:FmLayoutItem>
+                                                <buttons:FmSimpleButton Content="-"/>
+                                            </layout:FmLayoutItem>
+                                        </layout:FmVerticalLayoutGroup>
+                                        <layout:FmLayoutItem Label="گروه کاربران انتخاب شده: " LabelPosition="Top" 
+                                                                 VerticalAlignment="Stretch">
+                                            <listBox:FmListBoxEdit x:Name="CurrentUserGroupsListBoxEdit"
+                                                                   DisplayMember="Title" ValueMember="Id"/>
+                                        </layout:FmLayoutItem>
+                                    </layout:FmHorizontalLayoutGroup>
+                                </layout:FmGroupBox>
+                            </layout:FmVerticalLayoutGroup>
+                        </tabControl:FmTabItem>
+                        <tabControl:FmTabItem Header="گروه مکان">
+                            <layout:FmVerticalLayoutGroup>
+                                <layout:FmLayoutItem Label="موقعیت پیش فرض: ">
+                                    <input:FmComboBoxEdit x:Name="DefaultLocationGroupComboBoxEdit"/>
+                                </layout:FmLayoutItem>
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="گروه موقعیت ها" LabelPosition="Top" 
+                                                         VerticalAlignment="Stretch">
+                                        <listBox:FmListBoxEdit x:Name="AvailableLocationGroupListBoxEdit"
+                                                               DisplayMember="Title" ValueMember="Id"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmVerticalLayoutGroup VerticalAlignment="Center" Width="50">
+                                        <layout:FmLayoutItem>
+                                            <buttons:FmSimpleButton Content="+"
+                                                                    Click="AddSelectedLocationGroupToCurrentLocationGroupsOnClick"/>
+                                        </layout:FmLayoutItem>
+                                        <layout:FmLayoutItem>
+                                            <buttons:FmSimpleButton Content="-"
+                                                                    Click="RemoveSelectedLocationGroupFromCurrentLocationGroupsOnClick"/>
+                                        </layout:FmLayoutItem>
+                                    </layout:FmVerticalLayoutGroup>
+                                    <layout:FmLayoutItem Label="گروه موقعیت های انتخاب شده" LabelPosition="Top" 
+                                                         VerticalAlignment="Stretch">
+                                        <listBox:FmListBoxEdit x:Name="CurrentLocationGroupListBoxEdit"
+                                                               DisplayMember="Title" ValueMember="Id"/>
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                            </layout:FmVerticalLayoutGroup>
+                        </tabControl:FmTabItem>
+                    </tabControl:FmTabControl>
+                </layout:FmLayoutControl>
+            </dxdo:DocumentPanel>
+        </dock:FmDockLayoutGroup>
+    </dock:FmDockLayoutManager>
+</userControl:FilterUserControlBase>

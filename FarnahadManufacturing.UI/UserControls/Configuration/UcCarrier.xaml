@@ -62,7 +62,7 @@
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem>
-                            <dxe:CheckEdit x:Name="IsActiveCheckEdit" Content="فعال"/>
+                            <input:FmCheckEdit x:Name="IsActiveCheckEdit" Content="فعال"/>
                         </layout:FmLayoutItem>
                         <dxlc:LayoutItem Background="LightGray" Height="20" Label="لیست خدمات"/>
                         <layout:FmHorizontalLayoutGroup>

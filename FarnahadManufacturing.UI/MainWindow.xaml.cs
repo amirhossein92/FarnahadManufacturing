@@ -61,6 +61,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcCarrier>("پیک ها");
         }
 
+        private void UserOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcUser>("کاربران");
+        }
+
         private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase
         {
             if (!UserControlIsAlreadyOpen<T>())

@@ -102,6 +102,7 @@
     <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
     <Compile Include="Base\GridControl\FmListGridControl.cs" />
     <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
+    <Compile Include="Base\Input\FmCheckEdit.cs" />
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
     <Compile Include="Base\Input\FmTextEdit.cs" />
@@ -110,11 +111,13 @@
     <Compile Include="Base\Layout\FmDocumentPanel.cs" />
     <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
     <Compile Include="Base\Layout\FmGrid.cs" />
+    <Compile Include="Base\Layout\FmGroupBox.cs" />
     <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
     <Compile Include="Base\Layout\FmHorizontalLayoutGroup.cs" />
     <Compile Include="Base\Layout\FmLayoutControl.cs" />
     <Compile Include="Base\Layout\FmLayoutItem.cs" />
     <Compile Include="Base\Layout\FmVerticalLayoutGroup.cs" />
+    <Compile Include="Base\ListBox\FmListBoxEdit.cs" />
     <Compile Include="Base\MainPage\FmBarButtonItem.cs" />
     <Compile Include="Base\MainPage\FmBarItemSeparator.cs" />
     <Compile Include="Base\MainPage\FmBarSubItem.cs" />
@@ -123,6 +126,8 @@
     <Compile Include="Base\MainPage\FmToolBarControl.cs" />
     <Compile Include="Base\Size\FmControlWidth.cs" />
     <Compile Include="Base\Size\FmGridColumnWidth.cs" />
+    <Compile Include="Base\TabControl\FmTabControl.cs" />
+    <Compile Include="Base\TabControl\FmTabItem.cs" />
     <Compile Include="Base\UserControl\AddEditDeleteListUserControl.xaml.cs">
       <DependentUpon>AddEditDeleteListUserControl.xaml</DependentUpon>
     </Compile>
@@ -138,6 +143,7 @@
     <Compile Include="Base\Window\FmDialogWindow.cs" />
     <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
+    <Compile Include="Common\EncryptionUtility.cs" />
     <Compile Include="Common\ImageUtility.cs" />
     <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\PaginationUtility.cs" />
@@ -155,6 +161,12 @@
     </Compile>
     <Compile Include="UserControls\Configuration\UcCarrierService.xaml.cs">
       <DependentUpon>UcCarrierService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Configuration\UcSetPassword.xaml.cs">
+      <DependentUpon>UcSetPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Configuration\UcUser.xaml.cs">
+      <DependentUpon>UcUser.xaml</DependentUpon>
     </Compile>
     <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
       <SubType>Designer</SubType>
@@ -193,6 +205,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcCarrierService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcSetPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

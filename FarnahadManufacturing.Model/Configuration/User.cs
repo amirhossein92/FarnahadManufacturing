@@ -25,6 +25,7 @@ namespace FarnahadManufacturing.Model.Configuration
             LocationTypes = new List<LocationType>();
             PaymentMethods = new List<PaymentMethod>();
             PaymentTerms = new List<PaymentTerm>();
+            Provinces = new List<Province>();
             ShippingTerms = new List<ShippingTerm>();
             Trackings = new List<Tracking>();
             UomTypes = new List<UomType>();
@@ -287,6 +288,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _paymentTerms = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Province> _provinces;
+        public List<Province> Provinces
+        {
+            get => _provinces;
+            set
+            {
+                _provinces = value;
                 OnPropertyChanged();
             }
         }

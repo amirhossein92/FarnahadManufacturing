@@ -14,9 +14,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         {
             ToTable("City", FmDbSchema.BaseConfiguration.ToString());
             Property(item => item.Title).IsRequired().HasMaxLength(128);
-            HasRequired(item => item.Country)
-                .WithMany(country => country.Cities)
-                .HasForeignKey(item => item.CountryId)
+            HasRequired(item => item.Province)
+                .WithMany(province => province.Cities)
+                .HasForeignKey(item => item.ProvinceId)
                 .WillCascadeOnDelete(false);
             HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Cities)

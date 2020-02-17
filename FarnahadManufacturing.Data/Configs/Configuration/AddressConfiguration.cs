@@ -15,6 +15,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             HasOptional(item => item.Country)
                 .WithMany(country => country.Addresses)
                 .HasForeignKey(item => item.CountryId);
+            HasOptional(item => item.Province)
+                .WithMany(province => province.Addresses)
+                .HasForeignKey(item => item.ProvinceId);
             HasOptional(item => item.City)
                 .WithMany(city => city.Addresses)
                 .HasForeignKey(item => item.CityId);

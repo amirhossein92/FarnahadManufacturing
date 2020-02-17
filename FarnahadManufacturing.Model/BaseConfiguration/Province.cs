@@ -8,13 +8,14 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    /// <summary>
-    /// شهر
-    /// </summary>
-    public class City : FmModelBase
+    public class Province : FmModelBase
     {
-        public City()
+        /// <summary>
+        /// استان
+        /// </summary>
+        public Province()
         {
+            Cities = new List<City>();
             Addresses = new List<Address>();
         }
 
@@ -44,29 +45,15 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
         }
 
         /// <summary>
-        /// استان
+        /// مخفف
         /// </summary>
-        private int _provinceId;
-        public int ProvinceId
+        private string _abbreviation;
+        public string Abbreviation
         {
-            get => _provinceId;
+            get => _abbreviation;
             set
             {
-                _provinceId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// استان
-        /// </summary>
-        private Province _province;
-        public Province Province
-        {
-            get => _province;
-            set
-            {
-                _province = value;
+                _abbreviation = value;
                 OnPropertyChanged();
             }
         }
@@ -81,6 +68,45 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             set
             {
                 _description = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// کشور
+        /// </summary>
+        private int _countryId;
+        public int CountryId
+        {
+            get => _countryId;
+            set
+            {
+                _countryId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// کشور
+        /// </summary>
+        private Country _country;
+        public Country Country
+        {
+            get => _country;
+            set
+            {
+                _country = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<City> _cities;
+        public List<City> Cities
+        {
+            get => _cities;
+            set
+            {
+                _cities = value;
                 OnPropertyChanged();
             }
         }

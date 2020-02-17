@@ -145,8 +145,22 @@ namespace FarnahadManufacturing.Model.Configuration
         /// <summary>
         /// استان
         /// </summary>
-        private string _province;
-        public string Province
+        private int? _provinceId;
+        public int? ProvinceId
+        {
+            get => _provinceId;
+            set
+            {
+                _provinceId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// استان
+        /// </summary>
+        private Province _province;
+        public Province Province
         {
             get => _province;
             set

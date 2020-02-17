@@ -37,6 +37,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            CountryComboBox.SelectedIndexChanged += CountryComboBoxOnSelectedIndexChanged;
         }
 
         protected sealed override void InitialData()
@@ -58,15 +59,35 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
         }
 
-        private void LoadSearchGridControlData(string searchTitle = null, string searchCountryTitle = null)
+        private void CountryComboBoxOnSelectedIndexChanged(object sender, RoutedEventArgs e)
+        {
+            var countryId = Convert.ToInt32(CountryComboBox.EditValue);
+            LoadProvinceComboBox(countryId);
+        }
+
+        private void LoadProvinceComboBox(int countryId)
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var cityQueryable = dbContext.Cities.OrderBy(item => item.Id).Include(item => item.Country).AsQueryable();
+                var provinces = dbContext.Provinces.Where(item => item.CountryId == countryId)
+                    .Select(item => new { Title = item.Title, Id = item.Id }).ToList();
+                ProvinceComboBox.ItemsSource = provinces;
+                ProvinceComboBox.DisplayMember = "Title";
+                ProvinceComboBox.ValueMember = "Id";
+            }
+        }
+
+        private void LoadSearchGridControlData(string searchTitle = null, string searchProvinceTitle = null, string searchCountryTitle = null)
+        {
+            using (var dbContext = new FarnahadManufacturingDbContext())
+            {
+                var cityQueryable = dbContext.Cities.OrderBy(item => item.Id).Include(item => item.Province.Country).AsQueryable();
                 if (!string.IsNullOrEmpty(searchTitle))
                     cityQueryable = cityQueryable.Where(item => item.Title.Contains(searchTitle));
+                if (!string.IsNullOrEmpty(searchProvinceTitle))
+                    cityQueryable = cityQueryable.Where(item => item.Province.Title.Contains(searchProvinceTitle));
                 if (!string.IsNullOrEmpty(searchCountryTitle))
-                    cityQueryable = cityQueryable.Where(item => item.Country.Title.Contains(searchCountryTitle));
+                    cityQueryable = cityQueryable.Where(item => item.Province.Country.Title.Contains(searchCountryTitle));
                 TotalRecordsCount = cityQueryable.Count();
                 _cities = cityQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _cities;
@@ -105,7 +126,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
 
             MessageBoxService.SaveConfirmation(_activeCity.Title);
-            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
+            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
             IsEditing();
         }
 
@@ -119,7 +140,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.Cities.Remove(city);
                     dbContext.SaveChanges();
                 }
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
+                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
                 _activeCity = new City();
             }
             IsNotEditingAndAdding();
@@ -128,7 +149,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
             CurrentPage = 1;
-            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
+            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
         }
 
         private void SearchGridControlOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -151,14 +172,15 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         private void FillData(City city)
         {
             TitleTextEdit.Text = city.Title;
-            CountryComboBox.EditValue = city.CountryId;
+            CountryComboBox.EditValue = city.Province?.CountryId;
+            ProvinceComboBox.EditValue = city.Province?.Id;
             DescriptionTextEdit.Text = city.Description;
         }
 
         private void ReadData(ref City city)
         {
             city.Title = TitleTextEdit.Text;
-            city.CountryId = Convert.ToInt32(CountryComboBox.EditValue);
+            city.ProvinceId = Convert.ToInt32(ProvinceComboBox.EditValue);
             city.Description = DescriptionTextEdit.Text;
         }
 
@@ -167,7 +189,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             if (CurrentPage > 1)
             {
                 CurrentPage--;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
+                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
             }
         }
 
@@ -176,7 +198,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
             {
                 CurrentPage++;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchCountryTextEdit.Text);
+                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
             }
         }
 

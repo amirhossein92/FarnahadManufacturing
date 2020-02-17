@@ -59,6 +59,7 @@
     <Compile Include="Configs\BaseConfiguration\LocationTypeConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\PaymentMethodConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\PaymentTermConfiguration.cs" />
+    <Compile Include="Configs\BaseConfiguration\ProvinceConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\ShippingTermConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\UomTypeConfiguration.cs" />
     <Compile Include="Configs\Configuration\AddressConfiguration.cs" />
@@ -109,6 +110,10 @@
     <Compile Include="Migrations\202002171500208_cleaned_config_props.designer.cs">
       <DependentUpon>202002171500208_cleaned_config_props.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002171520216_added_province.cs" />
+    <Compile Include="Migrations\202002171520216_added_province.designer.cs">
+      <DependentUpon>202002171520216_added_province.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -140,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002171500208_cleaned_config_props.resx">
       <DependentUpon>202002171500208_cleaned_config_props.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002171520216_added_province.resx">
+      <DependentUpon>202002171520216_added_province.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

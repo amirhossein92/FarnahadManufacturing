@@ -14,6 +14,7 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
         {
             ToTable("Country", FmDbSchema.BaseConfiguration.ToString());
             Property(item => item.Title).IsRequired().HasMaxLength(128);
+            Property(item => item.Abbreviation).IsRequired().HasMaxLength(4);
             HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Countries)
                 .HasForeignKey(item => item.CreatedByUserId)

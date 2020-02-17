@@ -15,7 +15,7 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     {
         public Country()
         {
-            Cities = new List<City>();
+            Provinces = new List<Province>();
             Addresses = new List<Address>();
         }
 
@@ -45,6 +45,20 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
         }
 
         /// <summary>
+        /// مخفف
+        /// </summary>
+        private string _abbreviation;
+        public string Abbreviation
+        {
+            get => _abbreviation;
+            set
+            {
+                _abbreviation = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
         /// توضیحات
         /// </summary>
         private string _description;
@@ -58,13 +72,13 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
-        private List<City> _cities;
-        public List<City> Cities
+        private List<Province> _provinces;
+        public List<Province> Provinces
         {
-            get => _cities;
+            get => _provinces;
             set
             {
-                _cities = value;
+                _provinces = value;
                 OnPropertyChanged();
             }
         }

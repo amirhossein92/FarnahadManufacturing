@@ -26,6 +26,7 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<LocationType> LocationTypes { get; set; }
         public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
         public virtual DbSet<PaymentTerm> PaymentTerms { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<ShippingTerm> ShippingTerms { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
         public virtual DbSet<UomType> UomTypes { get; set; }
@@ -64,6 +65,7 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new LocationTypeConfiguration());
             modelBuilder.Configurations.Add(new PaymentMethodConfiguration());
             modelBuilder.Configurations.Add(new PaymentTermConfiguration());
+            modelBuilder.Configurations.Add(new ProvinceConfiguration());
             modelBuilder.Configurations.Add(new ShippingTermConfiguration());
             modelBuilder.Configurations.Add(new TrackingConfiguration());
             modelBuilder.Configurations.Add(new UomTypeConfiguration());

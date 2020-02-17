@@ -50,6 +50,8 @@ namespace FarnahadManufacturing.UI.Base.UserControl
             ToolBarItems.Add(deleteButton.Name, deleteButton);
         }
 
+        public abstract void LoadSearchGridControl();
+
         private void AddButtonOnToolBarItemClick(object sender, ItemClickEventArgs e)
         {
             OnAddToolBarItem();

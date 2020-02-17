@@ -76,6 +76,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             }
         }
 
+        public override void LoadSearchGridControl()
+        {
+            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
+        }
+
         protected override void OnAddToolBarItem()
         {
             _activeCarrier = new Carrier();
@@ -134,7 +139,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             }
 
             MessageBoxService.SaveConfirmation(_activeCarrier.Title);
-            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
+            LoadSearchGridControl();
             IsEditing();
         }
 
@@ -149,7 +154,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     dbContext.SaveChanges();
                 }
 
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
+                LoadSearchGridControl();
                 _activeCarrier = new Carrier();
             }
 
@@ -159,7 +164,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
             CurrentPage = 1;
-            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
+            LoadSearchGridControl();
         }
 
         private void SearchGridControlOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -177,7 +182,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             if (CurrentPage > 1)
             {
                 CurrentPage--;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
+                LoadSearchGridControl();
             }
         }
 
@@ -186,7 +191,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
             {
                 CurrentPage++;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchStatusComboBoxEdit.SelectedItemValue);
+                LoadSearchGridControl();
             }
         }
 

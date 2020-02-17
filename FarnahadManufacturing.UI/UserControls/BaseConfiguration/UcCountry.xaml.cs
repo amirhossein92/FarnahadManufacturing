@@ -47,6 +47,11 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             IsNotEditingAndAdding();
         }
 
+        public override void LoadSearchGridControl()
+        {
+            LoadSearchGridControlData(SearchTitleTextEdit.Text);
+        }
+
         protected override void OnAddToolBarItem()
         {
             _activeCountry = new Country();
@@ -77,7 +82,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
 
             MessageBoxService.SaveConfirmation(_activeCountry.Title);
-            LoadSearchGridControlData(SearchTitleTextEdit.Text);
+            LoadSearchGridControl();
             IsEditing();
         }
 
@@ -91,7 +96,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.Countries.Remove(country);
                     dbContext.SaveChanges();
                 }
-                LoadSearchGridControlData(SearchTitleTextEdit.Text);
+                LoadSearchGridControl();
                 _activeCountry = new Country();
                 MainLayoutGroup.IsEnabled = false;
             }
@@ -116,7 +121,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            LoadSearchGridControlData(SearchTitleTextEdit.Text);
+            LoadSearchGridControl();
         }
 
         private void ViewButtonOnClick(object sender, RoutedEventArgs e)
@@ -147,7 +152,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             if (CurrentPage > 1)
             {
                 CurrentPage--;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text);
+                LoadSearchGridControl();
             }
         }
 
@@ -156,7 +161,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             if (CurrentPage <= (TotalRecordsCount / ApplicationSetting.PageRecordNumber))
             {
                 CurrentPage++;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text);
+                LoadSearchGridControl();
             }
         }
 

@@ -77,6 +77,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CurrentLocationGroupListBoxEdit.ItemsSource = new ObservableCollection<LocationGroup>();
         }
 
+        public override void LoadSearchGridControl()
+        {
+            LoadSearchGridControlData(SearchUserNameTextEdit.Text, SearchNameTextEdit.Text);
+        }
+
         protected override void OnAddToolBarItem()
         {
             _activeUser = new User();
@@ -118,7 +123,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             }
 
             MessageBoxService.SaveConfirmation(_activeUser.UserName);
-            LoadSearchGridControlData(SearchUserNameTextEdit.Text, SearchNameTextEdit.Text);
+            LoadSearchGridControl();
             IsEditing();
         }
 
@@ -133,7 +138,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     dbContext.SaveChanges();
                 }
 
-                LoadSearchGridControlData(SearchUserNameTextEdit.Text, SearchNameTextEdit.Text);
+                LoadSearchGridControl();
                 _activeUser = new User();
             }
 
@@ -161,7 +166,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            LoadSearchGridControlData(SearchUserNameTextEdit.Text, SearchNameTextEdit.Text);
+            LoadSearchGridControl();
         }
 
         private void SearchGridControlOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -187,7 +192,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             if (CurrentPage > 1)
             {
                 CurrentPage--;
-                LoadSearchGridControlData(SearchUserNameTextEdit.Text, SearchNameTextEdit.Text);
+                LoadSearchGridControl();
             }
         }
 
@@ -196,7 +201,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
             {
                 CurrentPage++;
-                LoadSearchGridControlData(SearchUserNameTextEdit.Text, SearchNameTextEdit.Text);
+                LoadSearchGridControl();
             }
         }
 

@@ -96,6 +96,11 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
         }
 
+        public override void LoadSearchGridControl()
+        {
+            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
+        }
+
         protected override void OnAddToolBarItem()
         {
             _activeCity = new City();
@@ -126,7 +131,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             }
 
             MessageBoxService.SaveConfirmation(_activeCity.Title);
-            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
+            LoadSearchGridControl();
             IsEditing();
         }
 
@@ -140,7 +145,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.Cities.Remove(city);
                     dbContext.SaveChanges();
                 }
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
+                LoadSearchGridControl();
                 _activeCity = new City();
             }
             IsNotEditingAndAdding();
@@ -149,7 +154,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
             CurrentPage = 1;
-            LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
+            LoadSearchGridControl();
         }
 
         private void SearchGridControlOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -189,7 +194,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             if (CurrentPage > 1)
             {
                 CurrentPage--;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
+                LoadSearchGridControl();
             }
         }
 
@@ -198,7 +203,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
             {
                 CurrentPage++;
-                LoadSearchGridControlData(SearchTitleTextEdit.Text, SearchProvinceTextEdit.Text, SearchCountryTextEdit.Text);
+                LoadSearchGridControl();
             }
         }
 

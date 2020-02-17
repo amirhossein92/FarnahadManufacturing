@@ -8,21 +8,18 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public LocationConfiguration()
         {
-            this.ToTable("Location", FmDbSchema.Configuration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.HasRequired(item => item.LocationType)
+            ToTable("Location", FmDbSchema.Configuration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            HasRequired(item => item.LocationType)
                 .WithMany(locationType => locationType.Locations)
                 .HasForeignKey(item => item.LocationTypeId);
-            this.HasRequired(item => item.LocationGroup)
+            HasRequired(item => item.LocationGroup)
                 .WithMany(locationGroup => locationGroup.Locations)
                 .HasForeignKey(item => item.LocationGroupId);
-            this.HasOptional(item => item.DefaultCustomer)
+            HasOptional(item => item.DefaultCustomer)
                 .WithMany(customer => customer.Locations)
                 .HasForeignKey(item => item.DefaultCustomerId);
-            this.HasMany(item => item.Parts)
-                .WithOptional(part => part.DefaultLocation)
-                .HasForeignKey(part => part.DefaultLocationId);
-            this.HasRequired(item => item.CreatedByUser)
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Locations)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

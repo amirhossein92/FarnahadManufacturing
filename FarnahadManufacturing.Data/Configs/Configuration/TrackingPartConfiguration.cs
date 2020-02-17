@@ -12,14 +12,14 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public TrackingPartConfiguration()
         {
-            this.ToTable("TrackingPart", FmDbSchema.Configuration.ToString());
-            this.HasRequired(item => item.Tracking)
+            ToTable("TrackingPart", FmDbSchema.Configuration.ToString());
+            HasRequired(item => item.Tracking)
                 .WithMany(tracking => tracking.TrackingParts)
                 .HasForeignKey(item => item.TrackingId);
-            this.HasRequired(item => item.Part)
+            HasRequired(item => item.Part)
                 .WithMany(part => part.TrackingParts)
                 .HasForeignKey(item => item.PartId);
-            this.HasRequired(item => item.CreatedByUser)
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.TrackingParts)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

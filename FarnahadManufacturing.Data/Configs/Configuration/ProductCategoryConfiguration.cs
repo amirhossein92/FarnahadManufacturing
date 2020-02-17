@@ -8,20 +8,12 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public ProductCategoryConfiguration()
         {
-            this.ToTable("ProductCategory", FmDbSchema.Configuration.ToString());
-            this.Property(item => item.Title).HasMaxLength(128).IsRequired();
-            this.HasOptional(item => item.ParentProductCategory)
+            ToTable("ProductCategory", FmDbSchema.Configuration.ToString());
+            Property(item => item.Title).HasMaxLength(128).IsRequired();
+            HasOptional(item => item.ParentProductCategory)
                 .WithMany(productCategory => productCategory.ProductCategories)
                 .HasForeignKey(item => item.ParentProductCategoryId);
-            this.HasMany(item => item.Products)
-                .WithMany(item => item.ProductCategories)
-                .Map(item =>
-                {
-                    item.ToTable("ProductProductCategory", FmDbSchema.Configuration.ToString());
-                    item.MapLeftKey("ProductCategoryId");
-                    item.MapRightKey("ProductId");
-                });
-            this.HasRequired(item => item.CreatedByUser)
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.ProductCategories)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

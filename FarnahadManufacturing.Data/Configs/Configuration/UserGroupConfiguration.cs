@@ -12,9 +12,9 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public UserGroupConfiguration()
         {
-            this.ToTable("UserGroup", FmDbSchema.Configuration.ToString());
-            this.Property(item => item.Title).HasMaxLength(128).IsRequired();
-            this.HasMany(item => item.MembersUsers)
+            ToTable("UserGroup", FmDbSchema.Configuration.ToString());
+            Property(item => item.Title).HasMaxLength(128).IsRequired();
+            HasMany(item => item.MembersUsers)
                 .WithMany(user => user.UserGroupsMembers)
                 .Map(item =>
                 {
@@ -22,7 +22,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("UserGroupId");
                     item.MapRightKey("UserId");
                 });
-            this.HasRequired(item => item.CreatedByUser)
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.UserGroups)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

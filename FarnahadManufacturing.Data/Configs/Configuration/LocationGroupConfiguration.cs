@@ -8,12 +8,12 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public LocationGroupConfiguration()
         {
-            this.ToTable("LocationGroup", FmDbSchema.Configuration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.HasOptional(item => item.Category)
+            ToTable("LocationGroup", FmDbSchema.Configuration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            HasOptional(item => item.Category)
                 .WithMany(category => category.LocationGroups)
                 .HasForeignKey(item => item.CategoryId);
-            this.HasMany(item => item.Users)
+            HasMany(item => item.Users)
                 .WithMany(user => user.LocationGroupMembers)
                 .Map(item =>
                 {
@@ -21,10 +21,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("LocationGroupId");
                     item.MapRightKey("UserId");
                 });
-            this.HasMany(item => item.Locations)
-                .WithRequired(location => location.LocationGroup)
-                .HasForeignKey(location => location.LocationGroupId);
-            this.HasRequired(item => item.CreatedByUser)
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.LocationGroups)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

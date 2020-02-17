@@ -8,16 +8,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public CarrierConfiguration()
         {
-            this.ToTable("Carrier", FmDbSchema.Configuration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.Property(item => item.Scac).HasMaxLength(4);
-            this.HasMany(item => item.CarrierServices)
-                .WithRequired(carrierService => carrierService.Carrier)
-                .HasForeignKey(carrierService => carrierService.CarrierId);
-            this.HasMany(item => item.Companies)
-                .WithOptional(company => company.DefaultCarrier)
-                .HasForeignKey(company => company.DefaultCarrierId);
-            this.HasRequired(item => item.CreatedByUser)
+            ToTable("Carrier", FmDbSchema.Configuration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            Property(item => item.Scac).HasMaxLength(4);
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Carriers)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

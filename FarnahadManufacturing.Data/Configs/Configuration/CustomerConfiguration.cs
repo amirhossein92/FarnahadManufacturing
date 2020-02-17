@@ -12,22 +12,22 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public CustomerConfiguration()
         {
-            this.ToTable("Customer", FmDbSchema.Configuration.ToString());
-            this.HasOptional(item => item.DefaultPaymentTerm)
+            ToTable("Customer", FmDbSchema.Configuration.ToString());
+            HasOptional(item => item.DefaultPaymentTerm)
                 .WithMany(paymentTerm => paymentTerm.Customers)
                 .HasForeignKey(item => item.DefaultPaymentTermId);
-            this.HasOptional(item => item.Salesperson)
+            HasOptional(item => item.Salesperson)
                 .WithMany(user => user.CustomerSalespersons)
                 .HasForeignKey(item => item.SalespersonId);
-            this.HasOptional(item => item.Category)
+            HasOptional(item => item.Category)
                 .WithMany(user => user.Customers)
                 .HasForeignKey(item => item.CategoryId);
-            this.Property(item => item.AccountNumber).HasMaxLength(64);
-            this.HasRequired(item => item.TaxRate)
+            Property(item => item.AccountNumber).HasMaxLength(64);
+            HasRequired(item => item.TaxRate)
                 .WithMany(taxRate => taxRate.Customers)
                 .HasForeignKey(item => item.TaxRateId);
-            this.Property(item => item.TaxExemptNumber).HasMaxLength(64);
-            this.HasMany(item => item.CustomerGroups)
+            Property(item => item.TaxExemptNumber).HasMaxLength(64);
+            HasMany(item => item.CustomerGroups)
                 .WithMany(customerGroup => customerGroup.Customers)
                 .Map(item =>
                 {
@@ -35,9 +35,6 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                     item.MapLeftKey("CustomerId");
                     item.MapRightKey("CustomerGroupId");
                 });
-            this.HasMany(item => item.Locations)
-                .WithOptional(location => location.DefaultCustomer)
-                .HasForeignKey(location => location.DefaultCustomerId);
         }
     }
 }

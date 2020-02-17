@@ -12,15 +12,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
     {
         public CountryConfiguration()
         {
-            this.ToTable("Country", FmDbSchema.BaseConfiguration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.HasMany(item => item.Cities)
-                .WithRequired(city => city.Country)
-                .HasForeignKey(city => city.CountryId);
-            this.HasMany(item => item.Addresses)
-                .WithOptional(address => address.Country)
-                .HasForeignKey(address => address.CountryId);
-            this.HasRequired(item => item.CreatedByUser)
+            ToTable("Country", FmDbSchema.BaseConfiguration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Countries)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

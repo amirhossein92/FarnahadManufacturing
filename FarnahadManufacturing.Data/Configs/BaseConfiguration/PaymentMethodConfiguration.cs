@@ -12,8 +12,8 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
     {
         public PaymentMethodConfiguration()
         {
-            this.ToTable("PaymentMethod", FmDbSchema.BaseConfiguration.ToString());
-            this.HasRequired(item => item.CreatedByUser)
+            ToTable("PaymentMethod", FmDbSchema.BaseConfiguration.ToString());
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.PaymentMethods)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

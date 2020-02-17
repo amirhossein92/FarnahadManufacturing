@@ -105,6 +105,10 @@
     <Compile Include="Migrations\202002171449337_added_userGroup.designer.cs">
       <DependentUpon>202002171449337_added_userGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002171500208_cleaned_config_props.cs" />
+    <Compile Include="Migrations\202002171500208_cleaned_config_props.designer.cs">
+      <DependentUpon>202002171500208_cleaned_config_props.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002171449337_added_userGroup.resx">
       <DependentUpon>202002171449337_added_userGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002171500208_cleaned_config_props.resx">
+      <DependentUpon>202002171500208_cleaned_config_props.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,9 +7,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
     {
         public FobTypeConfiguration()
         {
-            this.ToTable("FobType", FmDbSchema.BaseConfiguration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.HasRequired(item => item.CreatedByUser)
+            ToTable("FobType", FmDbSchema.BaseConfiguration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.FobTypes)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

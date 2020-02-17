@@ -12,7 +12,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public MyCompanyConfiguration()
         {
-            this.ToTable("MyCompany", FmDbSchema.Configuration.ToString());
+            ToTable("MyCompany", FmDbSchema.Configuration.ToString());
         }
     }
 }

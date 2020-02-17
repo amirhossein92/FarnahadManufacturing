@@ -7,12 +7,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
     {
         public AddressTypeConfiguration()
         {
-            this.ToTable("AddressType", FmDbSchema.BaseConfiguration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            this.HasMany(item => item.Addresses)
-                .WithRequired(address => address.AddressType)
-                .HasForeignKey(address => address.AddressTypeId);
-            this.HasRequired(item => item.CreatedByUser)
+            ToTable("AddressType", FmDbSchema.BaseConfiguration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.AddressTypes)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

@@ -7,19 +7,9 @@ namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
     {
         public CategoryConfiguration()
         {
-            this.ToTable("Category", FmDbSchema.BaseConfiguration.ToString());
-            this.Property(item => item.Title).IsRequired().HasMaxLength(128);
-            // TODO: one to one relationship config
-            this.HasMany(item => item.Customers)
-                .WithOptional(customer => customer.Category)
-                .HasForeignKey(customer => customer.CategoryId);
-            this.HasMany(item => item.LocationGroups)
-                .WithOptional(locationGroups => locationGroups.Category)
-                .HasForeignKey(locationGroups => locationGroups.CategoryId);
-            this.HasMany(item => item.Products)
-                .WithOptional(product => product.Category)
-                .HasForeignKey(product => product.CategoryId);
-            this.HasRequired(item => item.CreatedByUser)
+            ToTable("Category", FmDbSchema.BaseConfiguration.ToString());
+            Property(item => item.Title).IsRequired().HasMaxLength(128);
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Categories)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

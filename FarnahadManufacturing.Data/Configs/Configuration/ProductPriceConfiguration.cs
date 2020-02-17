@@ -12,11 +12,11 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
     {
         public ProductPriceConfiguration()
         {
-            this.ToTable("ProductPrice", FmDbSchema.Configuration.ToString());
-            this.HasRequired(item => item.Product)
+            ToTable("ProductPrice", FmDbSchema.Configuration.ToString());
+            HasRequired(item => item.Product)
                 .WithMany(product => product.ProductPrices)
                 .HasForeignKey(item => item.ProductId);
-            this.HasRequired(item => item.CreatedByUser)
+            HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.ProductPrices)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);

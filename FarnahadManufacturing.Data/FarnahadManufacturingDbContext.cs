@@ -49,6 +49,7 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<TrackingPart> TrackingParts { get; set; }
         public virtual DbSet<Uom> Uoms { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserGroup> UsersGroups { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -86,6 +87,7 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new TrackingPartConfiguration());
             modelBuilder.Configurations.Add(new UomConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new UserGroupConfiguration());
             modelBuilder.Configurations.Add(new VendorConfiguration());
         }
     }

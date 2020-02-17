@@ -81,6 +81,7 @@
     <Compile Include="Configs\Configuration\UserConfiguration.cs" />
     <Compile Include="Configs\Configuration\UomConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\TrackingConfiguration.cs" />
+    <Compile Include="Configs\Configuration\UserGroupConfiguration.cs" />
     <Compile Include="Configs\Configuration\VendorConfiguration.cs" />
     <Compile Include="Configs\FmDbSchema.cs" />
     <Compile Include="FarnahadManufacturingDbContext.cs" />
@@ -99,6 +100,10 @@
     <Compile Include="Migrations\202002131826072_changed_company.cs" />
     <Compile Include="Migrations\202002131826072_changed_company.designer.cs">
       <DependentUpon>202002131826072_changed_company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002171449337_added_userGroup.cs" />
+    <Compile Include="Migrations\202002171449337_added_userGroup.designer.cs">
+      <DependentUpon>202002171449337_added_userGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002131826072_changed_company.resx">
       <DependentUpon>202002131826072_changed_company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002171449337_added_userGroup.resx">
+      <DependentUpon>202002171449337_added_userGroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

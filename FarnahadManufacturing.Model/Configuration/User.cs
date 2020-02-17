@@ -500,6 +500,28 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        private List<UserGroup> _userGroupsMembers;
+        public List<UserGroup> UserGroupsMembers
+        {
+            get => _userGroupsMembers;
+            set
+            {
+                _userGroupsMembers = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<UserGroup> _userGroups;
+        public List<UserGroup> UserGroups
+        {
+            get => _userGroups;
+            set
+            {
+                _userGroups = value;
+                OnPropertyChanged();
+            }
+        }
+
         private DateTime _createdDateTime;
         public DateTime CreatedDateTime
         {

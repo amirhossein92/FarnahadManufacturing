@@ -75,6 +75,7 @@
     <Compile Include="Configuration\TrackingPart.cs" />
     <Compile Include="Configuration\Uom.cs" />
     <Compile Include="Configuration\User.cs" />
+    <Compile Include="Configuration\UserGroup.cs" />
     <Compile Include="Configuration\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

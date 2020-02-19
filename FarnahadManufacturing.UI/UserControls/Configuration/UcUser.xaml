@@ -24,10 +24,10 @@
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
                 <layout:FmVerticalLayoutGroup>
-                    <layout:FmLayoutItem Label="نام کاربری: ">
+                    <layout:FmLayoutItem Label="نام کاربری">
                         <input:FmTextEdit x:Name="SearchUserNameTextEdit" />
                     </layout:FmLayoutItem>
-                    <layout:FmLayoutItem Label="نام: ">
+                    <layout:FmLayoutItem Label="نام">
                         <input:FmTextEdit x:Name="SearchNameTextEdit" />
                     </layout:FmLayoutItem>
                     <layout:FmLayoutItem HorizontalContentAlignment="Right">
@@ -57,26 +57,26 @@
                         <tabControl:FmTabItem Header="اطلاعات کلی">
                             <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
                                 <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Label="نام: ">
+                                    <layout:FmLayoutItem Label="نام">
                                         <input:FmTextEdit x:Name="FirstNameTextEdit" />
                                     </layout:FmLayoutItem>
-                                    <layout:FmLayoutItem Label="نام خانوادگی: ">
+                                    <layout:FmLayoutItem Label="نام خانوادگی">
                                         <input:FmTextEdit x:Name="LastNameTextEdit" />
                                     </layout:FmLayoutItem>
                                 </layout:FmHorizontalLayoutGroup>
                                 <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Label="نام کاربری: ">
+                                    <layout:FmLayoutItem Label="نام کاربری">
                                         <input:FmTextEdit x:Name="UserNameTextEdit" />
                                     </layout:FmLayoutItem>
-                                    <layout:FmLayoutItem Label="مخفف: ">
+                                    <layout:FmLayoutItem Label="مخفف">
                                         <input:FmTextEdit x:Name="InitialTextEdit" />
                                     </layout:FmLayoutItem>
                                 </layout:FmHorizontalLayoutGroup>
                                 <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Label="پست الکترونیکی: ">
+                                    <layout:FmLayoutItem Label="پست الکترونیکی">
                                         <input:FmTextEdit x:Name="EmailTextEdit"/>
                                     </layout:FmLayoutItem>
-                                    <layout:FmLayoutItem Label="شماره تلفن: ">
+                                    <layout:FmLayoutItem Label="شماره تلفن">
                                         <input:FmTextEdit x:Name="PhoneNumberTextEdit" />
                                     </layout:FmLayoutItem>
                                 </layout:FmHorizontalLayoutGroup>
@@ -92,7 +92,7 @@
                                 </layout:FmHorizontalLayoutGroup>
                                 <layout:FmGroupBox Header="گروه کاربران">
                                     <layout:FmHorizontalLayoutGroup>
-                                        <layout:FmLayoutItem Label="گروه کاربران موجود: " LabelPosition="Top"
+                                        <layout:FmLayoutItem Label="گروه کاربران موجود" LabelPosition="Top"
                                                                  VerticalAlignment="Stretch">
                                             <listBox:FmListBoxEdit x:Name="AvailableGroupsListBoxEdit"
                                                                    DisplayMember="Title" ValueMember="Id"/>
@@ -105,7 +105,7 @@
                                                 <buttons:FmSimpleButton Content="-"/>
                                             </layout:FmLayoutItem>
                                         </layout:FmVerticalLayoutGroup>
-                                        <layout:FmLayoutItem Label="گروه کاربران انتخاب شده: " LabelPosition="Top" 
+                                        <layout:FmLayoutItem Label="گروه کاربران انتخاب شده" LabelPosition="Top" 
                                                                  VerticalAlignment="Stretch">
                                             <listBox:FmListBoxEdit x:Name="CurrentUserGroupsListBoxEdit"
                                                                    DisplayMember="Title" ValueMember="Id"/>
@@ -116,7 +116,7 @@
                         </tabControl:FmTabItem>
                         <tabControl:FmTabItem Header="گروه مکان">
                             <layout:FmVerticalLayoutGroup>
-                                <layout:FmLayoutItem Label="موقعیت پیش فرض: ">
+                                <layout:FmLayoutItem Label="موقعیت پیش فرض">
                                     <input:FmComboBoxEdit x:Name="DefaultLocationGroupComboBoxEdit"/>
                                 </layout:FmLayoutItem>
                                 <layout:FmHorizontalLayoutGroup>

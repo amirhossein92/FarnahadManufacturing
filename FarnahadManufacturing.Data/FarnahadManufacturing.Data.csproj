@@ -114,6 +114,10 @@
     <Compile Include="Migrations\202002171520216_added_province.designer.cs">
       <DependentUpon>202002171520216_added_province.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002191530129_changed_address_default_prop_to_bool.cs" />
+    <Compile Include="Migrations\202002191530129_changed_address_default_prop_to_bool.designer.cs">
+      <DependentUpon>202002191530129_changed_address_default_prop_to_bool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002171520216_added_province.resx">
       <DependentUpon>202002171520216_added_province.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002191530129_changed_address_default_prop_to_bool.resx">
+      <DependentUpon>202002191530129_changed_address_default_prop_to_bool.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 
@@ -19,8 +20,6 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             HasOptional(item => item.DefaultShippingTerm)
                 .WithMany(shippingTerm => shippingTerm.Companies)
                 .HasForeignKey(item => item.DefaultShippingTermId);
-            HasOptional(item => item.DefaultAddress)
-                .WithOptionalDependent(address => address.CompanyDefaultAddress);
             HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.Companies)
                 .HasForeignKey(item => item.CreatedByUserId)

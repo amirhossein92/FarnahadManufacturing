@@ -259,24 +259,13 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private int _companyDefaultAddressId;
-        public int CompanyDefaultAddressId
+        private bool _isDefaultAddress;
+        public bool IsDefaultAddress
         {
-            get => _companyDefaultAddressId;
+            get => _isDefaultAddress;
             set
             {
-                _companyDefaultAddressId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private Company _companyDefaultAddress;
-        public Company CompanyDefaultAddress
-        {
-            get => _companyDefaultAddress;
-            set
-            {
-                _companyDefaultAddress = value;
+                _isDefaultAddress = value;
                 OnPropertyChanged();
             }
         }

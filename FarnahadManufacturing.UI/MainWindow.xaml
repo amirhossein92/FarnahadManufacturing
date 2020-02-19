@@ -73,7 +73,7 @@
                 <accordion:FmAccordionItem Header="خرید"
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Large.svg}">
                     <accordion:FmAccordionItem.Items>
-                        <accordion:FmAccordionItem Header="فروشنده ها"
+                        <accordion:FmAccordionItem Header="فروشنده ها" MouseDoubleClick="VendorOnMouseDoubleClick"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Store_Small.svg}" />
                         <accordion:FmAccordionItem Header="سفارش خرید"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Small.svg}" />

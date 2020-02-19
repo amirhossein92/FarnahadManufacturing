@@ -99,9 +99,12 @@
     <Compile Include="Base\Dock\FmDockDocumentGroup.cs" />
     <Compile Include="Base\Dock\FmDockLayoutGroup.cs" />
     <Compile Include="Base\Dock\FmDockLayoutManager.cs" />
+    <Compile Include="Base\GridControl\Columns\FmCheckBoxGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
     <Compile Include="Base\GridControl\FmListGridControl.cs" />
     <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
+    <Compile Include="Base\Image\FmImageEdit.cs" />
     <Compile Include="Base\Input\FmCheckEdit.cs" />
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
@@ -170,6 +173,9 @@
     <Compile Include="UserControls\Configuration\UcUser.xaml.cs">
       <DependentUpon>UcUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcVendor.xaml.cs">
+      <DependentUpon>UcVendor.xaml</DependentUpon>
+    </Compile>
     <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -215,6 +221,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcVendor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

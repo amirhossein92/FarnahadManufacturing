@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using DevExpress.Xpf.Editors.Settings;
 using DevExpress.Xpf.Grid;
-using FarnahadManufacturing.UI.Base.Size;
 
 namespace FarnahadManufacturing.UI.Base.GridControl.Columns
 {
-    public class FmTextGridColumn : FmGridColumn
+    public class FmCheckBoxGridColumn : FmGridColumn
     {
-        public FmTextGridColumn()
+        public FmCheckBoxGridColumn()
         {
-
+            EditSettings = new CheckEditSettings();
         }
-
 
     }
 }

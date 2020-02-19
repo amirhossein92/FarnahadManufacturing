@@ -22,10 +22,10 @@
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
                 <layout:FmVerticalLayoutGroup>
-                    <layout:FmLayoutItem Label="عنوان: ">
+                    <layout:FmLayoutItem Label="عنوان">
                         <input:FmTextEdit x:Name="SearchTitleTextEdit" />
                     </layout:FmLayoutItem>
-                    <layout:FmLayoutItem Label="وضعیت: ">
+                    <layout:FmLayoutItem Label="وضعیت">
                         <input:FmComboBoxEdit x:Name="SearchStatusComboBoxEdit" />
                     </layout:FmLayoutItem>
                     <layout:FmLayoutItem HorizontalContentAlignment="Right">
@@ -52,13 +52,13 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="پیک"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
-                        <layout:FmLayoutItem Label="عنوان: ">
+                        <layout:FmLayoutItem Label="عنوان">
                             <input:FmTextEdit x:Name="TitleTextEdit" />
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="کد استاندارد پیک: ">
+                        <layout:FmLayoutItem Label="کد استاندارد پیک">
                             <input:FmTextEdit x:Name="ScacTextEdit"/>
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="توضیحات: " LabelPosition="Top">
+                        <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem>

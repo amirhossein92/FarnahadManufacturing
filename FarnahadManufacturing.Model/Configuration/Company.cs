@@ -141,34 +141,6 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        /// <summary>
-        /// آدرس پیش فرض
-        /// </summary>
-        private int? _defaultAddressId;
-        public int? DefaultAddressId
-        {
-            get => _defaultAddressId;
-            set
-            {
-                _defaultAddressId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// آدرس پیش فرض
-        /// </summary>
-        private Address _defaultAddress;
-        public Address DefaultAddress
-        {
-            get => _defaultAddress;
-            set
-            {
-                _defaultAddress = value;
-                OnPropertyChanged();
-            }
-        }
-
         private List<Address> _address;
         public List<Address> Addresses
         {

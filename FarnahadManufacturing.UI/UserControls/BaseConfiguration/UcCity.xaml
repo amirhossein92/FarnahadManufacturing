@@ -22,13 +22,13 @@
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
                 <layout:FmVerticalLayoutGroup>
-                    <layout:FmLayoutItem Label="عنوان: ">
+                    <layout:FmLayoutItem Label="عنوان">
                         <input:FmTextEdit x:Name="SearchTitleTextEdit" />
                     </layout:FmLayoutItem>
-                    <dxlc:LayoutItem Label="استان: ">
+                    <dxlc:LayoutItem Label="استان">
                         <input:FmTextEdit x:Name="SearchProvinceTextEdit" />
                     </dxlc:LayoutItem>
-                    <dxlc:LayoutItem Label="کشور: ">
+                    <dxlc:LayoutItem Label="کشور">
                         <input:FmTextEdit x:Name="SearchCountryTextEdit" />
                     </dxlc:LayoutItem>
                     <layout:FmLayoutItem HorizontalContentAlignment="Right">
@@ -57,16 +57,16 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="شهر"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" Orientation="Vertical" IsEnabled="False">
-                        <layout:FmLayoutItem Label="نام: ">
+                        <layout:FmLayoutItem Label="نام">
                             <input:FmTextEdit x:Name="TitleTextEdit"/>
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="کشور: ">
+                        <layout:FmLayoutItem Label="کشور">
                             <input:FmComboBoxEdit x:Name="CountryComboBox"/>
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="استان: ">
+                        <layout:FmLayoutItem Label="استان">
                             <input:FmComboBoxEdit x:Name="ProvinceComboBox"/>
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="توضیحات: " LabelPosition="Top">
+                        <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit"/>
                         </layout:FmLayoutItem>
                     </layout:FmVerticalLayoutGroup>

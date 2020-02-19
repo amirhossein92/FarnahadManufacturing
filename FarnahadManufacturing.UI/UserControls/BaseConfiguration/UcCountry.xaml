@@ -20,7 +20,7 @@
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
                 <layout:FmVerticalLayoutGroup>
-                    <layout:FmLayoutItem Label="عنوان: ">
+                    <layout:FmLayoutItem Label="عنوان">
                         <input:FmTextEdit x:Name="SearchTitleTextEdit"/>
                     </layout:FmLayoutItem>
                     <layout:FmLayoutItem HorizontalContentAlignment="Right">
@@ -47,10 +47,10 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کشور"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
-                        <layout:FmLayoutItem Label="Name: ">
+                        <layout:FmLayoutItem Label="نام">
                             <input:FmTextEdit x:Name="NameTextEdit" />
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="Description: " LabelPosition="Top">
+                        <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
                         </layout:FmLayoutItem>
                     </layout:FmVerticalLayoutGroup>

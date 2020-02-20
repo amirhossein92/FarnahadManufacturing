@@ -105,7 +105,7 @@
     <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmComboBoxEditSettings.cs" />
-    <Compile Include="Base\GridControl\FmListGridControl.cs" />
+    <Compile Include="Base\GridControl\FmEditModeGridControl.cs" />
     <Compile Include="Base\GridControl\FmReadOnlyGridControl.cs" />
     <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
     <Compile Include="Base\Image\FmImageEdit.cs" />

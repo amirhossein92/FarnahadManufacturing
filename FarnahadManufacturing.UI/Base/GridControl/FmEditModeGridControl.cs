@@ -7,16 +7,16 @@ using DevExpress.Xpf.Grid;
 
 namespace FarnahadManufacturing.UI.Base.GridControl
 {
-    public class FmReadOnlyGridControl : DevExpress.Xpf.Grid.GridControl
+    public class FmEditModeGridControl : DevExpress.Xpf.Grid.GridControl
     {
-        public FmReadOnlyGridControl()
+        public FmEditModeGridControl()
         {
             SelectionMode = MultiSelectMode.Row;
             View = new TableView
             {
                 ShowSearchPanelMode = ShowSearchPanelMode.Never,
                 ShowGroupPanel = false,
-                AllowEditing = false,
+                AllowEditing = true,
             };
         }
     }

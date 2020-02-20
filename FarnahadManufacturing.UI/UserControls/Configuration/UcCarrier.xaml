@@ -70,12 +70,12 @@
                         <dxlc:LayoutItem Background="LightGray" Height="20" Label="لیست خدمات"/>
                         <layout:FmHorizontalLayoutGroup>
                             <layout:FmLayoutItem VerticalAlignment="Stretch">
-                                <gridControl:FmListGridControl x:Name="CarrierServiceGridControl">
-                                    <gridControl:FmListGridControl.Columns>
+                                <gridControl:FmEditModeGridControl x:Name="CarrierServiceGridControl">
+                                    <gridControl:FmEditModeGridControl.Columns>
                                         <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="x"/>
                                         <columns:FmTextGridColumn Header="کد" FieldName="Code" FmGridColumnWidth="Normal"/>
-                                    </gridControl:FmListGridControl.Columns>
-                                </gridControl:FmListGridControl>
+                                    </gridControl:FmEditModeGridControl.Columns>
+                                </gridControl:FmEditModeGridControl>
                             </layout:FmLayoutItem>
                             <userControl:AddEditDeleteListUserControl
                                 ClickOnAddItem="AddItemButtonOnClick"

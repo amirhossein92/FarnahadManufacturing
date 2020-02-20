@@ -210,8 +210,8 @@
                                     </layout:FmVerticalLayoutGroupBox>
                                     <layout:FmHorizontalLayoutGroupBox Header="اطلاعات تماس" MaxHeight="200">
                                         <layout:FmLayoutItem VerticalAlignment="Stretch">
-                                            <gridControl:FmListGridControl x:Name="CurrentContactInformationsGridControl">
-                                                <gridControl:FmListGridControl.Columns>
+                                            <gridControl:FmEditModeGridControl x:Name="CurrentContactInformationsGridControl">
+                                                <gridControl:FmEditModeGridControl.Columns>
                                                     <columns:FmTextGridColumn Header="نام" FieldName="Title" FmGridColumnWidth="Normal"/>
                                                     <columns:FmTextGridColumn Header="مقدار" FieldName="Value" FmGridColumnWidth="x"/>
                                                     <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal">
@@ -221,8 +221,8 @@
                                                         </columns:FmComboBoxGridColumn.EditSettings>
                                                     </columns:FmComboBoxGridColumn>
                                                     <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmGridColumnWidth="XXSmall"/>
-                                                </gridControl:FmListGridControl.Columns>
-                                            </gridControl:FmListGridControl>
+                                                </gridControl:FmEditModeGridControl.Columns>
+                                            </gridControl:FmEditModeGridControl>
                                         </layout:FmLayoutItem>
                                         <layout:FmVerticalLayoutGroup Width="50">
                                             <layout:FmLayoutItem>

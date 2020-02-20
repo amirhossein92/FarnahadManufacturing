@@ -11,20 +11,46 @@ namespace FarnahadManufacturing.UI.Base.GridControl.Columns
 {
     public class FmGridColumn : GridColumn
     {
-        public static readonly DependencyProperty FmControlWidthProperty = DependencyProperty.Register(
-            "FmControlWidth", typeof(FmControlWidth), typeof(FmTextGridColumn), new PropertyMetadata(default(FmControlWidth), PropertyChangedCallback));
-
-        protected static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public FmGridColumn()
         {
-            var control = (FmGridColumn)d;
-            if (e.NewValue != null)
-                control.Width = Convert.ToDouble(e.NewValue);
+            FmGridColumnWidth = FmGridColumnWidth.Auto;
         }
 
-        public FmControlWidth FmControlWidth
+        public static readonly DependencyProperty FmGridColumnWidthProperty = DependencyProperty.Register(
+            "FmGridColumnWidth", typeof(FmGridColumnWidth), typeof(FmGridColumn), new PropertyMetadata(default(FmGridColumnWidth), PropertyChangedCallback));
+
+        private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            get => (FmControlWidth)GetValue(FmControlWidthProperty);
-            set => SetValue(FmControlWidthProperty, value);
+            var column = (FmGridColumn)d;
+            if (e.NewValue is FmGridColumnWidth gridColumnWidth)
+            {
+                switch (gridColumnWidth)
+                {
+                    case FmGridColumnWidth.Auto:
+                        if (column.View is TableView tableView)
+                            tableView.BestFitColumn(column);
+                        break;
+                    case FmGridColumnWidth.x:
+                        column.Width = new GridColumnWidth(1, GridColumnUnitType.Star);
+                        break;
+                    case FmGridColumnWidth.x2:
+                        column.Width = new GridColumnWidth(2, GridColumnUnitType.Star);
+                        break;
+                    case FmGridColumnWidth.x3:
+                        column.Width = new GridColumnWidth(3, GridColumnUnitType.Star);
+                        break;
+                    default:
+                        var value = Convert.ToDouble(e.NewValue);
+                        column.Width = new GridColumnWidth(value, GridColumnUnitType.Pixel);
+                        break;
+                }
+            }
+        }
+
+        public FmGridColumnWidth FmGridColumnWidth
+        {
+            get => (FmGridColumnWidth)GetValue(FmGridColumnWidthProperty);
+            set => SetValue(FmGridColumnWidthProperty, value);
         }
     }
 }

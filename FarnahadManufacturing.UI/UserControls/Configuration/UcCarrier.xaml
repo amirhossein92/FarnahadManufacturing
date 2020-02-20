@@ -37,8 +37,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmControlWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -72,8 +72,8 @@
                             <layout:FmLayoutItem VerticalAlignment="Stretch">
                                 <gridControl:FmListGridControl x:Name="CarrierServiceGridControl">
                                     <gridControl:FmListGridControl.Columns>
-                                        <columns:FmTextGridColumn Header="عنوان" FieldName="Title" Width="*"/>
-                                        <columns:FmTextGridColumn Header="کد" FieldName="Code" FmControlWidth="Normal"/>
+                                        <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="x"/>
+                                        <columns:FmTextGridColumn Header="کد" FieldName="Code" FmGridColumnWidth="Normal"/>
                                     </gridControl:FmListGridControl.Columns>
                                 </gridControl:FmListGridControl>
                             </layout:FmLayoutItem>

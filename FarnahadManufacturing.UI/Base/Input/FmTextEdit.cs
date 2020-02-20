@@ -15,8 +15,7 @@ namespace FarnahadManufacturing.UI.Base.Input
         public FmTextEdit()
         {
             IsEnabledChanged += OnIsEnabledChanged;
-            // As Auto
-            Width = double.NaN;
+            FmControlWidth = FmControlWidth.Auto;
         }
 
         private void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -36,7 +35,10 @@ namespace FarnahadManufacturing.UI.Base.Input
         {
             var control = (FmTextEdit)d;
             if (e.NewValue != null)
-                control.Width = Convert.ToDouble(e.NewValue);
+            {
+                var value = Convert.ToDouble(e.NewValue);
+                control.Width = value == 0 ? double.NaN : value;
+            }
         }
 
         public FmControlWidth FmControlWidth

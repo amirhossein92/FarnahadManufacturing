@@ -42,8 +42,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
-                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True" FmControlWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
+                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -87,15 +87,15 @@
                                 <layout:FmLayoutItem VerticalAlignment="Stretch">
                                     <gridControl:FmReadOnlyGridControl x:Name="DefaultContactInformationsGridControl">
                                         <gridControl:FmReadOnlyGridControl.Columns>
-                                            <columns:FmTextGridColumn Header="نام" FieldName="Title" FmControlWidth="Normal"/>
-                                            <columns:FmTextGridColumn Header="مقدار" FieldName="Value" Width="*"/>
-                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmControlWidth="Normal">
+                                            <columns:FmTextGridColumn Header="نام" FieldName="Title" FmGridColumnWidth="Normal"/>
+                                            <columns:FmTextGridColumn Header="مقدار" FieldName="Value" FmGridColumnWidth="x"/>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal">
                                                 <columns:FmComboBoxGridColumn.EditSettings>
                                                     <columns:FmComboBoxEditSettings x:Name="DefaultContactInformationContactTypeComboBox"
                                                                                     ValueMember="Value" DisplayMember="Title"/>
                                                 </columns:FmComboBoxGridColumn.EditSettings>
                                             </columns:FmComboBoxGridColumn>
-                                            <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmControlWidth="XXSmall"
+                                            <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmGridColumnWidth="XXSmall"
                                                                           Width="100"/>
                                         </gridControl:FmReadOnlyGridControl.Columns>
                                     </gridControl:FmReadOnlyGridControl>
@@ -140,20 +140,20 @@
                                     <gridControl:FmReadOnlyGridControl x:Name="AddressesGridControl"
                                                                        SelectedItemChanged="AddressesGridControlOnSelectedItemChanged">
                                         <gridControl:FmReadOnlyGridControl.Columns>
-                                            <columns:FmTextGridColumn Header="آدرس" FieldName="Title" Width="*"/>
-                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="AddressTypeId" FmControlWidth="XXSmall">
+                                            <columns:FmTextGridColumn Header="آدرس" FieldName="Title" FmGridColumnWidth="x"/>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="AddressTypeId" FmGridColumnWidth="XXSmall">
                                                 <columns:FmComboBoxGridColumn.EditSettings>
                                                     <columns:FmComboBoxEditSettings x:Name="AddressesAddressTypeComboBox"
                                                                                     ValueMember="Id" DisplayMember="Title"/>
                                                 </columns:FmComboBoxGridColumn.EditSettings>
                                             </columns:FmComboBoxGridColumn>
-                                            <columns:FmComboBoxGridColumn Header="شهر" FieldName="CityId" FmControlWidth="XXSmall">
+                                            <columns:FmComboBoxGridColumn Header="شهر" FieldName="CityId" FmGridColumnWidth="XXSmall">
                                                 <columns:FmComboBoxGridColumn.EditSettings>
                                                     <columns:FmComboBoxEditSettings x:Name="AddressesCityComboBox"
                                                                                     ValueMember="Id" DisplayMember="Title"/>
                                                 </columns:FmComboBoxGridColumn.EditSettings>
                                             </columns:FmComboBoxGridColumn>
-                                            <columns:FmComboBoxGridColumn Header="استان" FieldName="ProvinceId" FmControlWidth="XXSmall">
+                                            <columns:FmComboBoxGridColumn Header="استان" FieldName="ProvinceId" FmGridColumnWidth="XXSmall">
                                                 <columns:FmComboBoxGridColumn.EditSettings>
                                                     <columns:FmComboBoxEditSettings x:Name="AddressesProvinceComboBox"
                                                                                     ValueMember="Id" DisplayMember="Title"/>
@@ -212,15 +212,15 @@
                                         <layout:FmLayoutItem VerticalAlignment="Stretch">
                                             <gridControl:FmListGridControl x:Name="CurrentContactInformationsGridControl">
                                                 <gridControl:FmListGridControl.Columns>
-                                                    <columns:FmTextGridColumn Header="نام" FieldName="Title" FmControlWidth="Normal"/>
-                                                    <columns:FmTextGridColumn Header="مقدار" FieldName="Value" Width="*"/>
-                                                    <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmControlWidth="Normal">
+                                                    <columns:FmTextGridColumn Header="نام" FieldName="Title" FmGridColumnWidth="Normal"/>
+                                                    <columns:FmTextGridColumn Header="مقدار" FieldName="Value" FmGridColumnWidth="x"/>
+                                                    <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal">
                                                         <columns:FmComboBoxGridColumn.EditSettings>
                                                             <columns:FmComboBoxEditSettings x:Name="CurrentContactInformationContactTypeComboBox" 
                                                                                             ValueMember="Value" DisplayMember="Title"/>
                                                         </columns:FmComboBoxGridColumn.EditSettings>
                                                     </columns:FmComboBoxGridColumn>
-                                                    <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmControlWidth="XXSmall"/>
+                                                    <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmGridColumnWidth="XXSmall"/>
                                                 </gridControl:FmListGridControl.Columns>
                                             </gridControl:FmListGridControl>
                                         </layout:FmLayoutItem>

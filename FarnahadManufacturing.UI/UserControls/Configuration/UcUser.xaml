@@ -38,8 +38,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="نام کاربری" FieldName="UserName" ReadOnly="True" Width="*" />
-                                    <columns:FmTextGridColumn Header="نام خانوادگی" FieldName="LastName" ReadOnly="True" FmControlWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="نام کاربری" FieldName="UserName" ReadOnly="True" FmGridColumnWidth="x" />
+                                    <columns:FmTextGridColumn Header="نام خانوادگی" FieldName="LastName" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>

@@ -8,6 +8,7 @@ namespace FarnahadManufacturing.UI.Base.Size
 {
     public enum FmControlWidth
     {
+        Auto = 0,
         XXSmall = 50,
         XSmall = 75,
         Small = 100,

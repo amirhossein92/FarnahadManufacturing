@@ -20,8 +20,10 @@ using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.Layout.Core.Platform;
 using FarnahadManufacturing.Data;
+using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 using FarnahadManufacturing.UI.Base.UserControl;
+using FarnahadManufacturing.UI.Base.ViewModel;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
@@ -48,6 +50,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             _vendors = new ObservableCollection<Vendor>();
             LoadSearchGridControlData();
 
+            LoadContactTypeComboBox();
             LoadCityComboBox();
             LoadProvinceComboBox();
             LoadAddressTypeComboBox();
@@ -66,6 +69,22 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             _contactInformations = new ObservableCollection<ContactInformation>();
             AddressesGridControl.ItemsSource = _addresses;
             CurrentContactInformationsGridControl.ItemsSource = _contactInformations;
+        }
+
+        private void LoadContactTypeComboBox()
+        {
+            var contactTypes = new List<FmComboModel<ContactType>>();
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Email, "پست الکترونیکی"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Fax, "فکس"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Home, "خانه"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Main, "اصلی"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Mobile, "تلفن همراه"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Other, "غیره"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Pager, "پیجر"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Web, "وبسایت"));
+            contactTypes.Add(new FmComboModel<ContactType>(ContactType.Work, "محل کار"));
+            DefaultContactInformationContactTypeComboBox.ItemsSource = contactTypes;
+            CurrentContactInformationContactTypeComboBox.ItemsSource = contactTypes;
         }
 
         public override void LoadSearchGridControl()
@@ -102,11 +121,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 var cities = dbContext.Cities.AsNoTracking().Select(item => new { Title = item.Title, Id = item.Id }).ToList();
                 SearchCityComboBoxEdit.ItemsSource = cities;
-                SearchCityComboBoxEdit.DisplayMember = "Title";
-                SearchCityComboBoxEdit.ValueMember = "Id";
                 CurrentCityComboBox.ItemsSource = cities;
-                CurrentCityComboBox.DisplayMember = "Title";
-                CurrentCityComboBox.ValueMember = "Id";
+                AddressesCityComboBox.ItemsSource = cities;
             }
         }
 
@@ -116,11 +132,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 var provinces = dbContext.Provinces.AsNoTracking().Select(item => new { Title = item.Title, Id = item.Id }).ToList();
                 SearchProvinceComboBoxEdit.ItemsSource = provinces;
-                SearchProvinceComboBoxEdit.DisplayMember = "Title";
-                SearchProvinceComboBoxEdit.ValueMember = "Id";
                 CurrentProvinceComboBox.ItemsSource = provinces;
-                CurrentProvinceComboBox.DisplayMember = "Title";
-                CurrentProvinceComboBox.ValueMember = "Id";
+                AddressesProvinceComboBox.ItemsSource = provinces;
             }
         }
 
@@ -132,8 +145,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 DefaultTermComboBoxEdit.ItemsSource = paymentTerms;
-                DefaultTermComboBoxEdit.DisplayMember = "Title";
-                DefaultTermComboBoxEdit.ValueMember = "Id";
             }
         }
 
@@ -145,8 +156,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 DefaultShippingTermComboBoxEdit.ItemsSource = shippingTerms;
-                DefaultShippingTermComboBoxEdit.DisplayMember = "Title";
-                DefaultShippingTermComboBoxEdit.ValueMember = "Id";
             }
         }
 
@@ -158,8 +167,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 DefaultCarrierServiceComboBoxEdit.ItemsSource = carrierServices;
-                DefaultCarrierServiceComboBoxEdit.DisplayMember = "Title";
-                DefaultCarrierServiceComboBoxEdit.ValueMember = "Id";
             }
         }
 
@@ -171,8 +178,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 DefaultCarrierComboBoxEdit.ItemsSource = carriers;
-                DefaultCarrierComboBoxEdit.DisplayMember = "Title";
-                DefaultCarrierComboBoxEdit.ValueMember = "Id";
             }
         }
 
@@ -184,8 +189,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 CurrentCountryComboBox.ItemsSource = countries;
-                CurrentCountryComboBox.DisplayMember = "Title";
-                CurrentCountryComboBox.ValueMember = "Id";
             }
         }
 
@@ -197,8 +200,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 CurrentAddressTypeComboBox.ItemsSource = addressTypes;
-                CurrentAddressTypeComboBox.DisplayMember = "Title";
-                CurrentAddressTypeComboBox.ValueMember = "Id";
+                AddressesAddressTypeComboBox.ItemsSource = addressTypes;
             }
         }
 
@@ -270,7 +272,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                                     dbContext.ContactInformations.Remove(contactInformationInDb);
                             }
                             foreach (var contactInformation in address.ContactInformations.Where(item => item.Id <= 0))
+                            {
+                                contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                                contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                                 addressInDb.ContactInformations.Add(contactInformation);
+                            }
                         }
                         else
                         {
@@ -280,12 +286,33 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     }
 
                     foreach (var address in _activeVendor.Addresses.Where(item => item.Id <= 0))
+                    {
+                        address.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                        address.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                        foreach (var contactInformation in address.ContactInformations)
+                        {
+                            contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                            contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                        }
                         vendorInDb.Addresses.Add(address);
+                    }
                     dbContext.SaveChanges();
                 }
                 else
                 {
                     _activeVendor.Addresses = _addresses.ToList();
+                    foreach (var address in _activeVendor.Addresses)
+                    {
+                        address.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                        address.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                        foreach (var contactInformation in address.ContactInformations)
+                        {
+                            contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                            contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                        }
+                    }
+                    _activeVendor.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                    _activeVendor.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                     dbContext.Vendors.Add(_activeVendor);
 
                     dbContext.SaveChanges();
@@ -381,7 +408,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         private void FillData(Vendor vendor)
         {
             TitleTextEdit.Text = vendor.Title;
-            DefaultAddressDetailLabel.Text = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress)?.Title;
+            DefaultAddressUserControl.Address = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress);
             CreatedUserTextEdit.Text = vendor.CreatedByUser?.UserName;
             CreatedDateTextEdit.Text = vendor.CreatedDateTime.ToLongTimeString();
             DefaultContactInformationsGridControl.ItemsSource = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress)?.ContactInformations;
@@ -395,6 +422,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
             _addresses = new ObservableCollection<Address>(vendor.Addresses);
             AddressesGridControl.ItemsSource = _addresses;
+            LogoImageEdit.EditValue = vendor.Logo;
         }
 
         private void ReadData(ref Vendor vendor)
@@ -411,6 +439,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
             if (AddressesGridControl.ItemsSource is ObservableCollection<Address> addresses)
                 vendor.Addresses = addresses.ToList();
+            vendor.Logo = LogoImageEdit.EditValue as byte[];
         }
 
         private void FillData(Address address)

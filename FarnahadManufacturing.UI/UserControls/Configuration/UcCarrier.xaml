@@ -21,32 +21,35 @@
     <dock:FmDockLayoutManager>
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
-                <layout:FmVerticalLayoutGroup>
-                    <layout:FmLayoutItem Label="عنوان">
-                        <input:FmTextEdit x:Name="SearchTitleTextEdit" />
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem Label="وضعیت">
-                        <input:FmComboBoxEdit x:Name="SearchStatusComboBoxEdit" />
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                        <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem VerticalAlignment="Stretch">
-                        <gridControl:FmSearchGridControl x:Name="SearchGridControl"
-                                                         MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
-                            <gridControl:FmSearchGridControl.Columns>
-                                <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
-                                <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmControlWidth="XXSmall"/>
-                            </gridControl:FmSearchGridControl.Columns>
-                        </gridControl:FmSearchGridControl>
-                    </layout:FmLayoutItem>
-                    <userControl:PaginationUserControl x:Name="PaginationUserControl"
-                                                       ClickOnPrevious="PreviousPageButtonOnClick"
-                                                       ClickOnNext="NextPageButtonOnClick" />
-                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                        <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
-                    </layout:FmLayoutItem>
-                </layout:FmVerticalLayoutGroup>
+                <layout:FmLayoutControl>
+                    <layout:FmVerticalLayoutGroup>
+                        <layout:FmLayoutItem Label="عنوان">
+                            <input:FmTextEdit x:Name="SearchTitleTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="وضعیت">
+                            <input:FmComboBoxEdit x:Name="SearchStatusComboBoxEdit" 
+                                                  ValueMember="Item1" DisplayMember = "Item2"/>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem VerticalAlignment="Stretch">
+                            <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                                                             MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                                <gridControl:FmSearchGridControl.Columns>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmControlWidth="XXSmall"/>
+                                </gridControl:FmSearchGridControl.Columns>
+                            </gridControl:FmSearchGridControl>
+                        </layout:FmLayoutItem>
+                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                           ClickOnPrevious="PreviousPageButtonOnClick"
+                                                           ClickOnNext="NextPageButtonOnClick" />
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                        </layout:FmLayoutItem>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
             </layout:FmFilterLayoutPanel>
             <dxdo:DocumentPanel ItemWidth="4*">
                 <layout:FmLayoutControl Orientation="Vertical">

@@ -1,4 +1,4 @@
-﻿<dx:DXWindow x:Class="FarnahadManufacturing.UI.MainWindow"
+﻿<window:FmWindow x:Class="FarnahadManufacturing.UI.MainWindow"
              xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
              xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
              xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
@@ -13,8 +13,11 @@
              xmlns:mainPage="clr-namespace:FarnahadManufacturing.UI.Base.MainPage"
              xmlns:accordion="clr-namespace:FarnahadManufacturing.UI.Base.Accordion"
              xmlns:dock="clr-namespace:FarnahadManufacturing.UI.Base.Dock"
+             xmlns:window="clr-namespace:FarnahadManufacturing.UI.Base.Window"
              mc:Ignorable="d"
-             Title="MainWindow" Height="450" Width="800">
+             Title="سیستم مدیریت کالا" Height="450" Width="800"
+             Closing="MainWindowOnClosing"
+             >
     <layout:FmGrid FlowDirection="RightToLeft">
         <layout:FmGrid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -146,4 +149,4 @@
                                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
     </layout:FmGrid>
-</dx:DXWindow>
+</window:FmWindow>

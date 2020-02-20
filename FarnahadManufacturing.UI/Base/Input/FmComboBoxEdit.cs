@@ -12,6 +12,7 @@ namespace FarnahadManufacturing.UI.Base.Input
     {
         public FmComboBoxEdit()
         {
+            AllowNullInput = true;
             IsEnabledChanged += OnIsEnabledChanged;
         }
 

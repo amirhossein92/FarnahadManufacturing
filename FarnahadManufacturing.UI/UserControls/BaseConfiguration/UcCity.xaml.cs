@@ -54,8 +54,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             {
                 var countries = dbContext.Countries.Select(item => new { Title = item.Title, Id = item.Id }).ToList();
                 CountryComboBox.ItemsSource = countries;
-                CountryComboBox.DisplayMember = "Title";
-                CountryComboBox.ValueMember = "Id";
             }
         }
 
@@ -72,8 +70,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 var provinces = dbContext.Provinces.Where(item => item.CountryId == countryId)
                     .Select(item => new { Title = item.Title, Id = item.Id }).ToList();
                 ProvinceComboBox.ItemsSource = provinces;
-                ProvinceComboBox.DisplayMember = "Title";
-                ProvinceComboBox.ValueMember = "Id";
             }
         }
 

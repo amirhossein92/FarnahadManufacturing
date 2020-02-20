@@ -22,208 +22,224 @@
     <dock:FmDockLayoutManager>
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
-                <layout:FmVerticalLayoutGroup>
-                    <layout:FmLayoutItem Label="نام">
-                        <input:FmTextEdit x:Name="SearchNameTextEdit" />
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem Label="استان">
-                        <input:FmComboBoxEdit x:Name="SearchProvinceComboBoxEdit" AllowNullInput="True" />
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem Label="شهر">
-                        <input:FmComboBoxEdit x:Name="SearchCityComboBoxEdit" AllowNullInput="True"/>
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                        <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
-                    </layout:FmLayoutItem>
-                    <layout:FmLayoutItem VerticalAlignment="Stretch">
-                        <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                <layout:FmLayoutControl>
+                    <layout:FmVerticalLayoutGroup>
+                        <layout:FmLayoutItem Label="نام">
+                            <input:FmTextEdit x:Name="SearchNameTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="استان">
+                            <input:FmComboBoxEdit x:Name="SearchProvinceComboBoxEdit" 
+                                                  ValueMember="Id" DisplayMember = "Title"/>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="شهر">
+                            <input:FmComboBoxEdit x:Name="SearchCityComboBoxEdit"
+                                                  ValueMember="Id" DisplayMember = "Title"/>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem VerticalAlignment="Stretch">
+                            <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
-                            <gridControl:FmSearchGridControl.Columns>
-                                <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
-                                <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True" FmControlWidth="XXSmall"/>
-                            </gridControl:FmSearchGridControl.Columns>
-                        </gridControl:FmSearchGridControl>
-                    </layout:FmLayoutItem>
-                    <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                <gridControl:FmSearchGridControl.Columns>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" Width="*" />
+                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True" FmControlWidth="XXSmall"/>
+                                </gridControl:FmSearchGridControl.Columns>
+                            </gridControl:FmSearchGridControl>
+                        </layout:FmLayoutItem>
+                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
                                                        ClickOnPrevious="PreviousPageButtonOnClick"
                                                        ClickOnNext="NextPageButtonOnClick" />
-                    <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                        <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
-                    </layout:FmLayoutItem>
-                </layout:FmVerticalLayoutGroup>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                        </layout:FmLayoutItem>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
             </layout:FmFilterLayoutPanel>
             <dxdo:DocumentPanel ItemWidth="4*">
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="فروشنده"/>
-                    <tabControl:FmTabControl x:Name="MainLayoutGroup" IsEnabled="False">
-                        <tabControl:FmTabItem Header="اطلاعات کلی" >
-                            <layout:FmVerticalLayoutGroup>
-                                <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Label="نام">
-                                        <input:FmTextEdit x:Name="TitleTextEdit" />
+                    <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
+                        <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem Label="نام">
+                                    <input:FmTextEdit x:Name="TitleTextEdit" />
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem HorizontalAlignment="Right">
+                                    <input:FmCheckEdit x:Name="IsActiveCheckEdit" Content="فعال" />
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmHorizontalLayoutGroup Height="125">
+                                <userControl:ShowAddressUserControl x:Name="DefaultAddressUserControl"/>
+                                <layout:FmVerticalLayoutGroupBox Header="آخرین تغییرات" VerticalAlignment="Stretch">
+                                    <layout:FmLayoutItem Label="تاریخ ثبت">
+                                        <input:FmTextEdit x:Name="CreatedDateTextEdit" IsEnabled="False"/>
                                     </layout:FmLayoutItem>
-                                    <layout:FmLayoutItem HorizontalAlignment="Right">
-                                        <input:FmCheckEdit x:Name="IsActiveCheckEdit" Content="فعال" />
+                                    <layout:FmLayoutItem Label="ثبت شده توسط">
+                                        <input:FmTextEdit x:Name="CreatedUserTextEdit" IsEnabled="False"/>
                                     </layout:FmLayoutItem>
-                                </layout:FmHorizontalLayoutGroup>
-                                <layout:FmHorizontalLayoutGroup Height="125">
-                                    <layout:FmGroupBox Header="آدرس">
+                                </layout:FmVerticalLayoutGroupBox>
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <image:FmImageEdit x:Name="LogoImageEdit" ShowMenuMode="Hover"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmVerticalLayoutGroupBox Header="اطلاعات تماس">
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <gridControl:FmReadOnlyGridControl x:Name="DefaultContactInformationsGridControl">
+                                        <gridControl:FmReadOnlyGridControl.Columns>
+                                            <columns:FmTextGridColumn Header="نام" FieldName="Title" FmControlWidth="Normal"/>
+                                            <columns:FmTextGridColumn Header="مقدار" FieldName="Value" Width="*"/>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmControlWidth="Normal">
+                                                <columns:FmComboBoxGridColumn.EditSettings>
+                                                    <columns:FmComboBoxEditSettings x:Name="DefaultContactInformationContactTypeComboBox"
+                                                                                    ValueMember="Value" DisplayMember="Title"/>
+                                                </columns:FmComboBoxGridColumn.EditSettings>
+                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmControlWidth="XXSmall"
+                                                                          Width="100"/>
+                                        </gridControl:FmReadOnlyGridControl.Columns>
+                                    </gridControl:FmReadOnlyGridControl>
+                                </layout:FmLayoutItem>
+                            </layout:FmVerticalLayoutGroupBox>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="جزئیات">
+                            <layout:FmLayoutItem Label="شرایط پرداخت پیش فرض">
+                                <input:FmComboBoxEdit x:Name="DefaultTermComboBoxEdit"
+                                                      ValueMember="Id" DisplayMember = "Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="پیک پیش فرض">
+                                <input:FmComboBoxEdit x:Name="DefaultCarrierComboBoxEdit"
+                                                      ValueMember="Id" DisplayMember = "Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="خدمت پیش فرض پیک">
+                                <input:FmComboBoxEdit x:Name="DefaultCarrierServiceComboBoxEdit"
+                                                      ValueMember="Id" DisplayMember = "Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="شرایط تحویل کالای پیش فرض">
+                                <input:FmComboBoxEdit x:Name="DefaultShippingTermComboBoxEdit"
+                                                      ValueMember="Id" DisplayMember = "Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="شماره حساب">
+                                <input:FmTextEdit x:Name="AccountNumberTextEdit"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="حداقل میزان سفارش">
+                                <input:FmSpinEdit x:Name="MinOrderAmountTextEdit"/>
+                            </layout:FmLayoutItem>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="آدرس">
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem Width="50">
+                                    <buttons:FmMiniAddSimpleButton Click="AddAddressButtonOnClick"/>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem Width="50">
+                                    <buttons:FmMiniDeleteSimpleButton Click="DeleteAddressButtonOnClick"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem VerticalAlignment="Stretch" MaxWidth="300">
+                                    <gridControl:FmReadOnlyGridControl x:Name="AddressesGridControl"
+                                                                       SelectedItemChanged="AddressesGridControlOnSelectedItemChanged">
+                                        <gridControl:FmReadOnlyGridControl.Columns>
+                                            <columns:FmTextGridColumn Header="آدرس" FieldName="Title" Width="*"/>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="AddressTypeId" FmControlWidth="XXSmall">
+                                                <columns:FmComboBoxGridColumn.EditSettings>
+                                                    <columns:FmComboBoxEditSettings x:Name="AddressesAddressTypeComboBox"
+                                                                                    ValueMember="Id" DisplayMember="Title"/>
+                                                </columns:FmComboBoxGridColumn.EditSettings>
+                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmComboBoxGridColumn Header="شهر" FieldName="CityId" FmControlWidth="XXSmall">
+                                                <columns:FmComboBoxGridColumn.EditSettings>
+                                                    <columns:FmComboBoxEditSettings x:Name="AddressesCityComboBox"
+                                                                                    ValueMember="Id" DisplayMember="Title"/>
+                                                </columns:FmComboBoxGridColumn.EditSettings>
+                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmComboBoxGridColumn Header="استان" FieldName="ProvinceId" FmControlWidth="XXSmall">
+                                                <columns:FmComboBoxGridColumn.EditSettings>
+                                                    <columns:FmComboBoxEditSettings x:Name="AddressesProvinceComboBox"
+                                                                                    ValueMember="Id" DisplayMember="Title"/>
+                                                </columns:FmComboBoxGridColumn.EditSettings>
+                                            </columns:FmComboBoxGridColumn>
+                                        </gridControl:FmReadOnlyGridControl.Columns>
+                                    </gridControl:FmReadOnlyGridControl>
+                                </layout:FmLayoutItem>
+                                <layout:FmVerticalLayoutGroup>
+                                    <layout:FmVerticalLayoutGroupBox Header="آدرس">
+                                        <layout:FmLayoutItem Label="نوع آدرس">
+                                            <input:FmComboBoxEdit x:Name="CurrentAddressTypeComboBox"
+                                                                  ValueMember="Id" DisplayMember = "Title"/>
+                                        </layout:FmLayoutItem>
+                                        <layout:FmLayoutItem Label="عنوان آدرس">
+                                            <input:FmTextEdit x:Name="CurrentAddressTitleTextEdit"/>
+                                        </layout:FmLayoutItem>
+                                        <layout:FmLayoutItem Label="آدرس">
+                                            <input:FmMultiLineTextEdit x:Name="CurrentAddressDetailTextEdit"/>
+                                        </layout:FmLayoutItem>
                                         <layout:FmHorizontalLayoutGroup>
-                                            <layout:FmLayoutItem>
-                                                <label:FmLabel x:Name="DefaultAddressDetailLabel" IsEnabled="False" Text="آدرس"/>
+                                            <layout:FmLayoutItem Label="شهر">
+                                                <input:FmComboBoxEdit x:Name="CurrentCityComboBox"
+                                                                      ValueMember="Id" DisplayMember = "Title"/>
                                             </layout:FmLayoutItem>
-                                            <layout:FmLayoutItem Width="50">
-                                                <buttons:FmSimpleButton Content="On Map"/>
+                                            <layout:FmLayoutItem Label="استان">
+                                                <input:FmComboBoxEdit x:Name="CurrentProvinceComboBox"
+                                                                      ValueMember="Id" DisplayMember = "Title"/>
+                                            </layout:FmLayoutItem>
+                                            <layout:FmLayoutItem Label="کد پستی">
+                                                <input:FmTextEdit x:Name="CurrentZipCodeTextEdit"/>
                                             </layout:FmLayoutItem>
                                         </layout:FmHorizontalLayoutGroup>
-                                    </layout:FmGroupBox>
-                                    <layout:FmGroupBox Header="آخرین تغییرات">
-                                        <layout:FmVerticalLayoutGroup>
-                                            <layout:FmLayoutItem Label="تاریخ ثبت">
-                                                <input:FmTextEdit x:Name="CreatedDateTextEdit" IsEnabled="False"/>
+                                        <layout:FmLayoutItem Label="کشور">
+                                            <input:FmComboBoxEdit x:Name="CurrentCountryComboBox"
+                                                                  ValueMember="Id" DisplayMember = "Title"/>
+                                        </layout:FmLayoutItem>
+                                        <layout:FmHorizontalLayoutGroup>
+                                            <layout:FmLayoutItem>
+                                                <input:FmCheckEdit x:Name="CurrentIsResidentialCheckEdit" Content="مسکونی"/>
                                             </layout:FmLayoutItem>
-                                            <layout:FmLayoutItem Label="ثبت شده توسط">
-                                                <input:FmTextEdit x:Name="CreatedUserTextEdit" IsEnabled="False"/>
+                                            <layout:FmLayoutItem Label="مختصات (عرض جغرافیایی)  ">
+                                                <input:FmSpinEdit x:Name="CurrentLongitudeTextEdit"/>
+                                            </layout:FmLayoutItem>
+                                        </layout:FmHorizontalLayoutGroup>
+                                        <layout:FmHorizontalLayoutGroup>
+                                            <layout:FmLayoutItem>
+                                                <input:FmCheckEdit x:Name="CurrentDefaultAddressCheckEdit" Content="آدرس پیش فرض"/>
+                                            </layout:FmLayoutItem>
+                                            <layout:FmLayoutItem Label="مختصات (طول جغرافیایی)  ">
+                                                <input:FmSpinEdit x:Name="CurrentLatitudeTextEdit"/>
+                                            </layout:FmLayoutItem>
+                                        </layout:FmHorizontalLayoutGroup>
+                                    </layout:FmVerticalLayoutGroupBox>
+                                    <layout:FmHorizontalLayoutGroupBox Header="اطلاعات تماس" MaxHeight="200">
+                                        <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                            <gridControl:FmListGridControl x:Name="CurrentContactInformationsGridControl">
+                                                <gridControl:FmListGridControl.Columns>
+                                                    <columns:FmTextGridColumn Header="نام" FieldName="Title" FmControlWidth="Normal"/>
+                                                    <columns:FmTextGridColumn Header="مقدار" FieldName="Value" Width="*"/>
+                                                    <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmControlWidth="Normal">
+                                                        <columns:FmComboBoxGridColumn.EditSettings>
+                                                            <columns:FmComboBoxEditSettings x:Name="CurrentContactInformationContactTypeComboBox" 
+                                                                                            ValueMember="Value" DisplayMember="Title"/>
+                                                        </columns:FmComboBoxGridColumn.EditSettings>
+                                                    </columns:FmComboBoxGridColumn>
+                                                    <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmControlWidth="XXSmall"/>
+                                                </gridControl:FmListGridControl.Columns>
+                                            </gridControl:FmListGridControl>
+                                        </layout:FmLayoutItem>
+                                        <layout:FmVerticalLayoutGroup Width="50">
+                                            <layout:FmLayoutItem>
+                                                <buttons:FmMiniAddSimpleButton Click="AddContactInformationOnClick"/>
+                                            </layout:FmLayoutItem>
+                                            <layout:FmLayoutItem>
+                                                <buttons:FmMiniDeleteSimpleButton Click="DeleteContactInformationOnClick"/>
                                             </layout:FmLayoutItem>
                                         </layout:FmVerticalLayoutGroup>
-                                    </layout:FmGroupBox>
-                                    <layout:FmLayoutItem VerticalAlignment="Stretch">
-                                        <image:FmImageEdit x:Name="LogoImageEdit" />
-                                    </layout:FmLayoutItem>
-                                </layout:FmHorizontalLayoutGroup>
-                                <layout:FmGroupBox Header="اطلاعات تماس">
-                                    <layout:FmLayoutItem VerticalAlignment="Stretch">
-                                        <gridControl:FmListGridControl x:Name="DefaultContactInformationsGridControl">
-                                            <gridControl:FmListGridControl.Columns>
-                                                <columns:FmTextGridColumn Header="نام" FieldName="Title" FmControlWidth="Normal"/>
-                                                <columns:FmTextGridColumn Header="مقدار" FieldName="Value" Width="*"/>
-                                                <columns:FmTextGridColumn Header="نوع" FieldName="ContactType" FmControlWidth="Normal"/>
-                                                <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmControlWidth="XSmall"/>
-                                            </gridControl:FmListGridControl.Columns>
-                                        </gridControl:FmListGridControl>
-                                    </layout:FmLayoutItem>
-                                </layout:FmGroupBox>
-                            </layout:FmVerticalLayoutGroup>
-                        </tabControl:FmTabItem>
-                        <tabControl:FmTabItem Header="جزئیات">
-                            <layout:FmVerticalLayoutGroup>
-                                <layout:FmLayoutItem Label="شرایط پرداخت پیش فرض">
-                                    <input:FmComboBoxEdit x:Name="DefaultTermComboBoxEdit"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="پیک پیش فرض">
-                                    <input:FmComboBoxEdit x:Name="DefaultCarrierComboBoxEdit"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="خدمت پیش فرض پیک">
-                                    <input:FmComboBoxEdit x:Name="DefaultCarrierServiceComboBoxEdit"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="شرایط تحویل کالای پیش فرض">
-                                    <input:FmComboBoxEdit x:Name="DefaultShippingTermComboBoxEdit"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="شماره حساب">
-                                    <input:FmTextEdit x:Name="AccountNumberTextEdit"/>
-                                </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="حداقل میزان سفارش">
-                                    <input:FmTextEdit x:Name="MinOrderAmountTextEdit"/>
-                                </layout:FmLayoutItem>
-                            </layout:FmVerticalLayoutGroup>
-                        </tabControl:FmTabItem>
-                        <tabControl:FmTabItem Header="آدرس">
-                            <layout:FmVerticalLayoutGroup>
-                                <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Width="50">
-                                        <buttons:FmMiniAddSimpleButton Click="AddAddressButtonOnClick"/>
-                                    </layout:FmLayoutItem>
-                                    <layout:FmLayoutItem Width="50">
-                                        <buttons:FmMiniDeleteSimpleButton Click="DeleteAddressButtonOnClick"/>
-                                    </layout:FmLayoutItem>
-                                </layout:FmHorizontalLayoutGroup>
-                                <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem VerticalAlignment="Stretch" MaxWidth="300">
-                                        <gridControl:FmListGridControl x:Name="AddressesGridControl"
-                                                                       SelectedItemChanged="AddressesGridControlOnSelectedItemChanged">
-                                            <gridControl:FmListGridControl.Columns>
-                                                <columns:FmTextGridColumn Header="آدرس" FieldName="Title" Width="*"/>
-                                                <columns:FmTextGridColumn Header="نوع" FieldName="AddressType" FmControlWidth="XXSmall"/>
-                                                <columns:FmTextGridColumn Header="شهر" FieldName="CityId" FmControlWidth="XXSmall"/>
-                                                <columns:FmTextGridColumn Header="استان" FieldName="ProvinceId" FmControlWidth="XXSmall"/>
-                                            </gridControl:FmListGridControl.Columns>
-                                        </gridControl:FmListGridControl>
-                                    </layout:FmLayoutItem>
-                                    <layout:FmVerticalLayoutGroup>
-                                        <layout:FmGroupBox Header="آدرس">
-                                            <layout:FmVerticalLayoutGroup>
-                                                <layout:FmLayoutItem Label="نوع آدرس">
-                                                    <input:FmComboBoxEdit x:Name="CurrentAddressTypeComboBox"/>
-                                                </layout:FmLayoutItem>
-                                                <layout:FmLayoutItem Label="عنوان آدرس">
-                                                    <input:FmTextEdit x:Name="CurrentAddressTitleTextEdit"/>
-                                                </layout:FmLayoutItem>
-                                                <layout:FmLayoutItem Label="آدرس">
-                                                    <input:FmMultiLineTextEdit x:Name="CurrentAddressDetailTextEdit"/>
-                                                </layout:FmLayoutItem>
-                                                <layout:FmHorizontalLayoutGroup>
-                                                    <layout:FmLayoutItem Label="شهر">
-                                                        <input:FmComboBoxEdit x:Name="CurrentCityComboBox"/>
-                                                    </layout:FmLayoutItem>
-                                                    <layout:FmLayoutItem Label="استان">
-                                                        <input:FmComboBoxEdit x:Name="CurrentProvinceComboBox"/>
-                                                    </layout:FmLayoutItem>
-                                                    <layout:FmLayoutItem Label="کد پستی">
-                                                        <input:FmTextEdit x:Name="CurrentZipCodeTextEdit"/>
-                                                    </layout:FmLayoutItem>
-                                                </layout:FmHorizontalLayoutGroup>
-                                                <layout:FmLayoutItem Label="کشور">
-                                                    <input:FmComboBoxEdit x:Name="CurrentCountryComboBox"/>
-                                                </layout:FmLayoutItem>
-                                                <layout:FmHorizontalLayoutGroup>
-                                                    <layout:FmLayoutItem>
-                                                        <input:FmCheckEdit x:Name="CurrentIsResidentialCheckEdit" Content="مسکونی"/>
-                                                    </layout:FmLayoutItem>
-                                                    <layout:FmLayoutItem Label="مختصات (عرض جغرافیایی)  ">
-                                                        <input:FmTextEdit x:Name="CurrentLongitudeTextEdit"/>
-                                                    </layout:FmLayoutItem>
-                                                </layout:FmHorizontalLayoutGroup>
-                                                <layout:FmHorizontalLayoutGroup>
-                                                    <layout:FmLayoutItem>
-                                                        <input:FmCheckEdit x:Name="CurrentDefaultAddressCheckEdit" Content="آدرس پیش فرض"/>
-                                                    </layout:FmLayoutItem>
-                                                    <layout:FmLayoutItem Label="مختصات (طول جغرافیایی)  ">
-                                                        <input:FmTextEdit x:Name="CurrentLatitudeTextEdit"/>
-                                                    </layout:FmLayoutItem>
-                                                </layout:FmHorizontalLayoutGroup>
-                                            </layout:FmVerticalLayoutGroup>
-                                        </layout:FmGroupBox>
-                                        <layout:FmGroupBox Header="اطلاعات تماس" MaxHeight="200">
-                                            <layout:FmHorizontalLayoutGroup>
-                                                <layout:FmLayoutItem VerticalAlignment="Stretch">
-                                                    <gridControl:FmListGridControl x:Name="CurrentContactInformationsGridControl">
-                                                        <gridControl:FmListGridControl.Columns>
-                                                            <columns:FmTextGridColumn Header="نام" FieldName="Title" FmControlWidth="Normal"/>
-                                                            <columns:FmTextGridColumn Header="مقدار" FieldName="Value" Width="*"/>
-                                                            <columns:FmTextGridColumn Header="نوع" FieldName="ContactType" FmControlWidth="Normal"/>
-                                                            <columns:FmCheckBoxGridColumn Header="پیشفرض" FieldName="IsDefault" FmControlWidth="XXSmall"/>
-                                                        </gridControl:FmListGridControl.Columns>
-                                                    </gridControl:FmListGridControl>
-                                                </layout:FmLayoutItem>
-                                                <layout:FmVerticalLayoutGroup Width="50">
-                                                    <layout:FmLayoutItem>
-                                                        <buttons:FmMiniAddSimpleButton Click="AddContactInformationOnClick"/>
-                                                    </layout:FmLayoutItem>
-                                                    <layout:FmLayoutItem>
-                                                        <buttons:FmMiniDeleteSimpleButton Click="DeleteContactInformationOnClick"/>
-                                                    </layout:FmLayoutItem>
-                                                </layout:FmVerticalLayoutGroup>
-                                            </layout:FmHorizontalLayoutGroup>
-                                        </layout:FmGroupBox>
-                                    </layout:FmVerticalLayoutGroup>
-                                </layout:FmHorizontalLayoutGroup>
-                            </layout:FmVerticalLayoutGroup>
+                                    </layout:FmHorizontalLayoutGroupBox>
+                                </layout:FmVerticalLayoutGroup>
+                            </layout:FmHorizontalLayoutGroup>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="کالا ها">
 
-                        </tabControl:FmTabItem>
-                        <tabControl:FmTabItem Header="کالا ها">
-
-                        </tabControl:FmTabItem>
-                    </tabControl:FmTabControl>
+                        </layout:FmVerticalLayoutGroup>
+                    </layout:FmVerticalLayoutGroup>
                 </layout:FmLayoutControl>
             </dxdo:DocumentPanel>
         </dock:FmDockLayoutGroup>

@@ -10,6 +10,17 @@ namespace FarnahadManufacturing.UI.Common
 {
     public static class MessageBoxService
     {
+        public static bool AskForClose()
+        {
+            var msg = "آیا از بسته شدن برنامه اطمینان دارید؟";
+            return MessageBox.Show(
+                       msg,
+                       "بستن برنامه",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning,
+                       MessageBoxDefaultButton.Button2) == DialogResult.Yes;
+        }
+
         public static DialogResult AskForDelete(string title = null)
         {
             var msg = "آیا از حذف شدن اطمینان دارید؟";

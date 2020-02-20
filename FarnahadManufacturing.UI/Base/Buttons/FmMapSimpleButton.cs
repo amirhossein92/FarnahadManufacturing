@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using DevExpress.Xpf.Core;
 
 namespace FarnahadManufacturing.UI.Base.Buttons
 {
-    public class FmSimpleButton : SimpleButton
+    public class FmMapSimpleButton : FmSimpleButton
     {
-        public FmSimpleButton()
+        public FmMapSimpleButton()
         {
-            Margin = new Thickness(1);
+            Content = "نقشه";
         }
     }
 }

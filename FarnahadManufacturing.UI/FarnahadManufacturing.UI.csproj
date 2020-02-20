@@ -88,6 +88,7 @@
     <Compile Include="Base\Accordion\FmAccordionItem.cs" />
     <Compile Include="Base\Accordion\FmSeparatorItem.cs" />
     <Compile Include="Base\Buttons\FmCancelSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMapSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmMiniAddSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmMiniEditSimpleButton.cs" />
@@ -100,15 +101,19 @@
     <Compile Include="Base\Dock\FmDockLayoutGroup.cs" />
     <Compile Include="Base\Dock\FmDockLayoutManager.cs" />
     <Compile Include="Base\GridControl\Columns\FmCheckBoxGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmComboBoxGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmComboBoxEditSettings.cs" />
     <Compile Include="Base\GridControl\FmListGridControl.cs" />
+    <Compile Include="Base\GridControl\FmReadOnlyGridControl.cs" />
     <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
     <Compile Include="Base\Image\FmImageEdit.cs" />
     <Compile Include="Base\Input\FmCheckEdit.cs" />
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
     <Compile Include="Base\Input\FmPasswordBoxEdit.cs" />
+    <Compile Include="Base\Input\FmSpinEdit.cs" />
     <Compile Include="Base\Input\FmTextEdit.cs" />
     <Compile Include="Base\Label\FmHeaderLabel.cs" />
     <Compile Include="Base\Label\FmLabel.cs" />
@@ -117,9 +122,11 @@
     <Compile Include="Base\Layout\FmGrid.cs" />
     <Compile Include="Base\Layout\FmGroupBox.cs" />
     <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
+    <Compile Include="Base\Layout\FmHorizontalLayoutGroupBox.cs" />
     <Compile Include="Base\Layout\FmHorizontalLayoutGroup.cs" />
     <Compile Include="Base\Layout\FmLayoutControl.cs" />
     <Compile Include="Base\Layout\FmLayoutItem.cs" />
+    <Compile Include="Base\Layout\FmVerticalLayoutGroupBox.cs" />
     <Compile Include="Base\Layout\FmVerticalLayoutGroup.cs" />
     <Compile Include="Base\ListBox\FmListBoxEdit.cs" />
     <Compile Include="Base\MainPage\FmBarButtonItem.cs" />
@@ -143,8 +150,13 @@
     <Compile Include="Base\UserControl\SaveCancelUserControl.xaml.cs">
       <DependentUpon>SaveCancelUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Base\UserControl\ShowAddressUserControl.xaml.cs">
+      <DependentUpon>ShowAddressUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base\UserControl\UserControlBase.cs" />
+    <Compile Include="Base\ViewModel\FmComboModel.cs" />
     <Compile Include="Base\Window\FmDialogWindow.cs" />
+    <Compile Include="Base\Window\FmWindow.cs" />
     <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSessionService.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
@@ -185,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Base\UserControl\SaveCancelUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\UserControl\ShowAddressUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

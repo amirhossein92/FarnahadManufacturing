@@ -14,7 +14,7 @@ namespace FarnahadManufacturing.UI.Base.GridControl.Columns
         public static readonly DependencyProperty FmControlWidthProperty = DependencyProperty.Register(
             "FmControlWidth", typeof(FmControlWidth), typeof(FmTextGridColumn), new PropertyMetadata(default(FmControlWidth), PropertyChangedCallback));
 
-        private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        protected static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (FmGridColumn)d;
             if (e.NewValue != null)

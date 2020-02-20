@@ -53,22 +53,6 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<UserGroup> UsersGroups { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
 
-        public override int SaveChanges()
-        {
-            foreach (var entry in this.ChangeTracker.Entries())
-            {
-                if (entry.State == EntityState.Added)
-                {
-                    if (entry.CurrentValues.PropertyNames.Any(item => item == "CreatedDateTime"))
-                    {
-                        entry.Property("CreatedDateTime").CurrentValue = DateTime.Now;
-                        entry.Property("CreatedByUserId").CurrentValue = 3;
-                    }
-                }
-            }
-            return base.SaveChanges();
-        }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

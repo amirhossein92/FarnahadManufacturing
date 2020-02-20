@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Docking.Base;
 using FarnahadManufacturing.UI.Base.UserControl;
+using FarnahadManufacturing.UI.Base.Window;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
@@ -27,7 +29,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI
 {
-    public partial class MainWindow : DXWindow
+    public partial class MainWindow : FmWindow
     {
         public MainWindow()
         {
@@ -119,6 +121,12 @@ namespace FarnahadManufacturing.UI
                 if (item is DocumentPanel documentPanel && documentPanel.Content is T)
                     documentPanel.IsActive = true;
             }
+        }
+
+        private void MainWindowOnClosing(object sender, CancelEventArgs e)
+        {
+            if (!MessageBoxService.AskForClose())
+                e.Cancel = true;
         }
     }
 }

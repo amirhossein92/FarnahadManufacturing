@@ -52,8 +52,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             statuses.Add(new Tuple<bool, string>(false, "غیر فعال"));
             statuses.Add(new Tuple<bool, string>(true, "فعال"));
             SearchStatusComboBoxEdit.ItemsSource = statuses;
-            SearchStatusComboBoxEdit.DisplayMember = "Item2";
-            SearchStatusComboBoxEdit.ValueMember = "Item1";
         }
 
         private void LoadSearchGridControlData(string searchTitle = null, object searchStatus = null)

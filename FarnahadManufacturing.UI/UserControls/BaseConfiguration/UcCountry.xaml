@@ -1,4 +1,4 @@
-﻿<userControl:FilterUserControlBase xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+﻿<userControl1:FilterUserControlBase xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
                                    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
                                    x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCountry"
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,17 +6,19 @@
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
-                                   xmlns:label="clr-namespace:FarnahadManufacturing.UI.Base.Label"
-                                   xmlns:input="clr-namespace:FarnahadManufacturing.UI.Base.Input"
-                                   xmlns:buttons="clr-namespace:FarnahadManufacturing.UI.Base.Buttons"
-                                   xmlns:gridControl="clr-namespace:FarnahadManufacturing.UI.Base.GridControl"
-                                   xmlns:layout="clr-namespace:FarnahadManufacturing.UI.Base.Layout"
-                                   xmlns:userControl="clr-namespace:FarnahadManufacturing.UI.Base.UserControl"
-                                   xmlns:dock="clr-namespace:FarnahadManufacturing.UI.Base.Dock"
-                                   xmlns:columns="clr-namespace:FarnahadManufacturing.UI.Base.GridControl.Columns"
+                                   xmlns:label="clr-namespace:FarnahadManufacturing.Control.Base.Label;assembly=FarnahadManufacturing.Control"
+                                   xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+                                   xmlns:buttons="clr-namespace:FarnahadManufacturing.Control.Base.Buttons;assembly=FarnahadManufacturing.Control"
+                                   xmlns:gridControl="clr-namespace:FarnahadManufacturing.Control.Base.GridControl;assembly=FarnahadManufacturing.Control"
+                                   xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+                                   xmlns:userControl="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+                                   xmlns:dock="clr-namespace:FarnahadManufacturing.Control.Base.Dock;assembly=FarnahadManufacturing.Control"
+                                   xmlns:columns="clr-namespace:FarnahadManufacturing.Control.Base.GridControl.Columns;assembly=FarnahadManufacturing.Control"
+                                   xmlns:userControl1="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+                                   xmlns:dock1="clr-namespace:FarnahadManufacturing.Control.Base.Dock;assembly=FarnahadManufacturing.Control"
                                    mc:Ignorable="d"
                                    d:DesignHeight="450" d:DesignWidth="800">
-    <dock:FmDockLayoutManager>
+    <dock1:FmDockLayoutManager>
         <dock:FmDockLayoutGroup>
             <layout:FmFilterLayoutPanel ItemWidth="*">
                 <layout:FmLayoutControl>
@@ -59,5 +61,5 @@
                 </layout:FmLayoutControl>
             </layout:FmDocumentPanel>
         </dock:FmDockLayoutGroup>
-    </dock:FmDockLayoutManager>
-</userControl:FilterUserControlBase>
+    </dock1:FmDockLayoutManager>
+</userControl1:FilterUserControlBase>

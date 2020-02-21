@@ -84,89 +84,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Base\Accordion\FmAccordionControl.cs" />
-    <Compile Include="Base\Accordion\FmAccordionItem.cs" />
-    <Compile Include="Base\Accordion\FmSeparatorItem.cs" />
-    <Compile Include="Base\Buttons\FmCancelSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMapSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniAddSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniEditSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmSaveSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmSearchSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmViewSimpleButton.cs" />
-    <Compile Include="Base\ControlDefaultValue.cs" />
-    <Compile Include="Base\Dock\FmDockDocumentGroup.cs" />
-    <Compile Include="Base\Dock\FmDockLayoutGroup.cs" />
-    <Compile Include="Base\Dock\FmDockLayoutManager.cs" />
-    <Compile Include="Base\GridControl\Columns\FmCheckBoxGridColumn.cs" />
-    <Compile Include="Base\GridControl\Columns\FmComboBoxGridColumn.cs" />
-    <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
-    <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
-    <Compile Include="Base\GridControl\Columns\FmComboBoxEditSettings.cs" />
-    <Compile Include="Base\GridControl\FmEditModeGridControl.cs" />
-    <Compile Include="Base\GridControl\FmReadOnlyGridControl.cs" />
-    <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
-    <Compile Include="Base\Image\FmImageEdit.cs" />
-    <Compile Include="Base\Input\FmCheckEdit.cs" />
-    <Compile Include="Base\Input\FmComboBoxEdit.cs" />
-    <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
-    <Compile Include="Base\Input\FmPasswordBoxEdit.cs" />
-    <Compile Include="Base\Input\FmSpinEdit.cs" />
-    <Compile Include="Base\Input\FmTextEdit.cs" />
-    <Compile Include="Base\Label\FmHeaderLabel.cs" />
-    <Compile Include="Base\Label\FmLabel.cs" />
-    <Compile Include="Base\Layout\FmDocumentPanel.cs" />
-    <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
-    <Compile Include="Base\Layout\FmGrid.cs" />
-    <Compile Include="Base\Layout\FmGroupBox.cs" />
-    <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
-    <Compile Include="Base\Layout\FmHorizontalLayoutGroupBox.cs" />
-    <Compile Include="Base\Layout\FmHorizontalLayoutGroup.cs" />
-    <Compile Include="Base\Layout\FmLayoutControl.cs" />
-    <Compile Include="Base\Layout\FmLayoutItem.cs" />
-    <Compile Include="Base\Layout\FmVerticalLayoutGroupBox.cs" />
-    <Compile Include="Base\Layout\FmVerticalLayoutGroup.cs" />
-    <Compile Include="Base\ListBox\FmListBoxEdit.cs" />
-    <Compile Include="Base\MainPage\FmBarButtonItem.cs" />
-    <Compile Include="Base\MainPage\FmBarItemSeparator.cs" />
-    <Compile Include="Base\MainPage\FmBarSubItem.cs" />
-    <Compile Include="Base\MainPage\FmMainMenuControl.cs" />
-    <Compile Include="Base\MainPage\FmStatusBarControl.cs" />
-    <Compile Include="Base\MainPage\FmToolBarControl.cs" />
-    <Compile Include="Base\Size\FmControlWidth.cs" />
-    <Compile Include="Base\Size\FmGridColumnWidth.cs" />
-    <Compile Include="Base\TabControl\FmTabControl.cs" />
-    <Compile Include="Base\TabControl\FmTabItem.cs" />
-    <Compile Include="Base\UserControl\AddEditDeleteListUserControl.xaml.cs">
-      <DependentUpon>AddEditDeleteListUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Base\UserControl\DialogUserControlBase.cs" />
-    <Compile Include="Base\UserControl\FilterUserControlBase.cs" />
-    <Compile Include="Base\UserControl\PaginationUserControl.xaml.cs">
-      <DependentUpon>PaginationUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Base\UserControl\SaveCancelUserControl.xaml.cs">
-      <DependentUpon>SaveCancelUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Base\UserControl\ShowAddressUserControl.xaml.cs">
-      <DependentUpon>ShowAddressUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Base\UserControl\UserControlBase.cs" />
-    <Compile Include="Base\ViewModel\FmComboModel.cs" />
-    <Compile Include="Base\Window\FmDialogWindow.cs" />
-    <Compile Include="Base\Window\FmWindow.cs" />
     <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSessionService.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
     <Compile Include="Common\EncryptionUtility.cs" />
-    <Compile Include="Common\ImageUtility.cs" />
     <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\PaginationUtility.cs" />
-    <Compile Include="Common\ToolBarUtility.cs" />
     <Compile Include="Common\HeaderService.cs" />
-    <Compile Include="Common\WindowService.cs" />
     <Compile Include="UserControls\BaseConfiguration\UcCity.xaml.cs">
       <DependentUpon>UcCity.xaml</DependentUpon>
     </Compile>
@@ -188,22 +112,6 @@
     <Compile Include="UserControls\Configuration\UcVendor.xaml.cs">
       <DependentUpon>UcVendor.xaml</DependentUpon>
     </Compile>
-    <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Base\UserControl\PaginationUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Base\UserControl\SaveCancelUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Base\UserControl\ShowAddressUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -278,6 +186,10 @@
     <ProjectReference Include="..\FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj">
       <Project>{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}</Project>
       <Name>FarnahadManufacturing.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FarnahadManufacturing.Control\FarnahadManufacturing.Control.csproj">
+      <Project>{ff9f6ef1-b6d3-42ca-ba35-1927be1b81bc}</Project>
+      <Name>FarnahadManufacturing.Control</Name>
     </ProjectReference>
     <ProjectReference Include="..\FarnahadManufacturing.Data\FarnahadManufacturing.Data.csproj">
       <Project>{5D16F9C4-AED6-4C87-ABE5-28982DF64217}</Project>

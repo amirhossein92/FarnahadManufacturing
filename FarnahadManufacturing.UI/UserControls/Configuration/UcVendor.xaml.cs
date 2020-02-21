@@ -19,11 +19,13 @@ using DevExpress.Data.Helpers;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.Layout.Core.Platform;
+using FarnahadManufacturing.Control.Base.UserControl;
+using FarnahadManufacturing.Control.Base.ViewModel;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
-using FarnahadManufacturing.UI.Base.UserControl;
-using FarnahadManufacturing.UI.Base.ViewModel;
+using FarnahadManufacturing.Control.Base.UserControl;
+using FarnahadManufacturing.Control.Base.ViewModel;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
@@ -408,7 +410,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         private void FillData(Vendor vendor)
         {
             TitleTextEdit.Text = vendor.Title;
-            DefaultAddressUserControl.Address = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress);
+            DefaultAddressUserControl.AddressDetail = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress)?.AddressDetail;
             CreatedUserTextEdit.Text = vendor.CreatedByUser?.UserName;
             CreatedDateTextEdit.Text = vendor.CreatedDateTime.ToLongTimeString();
             DefaultContactInformationsGridControl.ItemsSource = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress)?.ContactInformations;

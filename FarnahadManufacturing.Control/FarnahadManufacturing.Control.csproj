@@ -31,17 +31,124 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Accordion.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Accordion\FmAccordionControl.cs" />
+    <Compile Include="Base\Accordion\FmAccordionItem.cs" />
+    <Compile Include="Base\Accordion\FmSeparatorItem.cs" />
+    <Compile Include="Base\Buttons\FmCancelSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMapSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniAddSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniEditSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmSaveSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmSearchSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmViewSimpleButton.cs" />
+    <Compile Include="Base\ControlDefaultValue.cs" />
+    <Compile Include="Base\Dock\FmDockDocumentGroup.cs" />
+    <Compile Include="Base\Dock\FmDockLayoutGroup.cs" />
+    <Compile Include="Base\Dock\FmDockLayoutManager.cs" />
+    <Compile Include="Base\GridControl\Columns\FmCheckBoxGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmComboBoxEditSettings.cs" />
+    <Compile Include="Base\GridControl\Columns\FmComboBoxGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
+    <Compile Include="Base\GridControl\FmEditModeGridControl.cs" />
+    <Compile Include="Base\GridControl\FmReadOnlyGridControl.cs" />
+    <Compile Include="Base\GridControl\FmSearchGridControl.cs" />
+    <Compile Include="Base\Image\FmImageEdit.cs" />
+    <Compile Include="Base\Input\FmCheckEdit.cs" />
+    <Compile Include="Base\Input\FmComboBoxEdit.cs" />
+    <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
+    <Compile Include="Base\Input\FmPasswordBoxEdit.cs" />
+    <Compile Include="Base\Input\FmSpinEdit.cs" />
+    <Compile Include="Base\Input\FmTextEdit.cs" />
+    <Compile Include="Base\Label\FmHeaderLabel.cs" />
+    <Compile Include="Base\Label\FmLabel.cs" />
+    <Compile Include="Base\Layout\FmDocumentPanel.cs" />
+    <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
+    <Compile Include="Base\Layout\FmGrid.cs" />
+    <Compile Include="Base\Layout\FmGroupBox.cs" />
+    <Compile Include="Base\Layout\FmHeaderLayoutGroup.cs" />
+    <Compile Include="Base\Layout\FmHorizontalLayoutGroup.cs" />
+    <Compile Include="Base\Layout\FmHorizontalLayoutGroupBox.cs" />
+    <Compile Include="Base\Layout\FmLayoutControl.cs" />
+    <Compile Include="Base\Layout\FmLayoutItem.cs" />
+    <Compile Include="Base\Layout\FmVerticalLayoutGroup.cs" />
+    <Compile Include="Base\Layout\FmVerticalLayoutGroupBox.cs" />
+    <Compile Include="Base\ListBox\FmListBoxEdit.cs" />
+    <Compile Include="Base\MainPage\FmBarButtonItem.cs" />
+    <Compile Include="Base\MainPage\FmBarItemSeparator.cs" />
+    <Compile Include="Base\MainPage\FmBarSubItem.cs" />
+    <Compile Include="Base\MainPage\FmMainMenuControl.cs" />
+    <Compile Include="Base\MainPage\FmStatusBarControl.cs" />
+    <Compile Include="Base\MainPage\FmToolBarControl.cs" />
+    <Compile Include="Base\Size\FmControlWidth.cs" />
+    <Compile Include="Base\Size\FmGridColumnWidth.cs" />
+    <Compile Include="Base\TabControl\FmTabControl.cs" />
+    <Compile Include="Base\TabControl\FmTabItem.cs" />
+    <Compile Include="Base\UserControl\AddEditDeleteListUserControl.xaml.cs">
+      <DependentUpon>AddEditDeleteListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UserControl\DialogUserControlBase.cs" />
+    <Compile Include="Base\UserControl\FilterUserControlBase.cs" />
+    <Compile Include="Base\UserControl\PaginationUserControl.xaml.cs">
+      <DependentUpon>PaginationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UserControl\SaveCancelUserControl.xaml.cs">
+      <DependentUpon>SaveCancelUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UserControl\ShowAddressUserControl.xaml.cs">
+      <DependentUpon>ShowAddressUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UserControl\UserControlBase.cs" />
+    <Compile Include="Base\ViewModel\FmComboModel.cs" />
+    <Compile Include="Base\Window\FmDialogWindow.cs" />
+    <Compile Include="Base\Window\FmWindow.cs" />
+    <Compile Include="Common\ImageUtility.cs" />
+    <Compile Include="Common\ToolBarUtility.cs" />
+    <Compile Include="Common\WindowService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\UserControl\PaginationUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\UserControl\SaveCancelUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\UserControl\ShowAddressUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

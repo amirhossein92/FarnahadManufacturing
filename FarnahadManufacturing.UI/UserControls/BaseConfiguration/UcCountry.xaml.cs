@@ -17,7 +17,7 @@ using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.LayoutControl;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
-using FarnahadManufacturing.UI.Base.UserControl;
+using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration

@@ -17,9 +17,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Grid;
 using DevExpress.XtraPrinting.Native;
+using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.Configuration;
-using FarnahadManufacturing.UI.Base.UserControl;
+using FarnahadManufacturing.Control.Base.UserControl;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 using MessageBox = System.Windows.MessageBox;
 

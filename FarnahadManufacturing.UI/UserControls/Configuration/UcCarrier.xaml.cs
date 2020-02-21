@@ -144,7 +144,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnDeleteToolBarItem()
         {
-            if (MessageBoxService.AskForDelete(_activeCarrier.Title) == DialogResult.Yes)
+            if (MessageBoxService.AskForDelete(_activeCarrier.Title) == true)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
@@ -263,7 +263,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         private void DeleteItemButtonOnClick(object sender, RoutedEventArgs e)
         {
             var activeCarrierService = CarrierServiceGridControl.SelectedItem as CarrierService;
-            if (MessageBoxService.AskForDelete(activeCarrierService.Title) == DialogResult.Yes)
+            if (MessageBoxService.AskForDelete(activeCarrierService.Title) == true)
                 _carrierServices.Remove(activeCarrierService);
         }
 

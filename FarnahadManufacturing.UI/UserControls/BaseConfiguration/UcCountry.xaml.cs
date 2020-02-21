@@ -88,7 +88,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnDeleteToolBarItem()
         {
-            if (MessageBoxService.AskForDelete(_activeCountry.Title) == DialogResult.Yes)
+            if (MessageBoxService.AskForDelete(_activeCountry.Title) == true)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {

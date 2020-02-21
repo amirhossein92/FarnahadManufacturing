@@ -12,9 +12,6 @@ namespace FarnahadManufacturing.Control.Base.UserControl
                 SetToolBarItems();
         }
 
-        protected int CurrentPage = 1;
-        protected int TotalRecordsCount;
-
         protected sealed override void SetToolBarItems()
         {
             var addButton = new BarButtonItem

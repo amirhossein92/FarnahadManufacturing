@@ -86,10 +86,10 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     cityQueryable = cityQueryable.Where(item => item.Province.Title.Contains(searchProvinceTitle));
                 if (!string.IsNullOrEmpty(searchCountryTitle))
                     cityQueryable = cityQueryable.Where(item => item.Province.Country.Title.Contains(searchCountryTitle));
-                TotalRecordsCount = cityQueryable.Count();
-                _cities = cityQueryable.Paginate(CurrentPage);
+                var totalRecordsCount = cityQueryable.Count();
+                _cities = cityQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _cities;
-                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _cities.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(_cities.Count, totalRecordsCount);
             }
         }
 
@@ -150,7 +150,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            CurrentPage = 1;
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
@@ -186,24 +186,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             city.Description = DescriptionTextEdit.Text;
         }
 
-        private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                LoadSearchGridControl();
-            }
-        }
-
-        private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
-            {
-                CurrentPage++;
-                LoadSearchGridControl();
-            }
-        }
-
         private void ViewButtonOnClick(object sender, RoutedEventArgs e)
         {
             var city = SearchGridControl.SelectedItem as City;
@@ -227,6 +209,11 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         {
             MainLayoutGroup.IsEnabled = false;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
+        }
+
+        private void PaginationUserControlOnRefreshData(object sender, RoutedEventArgs e)
+        {
+            LoadSearchGridControl();
         }
     }
 }

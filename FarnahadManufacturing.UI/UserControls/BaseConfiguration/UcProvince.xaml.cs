@@ -62,10 +62,10 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 if (!string.IsNullOrEmpty(country))
                     provincesQueryable = provincesQueryable.Where(item => item.Country.Title.Contains(country) ||
                                                                           item.Country.Abbreviation.Contains(country));
-                TotalRecordsCount = provincesQueryable.Count();
-                _provinces = provincesQueryable.Paginate(CurrentPage);
+                var totalRecordsCount = provincesQueryable.Count();
+                _provinces = provincesQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _provinces;
-                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _provinces.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail( _provinces.Count, totalRecordsCount);
             }
         }
 
@@ -152,6 +152,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
@@ -163,24 +164,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 return;
             if (searchGridControl.ItemsSource is ObservableCollection<Province> provinces)
                 EditData(provinces[rowIndex]);
-        }
-
-        private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                LoadSearchGridControl();
-            }
-        }
-
-        private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
-            {
-                CurrentPage++;
-                LoadSearchGridControl();
-            }
         }
 
         private void ViewButtonOnClick(object sender, RoutedEventArgs e)
@@ -210,6 +193,11 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             province.Abbreviation = AbbreviationTextEdit.Text;
             province.CountryId = Convert.ToInt32(CountryComboBoxEdit.EditValue);
             province.Description = DescriptionTextEdit.Text;
+        }
+
+        private void PaginationUserControlOnRefreshData(object sender, RoutedEventArgs e)
+        {
+            LoadSearchGridControl();
         }
     }
 }

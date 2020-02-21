@@ -113,15 +113,16 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 if (!string.IsNullOrEmpty(searchTitle))
                     countryQueryable = countryQueryable.Where(item => item.Title.Contains(searchTitle) ||
                                                                       item.Description.Contains(searchTitle));
-                TotalRecordsCount = countryQueryable.Count();
-                _countries = countryQueryable.Paginate(CurrentPage);
+                var totalRecordsCount = countryQueryable.Count();
+                _countries = countryQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _countries;
-                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _countries.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(_countries.Count, totalRecordsCount);
             }
         }
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
@@ -146,24 +147,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             _activeCountry = country;
             FillData(_activeCountry);
             IsEditing();
-        }
-
-        private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                LoadSearchGridControl();
-            }
-        }
-
-        private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage <= (TotalRecordsCount / ApplicationSetting.PageRecordNumber))
-            {
-                CurrentPage++;
-                LoadSearchGridControl();
-            }
         }
 
         private void FillData(Country country)
@@ -197,6 +180,11 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         {
             MainLayoutGroup.IsEnabled = false;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
+        }
+
+        private void PaginationUserControlOnRefreshData(object sender, RoutedEventArgs e)
+        {
+            LoadSearchGridControl();
         }
     }
 }

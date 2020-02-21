@@ -59,10 +59,10 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 if (!string.IsNullOrEmpty(name))
                     usersQueryable = usersQueryable.Where(item => item.LastName.Contains(name) ||
                                                                   item.LastName.Contains(name));
-                TotalRecordsCount = usersQueryable.Count();
-                _users = usersQueryable.Paginate(CurrentPage);
+                var totalRecordsCount = usersQueryable.Count();
+                _users = usersQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _users;
-                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _users.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(_users.Count, totalRecordsCount);
             }
         }
 
@@ -169,6 +169,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
@@ -188,24 +189,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             FillData(_activeUser);
             LoadLocationGroups();
             IsEditing();
-        }
-
-        private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                LoadSearchGridControl();
-            }
-        }
-
-        private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
-            {
-                CurrentPage++;
-                LoadSearchGridControl();
-            }
         }
 
         private void ViewButtonOnClick(object sender, RoutedEventArgs e)
@@ -267,6 +250,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 availableLocationGroups.Add(selectedLocationGroup);
                 currentLocationGroups.Remove(selectedLocationGroup);
             }
+        }
+
+        private void PaginationUserControlOnRefreshData(object sender, RoutedEventArgs e)
+        {
+            LoadSearchGridControl();
         }
     }
 }

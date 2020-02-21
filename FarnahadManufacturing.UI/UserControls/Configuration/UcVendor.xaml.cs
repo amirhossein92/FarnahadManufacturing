@@ -111,10 +111,10 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     vendorsQueryable = vendorsQueryable.Where(item => item.Addresses.Any(a => a.ProvinceId == provinceId));
                 if (cityId != null)
                     vendorsQueryable = vendorsQueryable.Where(item => item.Addresses.Any(a => a.CityId == cityId));
-                TotalRecordsCount = vendorsQueryable.Count();
-                _vendors = vendorsQueryable.Paginate(CurrentPage);
+                var totalRecordsCount = vendorsQueryable.Count();
+                _vendors = vendorsQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _vendors;
-                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _vendors.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(_vendors.Count, totalRecordsCount);
             }
         }
 
@@ -209,6 +209,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
@@ -389,24 +390,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             IsEditing();
         }
 
-        private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                LoadSearchGridControl();
-            }
-        }
-
-        private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
-            {
-                CurrentPage++;
-                LoadSearchGridControl();
-            }
-        }
-
         private void ViewButtonOnClick(object sender, RoutedEventArgs e)
         {
             _activeVendor = SearchGridControl.SelectedItem as Vendor;
@@ -526,6 +509,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             if (_activeContactInformation != null)
                 _contactInformations.Remove(_activeContactInformation);
+        }
+
+        private void PaginationUserControlOnRefreshData(object sender, RoutedEventArgs e)
+        {
+            LoadSearchGridControl();
         }
     }
 }

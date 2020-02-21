@@ -49,8 +49,7 @@
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
                         <userControl:PaginationUserControl x:Name="PaginationUserControl"
-                                                       ClickOnPrevious="PreviousPageButtonOnClick"
-                                                       ClickOnNext="NextPageButtonOnClick" />
+                                                           RefreshData="PaginationUserControlOnRefreshData"/>
                         <layout:FmLayoutItem HorizontalContentAlignment="Right">
                             <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
                         </layout:FmLayoutItem>

@@ -68,10 +68,10 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     var searchStatusIsActive = searchStatus as Tuple<bool, string>;
                     carrierQueryable = carrierQueryable.Where(item => item.IsActive == searchStatusIsActive.Item1);
                 }
-                TotalRecordsCount = carrierQueryable.Count();
-                _carriers = carrierQueryable.Paginate(CurrentPage);
+                var totalRecordsCount = carrierQueryable.Count();
+                _carriers = carrierQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _carriers;
-                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _carriers.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(_carriers.Count, totalRecordsCount);
             }
         }
 
@@ -162,7 +162,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            CurrentPage = 1;
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
@@ -174,24 +174,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 return;
             if (searchGridControl.ItemsSource is ObservableCollection<Carrier> carriers)
                 EditData(carriers[rowIndex]);
-        }
-
-        private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                LoadSearchGridControl();
-            }
-        }
-
-        private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            if (CurrentPage <= PaginationUtility.MaximumPageNumber(TotalRecordsCount))
-            {
-                CurrentPage++;
-                LoadSearchGridControl();
-            }
         }
 
         private void ViewButtonOnClick(object sender, RoutedEventArgs e)
@@ -284,6 +266,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             MainLayoutGroup.IsEnabled = false;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
+        }
+
+        private void PaginationUserControlOnRefreshData(object sender, RoutedEventArgs e)
+        {
+            LoadSearchGridControl();
         }
     }
 }

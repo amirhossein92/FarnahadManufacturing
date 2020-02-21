@@ -7,44 +7,47 @@ namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public partial class PaginationUserControl : FmHorizontalLayoutGroup
     {
+        private int _currentPage = 1;
+        private int _currentPageCount;
+        private int _totalRecordsCount;
+
         public PaginationUserControl()
         {
             InitializeComponent();
         }
 
-        public event RoutedEventHandler ClickOnPrevious;
-        public event RoutedEventHandler ClickOnNext;
+        public int CurrentPage
+        {
+            get => _currentPage;
+            set => _currentPage = value;
+        }
+
+        public event RoutedEventHandler RefreshData;
 
         private void PreviousPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            ClickOnPrevious?.Invoke(sender, e);
+            if (_currentPage > 1)
+            {
+                _currentPage--;
+                RefreshData?.Invoke(sender, e);
+            }
         }
 
         private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            ClickOnNext?.Invoke(sender, e);
+            if (_currentPage <= PaginationUtility.MaximumPageNumber(_totalRecordsCount))
+            {
+                _currentPage++;
+                RefreshData?.Invoke(sender, e);
+            }
         }
 
-        //public static readonly DependencyProperty RecordCountTextProperty = DependencyProperty.Register(
-        //    "RecordCountText", typeof(string), typeof(PaginationUserControl), new PropertyMetadata(default(string), PropertyChangedCallback));
-
-        //private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    var control = (PaginationUserControl)d;
-        //    if (e.NewValue != null)
-        //        control.RecordsCountFmLabel.Text = Convert.ToString(e.NewValue);
-        //}
-
-        //public string RecordCountText
-        //{
-        //    get => (string)GetValue(RecordCountTextProperty);
-        //    set => SetValue(RecordCountTextProperty, value);
-        //}
-
-        public void UpdateRecordsDetail(int currentPage, int currentPageCount, int totalRecordsCount)
+        public void UpdateRecordsDetail(int currentPageCount, int totalRecordsCount)
         {
-            this.RecordsCountFmLabel.Text =
-                PaginationUtility.GetRecordsDetailText(currentPage, currentPageCount, totalRecordsCount);
+            _currentPageCount = currentPageCount;
+            _totalRecordsCount = totalRecordsCount;
+            RecordsCountFmLabel.Text =
+                PaginationUtility.GetRecordsDetailText(_currentPage, _currentPageCount, _totalRecordsCount);
         }
     }
 }

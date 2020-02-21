@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="Base\UserControl\DialogUserControlBase.cs" />
     <Compile Include="Base\UserControl\FilterUserControlBase.cs" />
+    <Compile Include="Base\UserControl\ListBoxButtonsUserControl.xaml.cs">
+      <DependentUpon>ListBoxButtonsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base\UserControl\PaginationUserControl.xaml.cs">
       <DependentUpon>PaginationUserControl.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
     <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\UserControl\ListBoxButtonsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Base\UserControl\PaginationUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>

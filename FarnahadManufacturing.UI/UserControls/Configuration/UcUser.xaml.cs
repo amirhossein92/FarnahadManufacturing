@@ -143,9 +143,9 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
                 LoadSearchGridControl();
                 _activeUser = new User();
+                IsNotEditingAndAdding();
             }
 
-            IsNotEditingAndAdding();
         }
 
         protected override void OnAdding()

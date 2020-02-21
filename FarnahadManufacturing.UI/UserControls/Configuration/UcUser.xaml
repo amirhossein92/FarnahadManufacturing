@@ -98,14 +98,7 @@
                                         <listBox:FmListBoxEdit x:Name="AvailableGroupsListBoxEdit"
                                                                    DisplayMember="Title" ValueMember="Id"/>
                                     </layout:FmLayoutItem>
-                                    <layout:FmVerticalLayoutGroup VerticalAlignment="Center" Width="50">
-                                        <layout:FmLayoutItem>
-                                            <buttons:FmSimpleButton Content="+"/>
-                                        </layout:FmLayoutItem>
-                                        <layout:FmLayoutItem>
-                                            <buttons:FmSimpleButton Content="-"/>
-                                        </layout:FmLayoutItem>
-                                    </layout:FmVerticalLayoutGroup>
+                                    <userControl:ListBoxButtonsUserControl/>
                                     <layout:FmLayoutItem Label="گروه کاربران انتخاب شده" LabelPosition="Top" 
                                                                  VerticalAlignment="Stretch">
                                         <listBox:FmListBoxEdit x:Name="CurrentUserGroupsListBoxEdit"
@@ -125,16 +118,8 @@
                                         <listBox:FmListBoxEdit x:Name="AvailableLocationGroupListBoxEdit"
                                                                DisplayMember="Title" ValueMember="Id"/>
                                     </layout:FmLayoutItem>
-                                    <layout:FmVerticalLayoutGroup VerticalAlignment="Center" Width="50">
-                                        <layout:FmLayoutItem>
-                                            <buttons:FmSimpleButton Content="+"
-                                                                    Click="AddSelectedLocationGroupToCurrentLocationGroupsOnClick"/>
-                                        </layout:FmLayoutItem>
-                                        <layout:FmLayoutItem>
-                                            <buttons:FmSimpleButton Content="-"
-                                                                    Click="RemoveSelectedLocationGroupFromCurrentLocationGroupsOnClick"/>
-                                        </layout:FmLayoutItem>
-                                    </layout:FmVerticalLayoutGroup>
+                                    <userControl:ListBoxButtonsUserControl AddSingle="AddSelectedLocationGroupToCurrentLocationGroupsOnClick"
+                                                                           RemoveSingle="RemoveSelectedLocationGroupFromCurrentLocationGroupsOnClick"/>
                                     <layout:FmLayoutItem Label="گروه موقعیت های انتخاب شده" LabelPosition="Top" 
                                                          VerticalAlignment="Stretch">
                                         <listBox:FmListBoxEdit x:Name="CurrentLocationGroupListBoxEdit"

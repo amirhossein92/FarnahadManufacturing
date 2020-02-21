@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Grid;
 using DevExpress.XtraPrinting.Native;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.Configuration;
@@ -61,7 +62,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 TotalRecordsCount = usersQueryable.Count();
                 _users = usersQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _users;
-                PaginationUserControl.RecordCountText = PaginationUtility.GetRecordsDetailText(CurrentPage, _users.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _users.Count, TotalRecordsCount);
             }
         }
 
@@ -163,7 +164,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(UserControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
         }
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)

@@ -84,18 +84,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSessionService.cs" />
-    <Compile Include="Common\ApplicationSetting.cs" />
-    <Compile Include="Common\EncryptionUtility.cs" />
-    <Compile Include="Common\MessageBoxService.cs" />
-    <Compile Include="Common\PaginationUtility.cs" />
-    <Compile Include="Common\HeaderService.cs" />
     <Compile Include="UserControls\BaseConfiguration\UcCity.xaml.cs">
       <DependentUpon>UcCity.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcCountry.xaml.cs">
       <DependentUpon>UcCountry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcProvince.xaml.cs">
+      <DependentUpon>UcProvince.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Configuration\UcCarrier.xaml.cs">
       <DependentUpon>UcCarrier.xaml</DependentUpon>
@@ -129,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\BaseConfiguration\UcCountry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseConfiguration\UcProvince.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

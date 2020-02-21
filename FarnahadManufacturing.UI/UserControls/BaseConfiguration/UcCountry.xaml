@@ -54,6 +54,9 @@
                         <layout:FmLayoutItem Label="نام">
                             <input:FmTextEdit x:Name="NameTextEdit" />
                         </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="مخفف">
+                            <input:FmTextEdit x:Name="AbbreviationTextEdit" />
+                        </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
                         </layout:FmLayoutItem>

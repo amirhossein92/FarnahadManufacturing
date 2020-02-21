@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.Layout;
 
 namespace FarnahadManufacturing.Control.Base.UserControl
@@ -24,20 +25,26 @@ namespace FarnahadManufacturing.Control.Base.UserControl
             ClickOnNext?.Invoke(sender, e);
         }
 
-        public static readonly DependencyProperty RecordCountTextProperty = DependencyProperty.Register(
-            "RecordCountText", typeof(string), typeof(PaginationUserControl), new PropertyMetadata(default(string), PropertyChangedCallback));
+        //public static readonly DependencyProperty RecordCountTextProperty = DependencyProperty.Register(
+        //    "RecordCountText", typeof(string), typeof(PaginationUserControl), new PropertyMetadata(default(string), PropertyChangedCallback));
 
-        private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (PaginationUserControl)d;
-            if (e.NewValue != null)
-                control.RecordsCountFmLabel.Text = Convert.ToString(e.NewValue);
-        }
+        //private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    var control = (PaginationUserControl)d;
+        //    if (e.NewValue != null)
+        //        control.RecordsCountFmLabel.Text = Convert.ToString(e.NewValue);
+        //}
 
-        public string RecordCountText
+        //public string RecordCountText
+        //{
+        //    get => (string)GetValue(RecordCountTextProperty);
+        //    set => SetValue(RecordCountTextProperty, value);
+        //}
+
+        public void UpdateRecordsDetail(int currentPage, int currentPageCount, int totalRecordsCount)
         {
-            get => (string)GetValue(RecordCountTextProperty);
-            set => SetValue(RecordCountTextProperty, value);
+            this.RecordsCountFmLabel.Text =
+                PaginationUtility.GetRecordsDetailText(currentPage, currentPageCount, totalRecordsCount);
         }
     }
 }

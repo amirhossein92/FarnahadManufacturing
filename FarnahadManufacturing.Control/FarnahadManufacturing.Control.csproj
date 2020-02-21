@@ -43,6 +43,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -127,6 +128,7 @@
     <Compile Include="Base\Window\FmDialogWindow.cs" />
     <Compile Include="Base\Window\FmWindow.cs" />
     <Compile Include="Common\ImageUtility.cs" />
+    <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\ToolBarUtility.cs" />
     <Compile Include="Common\WindowService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +151,11 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj">
+      <Project>{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}</Project>
+      <Name>FarnahadManufacturing.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

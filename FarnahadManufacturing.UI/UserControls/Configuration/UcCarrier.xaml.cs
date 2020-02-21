@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.Grid.EditForm;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.Configuration;
 using FarnahadManufacturing.Control.Base.UserControl;
@@ -70,8 +71,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 TotalRecordsCount = carrierQueryable.Count();
                 _carriers = carrierQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _carriers;
-                PaginationUserControl.RecordCountText =
-                    PaginationUtility.GetRecordsDetailText(CurrentPage, _carriers.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _carriers.Count, TotalRecordsCount);
             }
         }
 
@@ -283,7 +283,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(UserControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
         }
     }
 }

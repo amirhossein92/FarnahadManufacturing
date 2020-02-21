@@ -131,6 +131,9 @@
                         <accordion:FmAccordionItem Header="شهر"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
                                                    MouseDoubleClick="City_OnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="استان"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
+                                                   MouseDoubleClick="ProvinceOnMouseDoubleClick" />
                         <accordion:FmAccordionItem Header="کشور"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
                                                    MouseDoubleClick="Country_OnMouseDoubleClick" />

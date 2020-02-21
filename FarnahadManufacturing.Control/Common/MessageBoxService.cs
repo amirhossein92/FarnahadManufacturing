@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.Data.Filtering.Helpers;
-using DevExpress.Xpf.Core;
+﻿using System.Windows;
 
-namespace FarnahadManufacturing.UI.Common
+namespace FarnahadManufacturing.Control.Common
 {
     public static class MessageBoxService
     {
@@ -41,13 +34,13 @@ namespace FarnahadManufacturing.UI.Common
             var msgResult = MessageBox.Show(
                 message,
                 title,
-                MessageBoxButtons.YesNoCancel,
-                MessageBoxIcon.Warning,
-                MessageBoxDefaultButton.Button3,
+                MessageBoxButton.YesNoCancel,
+                MessageBoxImage.Warning,
+                MessageBoxResult.Cancel,
                 MessageBoxOptions.RtlReading);
 
-            if ((msgResult == DialogResult.Cancel) == false)
-                result = msgResult == DialogResult.Yes;
+            if ((msgResult == MessageBoxResult.Cancel) == false)
+                result = msgResult == MessageBoxResult.Yes;
 
             return result;
         }
@@ -57,10 +50,10 @@ namespace FarnahadManufacturing.UI.Common
             return MessageBox.Show(
                        message,
                        title,
-                       MessageBoxButtons.YesNo,
-                       MessageBoxIcon.Warning,
-                       MessageBoxDefaultButton.Button2,
-                       MessageBoxOptions.RtlReading) == DialogResult.Yes;
+                       MessageBoxButton.YesNo,
+                       MessageBoxImage.Warning,
+                       MessageBoxResult.No,
+                       MessageBoxOptions.RtlReading) == MessageBoxResult.Yes;
         }
 
         private static void ShowInfoMessageBox(string message, string title)
@@ -68,9 +61,9 @@ namespace FarnahadManufacturing.UI.Common
             MessageBox.Show(
                 message,
                 title,
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1,
+                MessageBoxButton.OK,
+                MessageBoxImage.Information,
+                MessageBoxResult.OK,
                 MessageBoxOptions.RtlReading);
         }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FarnahadManufacturing.UI.Common
+﻿namespace FarnahadManufacturing.Base.Common
 {
     public class HeaderService
     {
@@ -26,7 +20,7 @@ namespace FarnahadManufacturing.UI.Common
             return GenerateHeaderTitle(userControlName, title);
         }
 
-        public static string GenerateInActiveHeaderTitle(string userControlName)
+        public static string GenerateInactiveHeaderTitle(string userControlName)
         {
             return GenerateHeaderTitle(userControlName);
         }

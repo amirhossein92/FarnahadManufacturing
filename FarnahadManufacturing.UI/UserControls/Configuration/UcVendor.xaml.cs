@@ -19,6 +19,7 @@ using DevExpress.Data.Helpers;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.Layout.Core.Platform;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.ViewModel;
 using FarnahadManufacturing.Data;
@@ -26,6 +27,7 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.ViewModel;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
@@ -112,8 +114,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 TotalRecordsCount = vendorsQueryable.Count();
                 _vendors = vendorsQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _vendors;
-                PaginationUserControl.RecordCountText =
-                    PaginationUtility.GetRecordsDetailText(CurrentPage, _vendors.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _vendors.Count, TotalRecordsCount);
             }
         }
 
@@ -346,24 +347,29 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
                 LoadSearchGridControl();
                 _activeVendor = new Vendor();
+                IsNotEditingAndAdding();
             }
-
-            IsNotEditingAndAdding();
         }
 
         protected override void OnAdding()
         {
             MainLayoutGroup.IsEnabled = true;
+            FmHeaderLayoutGroup.HeaderTitle =
+                HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
             MainLayoutGroup.IsEnabled = true;
+            FmHeaderLayoutGroup.HeaderTitle =
+                HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeVendor.Title);
         }
 
         protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
+            FmHeaderLayoutGroup.HeaderTitle =
+                HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
         }
 
         private void SearchGridControlOnMouseDoubleClick(object sender, MouseButtonEventArgs e)

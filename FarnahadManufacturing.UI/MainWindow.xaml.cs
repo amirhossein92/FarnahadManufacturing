@@ -21,8 +21,7 @@ using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Docking.Base;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.Window;
-using FarnahadManufacturing.Control.Base.UserControl;
-using FarnahadManufacturing.Control.Base.Window;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
@@ -58,6 +57,11 @@ namespace FarnahadManufacturing.UI
         private void City_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcCity>("شهر ها");
+        }
+
+        private void ProvinceOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcProvince>("استان ها");
         }
 
         private void Carrier_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)

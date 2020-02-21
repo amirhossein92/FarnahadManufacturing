@@ -14,9 +14,11 @@ using System.Windows.Input;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.Utils;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Control.Base.UserControl;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
@@ -87,8 +89,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 TotalRecordsCount = cityQueryable.Count();
                 _cities = cityQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _cities;
-                PaginationUserControl.RecordCountText =
-                    PaginationUtility.GetRecordsDetailText(CurrentPage, _cities.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _cities.Count, TotalRecordsCount);
             }
         }
 
@@ -225,7 +226,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(UserControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
         }
     }
 }

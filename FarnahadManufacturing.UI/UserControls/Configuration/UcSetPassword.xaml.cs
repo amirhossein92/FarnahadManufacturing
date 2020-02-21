@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Control.Base.UserControl;

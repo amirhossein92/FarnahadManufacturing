@@ -15,9 +15,11 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Core.Native;
 using DevExpress.Xpf.Grid;
 using DevExpress.Xpf.LayoutControl;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Control.Base.UserControl;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
@@ -114,8 +116,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 TotalRecordsCount = countryQueryable.Count();
                 _countries = countryQueryable.Paginate(CurrentPage);
                 SearchGridControl.ItemsSource = _countries;
-                PaginationUserControl.RecordCountText =
-                    PaginationUtility.GetRecordsDetailText(CurrentPage, _countries.Count, TotalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(CurrentPage, _countries.Count, TotalRecordsCount);
             }
         }
 
@@ -168,12 +169,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         private void FillData(Country country)
         {
             NameTextEdit.Text = country.Title;
+            AbbreviationTextEdit.Text = country.Abbreviation;
             DescriptionTextEdit.Text = country.Description;
         }
 
         private void ReadData(ref Country country)
         {
             country.Title = NameTextEdit.Text;
+            country.Abbreviation = AbbreviationTextEdit.Text;
             country.Description = DescriptionTextEdit.Text;
         }
 
@@ -193,7 +196,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         protected override void OnNotEditingAndAdding()
         {
             MainLayoutGroup.IsEnabled = false;
-            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInActiveHeaderTitle(UserControlTitle);
+            FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
         }
     }
 }

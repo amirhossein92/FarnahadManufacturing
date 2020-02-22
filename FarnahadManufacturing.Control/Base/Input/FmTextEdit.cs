@@ -38,8 +38,8 @@ namespace FarnahadManufacturing.Control.Base.Input
 
         public FmControlWidth FmControlWidth
         {
-            get { return (FmControlWidth)GetValue(FmControlWidthProperty); }
-            set { SetValue(FmControlWidthProperty, value); }
+            get => (FmControlWidth)GetValue(FmControlWidthProperty);
+            set => SetValue(FmControlWidthProperty, value);
         }
     }
 }

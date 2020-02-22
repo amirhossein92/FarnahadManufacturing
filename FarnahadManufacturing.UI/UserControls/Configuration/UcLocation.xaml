@@ -1,0 +1,125 @@
+﻿<userControl:FilterUserControlBase
+    x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcLocation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Configuration"
+             xmlns:userControl="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+             xmlns:dock="clr-namespace:FarnahadManufacturing.Control.Base.Dock;assembly=FarnahadManufacturing.Control"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+             xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+             xmlns:buttons="clr-namespace:FarnahadManufacturing.Control.Base.Buttons;assembly=FarnahadManufacturing.Control"
+             xmlns:gridControl="clr-namespace:FarnahadManufacturing.Control.Base.GridControl;assembly=FarnahadManufacturing.Control"
+             xmlns:columns="clr-namespace:FarnahadManufacturing.Control.Base.GridControl.Columns;assembly=FarnahadManufacturing.Control"
+             xmlns:listBox="clr-namespace:FarnahadManufacturing.Control.Base.ListBox;assembly=FarnahadManufacturing.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <dock:FmDockLayoutManager>
+        <dock:FmDockLayoutGroup>
+            <layout:FmFilterLayoutPanel ItemWidth="*">
+                <layout:FmLayoutControl>
+                    <layout:FmVerticalLayoutGroup>
+                        <layout:FmLayoutItem Label="عنوان">
+                            <input:FmTextEdit x:Name="SearchTitleTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="توضیحات">
+                            <input:FmTextEdit x:Name="SearchDescriptionTitleTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="گروه">
+                            <input:FmComboBoxEdit x:Name="SearchLocationGroupComboBoxEdit" 
+                                                  ValueMember="Value" DisplayMember="Title"/>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="وضعیت">
+                            <input:FmComboBoxEdit x:Name="SearchStatusComboBoxEdit" 
+                                                  ValueMember="Value" DisplayMember="Title"/>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="شماره">
+                            <input:FmIntSpinEdit x:Name="SearchLocationNumberSpinEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem VerticalAlignment="Stretch">
+                            <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                                                             MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                                <gridControl:FmSearchGridControl.Columns>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True"
+                                                              FmGridColumnWidth="XSmall" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True"
+                                                              FmGridColumnWidth="XXSmall" />
+                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True"
+                                                              FmGridColumnWidth="XXSmall" />
+                                    <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId" ReadOnly="True"
+                                                              FmGridColumnWidth="XXSmall">
+                                        <columns:FmComboBoxGridColumn.EditSettings>
+                                            <columns:FmComboBoxEditSettings x:Name="LocationGroupComboBoxColumn"
+                                                                            ValueMember="Value" DisplayMember="Title"/>
+                                        </columns:FmComboBoxGridColumn.EditSettings>
+                                    </columns:FmComboBoxGridColumn>
+
+                                </gridControl:FmSearchGridControl.Columns>
+                            </gridControl:FmSearchGridControl>
+                        </layout:FmLayoutItem>
+                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                           RefreshData="PaginationUserControlOnRefreshData" />
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                        </layout:FmLayoutItem>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
+            </layout:FmFilterLayoutPanel>
+            <layout:FmDocumentPanel ItemWidth="4*">
+                <layout:FmLayoutControl Orientation="Vertical">
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="محل" />
+                    <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
+                        <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
+                            <layout:FmLayoutItem Label="نام">
+                                <input:FmTextEdit x:Name="NameTextEdit" />
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="توضیحات">
+                                <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="نوع">
+                                <input:FmComboBoxEdit x:Name="LocationTypeComboBoxEdit"
+                                                  ValueMember="Value" DisplayMember="Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="گروه">
+                                <input:FmComboBoxEdit x:Name="LocationGroupComboBoxEdit" 
+                                                  ValueMember="Value" DisplayMember="Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="مشتری پیش فرض">
+                                <input:FmComboBoxEdit x:Name="DefaultCustomerComboBoxEdit" 
+                                                  ValueMember="Value" DisplayMember="Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem Label="شماره" HorizontalContentAlignment="Left" Width="200">
+                                    <input:FmIntSpinEdit x:Name="LocationNumberSpinEdit" FmControlWidth="Small"/>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem HorizontalContentAlignment="Left">
+                                    <buttons:FmSimpleButton Content="تولید" Width="60"
+                                                            Click="GenerateNumberButtonOnClick"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmLayoutItem>
+                                <input:FmCheckEdit x:Name="AvailableForSaleCheckEdit" Content="در دسترس برای فروش"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem>
+                                <input:FmCheckEdit x:Name="PickableCheckEdit" Content="در دسترس برای گرفتن کالا"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem>
+                                <input:FmCheckEdit x:Name="ReceivableCheckEdit" Content="در دسترس برای دریافت کالا"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem>
+                                <input:FmCheckEdit x:Name="IsActiveCheckEdit" Content="فعال"/>
+                            </layout:FmLayoutItem>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="انبار">
+
+                        </layout:FmVerticalLayoutGroup>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
+            </layout:FmDocumentPanel>
+        </dock:FmDockLayoutGroup>
+    </dock:FmDockLayoutManager>
+</userControl:FilterUserControlBase>

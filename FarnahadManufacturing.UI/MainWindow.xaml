@@ -100,7 +100,7 @@
                     <accordion:FmAccordionItem Header="موقعیت"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Location_Small.svg}">
                         <accordion:FmAccordionItem.Items>
-                            <accordion:FmAccordionItem Header="موقعیت ها"
+                            <accordion:FmAccordionItem Header="موقعیت ها" MouseDoubleClick="LocationOnMouseDoubleClick"
                                                        Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Locations_Small.svg}" />
                             <accordion:FmAccordionItem Header="گروه موقعیت ها" MouseDoubleClick="LocationGroupOnMouseDoubleClick"
                                                        Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/LocationGroup_Small.svg}" />

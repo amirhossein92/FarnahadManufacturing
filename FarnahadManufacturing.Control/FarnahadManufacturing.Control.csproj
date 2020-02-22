@@ -81,6 +81,7 @@
     <Compile Include="Base\Image\FmImageEdit.cs" />
     <Compile Include="Base\Input\FmCheckEdit.cs" />
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
+    <Compile Include="Base\Input\FmIntSpinEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
     <Compile Include="Base\Input\FmPasswordBoxEdit.cs" />
     <Compile Include="Base\Input\FmSpinEdit.cs" />

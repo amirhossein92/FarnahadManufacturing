@@ -100,6 +100,9 @@
     <Compile Include="UserControls\Configuration\UcCarrierService.xaml.cs">
       <DependentUpon>UcCarrierService.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcLocation.xaml.cs">
+      <DependentUpon>UcLocation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Configuration\UcLocationGroup.xaml.cs">
       <DependentUpon>UcLocationGroup.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcCarrierService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcLocation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

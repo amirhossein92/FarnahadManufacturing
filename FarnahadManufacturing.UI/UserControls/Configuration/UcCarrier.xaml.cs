@@ -155,9 +155,9 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
                 LoadSearchGridControl();
                 _activeCarrier = new Carrier();
+                IsNotEditingAndAdding();
             }
 
-            IsNotEditingAndAdding();
         }
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)

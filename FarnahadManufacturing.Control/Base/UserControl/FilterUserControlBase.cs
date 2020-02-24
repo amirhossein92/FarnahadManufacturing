@@ -1,5 +1,6 @@
 ﻿using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf.Bars;
+using FarnahadManufacturing.Control.Base.ToolBar.Buttons;
 using FarnahadManufacturing.Control.Common;
 
 namespace FarnahadManufacturing.Control.Base.UserControl
@@ -14,26 +15,11 @@ namespace FarnahadManufacturing.Control.Base.UserControl
 
         protected sealed override void SetToolBarItems()
         {
-            var addButton = new BarButtonItem
-            {
-                Name = "Add",
-                Content = "اضافه",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Add.svg"),
-            };
+            var addButton = new FmAddBarButtonItem();
             addButton.ItemClick += AddButtonOnToolBarItemClick;
-            var saveButton = new BarButtonItem
-            {
-                Name = "Save",
-                Content = "ذخیره",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Save.svg"),
-            };
+            var saveButton = new FmSaveBarButtonItem();
             saveButton.ItemClick += SaveButtonOnToolBarItemClick;
-            var deleteButton = new BarButtonItem
-            {
-                Name = "Delete",
-                Content = "حذف",
-                Glyph = ImageUtility.CreateSvgImage("Icons/ToolBar/Delete.svg"),
-            };
+            var deleteButton = new FmDeleteBarButtonItem();
             deleteButton.ItemClick += DeleteButtonOnToolBarItemClick;
             ToolBarItems.Add(addButton.Name, addButton);
             ToolBarItems.Add(saveButton.Name, saveButton);

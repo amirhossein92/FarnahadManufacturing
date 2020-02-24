@@ -106,7 +106,7 @@
                                                        Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/LocationGroup_Small.svg}" />
                         </accordion:FmAccordionItem.Items>
                     </accordion:FmAccordionItem>
-                    <accordion:FmAccordionItem Header="شرکت"
+                    <accordion:FmAccordionItem Header="شرکت" MouseDoubleClick="MyCompanyOnMouseDoubleClick"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Company_Small.svg}" />
                     <accordion:FmAccordionItem Header="واحد اندازه گیری" MouseDoubleClick="UomOnMouseDoubleClick"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Uom_Small.svg}" />

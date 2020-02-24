@@ -74,6 +74,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcLocationGroup>("گروه محل ها");
         }
 
+        private void MyCompanyOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcMyCompany>("شرکت");
+        }
+
         private void Carrier_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcCarrier>("پیک ها");

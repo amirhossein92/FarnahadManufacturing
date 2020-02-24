@@ -74,6 +74,7 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         // TODO: What is status?
+        // TODO: Add isActive
 
         private List<Part> _parts;
         public List<Part> Parts

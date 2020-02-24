@@ -18,6 +18,7 @@ namespace FarnahadManufacturing.Control.Base.UserControl
             var showAddressUserControl = (ShowAddressUserControl)d;
             if (e.NewValue is string newAddress)
             {
+
                 //var provinceAndCityText = string.Empty;
                 //if (newAddress.Province != null)
                 //    provinceAndCityText += $"{newAddress.Province.Title} - ";
@@ -26,7 +27,7 @@ namespace FarnahadManufacturing.Control.Base.UserControl
                 //provinceAndCityText = provinceAndCityText.Trim(" - ".ToCharArray());
 
                 //showAddressUserControl.ProvinceAndCityLabel.Text = provinceAndCityText;
-                //showAddressUserControl.AddressDetailLabel.Text = newAddress.AddressDetail;
+                showAddressUserControl.AddressDetailLabel.Text = showAddressUserControl.AddressDetail;
             }
         }
 

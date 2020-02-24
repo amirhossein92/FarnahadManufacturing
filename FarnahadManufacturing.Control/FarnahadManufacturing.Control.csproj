@@ -110,6 +110,10 @@
     <Compile Include="Base\Size\FmGridColumnWidth.cs" />
     <Compile Include="Base\TabControl\FmTabControl.cs" />
     <Compile Include="Base\TabControl\FmTabItem.cs" />
+    <Compile Include="Base\ToolBar\Buttons\FmAddBarButtonItem.cs" />
+    <Compile Include="Base\ToolBar\Buttons\FmDeleteBarButtonItem.cs" />
+    <Compile Include="Base\ToolBar\Buttons\FmEditBarButtonItem.cs" />
+    <Compile Include="Base\ToolBar\Buttons\FmSaveBarButtonItem.cs" />
     <Compile Include="Base\UserControl\AddEditDeleteListUserControl.xaml.cs">
       <DependentUpon>AddEditDeleteListUserControl.xaml</DependentUpon>
     </Compile>
@@ -165,5 +169,6 @@
       <Name>FarnahadManufacturing.Base</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

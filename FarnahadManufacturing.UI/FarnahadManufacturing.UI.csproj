@@ -106,6 +106,9 @@
     <Compile Include="UserControls\Configuration\UcLocationGroup.xaml.cs">
       <DependentUpon>UcLocationGroup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcMyCompany.xaml.cs">
+      <DependentUpon>UcMyCompany.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Configuration\UcSetPassword.xaml.cs">
       <DependentUpon>UcSetPassword.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcLocationGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcMyCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

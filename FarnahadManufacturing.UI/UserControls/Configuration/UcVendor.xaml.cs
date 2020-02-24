@@ -25,8 +25,6 @@ using FarnahadManufacturing.Control.Base.ViewModel;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
-using FarnahadManufacturing.Control.Base.UserControl;
-using FarnahadManufacturing.Control.Base.ViewModel;
 using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 
@@ -54,6 +52,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             _vendors = new ObservableCollection<Vendor>();
             LoadSearchGridControlData();
 
+            // TODO: Connect related combo boxes => city,province and country
             LoadContactTypeComboBox();
             LoadCityComboBox();
             LoadProvinceComboBox();

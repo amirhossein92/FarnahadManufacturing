@@ -100,12 +100,12 @@
     <Compile Include="Base\Layout\FmVerticalLayoutGroup.cs" />
     <Compile Include="Base\Layout\FmVerticalLayoutGroupBox.cs" />
     <Compile Include="Base\ListBox\FmListBoxEdit.cs" />
-    <Compile Include="Base\MainPage\FmBarButtonItem.cs" />
-    <Compile Include="Base\MainPage\FmBarItemSeparator.cs" />
+    <Compile Include="Base\ToolBar\FmBarButtonItem.cs" />
+    <Compile Include="Base\ToolBar\FmBarItemSeparator.cs" />
     <Compile Include="Base\MainPage\FmBarSubItem.cs" />
     <Compile Include="Base\MainPage\FmMainMenuControl.cs" />
     <Compile Include="Base\MainPage\FmStatusBarControl.cs" />
-    <Compile Include="Base\MainPage\FmToolBarControl.cs" />
+    <Compile Include="Base\ToolBar\FmToolBarControl.cs" />
     <Compile Include="Base\Size\FmControlWidth.cs" />
     <Compile Include="Base\Size\FmGridColumnWidth.cs" />
     <Compile Include="Base\TabControl\FmTabControl.cs" />

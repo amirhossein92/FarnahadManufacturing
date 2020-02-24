@@ -14,6 +14,7 @@
              xmlns:accordion="clr-namespace:FarnahadManufacturing.Control.Base.Accordion;assembly=FarnahadManufacturing.Control"
              xmlns:dock="clr-namespace:FarnahadManufacturing.Control.Base.Dock;assembly=FarnahadManufacturing.Control"
              xmlns:window="clr-namespace:FarnahadManufacturing.Control.Base.Window;assembly=FarnahadManufacturing.Control"
+             xmlns:toolBar="clr-namespace:FarnahadManufacturing.Control.Base.ToolBar;assembly=FarnahadManufacturing.Control"
              mc:Ignorable="d"
              Title="سیستم مدیریت کالا" Height="450" Width="800"
              Closing="MainWindowOnClosing"
@@ -33,29 +34,29 @@
                                     VerticalAlignment="Stretch">
             <mainPage:FmMainMenuControl.Items>
                 <mainPage:FmBarSubItem Content="پرونده">
-                    <mainPage:FmBarButtonItem Content="باز کردن" />
-                    <mainPage:FmBarButtonItem Content="ذخیره" />
-                    <mainPage:FmBarButtonItem Content="خروج" />
+                    <toolBar:FmBarButtonItem Content="باز کردن" />
+                    <toolBar:FmBarButtonItem Content="ذخیره" />
+                    <toolBar:FmBarButtonItem Content="خروج" />
                 </mainPage:FmBarSubItem>
                 <mainPage:FmBarSubItem Content="ویرایش">
-                    <mainPage:FmBarButtonItem Content="کپی" />
-                    <mainPage:FmBarButtonItem Content="انتخاب همه" />
+                    <toolBar:FmBarButtonItem Content="کپی" />
+                    <toolBar:FmBarButtonItem Content="انتخاب همه" />
                 </mainPage:FmBarSubItem>
             </mainPage:FmMainMenuControl.Items>
         </mainPage:FmMainMenuControl>
-        <mainPage:FmToolBarControl x:Name="ToolBarControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+        <toolBar:FmToolBarControl x:Name="ToolBarControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                    BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"
                                    IsMultiLine="True">
-            <mainPage:FmToolBarControl.Items>
-                <mainPage:FmBarButtonItem Content="جدید" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Add.svg}"
+            <toolBar:FmToolBarControl.Items>
+                <toolBar:FmBarButtonItem Content="جدید" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Add.svg}"
                                           IsEnabled="False" />
-                <mainPage:FmBarButtonItem Content="ذخیره" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Delete.svg}"
+                <toolBar:FmBarButtonItem Content="ذخیره" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Delete.svg}"
                                           IsEnabled="False" />
-                <mainPage:FmBarItemSeparator />
-                <mainPage:FmBarButtonItem Content="پاک کردن" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Save.svg}"
+                <toolBar:FmBarItemSeparator />
+                <toolBar:FmBarButtonItem Content="پاک کردن" Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/Save.svg}"
                                           IsEnabled="False" />
-            </mainPage:FmToolBarControl.Items>
-        </mainPage:FmToolBarControl>
+            </toolBar:FmToolBarControl.Items>
+        </toolBar:FmToolBarControl>
         <accordion:FmAccordionControl Grid.Row="2" Grid.Column="0">
             <accordion:FmAccordionControl.Items>
                 <accordion:FmSeparatorItem />

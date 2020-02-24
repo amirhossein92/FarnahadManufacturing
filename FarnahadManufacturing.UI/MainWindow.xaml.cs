@@ -84,6 +84,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcUser>("کاربران");
         }
 
+        private void UomOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcUom>("واحد های اندازه گیری");
+        }
+
         private void VendorOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcVendor>("فروشنده ها");

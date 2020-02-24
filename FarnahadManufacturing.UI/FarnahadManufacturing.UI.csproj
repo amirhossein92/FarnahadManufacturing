@@ -109,6 +109,9 @@
     <Compile Include="UserControls\Configuration\UcSetPassword.xaml.cs">
       <DependentUpon>UcSetPassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcUom.xaml.cs">
+      <DependentUpon>UcUom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Configuration\UcUser.xaml.cs">
       <DependentUpon>UcUser.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcSetPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcUom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

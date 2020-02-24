@@ -108,7 +108,7 @@
                     </accordion:FmAccordionItem>
                     <accordion:FmAccordionItem Header="شرکت"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Company_Small.svg}" />
-                    <accordion:FmAccordionItem Header="واحد اندازه گیری"
+                    <accordion:FmAccordionItem Header="واحد اندازه گیری" MouseDoubleClick="UomOnMouseDoubleClick"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Uom_Small.svg}" />
                     <accordion:FmAccordionItem Header="پیک ها"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"

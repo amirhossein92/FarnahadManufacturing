@@ -27,6 +27,14 @@ namespace FarnahadManufacturing.Control.Common
             ShowInfoMessageBox(msg, "ذخیره");
         }
 
+        public static void CannotEditPrompt(string title)
+        {
+            var msg = "امکان ویرایش به علت غیر قابل تغییر بودن وجود ندارد";
+            if (!string.IsNullOrEmpty(title))
+                msg = $"امکان ویرایش به علت غیر قابل تغییر بودن {title} وجود ندارد";
+            ShowWarningMessageBox(msg, "غیر قابل تغییر");
+        }
+
         private static bool? ShowQuestionYesNoCancelMessageBox(string message, string title)
         {
             bool? result = null;
@@ -63,6 +71,17 @@ namespace FarnahadManufacturing.Control.Common
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Information,
+                MessageBoxResult.OK,
+                MessageBoxOptions.RtlReading);
+        }
+
+        private static void ShowWarningMessageBox(string message, string title)
+        {
+            MessageBox.Show(
+                message,
+                title,
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning,
                 MessageBoxResult.OK,
                 MessageBoxOptions.RtlReading);
         }

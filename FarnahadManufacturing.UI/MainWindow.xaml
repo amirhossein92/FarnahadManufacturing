@@ -123,7 +123,7 @@
                         <accordion:FmAccordionItem.Items>
                             <accordion:FmAccordionItem Header="کاربران" MouseDoubleClick="UserOnMouseDoubleClick"
                                                        Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/User_Small.svg}" />
-                            <accordion:FmAccordionItem Header="گروه کاربران"
+                            <accordion:FmAccordionItem Header="گروه کاربران" MouseDoubleClick="UserGroupOnMouseDoubleClick"
                                                        Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/UserGroup_Small.svg}" />
                         </accordion:FmAccordionItem.Items>
                     </accordion:FmAccordionItem>

@@ -232,6 +232,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void AddSelectedLocationGroupToCurrentLocationGroupsOnClick(object sender, RoutedEventArgs e)
         {
+            // TODO: UPDATE THE LISTBOX FUNCTIONS
             if (AvailableLocationGroupListBoxEdit.SelectedItem is LocationGroup selectedLocationGroup)
             {
                 var availableLocationGroups = AvailableLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;

@@ -121,6 +121,9 @@
     <Compile Include="UserControls\Configuration\UcUser.xaml.cs">
       <DependentUpon>UcUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcUserGroup.xaml.cs">
+      <DependentUpon>UcUserGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Configuration\UcVendor.xaml.cs">
       <DependentUpon>UcVendor.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcUserGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

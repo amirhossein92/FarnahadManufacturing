@@ -1,0 +1,80 @@
+﻿<userControl:FilterUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcUserGroup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Configuration"
+             xmlns:userControl="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+             xmlns:dock="clr-namespace:FarnahadManufacturing.Control.Base.Dock;assembly=FarnahadManufacturing.Control"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+             xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+             xmlns:buttons="clr-namespace:FarnahadManufacturing.Control.Base.Buttons;assembly=FarnahadManufacturing.Control"
+             xmlns:gridControl="clr-namespace:FarnahadManufacturing.Control.Base.GridControl;assembly=FarnahadManufacturing.Control"
+             xmlns:columns="clr-namespace:FarnahadManufacturing.Control.Base.GridControl.Columns;assembly=FarnahadManufacturing.Control"
+             xmlns:listBox="clr-namespace:FarnahadManufacturing.Control.Base.ListBox;assembly=FarnahadManufacturing.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <dock:FmDockLayoutManager>
+        <dock:FmDockLayoutGroup>
+            <layout:FmFilterLayoutPanel ItemWidth="*">
+                <layout:FmLayoutControl>
+                    <layout:FmVerticalLayoutGroup>
+                        <layout:FmLayoutItem Label="عنوان">
+                            <input:FmTextEdit x:Name="SearchTitleTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem VerticalAlignment="Stretch">
+                            <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                                                             MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                                <gridControl:FmSearchGridControl.Columns>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True"
+                                                              FmGridColumnWidth="XSmall" />
+                                </gridControl:FmSearchGridControl.Columns>
+                            </gridControl:FmSearchGridControl>
+                        </layout:FmLayoutItem>
+                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                           RefreshData="PaginationUserControlOnRefreshData" />
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                        </layout:FmLayoutItem>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
+            </layout:FmFilterLayoutPanel>
+            <layout:FmDocumentPanel ItemWidth="4*">
+                <layout:FmLayoutControl Orientation="Vertical">
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="گروه کاربر" />
+                    <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
+                        <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
+                            <layout:FmLayoutItem Label="عنوان">
+                                <input:FmTextEdit x:Name="TitleTextEdit" />
+                            </layout:FmLayoutItem>
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem Label="کاربران موجود" LabelPosition="Top"
+                                                     VerticalAlignment="Stretch">
+                                    <listBox:FmListBoxEdit x:Name="AvailableUsersListBoxEdit"
+                                                           ValueMember="Id" DisplayMember="UserName"/>
+                                </layout:FmLayoutItem>
+                                <userControl:ListBoxButtonsUserControl 
+                                    AddSingle="ListBoxButtonsUserControlOnAddSingle"
+                                    RemoveSingle="ListBoxButtonsUserControlOnRemoveSingle"/>
+                                <layout:FmLayoutItem Label="کاربران انتخاب شده" LabelPosition="Top"
+                                                     VerticalAlignment="Stretch">
+                                    <listBox:FmListBoxEdit x:Name="CurrentUsersListBoxEdit"
+                                                           ValueMember="Id" DisplayMember="UserName"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="دسترسی">
+
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="گزارشات">
+
+                        </layout:FmVerticalLayoutGroup>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
+            </layout:FmDocumentPanel>
+        </dock:FmDockLayoutGroup>
+    </dock:FmDockLayoutManager>
+</userControl:FilterUserControlBase>

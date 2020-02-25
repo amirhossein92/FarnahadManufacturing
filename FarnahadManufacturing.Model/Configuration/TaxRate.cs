@@ -57,6 +57,20 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
+        /// توضیحات
+        /// </summary>
+        private string _description;
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                _description = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
         /// براساس درصد
         /// </summary>
         private bool _isPercentageSelected;
@@ -94,6 +108,20 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _flatRate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// پیش فرض
+        /// </summary>
+        private bool _isDefault;
+        public bool IsDefault
+        {
+            get => _isDefault;
+            set
+            {
+                _isDefault = value;
                 OnPropertyChanged();
             }
         }

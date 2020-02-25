@@ -10,6 +10,8 @@ namespace FarnahadManufacturing.Control.Base.Input
         public FmSpinEdit()
         {
             FlowDirection = FlowDirection.LeftToRight;
+            MaskUseAsDisplayFormat = true;
+            AllowNullInput = true;
         }
 
         public static readonly DependencyProperty FmControlWidthProperty = DependencyProperty.Register(

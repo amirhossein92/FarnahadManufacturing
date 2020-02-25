@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using DevExpress.Xpf.Core.HandleDecorator;
 using DevExpress.Xpf.Editors;
 
 namespace FarnahadManufacturing.Control.Base.Input
@@ -7,7 +8,9 @@ namespace FarnahadManufacturing.Control.Base.Input
     {
         public FmComboBoxEdit()
         {
+            // TODO: Create LookUpEdit
             AllowNullInput = true;
+            NullValueButtonPlacement = EditorPlacement.EditBox;
             IsEnabledChanged += OnIsEnabledChanged;
         }
 

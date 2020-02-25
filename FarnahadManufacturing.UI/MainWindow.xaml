@@ -95,7 +95,7 @@
                 <accordion:FmAccordionItem Header="فروش"
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Purchase_Large.svg}" />
                 <accordion:FmAccordionItem Header="حسابداری"
-                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}" />
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}"/>
                 <accordion:FmAccordionItem Header="تنظیمات"
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Configuration_Large.svg}">
                     <accordion:FmAccordionItem Header="موقعیت"
@@ -115,6 +115,8 @@
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"
                                                MouseDoubleClick="Carrier_OnMouseDoubleClick" />
                     <accordion:FmAccordionItem Header="دسته بندی محصولات"
+                                               Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}" />
+                    <accordion:FmAccordionItem Header="نرخ های مالیاتی" MouseDoubleClick="TaxRateOnMouseDoubleClick"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}" />
                     <accordion:FmAccordionItem Header="کاربر"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Users_Small.svg}">

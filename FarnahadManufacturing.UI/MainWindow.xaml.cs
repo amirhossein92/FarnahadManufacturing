@@ -49,19 +49,9 @@ namespace FarnahadManufacturing.UI
                 ToolBarControl.Items.Add(item.Value);
         }
 
-        private void Country_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void VendorOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            OpenUserControlInNewTab<UcCountry>("کشور ها");
-        }
-
-        private void City_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            OpenUserControlInNewTab<UcCity>("شهر ها");
-        }
-
-        private void ProvinceOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            OpenUserControlInNewTab<UcProvince>("استان ها");
+            OpenUserControlInNewTab<UcVendor>("فروشنده ها");
         }
 
         private void LocationOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -84,6 +74,12 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcCarrier>("پیک ها");
         }
 
+        private void TaxRateOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // TODO: Tax Rate Icon
+            OpenUserControlInNewTab<UcTaxRate>("نرخ های مالیاتی");
+        }
+
         private void UserOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcUser>("کاربران");
@@ -94,9 +90,19 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcUom>("واحد های اندازه گیری");
         }
 
-        private void VendorOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Country_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            OpenUserControlInNewTab<UcVendor>("فروشنده ها");
+            OpenUserControlInNewTab<UcCountry>("کشور ها");
+        }
+
+        private void City_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcCity>("شهر ها");
+        }
+
+        private void ProvinceOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcProvince>("استان ها");
         }
 
         private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase

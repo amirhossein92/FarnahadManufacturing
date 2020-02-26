@@ -1,0 +1,30 @@
+﻿<userControl:DialogUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcProductCategoryAddEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Configuration"
+             xmlns:userControl="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+             xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="350"
+             Height="200" Width="350">
+    <layout:FmLayoutControl>
+        <layout:FmVerticalLayoutGroup>
+            <layout:FmHeaderLayoutGroup HeaderTitle="دسته بندی محصولات"/>
+            <layout:FmLayoutItem Label="نام گروه">
+                <input:FmTextEdit x:Name="GroupNameTextEdit"/>
+            </layout:FmLayoutItem>
+            <layout:FmLayoutItem Label="شاخه اصلی">
+                <input:FmComboBoxEdit x:Name="ParentProductCategoryComboBoxEdit"/>
+            </layout:FmLayoutItem>
+            <layout:FmLayoutItem Label="توضیحات">
+                <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit"/>
+            </layout:FmLayoutItem>
+            <userControl:SaveCancelUserControl
+                ClickOnSave="ClickOnSave"
+                ClickOnCancel="ClickOnCancel"/>
+        </layout:FmVerticalLayoutGroup>
+    </layout:FmLayoutControl>
+</userControl:DialogUserControlBase>

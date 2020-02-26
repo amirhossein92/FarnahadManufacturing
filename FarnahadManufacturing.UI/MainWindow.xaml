@@ -114,7 +114,7 @@
                     <accordion:FmAccordionItem Header="پیک ها"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"
                                                MouseDoubleClick="Carrier_OnMouseDoubleClick" />
-                    <accordion:FmAccordionItem Header="دسته بندی محصولات"
+                    <accordion:FmAccordionItem Header="دسته بندی محصولات" MouseDoubleClick="ProductCategoryOnMouseDoubleClick"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}" />
                     <accordion:FmAccordionItem Header="نرخ های مالیاتی" MouseDoubleClick="TaxRateOnMouseDoubleClick"
                                                Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}" />

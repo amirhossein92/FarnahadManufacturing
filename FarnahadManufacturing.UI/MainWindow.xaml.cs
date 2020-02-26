@@ -74,6 +74,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcCarrier>("پیک ها");
         }
 
+        private void ProductCategoryOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            WindowService.OpenUserControlDialog(new UcProductCategory());
+        }
+
         private void TaxRateOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             // TODO: Tax Rate Icon

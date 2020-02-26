@@ -1,6 +1,6 @@
 ﻿namespace FarnahadManufacturing.Control.Base.Buttons
 {
-    public class FmMiniDeleteSimpleButton : FmSimpleButton
+    public class FmMiniDeleteSimpleButton : FmMiniSimpleButton
     {
         public FmMiniDeleteSimpleButton()
         {

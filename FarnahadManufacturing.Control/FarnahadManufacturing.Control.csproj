@@ -62,6 +62,8 @@
     <Compile Include="Base\Buttons\FmMiniAddSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmMiniEditSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniRefreshSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmMiniSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmSaveSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmSearchSimpleButton.cs" />
     <Compile Include="Base\Buttons\FmSimpleButton.cs" />
@@ -117,8 +119,14 @@
     <Compile Include="Base\ToolBar\Buttons\FmDeleteBarButtonItem.cs" />
     <Compile Include="Base\ToolBar\Buttons\FmEditBarButtonItem.cs" />
     <Compile Include="Base\ToolBar\Buttons\FmSaveBarButtonItem.cs" />
+    <Compile Include="Base\TreeList\FmTreeListColumn.cs" />
+    <Compile Include="Base\TreeList\FmTreeListControl.cs" />
+    <Compile Include="Base\TreeList\FmTreeListView.cs" />
     <Compile Include="Base\UserControl\AddEditDeleteListUserControl.xaml.cs">
       <DependentUpon>AddEditDeleteListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UserControl\AddEditDeleteRefreshButtonListUserControl.xaml.cs">
+      <DependentUpon>AddEditDeleteRefreshButtonListUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base\UserControl\DialogUserControlBase.cs" />
     <Compile Include="Base\UserControl\FilterUserControlBase.cs" />
@@ -148,6 +156,10 @@
     <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\UserControl\AddEditDeleteRefreshButtonListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Base\UserControl\ListBoxButtonsUserControl.xaml">
       <SubType>Designer</SubType>

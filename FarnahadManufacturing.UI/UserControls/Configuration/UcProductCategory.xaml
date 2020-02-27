@@ -70,7 +70,7 @@
                     <layout:FmLayoutItem VerticalAlignment="Stretch" Height="125">
                         <gridControl:FmSearchGridControl x:Name="SearchGridControl">
                             <gridControl:FmSearchGridControl.Columns>
-                                <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True" FmGridColumnWidth="x" />
+                                <columns:FmTextGridColumn Header="شماره" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
                                 <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="Small"/>
                             </gridControl:FmSearchGridControl.Columns>
                         </gridControl:FmSearchGridControl>
@@ -84,7 +84,8 @@
                         <label:FmLabel x:Name="AvailableProductLabel"/>
                     </layout:FmLayoutItem>
                     <layout:FmLayoutItem>
-                        <input:FmCheckEdit Content="نمایش عکس" Checked="DisplayProductImageOnChecked"/>
+                        <input:FmCheckEdit Content="نمایش عکس" Checked="DisplayProductImageOnChecked"
+                                           Unchecked="DisplayProductImageOnUnchecked"/>
                     </layout:FmLayoutItem>
                 </layout:FmVerticalLayoutGroupBox>
             </layout:FmHorizontalLayoutGroup>

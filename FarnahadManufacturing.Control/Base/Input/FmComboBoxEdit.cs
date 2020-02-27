@@ -10,6 +10,7 @@ namespace FarnahadManufacturing.Control.Base.Input
         {
             // TODO: Create LookUpEdit
             AllowNullInput = true;
+            NullValue = null;
             NullValueButtonPlacement = EditorPlacement.EditBox;
             IsEnabledChanged += OnIsEnabledChanged;
         }

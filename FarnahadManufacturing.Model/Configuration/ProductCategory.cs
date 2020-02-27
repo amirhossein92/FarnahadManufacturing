@@ -14,7 +14,7 @@ namespace FarnahadManufacturing.Model.Configuration
     {
         public ProductCategory()
         {
-            ProductCategories = new List<ProductCategory>();
+            ChildrenProductCategories = new List<ProductCategory>();
             Products = new List<Product>();
         }
 
@@ -85,13 +85,16 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        private List<ProductCategory> _productCategories;
-        public List<ProductCategory> ProductCategories
+        /// <summary>
+        /// زیر شاخه
+        /// </summary>
+        private List<ProductCategory> _childrenProductCategories;
+        public List<ProductCategory> ChildrenProductCategories
         {
-            get => _productCategories;
+            get => _childrenProductCategories;
             set
             {
-                _productCategories = value;
+                _childrenProductCategories = value;
                 OnPropertyChanged();
             }
         }

@@ -11,7 +11,7 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
             ToTable("ProductCategory", FmDbSchema.Configuration.ToString());
             Property(item => item.Title).HasMaxLength(128).IsRequired();
             HasOptional(item => item.ParentProductCategory)
-                .WithMany(productCategory => productCategory.ProductCategories)
+                .WithMany(productCategory => productCategory.ChildrenProductCategories)
                 .HasForeignKey(item => item.ParentProductCategoryId);
             HasRequired(item => item.CreatedByUser)
                 .WithMany(user => user.ProductCategories)

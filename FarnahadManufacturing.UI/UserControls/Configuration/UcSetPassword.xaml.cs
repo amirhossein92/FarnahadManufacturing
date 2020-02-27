@@ -16,6 +16,7 @@ using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Control.Base.UserControl;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
@@ -83,9 +84,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void CloseWindow()
         {
-            var p = Parent as Grid;
-            var b = p.Parent as Window;
-            b.Close();
+            WindowService.CloseUserControlDialogWindow(this);
         }
     }
 }

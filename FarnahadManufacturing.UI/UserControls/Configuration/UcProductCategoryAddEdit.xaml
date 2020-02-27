@@ -17,7 +17,8 @@
                 <input:FmTextEdit x:Name="GroupNameTextEdit"/>
             </layout:FmLayoutItem>
             <layout:FmLayoutItem Label="شاخه اصلی">
-                <input:FmComboBoxEdit x:Name="ParentProductCategoryComboBoxEdit"/>
+                <input:FmComboBoxEdit x:Name="ParentProductCategoryComboBoxEdit"
+                                      ValueMember="Value" DisplayMember="Title"/>
             </layout:FmLayoutItem>
             <layout:FmLayoutItem Label="توضیحات">
                 <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit"/>

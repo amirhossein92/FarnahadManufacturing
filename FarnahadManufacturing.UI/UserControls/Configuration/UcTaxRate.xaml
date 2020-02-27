@@ -40,9 +40,9 @@
                                                               FmGridColumnWidth="XSmall" />
                                     <columns:FmTextGridColumn Header="مخفف" FieldName="Abbreviation" ReadOnly="True"
                                                               FmGridColumnWidth="XXSmall" />
-                                    <columns:FmTextGridColumn Header="درصد" FieldName="Percentage" ReadOnly="True"
+                                    <columns:FmPercentageSpinEditGridColumn Header="درصد" FieldName="Percentage" ReadOnly="True"
                                                               FmGridColumnWidth="XXSmall" />
-                                    <columns:FmTextGridColumn Header="مقدار" FieldName="FlatRate" ReadOnly="True"
+                                    <columns:FmSpinEditGridColumn Header="مقدار" FieldName="FlatRate" ReadOnly="True"
                                                               FmGridColumnWidth="XXSmall" />
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>

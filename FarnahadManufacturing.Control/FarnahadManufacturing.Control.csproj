@@ -76,6 +76,9 @@
     <Compile Include="Base\GridControl\Columns\FmComboBoxEditSettings.cs" />
     <Compile Include="Base\GridControl\Columns\FmComboBoxGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmIntSpinEditGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmPercentageSpinEditGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmSpinEditGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmTextGridColumn.cs" />
     <Compile Include="Base\GridControl\FmEditModeGridControl.cs" />
     <Compile Include="Base\GridControl\FmReadOnlyGridControl.cs" />
@@ -84,6 +87,7 @@
     <Compile Include="Base\Input\FmCheckEdit.cs" />
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
     <Compile Include="Base\Input\FmCurrencySpinEdit.cs" />
+    <Compile Include="Base\Input\FmEmailTextEdit.cs" />
     <Compile Include="Base\Input\FmIntSpinEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
     <Compile Include="Base\Input\FmPasswordBoxEdit.cs" />

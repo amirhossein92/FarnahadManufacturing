@@ -48,7 +48,7 @@
                                                               FmGridColumnWidth="XSmall" />
                                     <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True"
                                                               FmGridColumnWidth="XXSmall" />
-                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True"
+                                    <columns:FmIntSpinEditGridColumn Header="شماره" FieldName="Number" ReadOnly="True"
                                                               FmGridColumnWidth="XXSmall" />
                                     <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId" ReadOnly="True"
                                                               FmGridColumnWidth="XXSmall">

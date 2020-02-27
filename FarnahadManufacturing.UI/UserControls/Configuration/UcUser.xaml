@@ -76,7 +76,7 @@
                                 </layout:FmHorizontalLayoutGroup>
                                 <layout:FmHorizontalLayoutGroup>
                                     <layout:FmLayoutItem Label="پست الکترونیکی">
-                                        <input:FmTextEdit x:Name="EmailTextEdit"/>
+                                        <input:FmEmailTextEdit x:Name="EmailTextEdit"/>
                                     </layout:FmLayoutItem>
                                     <layout:FmLayoutItem Label="شماره تلفن">
                                         <input:FmTextEdit x:Name="PhoneNumberTextEdit" />

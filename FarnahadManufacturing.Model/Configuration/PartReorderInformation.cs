@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
-using FarnahadManufacturing.Model.BaseConfiguration;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
-    /// <summary>
-    /// ردیابی کالا
-    /// </summary>
-    public class TrackingPart : FmModelBase
+    // TODO: New Model
+    public class PartReorderInformation : FmModelBase
     {
         private int _id;
         public int Id
@@ -16,34 +17,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _id = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// ردیابی
-        /// </summary>
-        private int _trackingId;
-        public int TrackingId
-        {
-            get => _trackingId;
-            set
-            {
-                _trackingId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// ردیابی
-        /// </summary>
-        private Tracking _tracking;
-        public Tracking Tracking
-        {
-            get => _tracking;
-            set
-            {
-                _tracking = value;
                 OnPropertyChanged();
             }
         }
@@ -77,57 +50,57 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
-        /// مقدار بعدی
+        /// گروه موقعیت
         /// </summary>
-        private string _nextValue;
-        public string NextValue
+        private int _locationGroupId;
+        public int LocationGroupId
         {
-            get => _nextValue;
+            get => _locationGroupId;
             set
             {
-                _nextValue = value;
+                _locationGroupId = value;
                 OnPropertyChanged();
             }
         }
 
         /// <summary>
-        /// توضیحات
+        /// گروه موقعیت
         /// </summary>
-        private string _description;
-        public string Description
+        private LocationGroup _locationGroup;
+        public LocationGroup LocationGroup
         {
-            get => _description;
+            get => _locationGroup;
             set
             {
-                _description = value;
+                _locationGroup = value;
                 OnPropertyChanged();
             }
         }
 
         /// <summary>
-        /// اصلی
+        /// حداکثر مقدار کالا
         /// </summary>
-        private bool _isPrimary;
-        public bool IsPrimary
+        private double _orderUpToLevel;
+        public double OrderUpToLevel
         {
-            get => _isPrimary;
+            get => _orderUpToLevel;
             set
             {
-                _isPrimary = value;
+                _orderUpToLevel = value;
                 OnPropertyChanged();
             }
         }
 
         /// <summary>
-        /// انتخاب شده
+        /// حداقل مقدار کالا
         /// </summary>
-        private bool _isSelected;
-        public bool IsSelected
+        private double _reorderPoint;
+        public double ReorderPoint
         {
-            get => _isSelected;
+            get => _reorderPoint;
             set
             {
-                _isSelected = value;
+                _reorderPoint = value;
                 OnPropertyChanged();
             }
         }

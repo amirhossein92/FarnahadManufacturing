@@ -162,12 +162,12 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 
         private void SearchGridControlOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
             var searchGridControl = (GridControl)sender;
             var rowIndex = searchGridControl.View.GetRowHandleByMouseEventArgs(e);
             if (rowIndex == DataControlBase.InvalidRowHandle)

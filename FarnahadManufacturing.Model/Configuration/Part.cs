@@ -18,6 +18,8 @@ namespace FarnahadManufacturing.Model.Configuration
             TrackingParts = new List<TrackingPart>();
             PartCosts = new List<PartCost>();
             Products = new List<Product>();
+            PartReorderInformations = new List<PartReorderInformation>();
+            PartDefaultLocations = new List<PartDefaultLocation>();
         }
 
         private int _id;
@@ -354,6 +356,48 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         /// <summary>
+        /// شماره اصلاح
+        /// </summary>
+        private string _revisionNumber;
+        public string RevisionNumber
+        {
+            get => _revisionNumber;
+            set
+            {
+                _revisionNumber = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// یادداشت اخطار
+        /// </summary>
+        private string _alertNote;
+        public string AlertNote
+        {
+            get => _alertNote;
+            set
+            {
+                _alertNote = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// اهمیت کالا
+        /// </summary>
+        private PartAbcCode _partAbcCode;
+        public PartAbcCode PartAbcCode
+        {
+            get => _partAbcCode;
+            set
+            {
+                _partAbcCode = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
         /// فعال
         /// </summary>
         private bool _isActive;
@@ -363,6 +407,28 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _isActive = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartDefaultLocation> _partDefaultLocations;
+        public List<PartDefaultLocation> PartDefaultLocations
+        {
+            get => _partDefaultLocations;
+            set
+            {
+                _partDefaultLocations = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartReorderInformation> _partReorderInformations;
+        public List<PartReorderInformation> PartReorderInformations
+        {
+            get => _partReorderInformations;
+            set
+            {
+                _partReorderInformations = value;
                 OnPropertyChanged();
             }
         }
@@ -418,6 +484,39 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _createdDateTime = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _lastChangedByUserId;
+        public int LastChangedByUserId
+        {
+            get => _lastChangedByUserId;
+            set
+            {
+                _lastChangedByUserId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private User _lastChangedByUser;
+        public User LastChangedByUser
+        {
+            get => _lastChangedByUser;
+            set
+            {
+                _lastChangedByUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private DateTime _lastChangedDateTime;
+        public DateTime LastChangedDateTime
+        {
+            get => _lastChangedDateTime;
+            set
+            {
+                _lastChangedDateTime = value;
                 OnPropertyChanged();
             }
         }

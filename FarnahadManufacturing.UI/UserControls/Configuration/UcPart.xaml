@@ -1,0 +1,294 @@
+﻿<userControl:FilterUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcPart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Configuration"
+             xmlns:userControl="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+             xmlns:dock="clr-namespace:FarnahadManufacturing.Control.Base.Dock;assembly=FarnahadManufacturing.Control"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+             xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+             xmlns:buttons="clr-namespace:FarnahadManufacturing.Control.Base.Buttons;assembly=FarnahadManufacturing.Control"
+             xmlns:gridControl="clr-namespace:FarnahadManufacturing.Control.Base.GridControl;assembly=FarnahadManufacturing.Control"
+             xmlns:columns="clr-namespace:FarnahadManufacturing.Control.Base.GridControl.Columns;assembly=FarnahadManufacturing.Control"
+             xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+             xmlns:image="clr-namespace:FarnahadManufacturing.Control.Base.Image;assembly=FarnahadManufacturing.Control"
+             xmlns:label="clr-namespace:FarnahadManufacturing.Control.Base.Label;assembly=FarnahadManufacturing.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <dock:FmDockLayoutManager>
+        <dock:FmDockLayoutGroup>
+            <layout:FmFilterLayoutPanel ItemWidth="*">
+                <layout:FmLayoutControl>
+                    <layout:FmVerticalLayoutGroup>
+                        <layout:FmLayoutItem Label="شماره کالا">
+                            <input:FmTextEdit x:Name="SearchPartNumberTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="توضیحات">
+                            <input:FmTextEdit x:Name="SearchDescriptionTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="نوع کالا">
+                            <input:FmComboBoxEdit x:Name="SearchPartTypeComboBoxEdit"
+                                                  ValueMember="Id" DisplayMember = "Title"/>
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem VerticalAlignment="Stretch">
+                            <gridControl:FmSearchGridControl x:Name="SearchGridControl"
+                                                         MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                                <gridControl:FmSearchGridControl.Columns>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
+                                </gridControl:FmSearchGridControl.Columns>
+                            </gridControl:FmSearchGridControl>
+                        </layout:FmLayoutItem>
+                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                           RefreshData="PaginationUserControlOnRefreshData"/>
+                        <layout:FmLayoutItem HorizontalContentAlignment="Right">
+                            <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
+                        </layout:FmLayoutItem>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
+            </layout:FmFilterLayoutPanel>
+            <dxdo:DocumentPanel ItemWidth="4*">
+                <layout:FmLayoutControl Orientation="Vertical">
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کالا"/>
+                    <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
+                        <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem Label="شماره کالا">
+                                    <input:FmTextEdit x:Name="PartNumberTextEdit" />
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem Label="واحد اندازه گیری">
+                                    <input:FmComboBoxEdit x:Name="UomComboBoxEdit" 
+                                                          ValueMember="Id" DisplayMember="Title"/>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem Label="نوع کالا">
+                                    <input:FmComboBoxEdit x:Name="PartTypeComboBoxEdit" 
+                                                          ValueMember="Value" DisplayMember="Title"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmLayoutItem Label="توضیحات">
+                                <input:FmTextEdit x:Name="DescriptionTextEdit" />
+                            </layout:FmLayoutItem>
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem HorizontalAlignment="Left">
+                                    <input:FmCheckEdit x:Name="IsActiveCheckEdit" Content="فعال"/>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem  HorizontalAlignment="Left">
+                                    <input:FmCheckEdit x:Name="PickInPartUomOnlyCheckEdit" Content="قابل استفاده در واحد اندازه گیری دیگر"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmLayoutItem Label="جزئیات">
+                                <input:FmMultiLineTextEdit x:Name="DetailsTextEdit"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                <image:FmImageEdit x:Name="PictureImageEdit" ShowMenuMode="Hover"/>
+                            </layout:FmLayoutItem>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="جزئیات">
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmVerticalLayoutGroup>
+                                    <layout:FmLayoutItem Label="شماره اصلاح">
+                                        <input:FmTextEdit x:Name="RevisionNumberTextEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="کد کالا (UPC)">
+                                        <input:FmTextEdit x:Name="UpcTextEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="هزینه">
+                                        <input:FmCurrencySpinEdit x:Name="CostSpinEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="یادداشت اخطار">
+                                        <input:FmTextEdit x:Name="AlertNoteTextEdit"/>
+                                    </layout:FmLayoutItem>
+                                </layout:FmVerticalLayoutGroup>
+                                <layout:FmVerticalLayoutGroup>
+                                    <layout:FmLayoutItem Label="تاریخ ایجاد">
+                                        <label:FmLabel x:Name="CreatedDateLabel"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="تاریخ آخرین تغییر">
+                                        <label:FmLabel x:Name="LastChangedDateLabel"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="آخرین کاربر">
+                                        <label:FmLabel x:Name="LastUserLabel"/>
+                                    </layout:FmLayoutItem>
+                                </layout:FmVerticalLayoutGroup>
+                            </layout:FmHorizontalLayoutGroup>
+                            <layout:FmVerticalLayoutGroupBox Header="ابعاد و وزن">
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="طول">
+                                        <input:FmSpinEdit x:Name="LengthSpinEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="عرض">
+                                        <input:FmSpinEdit x:Name="WidthSpinEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="ارتفاع">
+                                        <input:FmSpinEdit x:Name="HeightSpinEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Width="75">
+                                        <input:FmComboBoxEdit x:Name="DistanceUomComboBoxEdit"
+                                                              ValueMember="Id" DisplayMember="Title"/>
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="وزن">
+                                        <input:FmSpinEdit x:Name="WeightSpinEdit"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Width="75">
+                                        <input:FmComboBoxEdit x:Name="WeightUomComboBoxEdit"
+                                                              ValueMember="Id" DisplayMember="Title"/>
+                                    </layout:FmLayoutItem>
+                                </layout:FmHorizontalLayoutGroup>
+                            </layout:FmVerticalLayoutGroupBox>
+                            <layout:FmVerticalLayoutGroupBox Header="ردیابی">
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <gridControl:FmEditModeGridControl x:Name="TrackingGridControl">
+                                        <gridControl:FmEditModeGridControl.Columns>
+                                            <columns:FmCheckBoxGridColumn Header="انتخاب شده" FieldName="IsSelected" FmGridColumnWidth="XSmall"/>
+                                            <columns:FmTextGridColumn Header="نام" FieldName="Tracking.Title" FmGridColumnWidth="Small"/>
+                                            <columns:FmTextGridColumn Header="مخفف" FieldName="Tracking.Abbreviation" FmGridColumnWidth="XXSmall"/>
+                                            <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="Small"/>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="Tracking.TrackingValueType" 
+                                                                          FmGridColumnWidth="Small">
+                                                <columns:FmComboBoxGridColumn.EditSettings>
+                                                    <columns:FmComboBoxEditSettings x:Name="TrackingTypeComboBox"
+                                                                                    ValueMember="Value" DisplayMember="Title"/>
+                                                </columns:FmComboBoxGridColumn.EditSettings>
+                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmTextGridColumn Header="مقدار بعدی" FieldName="NextValue" FmGridColumnWidth="Small"/>
+                                            <columns:FmCheckBoxGridColumn Header="اصلی" FieldName="IsPrimary" FmGridColumnWidth="XXSmall"/>
+                                        </gridControl:FmEditModeGridControl.Columns>
+                                    </gridControl:FmEditModeGridControl>
+                                </layout:FmLayoutItem>
+                            </layout:FmVerticalLayoutGroupBox>
+                            <layout:FmVerticalLayoutGroupBox Header="محصولات">
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                        <gridControl:FmEditModeGridControl x:Name="ProductsGridControl" CustomUnboundColumnData="ProductsGridControlOnCustomUnboundColumnData">
+                                            <gridControl:FmEditModeGridControl.Columns>
+                                                <columns:FmTextGridColumn Header="نام" FieldName="Title" FmGridColumnWidth="Normal"/>
+                                                <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="x"/>
+                                                <columns:FmSpinEditGridColumn Header="قیمت" FieldName="Price" 
+                                                                              UnboundType="Decimal" FmGridColumnWidth="Small"/>
+                                                <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="Default" FmGridColumnWidth="XSmall"/>
+                                            </gridControl:FmEditModeGridControl.Columns>
+                                        </gridControl:FmEditModeGridControl>
+                                    </layout:FmLayoutItem>
+                                    <userControl:AddEditDeleteListUserControl/>
+                                </layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem>
+                                    <input:FmCheckEdit Content="نمایش محصولات غیر فعال" x:Name="ShowInActiveProductCheckEdit"
+                                                       EditValueChanged="ShowInActiveProductCheckEditOnEditValueChanged"/>
+                                </layout:FmLayoutItem>
+                            </layout:FmVerticalLayoutGroupBox>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="حساب ها">
+                            <!--TODO: ACCOUNT-->
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="انبار">
+                            <layout:FmLayoutItem Label="اهمیت کالا">
+                                <input:FmComboBoxEdit x:Name="PartAbcCodeComboBoxEdit"
+                                                      ValueMember="Value" DisplayMember="Title"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmLayoutItem Label="واحد">
+                                <label:FmLabel x:Name="UomLabel"/>
+                            </layout:FmLayoutItem>
+                            <layout:FmVerticalLayoutGroupBox Header="انبار">
+                                <layout:FmHorizontalLayoutGroup>
+                                    <layout:FmLayoutItem Label="موجود">
+                                        <label:FmLabel x:Name="OnHandInventoryLabel"/>
+                                    </layout:FmLayoutItem>
+                                    <layout:FmLayoutItem Label="سفارش شده">
+                                        <label:FmLabel x:Name="OnOrderInventoryLabel"/>
+                                    </layout:FmLayoutItem>
+                                    <!--TODO: Inventory-->
+                                </layout:FmHorizontalLayoutGroup>
+                            </layout:FmVerticalLayoutGroupBox>
+                            <layout:FmHorizontalLayoutGroupBox Header="اطلاعات سفارش دوباره">
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <gridControl:FmEditModeGridControl x:Name="ReorderInformationGridControl">
+                                        <gridControl:FmEditModeGridControl.Columns>
+                                            <columns:FmComboBoxGridColumn Header="گروه موقعیت" FieldName="LocationGroupId">
+                                                <columns:FmComboBoxGridColumn.EditSettings>
+                                                    <columns:FmComboBoxEditSettings x:Name="LocationGroupComboBox"
+                                                                                    ValueMember="Value" DisplayMember="Title"/>
+                                                </columns:FmComboBoxGridColumn.EditSettings>
+                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmSpinEditGridColumn Header="حداکثر مقدار" FieldName="OrderUpToLevel"/>
+                                            <columns:FmSpinEditGridColumn Header="حداقل مقدار" FieldName="ReorderPoint"/>
+                                        </gridControl:FmEditModeGridControl.Columns>
+                                    </gridControl:FmEditModeGridControl>
+                                </layout:FmLayoutItem>
+                                <userControl:AddEditDeleteListUserControl/>
+                            </layout:FmHorizontalLayoutGroupBox>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="محل پیش فرض">
+                            <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                <gridControl:FmEditModeGridControl x:Name="DefaultLocationGridControl">
+                                    <gridControl:FmEditModeGridControl.Columns>
+                                        <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId">
+                                            <columns:FmComboBoxGridColumn.EditSettings>
+                                                <columns:FmComboBoxEditSettings x:Name="DefaultLocationGroupComboBox" 
+                                                                                ValueMember="Value" DisplayMember="Title"/>
+                                            </columns:FmComboBoxGridColumn.EditSettings>
+                                        </columns:FmComboBoxGridColumn>
+                                        <columns:FmComboBoxGridColumn Header="محل پیش فرض" FieldName="DefaultLocationId">
+                                            <columns:FmComboBoxGridColumn.EditSettings>
+                                                <!--TODO: FILTER THE COMBO BASED ON LOCATION GROUP VALUE-->
+                                                <columns:FmComboBoxEditSettings x:Name="DefaultLocationComboBox"
+                                                                                ValueMember="Value" DisplayMember="Title">
+                                                </columns:FmComboBoxEditSettings>
+                                            </columns:FmComboBoxGridColumn.EditSettings>
+                                        </columns:FmComboBoxGridColumn>
+                                    </gridControl:FmEditModeGridControl.Columns>
+                                </gridControl:FmEditModeGridControl>
+                            </layout:FmLayoutItem>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="دستور العمل تولید">
+                            <layout:FmVerticalLayoutGroupBox Header="کالای تولید شده">
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <gridControl:FmEditModeGridControl>
+                                        <gridControl:FmEditModeGridControl.Columns>
+                                            <!--TODO: BOM Finished Good-->
+                                        </gridControl:FmEditModeGridControl.Columns>
+                                    </gridControl:FmEditModeGridControl>
+                                </layout:FmLayoutItem>
+                            </layout:FmVerticalLayoutGroupBox>
+                            <layout:FmVerticalLayoutGroupBox Header="کالای اولیه">
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <gridControl:FmEditModeGridControl>
+                                        <gridControl:FmEditModeGridControl.Columns>
+                                            <!--TODO: BOM Raw Good-->
+                                        </gridControl:FmEditModeGridControl.Columns>
+                                    </gridControl:FmEditModeGridControl>
+                                </layout:FmLayoutItem>
+                            </layout:FmVerticalLayoutGroupBox>
+                        </layout:FmVerticalLayoutGroup>
+                        <layout:FmVerticalLayoutGroup Header="فروشنده ها">
+                            <layout:FmHorizontalLayoutGroup>
+                                <layout:FmLayoutItem VerticalAlignment="Stretch">
+                                    <gridControl:FmEditModeGridControl x:Name="VendorPartsGridControl">
+                                        <gridControl:FmEditModeGridControl.Columns>
+                                            <columns:FmTextGridColumn Header="فروشنده" FieldName="Vendor" FmGridColumnWidth="Small"/>
+                                            <columns:FmTextGridColumn Header="شماره کالا" FieldName="PartNumber" FmGridColumnWidth="XSmall"/>
+                                            <columns:FmCurrencySpinEditGridColumn Header="آخرین قیمت" FieldName="LastCost" FmGridColumnWidth="XSmall"/>
+                                            <columns:FmTextGridColumn Header="واحد اندازه گیری" FieldName="Uom" FmGridColumnWidth="XXSmall"/>
+                                            <columns:FmTextGridColumn Header="آخرین تاریخ" FieldName="LastDate" FmGridColumnWidth="XSmall"/>
+                                            <columns:FmTextGridColumn Header="زمان انتظار" FieldName="LeadTime" FmGridColumnWidth="XSmall"/>
+                                            <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="Default" FmGridColumnWidth="XXSmall"/>
+                                            <columns:FmTextGridColumn Header="حداقل سفارش" FieldName="MinQuantity" FmGridColumnWidth="XSmall"/>
+                                        </gridControl:FmEditModeGridControl.Columns>
+                                    </gridControl:FmEditModeGridControl>
+                                </layout:FmLayoutItem>
+                                <layout:FmLayoutItem Width="50">
+                                    <userControl:AddEditDeleteListUserControl/>
+                                </layout:FmLayoutItem>
+                            </layout:FmHorizontalLayoutGroup>
+                        </layout:FmVerticalLayoutGroup>
+                    </layout:FmVerticalLayoutGroup>
+                </layout:FmLayoutControl>
+            </dxdo:DocumentPanel>
+        </dock:FmDockLayoutGroup>
+    </dock:FmDockLayoutManager>
+</userControl:FilterUserControlBase>

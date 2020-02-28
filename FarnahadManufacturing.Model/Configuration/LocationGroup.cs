@@ -17,6 +17,8 @@ namespace FarnahadManufacturing.Model.Configuration
         {
             Users = new List<User>();
             Locations = new List<Location>();
+            PartDefaultLocations = new List<PartDefaultLocation>();
+            PartReorderInformations = new List<PartReorderInformation>();
         }
 
         private int _id;
@@ -107,6 +109,28 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _locations = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartDefaultLocation> _partDefaultLocations;
+        public List<PartDefaultLocation> PartDefaultLocations
+        {
+            get => _partDefaultLocations;
+            set
+            {
+                _partDefaultLocations = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartReorderInformation> _partReorderInformations;
+        public List<PartReorderInformation> PartReorderInformations
+        {
+            get => _partReorderInformations;
+            set
+            {
+                _partReorderInformations = value;
                 OnPropertyChanged();
             }
         }

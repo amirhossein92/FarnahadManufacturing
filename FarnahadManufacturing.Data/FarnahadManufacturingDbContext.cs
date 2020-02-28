@@ -43,6 +43,8 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<MyCompany> MyCompanies { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<PartCost> PartCosts { get; set; }
+        public virtual DbSet<PartDefaultLocation> PartDefaultLocations { get; set; }
+        public virtual DbSet<PartReorderInformation> PartReorderInformations { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<ProductPrice> ProductPrices { get; set; }
@@ -82,6 +84,8 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new MyCompanyConfiguration());
             modelBuilder.Configurations.Add(new PartConfiguration());
             modelBuilder.Configurations.Add(new PartCostConfiguration());
+            modelBuilder.Configurations.Add(new PartDefaultLocationConfiguration());
+            modelBuilder.Configurations.Add(new PartReorderInformationConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
             modelBuilder.Configurations.Add(new ProductPriceConfiguration());

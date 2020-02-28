@@ -74,6 +74,8 @@
     <Compile Include="Configs\Configuration\MyCompanyConfiguration.cs" />
     <Compile Include="Configs\Configuration\PartConfiguration.cs" />
     <Compile Include="Configs\Configuration\PartCostConfiguration.cs" />
+    <Compile Include="Configs\Configuration\PartDefaultLocationConfiguration.cs" />
+    <Compile Include="Configs\Configuration\PartReorderInformationConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductCategoryConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductConfiguration.cs" />
     <Compile Include="Configs\Configuration\ProductPriceConfiguration.cs" />
@@ -122,6 +124,22 @@
     <Compile Include="Migrations\202002251807311_added_props_into_taxRate.designer.cs">
       <DependentUpon>202002251807311_added_props_into_taxRate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002281633457_added_new_objects_related_to_part.cs" />
+    <Compile Include="Migrations\202002281633457_added_new_objects_related_to_part.designer.cs">
+      <DependentUpon>202002281633457_added_new_objects_related_to_part.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281748221_added_last_change_user_and_date.cs" />
+    <Compile Include="Migrations\202002281748221_added_last_change_user_and_date.designer.cs">
+      <DependentUpon>202002281748221_added_last_change_user_and_date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281915359_added_some_props.cs" />
+    <Compile Include="Migrations\202002281915359_added_some_props.designer.cs">
+      <DependentUpon>202002281915359_added_some_props.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281950140_added_some_props_in_trackingPart.cs" />
+    <Compile Include="Migrations\202002281950140_added_some_props_in_trackingPart.designer.cs">
+      <DependentUpon>202002281950140_added_some_props_in_trackingPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +180,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002251807311_added_props_into_taxRate.resx">
       <DependentUpon>202002251807311_added_props_into_taxRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281633457_added_new_objects_related_to_part.resx">
+      <DependentUpon>202002281633457_added_new_objects_related_to_part.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281748221_added_last_change_user_and_date.resx">
+      <DependentUpon>202002281748221_added_last_change_user_and_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281915359_added_some_props.resx">
+      <DependentUpon>202002281915359_added_some_props.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281950140_added_some_props_in_trackingPart.resx">
+      <DependentUpon>202002281950140_added_some_props_in_trackingPart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

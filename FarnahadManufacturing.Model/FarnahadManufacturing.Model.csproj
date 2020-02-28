@@ -48,6 +48,7 @@
     <Compile Include="BaseConfiguration\Country.cs" />
     <Compile Include="BaseConfiguration\FobType.cs" />
     <Compile Include="BaseConfiguration\LocationType.cs" />
+    <Compile Include="BaseConfiguration\PartAbcCode.cs" />
     <Compile Include="BaseConfiguration\PartType.cs" />
     <Compile Include="BaseConfiguration\PaymentMethod.cs" />
     <Compile Include="BaseConfiguration\PaymentTerm.cs" />
@@ -69,6 +70,8 @@
     <Compile Include="Configuration\MyCompany.cs" />
     <Compile Include="Configuration\Part.cs" />
     <Compile Include="Configuration\PartCost.cs" />
+    <Compile Include="Configuration\PartDefaultLocation.cs" />
+    <Compile Include="Configuration\PartReorderInformation.cs" />
     <Compile Include="Configuration\Product.cs" />
     <Compile Include="Configuration\ProductCategory.cs" />
     <Compile Include="Configuration\ProductPrice.cs" />

@@ -65,7 +65,7 @@
                     <accordion:FmAccordionItem.Items>
                         <accordion:FmAccordionItem Header="کالا"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Small.svg}"
-                                                   MouseDoubleClick="Country_OnMouseDoubleClick" />
+                                                   MouseDoubleClick="PartOnMouseDoubleClick" />
                         <accordion:FmAccordionItem Header="محصولات"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Product_Small.svg}" />
                         <accordion:FmAccordionItem Header="انبار"

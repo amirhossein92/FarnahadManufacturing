@@ -37,6 +37,10 @@ namespace FarnahadManufacturing.Data.Configs.Configuration
                 .WithMany(user => user.Parts)
                 .HasForeignKey(item => item.CreatedByUserId)
                 .WillCascadeOnDelete(false);
+            HasRequired(item => item.LastChangedByUser)
+                .WithMany(user => user.ChangedParts)
+                .HasForeignKey(item => item.LastChangedByUserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

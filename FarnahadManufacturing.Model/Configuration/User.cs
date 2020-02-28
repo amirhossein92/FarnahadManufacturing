@@ -39,6 +39,8 @@ namespace FarnahadManufacturing.Model.Configuration
             Locations = new List<Location>();
             LocationGroups = new List<LocationGroup>();
             Parts = new List<Part>();
+            ChangedParts = new List<Part>();
+            PartReorderInformations = new List<PartReorderInformation>();
             PartCosts = new List<PartCost>();
             Products = new List<Product>();
             ProductCategories = new List<ProductCategory>();
@@ -431,6 +433,28 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _parts = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Part> _changedParts;
+        public List<Part> ChangedParts
+        {
+            get => _changedParts;
+            set
+            {
+                _changedParts = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartReorderInformation> _partReorderInformations;
+        public List<PartReorderInformation> PartReorderInformations
+        {
+            get => _partReorderInformations;
+            set
+            {
+                _partReorderInformations = value;
                 OnPropertyChanged();
             }
         }

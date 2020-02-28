@@ -16,6 +16,7 @@ namespace FarnahadManufacturing.Model.Configuration
         public Location()
         {
             Parts = new List<Part>();
+            PartDefaultLocations = new List<PartDefaultLocation>();
         }
 
         private int _id;
@@ -218,6 +219,17 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _parts = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<PartDefaultLocation> _partDefaultLocations;
+        public List<PartDefaultLocation> PartDefaultLocations
+        {
+            get => _partDefaultLocations;
+            set
+            {
+                _partDefaultLocations = value;
                 OnPropertyChanged();
             }
         }

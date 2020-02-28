@@ -49,6 +49,11 @@ namespace FarnahadManufacturing.UI
                 ToolBarControl.Items.Add(item.Value);
         }
 
+        private void PartOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcPart>("کالا ها");
+        }
+
         private void VendorOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcVendor>("فروشنده ها");

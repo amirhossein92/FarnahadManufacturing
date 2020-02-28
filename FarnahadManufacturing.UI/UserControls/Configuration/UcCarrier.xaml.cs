@@ -89,7 +89,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnSaveToolBarItem()
         {
-            ReadData(ref _activeCarrier);
+            ReadData(_activeCarrier);
             if (_activeCarrier.Id > 0)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
@@ -208,7 +208,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CarrierServiceGridControl.ItemsSource = _carrierServices;
         }
 
-        private void ReadData(ref Carrier carrier)
+        private void ReadData(Carrier carrier)
         {
             carrier.Title = TitleTextEdit.Text;
             carrier.Scac = ScacTextEdit.Text;

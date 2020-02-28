@@ -107,7 +107,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnSaveToolBarItem()
         {
-            ReadData(ref _activeCity);
+            ReadData(_activeCity);
             if (_activeCity.Id > 0)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
@@ -179,7 +179,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             DescriptionTextEdit.Text = city.Description;
         }
 
-        private void ReadData(ref City city)
+        private void ReadData(City city)
         {
             city.Title = TitleTextEdit.Text;
             city.ProvinceId = Convert.ToInt32(ProvinceComboBox.EditValue);

@@ -225,8 +225,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnSaveToolBarItem()
         {
-            ReadData(ref _activeVendor);
-            ReadData(ref _activeAddress);
+            ReadData(_activeVendor);
+            ReadData(_activeAddress);
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
                 if (_activeVendor.Id > 0)
@@ -415,7 +415,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             LogoImageEdit.EditValue = vendor.Logo;
         }
 
-        private void ReadData(ref Vendor vendor)
+        private void ReadData(Vendor vendor)
         {
             vendor.Title = TitleTextEdit.Text;
 
@@ -448,7 +448,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CurrentContactInformationsGridControl.ItemsSource = _contactInformations;
         }
 
-        private void ReadData(ref Address address)
+        private void ReadData(Address address)
         {
             address.AddressTypeId = Convert.ToInt32(CurrentAddressTypeComboBox.EditValue);
             address.Title = CurrentAddressTitleTextEdit.Text;
@@ -467,7 +467,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             if (e.OldItem is Address oldAddress)
             {
-                ReadData(ref oldAddress);
+                ReadData(oldAddress);
                 oldAddress.ContactInformations = _contactInformations.ToList();
             }
             if (e.NewItem is Address newAddress)

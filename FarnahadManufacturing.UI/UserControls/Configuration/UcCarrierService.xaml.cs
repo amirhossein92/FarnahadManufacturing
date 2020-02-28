@@ -48,7 +48,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
         {
-            ReadData(ref _activeCarrierService);
+            ReadData(_activeCarrierService);
             if (_activeCarrierService.Id <= 0)
             {
                 _activeCarrierService.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
@@ -58,7 +58,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CloseWindow();
         }
 
-        private void ReadData(ref CarrierService carrierService)
+        private void ReadData(CarrierService carrierService)
         {
             carrierService.Title = TitleTextEdit.Text;
             carrierService.Code = CodeTextEdit.Text;

@@ -94,7 +94,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnSaveToolBarItem()
         {
-            ReadData(ref _activeUser);
+            ReadData(_activeUser);
             if (!string.IsNullOrEmpty(_activeUser.Password))
             {
                 if (_activeUser.Id > 0)
@@ -204,7 +204,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             _activeUser.PasswordSalt = ApplicationDataStore.GetData<string>("CurrentPasswordSalt");
         }
 
-        private void ReadData(ref User user)
+        private void ReadData(User user)
         {
             user.FirstName = FirstNameTextEdit.Text;
             user.LastName = LastNameTextEdit.Text;

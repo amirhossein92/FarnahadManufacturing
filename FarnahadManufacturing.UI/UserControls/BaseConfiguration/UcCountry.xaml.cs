@@ -63,7 +63,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnSaveToolBarItem()
         {
-            ReadData(ref _activeCountry);
+            ReadData(_activeCountry);
             if (_activeCountry.Id > 0)
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
@@ -156,7 +156,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             DescriptionTextEdit.Text = country.Description;
         }
 
-        private void ReadData(ref Country country)
+        private void ReadData(Country country)
         {
             country.Title = NameTextEdit.Text;
             country.Abbreviation = AbbreviationTextEdit.Text;

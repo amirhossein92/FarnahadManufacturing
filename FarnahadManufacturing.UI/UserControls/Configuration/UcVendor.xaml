@@ -177,11 +177,13 @@
                                         <layout:FmHorizontalLayoutGroup>
                                             <layout:FmLayoutItem Label="شهر">
                                                 <input:FmComboBoxEdit x:Name="CurrentCityComboBox"
-                                                                      ValueMember="Id" DisplayMember = "Title"/>
+                                                                      ValueMember="Id" DisplayMember = "Title"
+                                                                      EditValueChanged="CurrentCityComboBoxOnEditValueChanged"/>
                                             </layout:FmLayoutItem>
                                             <layout:FmLayoutItem Label="استان">
                                                 <input:FmComboBoxEdit x:Name="CurrentProvinceComboBox"
-                                                                      ValueMember="Id" DisplayMember = "Title"/>
+                                                                      ValueMember="Id" DisplayMember = "Title"
+                                                                      EditValueChanged="CurrentProvinceComboBoxOnEditValueChanged"/>
                                             </layout:FmLayoutItem>
                                             <layout:FmLayoutItem Label="کد پستی">
                                                 <input:FmTextEdit x:Name="CurrentZipCodeTextEdit"/>
@@ -189,7 +191,8 @@
                                         </layout:FmHorizontalLayoutGroup>
                                         <layout:FmLayoutItem Label="کشور">
                                             <input:FmComboBoxEdit x:Name="CurrentCountryComboBox"
-                                                                  ValueMember="Id" DisplayMember = "Title"/>
+                                                                  ValueMember="Id" DisplayMember = "Title"
+                                                                  EditValueChanged="CurrentCountryComboBoxOnEditValueChanged"/>
                                         </layout:FmLayoutItem>
                                         <layout:FmHorizontalLayoutGroup>
                                             <layout:FmLayoutItem>

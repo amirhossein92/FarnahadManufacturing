@@ -46,14 +46,15 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             _users = new ObservableCollection<User>();
             LoadSearchGridControlData();
             LoadCustomerGroups();
-            LoadLocationGroups();
         }
 
         private void LoadSearchGridControlData(string userName = null, string name = null)
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var usersQueryable = dbContext.Users.OrderBy(item => item.Id).AsQueryable();
+                var usersQueryable = dbContext.Users
+                    .OrderBy(item => item.Id)
+                    .Include(item => item.LocationGroupMembers).AsQueryable();
                 if (!string.IsNullOrEmpty(userName))
                     usersQueryable = usersQueryable.Where(item => item.UserName.Contains(userName));
                 if (!string.IsNullOrEmpty(name))
@@ -70,14 +71,22 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
         }
 
-        private void LoadLocationGroups()
+        private List<LocationGroup> GetAvailableLocationGroups()
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                AvailableLocationGroupListBoxEdit.ItemsSource =
-                    new ObservableCollection<LocationGroup>(dbContext.LocationGroups.ToList());
+                var locationGroups = dbContext.LocationGroups.ToList();
+                if (_activeUser != null)
+                {
+                    foreach (var locationGroup in _activeUser.LocationGroupMembers)
+                    {
+                        var locationGroupInDb = locationGroups.First(item => item.Id == locationGroup.Id);
+                        locationGroups.Remove(locationGroupInDb);
+                    }
+                }
+
+                return locationGroups;
             }
-            CurrentLocationGroupListBoxEdit.ItemsSource = new ObservableCollection<LocationGroup>();
         }
 
         public override void LoadSearchGridControl()
@@ -101,7 +110,27 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 {
                     using (var dbContext = new FarnahadManufacturingDbContext())
                     {
-                        dbContext.Entry(_activeUser).State = EntityState.Modified;
+                        var userInDb = dbContext.Users
+                            .Include(item => item.LocationGroupMembers)
+                            .First(item => item.Id == _activeUser.Id);
+
+                        userInDb.FirstName = _activeUser.FirstName;
+                        userInDb.LastName = _activeUser.LastName;
+                        userInDb.UserName = _activeUser.UserName;
+                        userInDb.Email = _activeUser.Email;
+                        userInDb.PhoneNumber = _activeUser.PhoneNumber;
+                        userInDb.Initial = _activeUser.Initial;
+                        userInDb.IsActive = _activeUser.IsActive;
+                        userInDb.PasswordSalt = _activeUser.PasswordSalt;
+                        userInDb.Password = _activeUser.Password;
+
+                        userInDb.LocationGroupMembers.Clear();
+                        foreach (var locationGroup in _activeUser.LocationGroupMembers)
+                        {
+                            var locationGroupInDb = dbContext.LocationGroups.Find(locationGroup.Id);
+                            userInDb.LocationGroupMembers.Add(locationGroupInDb);
+                        }
+
                         dbContext.SaveChanges();
                     }
                 }
@@ -187,7 +216,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             _activeUser = user;
             FillData(_activeUser);
-            LoadLocationGroups();
             IsEditing();
         }
 
@@ -213,9 +241,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             user.Email = EmailTextEdit.Text;
             user.PhoneNumber = PhoneNumberTextEdit.Text;
             //user.CustomerGroups = CurrentUserGroupsListBoxEdit.ItemsSource as ObservableCollection<CustomerGroup>;
-            var currentLocationGroups =
-                CurrentLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
-            user.LocationGroupMembers = currentLocationGroups.ToList();
+            if (CurrentLocationGroupListBoxEdit.ItemsSource is ObservableCollection<LocationGroup> currentLocationGroups)
+                user.LocationGroupMembers = currentLocationGroups.ToList();
         }
 
         private void FillData(User user)
@@ -228,17 +255,18 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             PhoneNumberTextEdit.Text = user.PhoneNumber;
             CurrentUserGroupsListBoxEdit.ItemsSource = new ObservableCollection<CustomerGroup>(user.CustomerGroups);
             CurrentLocationGroupListBoxEdit.ItemsSource = new ObservableCollection<LocationGroup>(user.LocationGroupMembers);
+            AvailableLocationGroupListBoxEdit.ItemsSource = new ObservableCollection<LocationGroup>(GetAvailableLocationGroups());
         }
 
         private void AddSelectedLocationGroupToCurrentLocationGroupsOnClick(object sender, RoutedEventArgs e)
         {
-            // TODO: UPDATE THE LISTBOX FUNCTIONS
             if (AvailableLocationGroupListBoxEdit.SelectedItem is LocationGroup selectedLocationGroup)
             {
+                var tempLocationGroup = selectedLocationGroup;
                 var availableLocationGroups = AvailableLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
-                var currentLocationGroups = CurrentLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
-                currentLocationGroups.Add(selectedLocationGroup);
                 availableLocationGroups.Remove(selectedLocationGroup);
+                var currentLocationGroups = CurrentLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
+                currentLocationGroups.Add(tempLocationGroup);
             }
         }
 
@@ -246,10 +274,12 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             if (CurrentLocationGroupListBoxEdit.SelectedItem is LocationGroup selectedLocationGroup)
             {
-                var availableLocationGroups = AvailableLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
+                var tempLocationGroup = selectedLocationGroup;
                 var currentLocationGroups = CurrentLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
-                availableLocationGroups.Add(selectedLocationGroup);
                 currentLocationGroups.Remove(selectedLocationGroup);
+                var availableLocationGroups = AvailableLocationGroupListBoxEdit.ItemsSource as ObservableCollection<LocationGroup>;
+                if (!availableLocationGroups.Any(item => item.Id == tempLocationGroup.Id))
+                    availableLocationGroups.Add(tempLocationGroup);
             }
         }
 

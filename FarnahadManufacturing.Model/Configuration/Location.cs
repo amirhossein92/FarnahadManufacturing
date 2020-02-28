@@ -43,7 +43,6 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // TODO: Can be auto-generated
         /// <summary>
         /// شماره
         /// </summary>

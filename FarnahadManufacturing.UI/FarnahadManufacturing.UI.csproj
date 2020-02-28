@@ -238,7 +238,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\NavigationBar\TaxRate_Large.svg" />
+    <Resource Include="Icons\NavigationBar\TaxRate_Small.svg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj">
       <Project>{C5478796-7E68-4E8E-BF98-DAA95A1A2C06}</Project>

@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
+using FarnahadManufacturing.Control.Base.Input;
 using FarnahadManufacturing.Control.Base.ToolBar.Buttons;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.ViewModel;
@@ -130,7 +131,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected sealed override void InitialData()
         {
-            // TODO: Connect related combo boxes => city,province and country
             LoadContactTypeComboBox();
             LoadAddressTypeComboBox();
             LoadCarrierComboBox();
@@ -197,19 +197,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
                 var countries = dbContext.Countries.AsNoTracking()
-                    .Select(item => new { Title = item.Title, Id = item.Id })
                     .ToList();
                 CurrentCountryComboBox.ItemsSource = countries;
-            }
-        }
-
-        private void LoadCityComboBox()
-        {
-            using (var dbContext = new FarnahadManufacturingDbContext())
-            {
-                var cities = dbContext.Cities.AsNoTracking().Select(item => new { Title = item.Title, Id = item.Id }).ToList();
-                CurrentCityComboBox.ItemsSource = cities;
-                AddressesCityComboBox.ItemsSource = cities;
             }
         }
 
@@ -217,9 +206,27 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var provinces = dbContext.Provinces.AsNoTracking().Select(item => new { Title = item.Title, Id = item.Id }).ToList();
+                var provincesQueryable = dbContext.Provinces.AsNoTracking().AsQueryable();
+                if (CurrentCountryComboBox.SelectedItem is Country country && country.Id != 0)
+                    provincesQueryable = provincesQueryable.Where(item => item.CountryId == country.Id);
+                var provinces = provincesQueryable.ToList();
                 CurrentProvinceComboBox.ItemsSource = provinces;
                 AddressesProvinceComboBox.ItemsSource = provinces;
+            }
+        }
+
+        private void LoadCityComboBox()
+        {
+            using (var dbContext = new FarnahadManufacturingDbContext())
+            {
+                var citiesQueryable = dbContext.Cities.AsNoTracking().AsQueryable();
+                if (CurrentProvinceComboBox.SelectedItem is Province province && province.Id != 0)
+                    citiesQueryable = citiesQueryable.Where(item => item.ProvinceId == province.Id);
+                if (CurrentCountryComboBox.SelectedItem is Country country && country.Id != 0)
+                    citiesQueryable = citiesQueryable.Where(item => item.Province.CountryId == country.Id);
+                var cities = citiesQueryable.ToList();
+                CurrentCityComboBox.ItemsSource = cities;
+                AddressesCityComboBox.ItemsSource = cities;
             }
         }
 
@@ -345,6 +352,25 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 _activeContactInformation = _contactInformations.FirstOrDefault();
                 FillData(_activeAddress);
             }
+        }
+
+        private void CurrentCountryComboBoxOnEditValueChanged(object sender, RoutedEventArgs e)
+        {
+            LoadProvinceComboBox();
+            LoadCityComboBox();
+        }
+
+        private void CurrentProvinceComboBoxOnEditValueChanged(object sender, RoutedEventArgs e)
+        {
+            LoadCityComboBox();
+            if (CurrentProvinceComboBox.SelectedItem is Province province && province.Id != 0)
+                CurrentCountryComboBox.EditValue = province.CountryId;
+        }
+
+        private void CurrentCityComboBoxOnEditValueChanged(object sender, RoutedEventArgs e)
+        {
+            if (CurrentCityComboBox.SelectedItem is City city && city.Id != 0)
+                CurrentProvinceComboBox.EditValue = city.ProvinceId;
         }
     }
 }

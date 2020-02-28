@@ -94,13 +94,13 @@
                                 <columns:FmComboBoxGridColumn Header="شهر" FieldName="CityId" FmGridColumnWidth="XXSmall">
                                     <columns:FmComboBoxGridColumn.EditSettings>
                                         <columns:FmComboBoxEditSettings x:Name="AddressesCityComboBox"
-                                                                                    ValueMember="Id" DisplayMember="Title"/>
+                                                                        ValueMember="Id" DisplayMember="Title"/>
                                     </columns:FmComboBoxGridColumn.EditSettings>
                                 </columns:FmComboBoxGridColumn>
                                 <columns:FmComboBoxGridColumn Header="استان" FieldName="ProvinceId" FmGridColumnWidth="XXSmall">
                                     <columns:FmComboBoxGridColumn.EditSettings>
                                         <columns:FmComboBoxEditSettings x:Name="AddressesProvinceComboBox"
-                                                                                    ValueMember="Id" DisplayMember="Title"/>
+                                                                        ValueMember="Id" DisplayMember="Title"/>
                                     </columns:FmComboBoxGridColumn.EditSettings>
                                 </columns:FmComboBoxGridColumn>
                             </gridControl:FmReadOnlyGridControl.Columns>
@@ -121,19 +121,22 @@
                             <layout:FmHorizontalLayoutGroup>
                                 <layout:FmLayoutItem Label="شهر">
                                     <input:FmComboBoxEdit x:Name="CurrentCityComboBox"
-                                                                      ValueMember="Id" DisplayMember = "Title"/>
+                                                          ValueMember="Id" DisplayMember = "Title"
+                                                          EditValueChanged="CurrentCityComboBoxOnEditValueChanged"/>
                                 </layout:FmLayoutItem>
                                 <layout:FmLayoutItem Label="استان">
                                     <input:FmComboBoxEdit x:Name="CurrentProvinceComboBox"
-                                                                      ValueMember="Id" DisplayMember = "Title"/>
+                                                          ValueMember="Id" DisplayMember = "Title"
+                                                          EditValueChanged="CurrentProvinceComboBoxOnEditValueChanged"/>
                                 </layout:FmLayoutItem>
                                 <layout:FmLayoutItem Label="کد پستی">
                                     <input:FmTextEdit x:Name="CurrentZipCodeTextEdit"/>
                                 </layout:FmLayoutItem>
                             </layout:FmHorizontalLayoutGroup>
                             <layout:FmLayoutItem Label="کشور">
-                                <input:FmComboBoxEdit x:Name="CurrentCountryComboBox"
-                                                                  ValueMember="Id" DisplayMember = "Title"/>
+                                <input:FmComboBoxEdit x:Name="CurrentCountryComboBox" AllowUpdateTwoWayBoundPropertiesOnSynchronization="False"
+                                                      ValueMember="Id" DisplayMember = "Title"
+                                                      EditValueChanged="CurrentCountryComboBoxOnEditValueChanged"/>
                             </layout:FmLayoutItem>
                             <layout:FmHorizontalLayoutGroup>
                                 <layout:FmLayoutItem>

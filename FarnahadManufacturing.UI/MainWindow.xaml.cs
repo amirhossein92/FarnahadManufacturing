@@ -81,7 +81,6 @@ namespace FarnahadManufacturing.UI
 
         private void TaxRateOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            // TODO: Tax Rate Icon
             OpenUserControlInNewTab<UcTaxRate>("نرخ های مالیاتی");
         }
 

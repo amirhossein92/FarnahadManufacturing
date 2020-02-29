@@ -112,18 +112,25 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
                     MessageBoxService.SaveConfirmation(_activeUom.Title);
                     LoadSearchGridControl();
-                    IsAdding();
+                    IsEditing();
                 }
             }
         }
 
         protected override void OnDeleteToolBarItem()
         {
-            using (var dbContext = new FarnahadManufacturingDbContext())
+            if (MessageBoxService.AskForDelete(_activeUom.Title) == true)
             {
-                var uomInDb = dbContext.Uoms.Find(_activeUom.Id);
-                dbContext.Uoms.Remove(uomInDb);
-                dbContext.SaveChanges();
+                using (var dbContext = new FarnahadManufacturingDbContext())
+                {
+                    var uomInDb = dbContext.Uoms.Find(_activeUom.Id);
+                    dbContext.Uoms.Remove(uomInDb);
+                    dbContext.SaveChanges();
+                }
+
+                LoadSearchGridControl();
+                _activeUom = new Uom();
+                IsNotEditingAndAdding();
             }
         }
 

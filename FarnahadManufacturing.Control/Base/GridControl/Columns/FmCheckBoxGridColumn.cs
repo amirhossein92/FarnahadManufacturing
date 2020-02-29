@@ -1,4 +1,5 @@
-﻿using DevExpress.Xpf.Editors.Settings;
+﻿using System.Windows;
+using DevExpress.Xpf.Editors.Settings;
 
 namespace FarnahadManufacturing.Control.Base.GridControl.Columns
 {
@@ -6,7 +7,10 @@ namespace FarnahadManufacturing.Control.Base.GridControl.Columns
     {
         public FmCheckBoxGridColumn()
         {
-            EditSettings = new CheckEditSettings();
+            EditSettings = new CheckEditSettings
+            {
+                FlowDirection = FlowDirection.RightToLeft,
+            };
         }
 
     }

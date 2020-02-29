@@ -7,7 +7,7 @@ namespace FarnahadManufacturing.Base.Common
     {
         private static Dictionary<string, object> _items = new Dictionary<string, object>();
 
-        public static void SendData<T>(string key, T value) where T : class
+        public static void SendData<T>(string key, T value)
         {
             if (!_items.ContainsKey(key))
                 _items.Add(key, value);
@@ -15,16 +15,16 @@ namespace FarnahadManufacturing.Base.Common
                 throw new Exception("Key already exists...");
         }
 
-        public static T GetData<T>(string key) where T : class
+        public static T GetData<T>(string key)
         {
             if (_items.ContainsKey(key))
             {
-                var value = _items[key] as T;
+                var value = (T)_items[key];
                 _items.Remove(key);
                 return value;
             }
 
-            return null;
+            return default(T);
         }
 
     }

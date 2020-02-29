@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
@@ -14,15 +15,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DevExpress.Mvvm.UI;
 using DevExpress.Xpf.Editors;
 using DevExpress.Xpf.Grid;
 using FarnahadManufacturing.Base.Common;
+using FarnahadManufacturing.Control.Base.GridControl;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.ViewModel;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 using FarnahadManufacturing.UI.Common;
+using WindowService = FarnahadManufacturing.Control.Common.WindowService;
 
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
@@ -141,6 +146,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 new FmComboModel<PartType>(PartType.Service, "Service"),
             };
             PartTypeComboBoxEdit.ItemsSource = partTypes;
+            SearchPartTypeComboBoxEdit.ItemsSource = partTypes;
         }
 
         public override void LoadSearchGridControl()
@@ -153,7 +159,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var partsQueryable = dbContext.Parts.OrderBy(item => item.Id).AsQueryable();
+                var partsQueryable = dbContext.Parts.OrderBy(item => item.Id)
+                    .Include(item => item.PartCosts)
+                    .Include(item => item.PartReorderInformations)
+                    .Include(item => item.LastChangedByUser)
+                    .AsQueryable();
                 if (!string.IsNullOrEmpty(partNumber))
                     partsQueryable = partsQueryable.Where(item => item.Number.Contains(partNumber));
                 if (!string.IsNullOrEmpty(description))
@@ -178,9 +188,84 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             ReadData(_activePart);
             if (_activePart.Id > 0)
             {
+                var activeUserId = ApplicationSessionService.GetActiveUserId();
+                var creationDate = ApplicationSessionService.GetNowDateTime();
+
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
-                    dbContext.Entry(_activePart).State = EntityState.Modified;
+                    var partInDb = dbContext.Parts.First(item => item.Id == _activePart.Id);
+                    var newCost = _activePart.PartCosts.FirstOrDefault(item => item.CreatedByUserId == 0);
+                    if (newCost != null)
+                    {
+                        newCost.CreatedByUserId = activeUserId;
+                        newCost.CreatedDateTime = creationDate;
+                        newCost.PartId = partInDb.Id;
+                        partInDb.PartCosts.Add(newCost);
+                    }
+
+                    foreach (var defaultLocation in _activePart.PartDefaultLocations)
+                    {
+                        if (defaultLocation.PartId == 0)
+                            defaultLocation.PartId = _activePart.Id;
+                        else
+                            dbContext.Entry(defaultLocation).State = EntityState.Modified;
+                    }
+                    partInDb.PartDefaultLocations = _activePart.PartDefaultLocations;
+
+                    foreach (var trackingPart in _activePart.TrackingParts)
+                    {
+                        if (trackingPart.PartId == 0)
+                        {
+                            trackingPart.PartId = _activePart.Id;
+                            trackingPart.CreatedByUserId = activeUserId;
+                            trackingPart.CreatedDateTime = creationDate;
+                        }
+                        else
+                            dbContext.Entry(trackingPart).State = EntityState.Modified;
+                    }
+                    partInDb.TrackingParts = _activePart.TrackingParts;
+
+                    foreach (var partReorderInformation in _activePart.PartReorderInformations)
+                    {
+                        if (partReorderInformation.PartId == 0)
+                        {
+                            partReorderInformation.PartId = _activePart.Id;
+                            partReorderInformation.CreatedByUserId = activeUserId;
+                            partReorderInformation.CreatedDateTime = creationDate;
+                        }
+                        else if (partInDb.PartReorderInformations.Any(item => item.Id == partReorderInformation.Id))
+                            dbContext.Entry(partReorderInformation).State = EntityState.Deleted;
+                        else
+                            dbContext.Entry(partReorderInformation).State = EntityState.Modified;
+                    }
+                    partInDb.PartReorderInformations = _activePart.PartReorderInformations;
+
+                    //_activePart.Products;
+
+                    partInDb.Title = _activePart.Title;
+                    partInDb.Number = _activePart.Number;
+                    partInDb.UomId = _activePart.UomId;
+                    partInDb.PartType = _activePart.PartType;
+                    partInDb.Description = _activePart.Description;
+                    partInDb.Details = _activePart.Details;
+                    partInDb.IsActive = _activePart.IsActive;
+                    partInDb.PickInPartUomOnly = _activePart.PickInPartUomOnly;
+                    partInDb.Picture = _activePart.Picture;
+
+                    partInDb.RevisionNumber = _activePart.RevisionNumber;
+                    partInDb.Upc = _activePart.Upc;
+                    partInDb.AlertNote = _activePart.AlertNote;
+                    partInDb.Length = _activePart.Length;
+                    partInDb.Width = _activePart.Width;
+                    partInDb.DistanceUomId = _activePart.DistanceUomId;
+                    partInDb.Weight = _activePart.Weight;
+                    partInDb.WeightUomId = _activePart.WeightUomId;
+
+                    partInDb.PartAbcCode = _activePart.PartAbcCode;
+
+                    partInDb.LastChangedByUserId = activeUserId;
+                    partInDb.LastChangedDateTime = creationDate;
+
                     dbContext.SaveChanges();
                 }
             }
@@ -188,21 +273,55 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
-                    _activePart.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
-                    _activePart.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                    var activeUserId = ApplicationSessionService.GetActiveUserId();
+                    var creationDate = ApplicationSessionService.GetNowDateTime();
+                    _activePart.CreatedByUserId = activeUserId;
+                    _activePart.LastChangedByUserId = activeUserId;
+                    _activePart.CreatedDateTime = creationDate;
+                    _activePart.LastChangedDateTime = creationDate;
+                    foreach (var trackingPart in _activePart.TrackingParts)
+                    {
+                        dbContext.Trackings.Attach(trackingPart.Tracking);
+                        trackingPart.CreatedByUserId = activeUserId;
+                        trackingPart.CreatedDateTime = creationDate;
+                    }
+
+                    foreach (var partCost in _activePart.PartCosts)
+                    {
+                        partCost.CreatedByUserId = activeUserId;
+                        partCost.CreatedDateTime = creationDate;
+                    }
+
+                    foreach (var reorderInformation in _activePart.PartReorderInformations)
+                    {
+                        reorderInformation.CreatedByUserId = activeUserId;
+                        reorderInformation.CreatedDateTime = creationDate;
+                    }
+
                     dbContext.Parts.Add(_activePart);
                     dbContext.SaveChanges();
                 }
             }
+
+            MessageBoxService.SaveConfirmation(_activePart.Title);
+            LoadSearchGridControl();
+            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
         {
-            using (var dbContext = new FarnahadManufacturingDbContext())
+            if (MessageBoxService.AskForDelete(_activePart.Title) == true)
             {
-                var partInDb = dbContext.Parts.FirstOrDefault(item => item.Id == _activePart.Id);
-                dbContext.Parts.Remove(partInDb);
-                dbContext.SaveChanges();
+                using (var dbContext = new FarnahadManufacturingDbContext())
+                {
+                    var partInDb = dbContext.Parts.FirstOrDefault(item => item.Id == _activePart.Id);
+                    dbContext.Parts.Remove(partInDb);
+                    dbContext.SaveChanges();
+                }
+
+                LoadSearchGridControl();
+                _activePart = new Part();
+                IsNotEditingAndAdding();
             }
         }
 
@@ -261,6 +380,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void FillData(Part part)
         {
+            PartTitleTextEdit.Text = part.Title;
             PartNumberTextEdit.Text = part.Number;
             UomComboBoxEdit.EditValue = part.UomId;
             PartTypeComboBoxEdit.EditValue = part.PartType;
@@ -303,7 +423,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 var trackingParts = dbContext.TrackingParts
                     .Include(item => item.Tracking)
-                    .Where(item => item.Id == partId).ToList();
+                    .Where(item => item.PartId == partId).ToList();
                 var trackingIds = dbContext.Trackings.Select(item => item.Id).ToList();
                 foreach (var trackingId in trackingIds)
                 {
@@ -312,8 +432,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                         var tracking = dbContext.Trackings.First(item => item.Id == trackingId);
                         trackingParts.Add(new TrackingPart
                         {
-                            Tracking = tracking,
-                            PartId = partId,
+                            Tracking = tracking
                         });
                     }
                 }
@@ -325,7 +444,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var partDefaultLocations = dbContext.PartDefaultLocations.Where(item => item.Id == partId).ToList();
+                var partDefaultLocations = dbContext.PartDefaultLocations.Where(item => item.PartId == partId).ToList();
                 var locationGroupIds = dbContext.LocationGroups.Select(item => item.Id).ToList();
                 foreach (var locationGroupId in locationGroupIds)
                 {
@@ -333,8 +452,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     {
                         partDefaultLocations.Add(new PartDefaultLocation
                         {
-                            LocationGroupId = locationGroupId,
-                            PartId = partId,
+                            LocationGroupId = locationGroupId
                         });
                     }
                 }
@@ -346,15 +464,18 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var products = dbContext.Products
-                    .Where(item => item.Id == partId && item.IsActive == !showInActiveProducts)
-                    .ToList();
+                var productsQueryable = dbContext.Products
+                    .Where(item => item.PartId == partId).AsQueryable();
+                if (!showInActiveProducts)
+                    productsQueryable = productsQueryable.Where(item => item.IsActive == true);
+                var products = productsQueryable.ToList();
                 ProductsGridControl.ItemsSource = products;
             }
         }
 
         private void ReadData(Part part)
         {
+            part.Title = PartTitleTextEdit.Text;
             part.Number = PartNumberTextEdit.Text;
             part.UomId = Convert.ToInt32(UomComboBoxEdit.EditValue);
             part.PartType = (PartType)PartTypeComboBoxEdit.EditValue;
@@ -366,40 +487,93 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
             part.RevisionNumber = RevisionNumberTextEdit.Text;
             part.Upc = UpcTextEdit.Text;
-            // CREATE COST
-            //CostSpinEdit.EditValue = part.PartCosts.OrderByDescending(item => item.CreatedDateTime).First()?.Cost;
+            var lastCost = part.PartCosts.OrderByDescending(item => item.CreatedDateTime).FirstOrDefault()?.Cost;
+            if (lastCost == null || (lastCost != null && lastCost != Convert.ToDouble(CostSpinEdit.EditValue)))
+                part.PartCosts.Add(new PartCost { Cost = Convert.ToDouble(CostSpinEdit.EditValue) });
             part.AlertNote = AlertNoteTextEdit.Text;
-            part.Width = (double?)LengthSpinEdit.EditValue;
+            part.Length = (double?)LengthSpinEdit.EditValue;
             part.Width = (double?)WidthSpinEdit.EditValue;
             part.Height = (double?)HeightSpinEdit.EditValue;
             part.DistanceUomId = (int)DistanceUomComboBoxEdit.EditValue;
             part.Weight = (double?)WeightSpinEdit.EditValue;
             part.WeightUomId = (int)WeightUomComboBoxEdit.EditValue;
-            // Tracking
-
+            if (TrackingGridControl.ItemsSource is ObservableCollection<TrackingPart> trackingParts)
+                part.TrackingParts = trackingParts.ToList();
             part.PartAbcCode = (PartAbcCode)PartAbcCodeComboBoxEdit.EditValue;
             // UPDATE REORDER INFORMATION
-            //ReorderInformationGridControl.ItemsSource = new ObservableCollection<PartReorderInformation>(part.PartReorderInformations);
+            if (ReorderInformationGridControl.ItemsSource is ObservableCollection<PartReorderInformation> partReorderInformations)
+                part.PartReorderInformations = partReorderInformations.ToList();
             // UPDATE DEFAULT LOCATIONS
-            DefaultLocationGridControl.ItemsSource = new ObservableCollection<PartDefaultLocation>(part.PartDefaultLocations);
+            if (DefaultLocationGridControl.ItemsSource is ObservableCollection<PartDefaultLocation> partDefaultLocations)
+                part.PartDefaultLocations = partDefaultLocations.ToList();
 
-            // Vendors
+            // UPDATE Vendors
         }
 
         private void ProductsGridControlOnCustomUnboundColumnData(object sender, GridColumnDataEventArgs e)
         {
+            var product = ((IList)((FmEditModeGridControl)sender).ItemsSource)[e.ListSourceRowIndex] as Product;
             if (e.IsGetData)
             {
                 if (e.Column.FieldName == "Price")
                 {
-
+                    e.Value = GetLastProductPriceByProductId(product.Id);
                 }
             }
+        }
+
+        private double? GetLastProductPriceByProductId(int productId)
+        {
+            double? result = null;
+            using (var dbContext = new FarnahadManufacturingDbContext())
+            {
+                var lastProductPrice = dbContext.ProductPrices.Where(item => item.ProductId == productId)
+                    .OrderByDescending(item => item.CreatedDateTime).FirstOrDefault();
+                if (lastProductPrice != null)
+                    result = lastProductPrice.Price;
+            }
+            return result;
         }
 
         private void ShowInActiveProductCheckEditOnEditValueChanged(object sender, EditValueChangedEventArgs e)
         {
             LoadProducts(_activePart.Id, (bool)e.NewValue);
+        }
+
+        private void AddEditDeleteListUserControlOnClickOnAddItem(object sender, RoutedEventArgs e)
+        {
+            var partReorderInformation = new PartReorderInformation();
+            WindowService.OpenUserControlDialog(new UcPartReorderInformation(partReorderInformation));
+            var dataIsAdded = ApplicationDataStore.GetData<bool>("IsAddedOrChanged");
+            if (dataIsAdded)
+            {
+                _activePart.PartReorderInformations.Add(partReorderInformation);
+                ReorderInformationGridControl.ItemsSource =
+                    new ObservableCollection<PartReorderInformation>(_activePart.PartReorderInformations);
+            }
+        }
+
+        private void AddEditDeleteListUserControlOnClickOnEditItem(object sender, RoutedEventArgs e)
+        {
+            if (ReorderInformationGridControl.SelectedItem is PartReorderInformation partReorderInformation)
+            {
+                WindowService.OpenUserControlDialog(new UcPartReorderInformation(partReorderInformation));
+                var dataIsChanged = ApplicationDataStore.GetData<bool>("IsAddedOrChanged");
+                if (dataIsChanged)
+                {
+                    ReorderInformationGridControl.ItemsSource =
+                        new ObservableCollection<PartReorderInformation>(_activePart.PartReorderInformations);
+                }
+            }
+        }
+
+        private void AddEditDeleteListUserControlOnClickOnDeleteItem(object sender, RoutedEventArgs e)
+        {
+            if (ReorderInformationGridControl.SelectedItem is PartReorderInformation partReorderInformation)
+            {
+                if (MessageBoxService.AskForDelete() == true)
+                    _activePart.PartReorderInformations.Remove(partReorderInformation);
+            }
         }
     }
 }

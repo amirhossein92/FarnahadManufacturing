@@ -56,6 +56,9 @@
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کالا"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
+                            <layout:FmLayoutItem Label="نام کالا">
+                                <input:FmTextEdit x:Name="PartTitleTextEdit" />
+                            </layout:FmLayoutItem>
                             <layout:FmHorizontalLayoutGroup>
                                 <layout:FmLayoutItem Label="شماره کالا">
                                     <input:FmTextEdit x:Name="PartNumberTextEdit" />
@@ -146,10 +149,10 @@
                                     <gridControl:FmEditModeGridControl x:Name="TrackingGridControl">
                                         <gridControl:FmEditModeGridControl.Columns>
                                             <columns:FmCheckBoxGridColumn Header="انتخاب شده" FieldName="IsSelected" FmGridColumnWidth="XSmall"/>
-                                            <columns:FmTextGridColumn Header="نام" FieldName="Tracking.Title" FmGridColumnWidth="Small"/>
-                                            <columns:FmTextGridColumn Header="مخفف" FieldName="Tracking.Abbreviation" FmGridColumnWidth="XXSmall"/>
+                                            <columns:FmTextGridColumn Header="نام" ReadOnly="True" FieldName="Tracking.Title" FmGridColumnWidth="Small"/>
+                                            <columns:FmTextGridColumn Header="مخفف" ReadOnly="True" FieldName="Tracking.Abbreviation" FmGridColumnWidth="XXSmall"/>
                                             <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="Small"/>
-                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="Tracking.TrackingValueType" 
+                                            <columns:FmComboBoxGridColumn Header="نوع" ReadOnly="True" FieldName="Tracking.TrackingValueType" 
                                                                           FmGridColumnWidth="Small">
                                                 <columns:FmComboBoxGridColumn.EditSettings>
                                                     <columns:FmComboBoxEditSettings x:Name="TrackingTypeComboBox"
@@ -220,7 +223,10 @@
                                         </gridControl:FmEditModeGridControl.Columns>
                                     </gridControl:FmEditModeGridControl>
                                 </layout:FmLayoutItem>
-                                <userControl:AddEditDeleteListUserControl/>
+                                <userControl:AddEditDeleteListUserControl 
+                                    ClickOnAddItem="AddEditDeleteListUserControlOnClickOnAddItem"
+                                    ClickOnEditItem="AddEditDeleteListUserControlOnClickOnEditItem"
+                                    ClickOnDeleteItem="AddEditDeleteListUserControlOnClickOnDeleteItem"/>
                             </layout:FmHorizontalLayoutGroupBox>
                         </layout:FmVerticalLayoutGroup>
                         <layout:FmVerticalLayoutGroup Header="محل پیش فرض">

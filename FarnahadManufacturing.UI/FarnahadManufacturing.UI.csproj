@@ -112,6 +112,9 @@
     <Compile Include="UserControls\Configuration\UcPart.xaml.cs">
       <DependentUpon>UcPart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcPartReorderInformation.xaml.cs">
+      <DependentUpon>UcPartReorderInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Configuration\UcProductCategory.xaml.cs">
       <DependentUpon>UcProductCategory.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcPartReorderInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

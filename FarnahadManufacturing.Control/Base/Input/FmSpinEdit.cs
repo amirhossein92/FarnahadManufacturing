@@ -11,6 +11,8 @@ namespace FarnahadManufacturing.Control.Base.Input
         {
             FlowDirection = FlowDirection.LeftToRight;
             MaskUseAsDisplayFormat = true;
+            MaskType = MaskType.Numeric;
+            EditValueType = typeof(double);
             AllowNullInput = true;
         }
 

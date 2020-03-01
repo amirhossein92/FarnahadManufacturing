@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using DevExpress.Xpf.Core;
+using FarnahadManufacturing.UI.Assets;
+using FarnahadManufacturing.UI.UserControls.Login;
 
 namespace FarnahadManufacturing.UI
 {
@@ -18,6 +20,9 @@ namespace FarnahadManufacturing.UI
         {
             ApplicationThemeHelper.ApplicationThemeName = Theme.VS2017LightName;
             base.OnStartup(e);
+            DXSplashScreen.Show<SplashScreenView>();
+            var loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
         }
     }
 }

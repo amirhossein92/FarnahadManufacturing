@@ -40,6 +40,8 @@ namespace FarnahadManufacturing.UI
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            DXSplashScreen.Close();
+            this.Activate();
         }
 
         private void SetToolBar(Dictionary<string, IBarItem> toolBarItems)

@@ -1,0 +1,38 @@
+﻿<Window x:Class="FarnahadManufacturing.UI.UserControls.Login.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Login"
+        xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+        xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+        xmlns:label="clr-namespace:FarnahadManufacturing.Control.Base.Label;assembly=FarnahadManufacturing.Control"
+        xmlns:buttons="clr-namespace:FarnahadManufacturing.Control.Base.Buttons;assembly=FarnahadManufacturing.Control"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="200" Width="500"
+        FlowDirection="RightToLeft" ResizeMode="NoResize">
+    <layout:FmLayoutControl>
+        <layout:FmHorizontalLayoutGroup>
+            <layout:FmVerticalLayoutGroup>
+                <layout:FmLayoutItem Label="نام کاربری">
+                    <input:FmTextEdit x:Name="UserNameTextEdit"/>
+                </layout:FmLayoutItem>
+                <layout:FmLayoutItem Label="رمز عبور">
+                    <input:FmPasswordBoxEdit x:Name="PasswordTextEdit"/>
+                </layout:FmLayoutItem>
+                <layout:FmHorizontalLayoutGroup VerticalAlignment="Bottom">
+                    <layout:FmLayoutItem>
+                        <buttons:FmSimpleButton Content="ورود" Click="LoginButtonOnClick"/>
+                    </layout:FmLayoutItem>
+                    <layout:FmLayoutItem>
+                        <buttons:FmSimpleButton Content="خروج" Click="ExitButtonOnClick"/>
+                    </layout:FmLayoutItem>
+                </layout:FmHorizontalLayoutGroup>
+            </layout:FmVerticalLayoutGroup>
+            <layout:FmLayoutItem VerticalAlignment="Stretch" 
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                <label:FmLabel Text="خوش آمدید!"></label:FmLabel>
+            </layout:FmLayoutItem>
+        </layout:FmHorizontalLayoutGroup>
+    </layout:FmLayoutControl>
+</Window>

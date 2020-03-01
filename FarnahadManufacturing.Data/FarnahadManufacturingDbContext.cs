@@ -29,7 +29,6 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<ShippingTerm> ShippingTerms { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
-        public virtual DbSet<UomType> UomTypes { get; set; }
 
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Carrier> Carriers { get; set; }
@@ -70,7 +69,6 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new ProvinceConfiguration());
             modelBuilder.Configurations.Add(new ShippingTermConfiguration());
             modelBuilder.Configurations.Add(new TrackingConfiguration());
-            modelBuilder.Configurations.Add(new UomTypeConfiguration());
 
             modelBuilder.Configurations.Add(new AddressConfiguration());
             modelBuilder.Configurations.Add(new CarrierConfiguration());

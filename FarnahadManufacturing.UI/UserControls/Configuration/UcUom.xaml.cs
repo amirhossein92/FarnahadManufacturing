@@ -20,6 +20,7 @@ using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.ViewModel;
 using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.Data;
+using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 using FarnahadManufacturing.UI.Common;
 
@@ -47,15 +48,16 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void LoadUomTypeComboBox()
         {
-            using (var dbContext = new FarnahadManufacturingDbContext())
+            var uomTypes = new ObservableCollection<FmComboModel<UomType>>
             {
-                var uomTypes = dbContext.UomTypes.Select(item => new FmComboModel<int>
-                {
-                    Value = item.Id,
-                    Title = item.Title
-                }).ToList();
-                UomTypeComboBoxEdit.ItemsSource = uomTypes;
-            }
+                new FmComboModel<UomType>(UomType.Area, "مساحت"),
+                new FmComboModel<UomType>(UomType.Count, "شمارش"),
+                new FmComboModel<UomType>(UomType.Length, "طول"),
+                new FmComboModel<UomType>(UomType.Time, "زمان"),
+                new FmComboModel<UomType>(UomType.Volume, "حجم"),
+                new FmComboModel<UomType>(UomType.Weight, "وزن"),
+            };
+            UomTypeComboBoxEdit.ItemsSource = uomTypes;
         }
 
         public override void LoadSearchGridControl()
@@ -191,7 +193,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             AbbreviationTextEdit.Text = uom.Abbreviation;
             TitleTextEdit.Text = uom.Title;
             DescriptionTextEdit.Text = uom.Description;
-            UomTypeComboBoxEdit.EditValue = uom.UomTypeId;
+            UomTypeComboBoxEdit.EditValue = uom.UomType;
             ConversionSpinEdit.EditValue = uom.Conversion;
             IsActiveCheckEdit.EditValue = uom.IsActive;
             ReadOnlyCheckEdit.EditValue = uom.ReadOnly;
@@ -202,7 +204,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             uom.Abbreviation = AbbreviationTextEdit.Text;
             uom.Title = TitleTextEdit.Text;
             uom.Description = DescriptionTextEdit.Text;
-            uom.UomTypeId = Convert.ToInt32(UomTypeComboBoxEdit.EditValue);
+            uom.UomType = (UomType)UomTypeComboBoxEdit.EditValue;
             uom.Conversion = Convert.ToDouble(ConversionSpinEdit.EditValue);
             uom.IsActive = (bool)IsActiveCheckEdit.EditValue;
             uom.ReadOnly = (bool)ReadOnlyCheckEdit.EditValue;

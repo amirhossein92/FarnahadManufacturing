@@ -61,7 +61,6 @@
     <Compile Include="Configs\BaseConfiguration\PaymentTermConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\ProvinceConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\ShippingTermConfiguration.cs" />
-    <Compile Include="Configs\BaseConfiguration\UomTypeConfiguration.cs" />
     <Compile Include="Configs\Configuration\AddressConfiguration.cs" />
     <Compile Include="Configs\Configuration\CarrierConfiguration.cs" />
     <Compile Include="Configs\Configuration\CarrierServiceConfiguration.cs" />
@@ -140,6 +139,10 @@
     <Compile Include="Migrations\202002281950140_added_some_props_in_trackingPart.designer.cs">
       <DependentUpon>202002281950140_added_some_props_in_trackingPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003011749004_changed_uomType_to_enum.cs" />
+    <Compile Include="Migrations\202003011749004_changed_uomType_to_enum.designer.cs">
+      <DependentUpon>202003011749004_changed_uomType_to_enum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -192,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002281950140_added_some_props_in_trackingPart.resx">
       <DependentUpon>202002281950140_added_some_props_in_trackingPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003011749004_changed_uomType_to_enum.resx">
+      <DependentUpon>202003011749004_changed_uomType_to_enum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

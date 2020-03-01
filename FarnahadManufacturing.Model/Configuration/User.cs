@@ -28,7 +28,6 @@ namespace FarnahadManufacturing.Model.Configuration
             Provinces = new List<Province>();
             ShippingTerms = new List<ShippingTerm>();
             Trackings = new List<Tracking>();
-            UomTypes = new List<UomType>();
 
             Addresses = new List<Address>();
             Carriers = new List<Carrier>();
@@ -323,17 +322,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _trackings = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private List<UomType> _uomTypes;
-        public List<UomType> UomTypes
-        {
-            get => _uomTypes;
-            set
-            {
-                _uomTypes = value;
                 OnPropertyChanged();
             }
         }

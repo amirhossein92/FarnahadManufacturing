@@ -93,20 +93,6 @@ namespace FarnahadManufacturing.Model.Configuration
         /// <summary>
         /// نوع واحد اندازه گیری
         /// </summary>
-        private int _uomTypeId;
-        public int UomTypeId
-        {
-            get => _uomTypeId;
-            set
-            {
-                _uomTypeId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// نوع واحد اندازه گیری
-        /// </summary>
         private UomType _uomType;
         public UomType UomType
         {

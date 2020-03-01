@@ -151,6 +151,7 @@
     <Compile Include="Base\ViewModel\FmComboModel.cs" />
     <Compile Include="Base\Window\FmDialogWindow.cs" />
     <Compile Include="Base\Window\FmWindow.cs" />
+    <Compile Include="Common\EnumUtility.cs" />
     <Compile Include="Common\ImageUtility.cs" />
     <Compile Include="Common\MessageBoxService.cs" />
     <Compile Include="Common\ToolBarUtility.cs" />

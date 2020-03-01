@@ -71,9 +71,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                // TODO: Change UOM Type to enum;
                 var distanceUoms = dbContext.Uoms.AsNoTracking()
-                    .Where(item => item.UomTypeId == 3).ToList();
+                    .Where(item => item.UomType == UomType.Length).ToList();
                 DistanceUomComboBoxEdit.ItemsSource = distanceUoms;
             }
         }
@@ -83,7 +82,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
                 var weightUoms = dbContext.Uoms.AsNoTracking()
-                    .Where(item => item.UomTypeId == 2).ToList();
+                    .Where(item => item.UomType == UomType.Weight).ToList();
                 WeightUomComboBoxEdit.ItemsSource = weightUoms;
             }
         }

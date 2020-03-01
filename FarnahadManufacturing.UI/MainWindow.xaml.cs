@@ -40,7 +40,7 @@ namespace FarnahadManufacturing.UI
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            DXSplashScreen.Close();
+            //DXSplashScreen.Close();
             this.Activate();
         }
 

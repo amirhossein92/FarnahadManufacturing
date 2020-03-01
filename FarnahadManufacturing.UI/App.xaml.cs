@@ -5,9 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using DevExpress.Xpf.Core;
 using FarnahadManufacturing.UI.Assets;
 using FarnahadManufacturing.UI.UserControls.Login;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace FarnahadManufacturing.UI
 {
@@ -23,6 +25,14 @@ namespace FarnahadManufacturing.UI
             DXSplashScreen.Show<SplashScreenView>();
             var loginWindow = new LoginWindow();
             loginWindow.ShowDialog();
+        }
+
+        private void App_OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            var exception = e.Exception;
+            if (exception != null)
+                MessageBox.Show("Error", $"{e.Exception.Message}");
+            e.Handled = true;
         }
     }
 }

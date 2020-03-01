@@ -93,25 +93,37 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             ReadData(_activeUom);
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                if (_activeUom.Id > 0 && _activeUom.ReadOnly)
+                bool isSaved = true;
+                if (_activeUom.Id > 0)
                 {
-                    MessageBoxService.CannotEditPrompt(_activeUom.Title);
-                }
-                else
-                {
-                    if (_activeUom.Id > 0)
+                    var activeUomInDb = dbContext.Uoms.First(item => item.Id == _activeUom.Id);
+                    if (activeUomInDb.ReadOnly)
                     {
-                        dbContext.Entry(_activeUom).State = EntityState.Modified;
-                        dbContext.SaveChanges();
+                        MessageBoxService.CannotEditPrompt(_activeUom.Title);
+                        isSaved = false;
                     }
                     else
                     {
-                        _activeUom.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
-                        _activeUom.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
-                        dbContext.Uoms.Add(_activeUom);
+                        activeUomInDb.Title = _activeUom.Title;
+                        activeUomInDb.Abbreviation = _activeUom.Abbreviation;
+                        activeUomInDb.ReadOnly = _activeUom.ReadOnly;
+                        activeUomInDb.Conversion = _activeUom.Conversion;
+                        activeUomInDb.Description = _activeUom.Description;
+                        activeUomInDb.IsActive = _activeUom.IsActive;
+                        activeUomInDb.UomType = _activeUom.UomType;
                         dbContext.SaveChanges();
                     }
+                }
+                else
+                {
+                    _activeUom.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                    _activeUom.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                    dbContext.Uoms.Add(_activeUom);
+                    dbContext.SaveChanges();
+                }
 
+                if (isSaved)
+                {
                     MessageBoxService.SaveConfirmation(_activeUom.Title);
                     LoadSearchGridControl();
                     IsEditing();

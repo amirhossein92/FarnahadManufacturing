@@ -22,7 +22,6 @@ namespace FarnahadManufacturing.Model.Configuration
             Cities = new List<City>();
             Countries = new List<Country>();
             FobTypes = new List<FobType>();
-            LocationTypes = new List<LocationType>();
             PaymentMethods = new List<PaymentMethod>();
             PaymentTerms = new List<PaymentTerm>();
             Provinces = new List<Province>();
@@ -256,17 +255,6 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _fobTypes = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private List<LocationType> _locationTypes;
-        public List<LocationType> LocationTypes
-        {
-            get => _locationTypes;
-            set
-            {
-                _locationTypes = value;
                 OnPropertyChanged();
             }
         }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    // TODO: New Enum
     public enum PartAbcCode
     {
         // Top 85% Sale

@@ -111,13 +111,16 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void LoadLocationTypeComboBox()
         {
-            using (var dbContext = new FarnahadManufacturingDbContext())
+            // TODO: Complete enum lists
+            var locationTypes = new ObservableCollection<FmComboModel<LocationType>>
             {
-                var locationTypes = dbContext.LocationTypes
-                    .Select(item => new FmComboModel<int> { Title = item.Title, Value = item.Id })
-                    .ToList();
-                LocationTypeComboBoxEdit.ItemsSource = locationTypes;
-            }
+                new FmComboModel<LocationType>(LocationType.Consignment,"Consignment"),
+                new FmComboModel<LocationType>(LocationType.Stock,"انبار"),
+                new FmComboModel<LocationType>(LocationType.Vendor,"فروشنده"),
+                new FmComboModel<LocationType>(LocationType.Shipping,"Shipping"),
+            };
+
+            LocationTypeComboBoxEdit.ItemsSource = locationTypes;
         }
 
         private void LoadCustomerComboBox()
@@ -239,7 +242,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             NameTextEdit.EditValue = location.Title;
             DescriptionTextEdit.EditValue = location.Description;
-            LocationTypeComboBoxEdit.EditValue = location.LocationTypeId;
+            LocationTypeComboBoxEdit.EditValue = location.LocationType;
             LocationGroupComboBoxEdit.EditValue = location.LocationGroupId;
             DefaultCustomerComboBoxEdit.EditValue = location.DefaultCustomerId;
             LocationNumberSpinEdit.EditValue = location.Number;
@@ -253,7 +256,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             location.Title = NameTextEdit.Text;
             location.Description = DescriptionTextEdit.Text;
-            location.LocationTypeId = Convert.ToInt32(LocationTypeComboBoxEdit.EditValue);
+            location.LocationType = (LocationType)LocationTypeComboBoxEdit.EditValue;
             location.LocationGroupId = Convert.ToInt32(LocationGroupComboBoxEdit.EditValue);
             location.DefaultCustomerId = (int?)DefaultCustomerComboBoxEdit.EditValue;
             location.Number = Convert.ToInt32(LocationNumberSpinEdit.EditValue);

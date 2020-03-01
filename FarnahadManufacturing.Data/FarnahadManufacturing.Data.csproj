@@ -56,7 +56,6 @@
     <Compile Include="Configs\BaseConfiguration\CityConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\CountryConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\FobTypeConfiguration.cs" />
-    <Compile Include="Configs\BaseConfiguration\LocationTypeConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\PaymentMethodConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\PaymentTermConfiguration.cs" />
     <Compile Include="Configs\BaseConfiguration\ProvinceConfiguration.cs" />
@@ -143,6 +142,10 @@
     <Compile Include="Migrations\202003011749004_changed_uomType_to_enum.designer.cs">
       <DependentUpon>202003011749004_changed_uomType_to_enum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003011849298_changed_locationType_to_enum.cs" />
+    <Compile Include="Migrations\202003011849298_changed_locationType_to_enum.designer.cs">
+      <DependentUpon>202003011849298_changed_locationType_to_enum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -198,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003011749004_changed_uomType_to_enum.resx">
       <DependentUpon>202003011749004_changed_uomType_to_enum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003011849298_changed_locationType_to_enum.resx">
+      <DependentUpon>202003011849298_changed_locationType_to_enum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

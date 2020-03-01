@@ -75,20 +75,6 @@ namespace FarnahadManufacturing.Model.Configuration
         /// <summary>
         /// نوع محل
         /// </summary>
-        private int _locationTypeId;
-        public int LocationTypeId
-        {
-            get => _locationTypeId;
-            set
-            {
-                _locationTypeId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// نوع محل
-        /// </summary>
         private LocationType _locationType;
         public LocationType LocationType
         {

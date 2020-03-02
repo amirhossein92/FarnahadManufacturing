@@ -328,6 +328,11 @@
     <Resource Include="Assets\DXSplashScreen\Logo.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\Button\add_small.svg" />
+    <Resource Include="Icons\Button\edit_small.svg" />
+    <Resource Include="Icons\Button\remove_small.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -8,14 +8,12 @@
                                 xmlns:label="clr-namespace:FarnahadManufacturing.Control.Base.Label"
                                 mc:Ignorable="d" >
     <layout:FmLayoutItem HorizontalContentAlignment="Left">
-        <buttons:FmSimpleButton Content="قبلی"
-                                    Click="PreviousPageButtonOnClick" />
+        <buttons:FmMiniPreviousSimpleButton Click="PreviousPageButtonOnClick" />
     </layout:FmLayoutItem>
     <layout:FmLayoutItem HorizontalContentAlignment="Center">
         <label:FmLabel x:Name="RecordsCountFmLabel" Text="تعداد رکوردها" />
     </layout:FmLayoutItem>
     <layout:FmLayoutItem HorizontalContentAlignment="Right">
-        <buttons:FmSimpleButton Content="بعدی"
-                                    Click="NextPageButtonOnClick" />
+        <buttons:FmMiniNextSimpleButton Click="NextPageButtonOnClick" />
     </layout:FmLayoutItem>
 </layout:FmHorizontalLayoutGroup>

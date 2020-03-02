@@ -19,7 +19,7 @@
             </layout:FmLayoutItem>
         </layout:FmVerticalLayoutGroup>
         <layout:FmLayoutItem Width="50">
-            <buttons:FmMapSimpleButton Click="MapButtonOnClick"/>
+            <buttons:FmMiniMapSimpleButton Click="MapButtonOnClick"/>
         </layout:FmLayoutItem>
     </layout:FmHorizontalLayoutGroup>
 </layout:FmGroupBox>

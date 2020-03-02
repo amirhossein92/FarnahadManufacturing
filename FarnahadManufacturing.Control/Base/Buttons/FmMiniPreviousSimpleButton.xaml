@@ -1,0 +1,10 @@
+﻿<local:FmMiniSimpleButton x:Class="FarnahadManufacturing.Control.Base.Buttons.FmMiniPreviousSimpleButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FarnahadManufacturing.Control.Base.Buttons"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d" 
+             Glyph="{dx:SvgImageSource Uri=Icon/previous_small.svg}">
+</local:FmMiniSimpleButton>

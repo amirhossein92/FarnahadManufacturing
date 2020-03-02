@@ -8,6 +8,7 @@ namespace FarnahadManufacturing.Control.Base.Buttons
         public FmSimpleButton()
         {
             Margin = new Thickness(1);
+            Width = 100;
         }
     }
 }

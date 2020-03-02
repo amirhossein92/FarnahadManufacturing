@@ -57,17 +57,41 @@
     <Compile Include="Base\Accordion\FmAccordionControl.cs" />
     <Compile Include="Base\Accordion\FmAccordionItem.cs" />
     <Compile Include="Base\Accordion\FmSeparatorItem.cs" />
-    <Compile Include="Base\Buttons\FmCancelSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMapSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniAddSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniEditSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmMiniRefreshSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmCancelSimpleButton.xaml.cs">
+      <DependentUpon>FmCancelSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniMapSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniMapSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniAddSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniAddSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniDeleteSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniDeleteSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniEditSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniEditSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniPreviousSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniPreviousSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniNextSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniNextSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmMiniRefreshSimpleButton.xaml.cs">
+      <DependentUpon>FmMiniRefreshSimpleButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base\Buttons\FmMiniSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmSaveSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmSearchSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmSaveSimpleButton.xaml.cs">
+      <DependentUpon>FmSaveSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buttons\FmSearchSimpleButton.xaml.cs">
+      <DependentUpon>FmSearchSimpleButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base\Buttons\FmSimpleButton.cs" />
-    <Compile Include="Base\Buttons\FmViewSimpleButton.cs" />
+    <Compile Include="Base\Buttons\FmViewSimpleButton.xaml.cs">
+      <DependentUpon>FmViewSimpleButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base\ControlDefaultValue.cs" />
     <Compile Include="Base\Dock\FmDockDocumentGroup.cs" />
     <Compile Include="Base\Dock\FmDockLayoutGroup.cs" />
@@ -159,6 +183,50 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Base\Buttons\FmCancelSimpleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniMapSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniAddSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniDeleteSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniEditSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniPreviousSimpleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniNextSimpleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Buttons\FmMiniRefreshSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmSaveSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmSearchSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Buttons\FmViewSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Base\UserControl\AddEditDeleteListUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -190,6 +258,30 @@
       <Name>FarnahadManufacturing.Base</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\refresh_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\add_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\edit_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\remove_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\cancel_small.svg" />
+    <Resource Include="Base\Buttons\Icon\save_small.svg" />
+    <Resource Include="Base\Buttons\Icon\search_small.svg" />
+    <Resource Include="Base\Buttons\Icon\view_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\map_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Base\Buttons\Icon\next_small.svg" />
+    <Resource Include="Base\Buttons\Icon\previous_small.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

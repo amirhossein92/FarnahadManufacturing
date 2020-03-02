@@ -9,7 +9,7 @@
         xmlns:label="clr-namespace:FarnahadManufacturing.Control.Base.Label;assembly=FarnahadManufacturing.Control"
         xmlns:buttons="clr-namespace:FarnahadManufacturing.Control.Base.Buttons;assembly=FarnahadManufacturing.Control"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="200" Width="500"
+        Title="ورود" Height="200" Width="500"
         WindowStartupLocation="CenterScreen"
         FlowDirection="RightToLeft" ResizeMode="NoResize">
     <layout:FmLayoutControl>

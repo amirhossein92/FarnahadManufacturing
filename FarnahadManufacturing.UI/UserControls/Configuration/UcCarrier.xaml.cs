@@ -157,7 +157,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 _activeCarrier = new Carrier();
                 IsNotEditingAndAdding();
             }
-
         }
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)

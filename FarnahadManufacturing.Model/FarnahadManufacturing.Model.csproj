@@ -52,6 +52,7 @@
     <Compile Include="BaseConfiguration\PartType.cs" />
     <Compile Include="BaseConfiguration\PaymentMethod.cs" />
     <Compile Include="BaseConfiguration\PaymentTerm.cs" />
+    <Compile Include="BaseConfiguration\PaymentType.cs" />
     <Compile Include="BaseConfiguration\Province.cs" />
     <Compile Include="BaseConfiguration\PurchaseOrderStatus.cs" />
     <Compile Include="BaseConfiguration\ShippingTerm.cs" />

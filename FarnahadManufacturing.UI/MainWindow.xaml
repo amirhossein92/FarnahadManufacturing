@@ -95,7 +95,12 @@
                 <accordion:FmAccordionItem Header="فروش"
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Purchase_Large.svg}" />
                 <accordion:FmAccordionItem Header="حسابداری"
-                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}"/>
+                                           Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}">
+                    <accordion:FmAccordionItem.Items>
+                        <accordion:FmAccordionItem Header="تقسیم بندی" MouseDoubleClick="CategoryOnMouseDoubleClick"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Locations_Small.svg}" />
+                    </accordion:FmAccordionItem.Items>
+                </accordion:FmAccordionItem>
                 <accordion:FmAccordionItem Header="تنظیمات"
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Configuration_Large.svg}">
                     <accordion:FmAccordionItem Header="موقعیت"
@@ -140,6 +145,9 @@
                         <accordion:FmAccordionItem Header="کشور"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
                                                    MouseDoubleClick="Country_OnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="ردیابی"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="TrackingOnMouseDoubleClick" />
                     </accordion:FmAccordionItem.Items>
                 </accordion:FmAccordionItem>
             </accordion:FmAccordionControl.Items>

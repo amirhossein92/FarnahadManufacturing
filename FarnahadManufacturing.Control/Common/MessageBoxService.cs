@@ -35,6 +35,14 @@ namespace FarnahadManufacturing.Control.Common
             ShowWarningMessageBox(msg, "غیر قابل تغییر");
         }
 
+        public static void CannotDeleteParent(string title)
+        {
+            var msg = "امکان حذف به علت استفاده در گروه های دیگر وجود ندارد. ابتدا گروه های زیری باید حذف شوند.";
+            if (!string.IsNullOrEmpty(title))
+                msg = $"امکان حذف {title} به علت استفاده در گروه های دیگر وجود ندارد. ابتدا گروه های زیری باید حذف شوند.";
+            ShowWarningMessageBox(msg, "غیر قابل حذف");
+        }
+
         private static bool? ShowQuestionYesNoCancelMessageBox(string message, string title)
         {
             bool? result = null;

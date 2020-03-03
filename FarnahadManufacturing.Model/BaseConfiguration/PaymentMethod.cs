@@ -24,6 +24,20 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// نوع پرداخت
+        /// </summary>
+        private PaymentType _paymentType;
+        public PaymentType PaymentType
+        {
+            get => _paymentType;
+            set
+            {
+                _paymentType = value;
+                OnPropertyChanged();
+            }
+        }
+
         private int _createdByUserId;
         public int CreatedByUserId
         {

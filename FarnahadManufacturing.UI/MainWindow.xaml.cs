@@ -61,6 +61,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcVendor>("فروشنده ها");
         }
 
+        private void CategoryOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcCategory>("تقسیم بندی فعالیت ها");
+        }
+
         private void LocationOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcLocation>("محل ها");
@@ -119,6 +124,11 @@ namespace FarnahadManufacturing.UI
         private void ProvinceOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcProvince>("استان ها");
+        }
+
+        private void TrackingOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcTracking>("ردیابی ها");
         }
 
         private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase

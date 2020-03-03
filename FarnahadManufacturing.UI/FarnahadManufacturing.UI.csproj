@@ -88,6 +88,12 @@
       <DependentUpon>SplashScreenView1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\ApplicationSessionService.cs" />
+    <Compile Include="UserControls\BaseConfiguration\UcCategory.xaml.cs">
+      <DependentUpon>UcCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcCategoryAddEdit.xaml.cs">
+      <DependentUpon>UcCategoryAddEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcCity.xaml.cs">
       <DependentUpon>UcCity.xaml</DependentUpon>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcProvince.xaml.cs">
       <DependentUpon>UcProvince.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcTracking.xaml.cs">
+      <DependentUpon>UcTracking.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Configuration\UcCarrier.xaml.cs">
       <DependentUpon>UcCarrier.xaml</DependentUpon>
@@ -161,6 +170,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\BaseConfiguration\UcCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseConfiguration\UcCategoryAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\BaseConfiguration\UcCity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\BaseConfiguration\UcProvince.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseConfiguration\UcTracking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,7 +348,9 @@
     <Resource Include="Assets\DXSplashScreen\Image.png" />
     <Resource Include="Assets\DXSplashScreen\Logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\ToolBar\Edit.svg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Button\add_small.svg" />
     <Resource Include="Icons\Button\edit_small.svg" />

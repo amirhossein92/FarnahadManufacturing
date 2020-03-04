@@ -22,6 +22,7 @@ using DevExpress.Xpf.Docking.Base;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.Window;
 using FarnahadManufacturing.Control.Common;
+using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
@@ -129,6 +130,26 @@ namespace FarnahadManufacturing.UI
         private void TrackingOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcTracking>("ردیابی ها");
+        }
+
+        private void ShippingTermOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcShippingTerm>("شرایط تحویل کالا");
+        }
+
+        private void FobTypeOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcFobType>("فوب ها");
+        }
+
+        private void AddressTypeOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcAddressType>("نوع آدرس");
+        }
+
+        private void PaymentTermOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcPaymentTerm>("شرایط پرداخت");
         }
 
         private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase

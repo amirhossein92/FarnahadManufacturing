@@ -150,6 +150,10 @@
     <Compile Include="Migrations\202003031914306_added_paymentTypeEnum_in_paymentMethod.designer.cs">
       <DependentUpon>202003031914306_added_paymentTypeEnum_in_paymentMethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003041822599_paymentTerm_changed.cs" />
+    <Compile Include="Migrations\202003041822599_paymentTerm_changed.designer.cs">
+      <DependentUpon>202003041822599_paymentTerm_changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003031914306_added_paymentTypeEnum_in_paymentMethod.resx">
       <DependentUpon>202003031914306_added_paymentTypeEnum_in_paymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041822599_paymentTerm_changed.resx">
+      <DependentUpon>202003041822599_paymentTerm_changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

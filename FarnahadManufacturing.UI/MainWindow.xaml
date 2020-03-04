@@ -148,6 +148,18 @@
                         <accordion:FmAccordionItem Header="ردیابی"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
                                                    MouseDoubleClick="TrackingOnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="شرایط تحویل کالا"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="ShippingTermOnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="فوب"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="FobTypeOnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="نوع آدرس"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="AddressTypeOnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="شرایط پرداخت"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="PaymentTermOnMouseDoubleClick" />
                     </accordion:FmAccordionItem.Items>
                 </accordion:FmAccordionItem>
             </accordion:FmAccordionControl.Items>

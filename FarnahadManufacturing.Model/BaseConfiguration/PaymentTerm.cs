@@ -58,6 +58,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// نوع شرط پرداخت
+        /// </summary>
         private bool _isNet;
         public bool IsNet
         {
@@ -69,6 +72,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// موعد پرداخت بعد از
+        /// </summary>
         private int? _netNetDays;
         public int? NetNetDays
         {
@@ -80,6 +86,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// درصد تخفیف پرداخت پیش از موعد
+        /// </summary>
         private double? _netDiscountPercentage;
         public double? NetDiscountPercentage
         {
@@ -91,6 +100,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// تخفیف در صورت پرداخت پیش از
+        /// </summary>
         private double? _netDiscountDays;
         public double? NetDiscountDays
         {
@@ -102,17 +114,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
-        private bool _isDateDriven;
-        public bool IsDateDriven
-        {
-            get => _isDateDriven;
-            set
-            {
-                _isDateDriven = value;
-                OnPropertyChanged();
-            }
-        }
-
+        /// <summary>
+        /// تاریخ موعد پرداخت
+        /// </summary>
         private DateTime? _dateDrivenDueDate;
         public DateTime? DateDrivenDueDate
         {
@@ -124,6 +128,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// پرداخت در ماه بعد در صورت خرید پس از
+        /// </summary>
         private int? _dateDrivenNextMonthIfWithin;
         public int? DateDrivenNextMonthIfWithin
         {
@@ -135,6 +142,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// درصد تخفیف پرداخت پیش از موعد
+        /// </summary>
         private double? _dateDrivenDiscountPercentage;
         public double? DateDrivenDiscountPercentage
         {
@@ -146,6 +156,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// تخفیف در صورت پرداخت پیش از
+        /// </summary>
         private DateTime? _dateDrivenDiscountDate;
         public DateTime? DateDrivenDiscountDate
         {
@@ -157,6 +170,9 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             }
         }
 
+        /// <summary>
+        /// فعال
+        /// </summary>
         private bool _isActive;
         public bool IsActive
         {
@@ -164,6 +180,20 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
             set
             {
                 _isActive = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// غیر قابل تغییر
+        /// </summary>
+        private bool _readOnly;
+        public bool ReadOnly
+        {
+            get => _readOnly;
+            set
+            {
+                _readOnly = value;
                 OnPropertyChanged();
             }
         }

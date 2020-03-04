@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.Xpf.Editors;
 
 namespace FarnahadManufacturing.Control.Base.Input
 {
-    public class FmIntSpinEdit : FmSpinEdit
+    public class FmDateEdit : DateEdit
     {
-        public FmIntSpinEdit()
+        public FmDateEdit()
         {
-            Mask = "D0";
-            EditValueType = typeof(int);
+
         }
     }
 }

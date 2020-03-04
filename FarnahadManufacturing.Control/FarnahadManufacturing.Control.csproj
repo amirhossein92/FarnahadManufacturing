@@ -112,6 +112,7 @@
     <Compile Include="Base\Input\FmCheckEdit.cs" />
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
     <Compile Include="Base\Input\FmCurrencySpinEdit.cs" />
+    <Compile Include="Base\Input\FmDateEdit.cs" />
     <Compile Include="Base\Input\FmEmailTextEdit.cs" />
     <Compile Include="Base\Input\FmIntSpinEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />

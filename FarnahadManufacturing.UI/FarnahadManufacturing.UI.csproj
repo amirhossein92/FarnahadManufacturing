@@ -88,6 +88,9 @@
       <DependentUpon>SplashScreenView1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\ApplicationSessionService.cs" />
+    <Compile Include="UserControls\BaseConfiguration\UcAddressType.xaml.cs">
+      <DependentUpon>UcAddressType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcCategory.xaml.cs">
       <DependentUpon>UcCategory.xaml</DependentUpon>
     </Compile>
@@ -100,8 +103,17 @@
     <Compile Include="UserControls\BaseConfiguration\UcCountry.xaml.cs">
       <DependentUpon>UcCountry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcFobType.xaml.cs">
+      <DependentUpon>UcFobType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcPaymentTerm.xaml.cs">
+      <DependentUpon>UcPaymentTerm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcProvince.xaml.cs">
       <DependentUpon>UcProvince.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcShippingTerm.xaml.cs">
+      <DependentUpon>UcShippingTerm.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcTracking.xaml.cs">
       <DependentUpon>UcTracking.xaml</DependentUpon>
@@ -170,6 +182,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\BaseConfiguration\UcAddressType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\BaseConfiguration\UcCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,7 +202,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\BaseConfiguration\UcFobType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseConfiguration\UcPaymentTerm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\BaseConfiguration\UcProvince.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseConfiguration\UcShippingTerm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -66,7 +66,7 @@
                         <accordion:FmAccordionItem Header="کالا"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Small.svg}"
                                                    MouseDoubleClick="PartOnMouseDoubleClick" />
-                        <accordion:FmAccordionItem Header="محصولات"
+                        <accordion:FmAccordionItem Header="محصولات" MouseDoubleClick="ProductOnMouseDoubleClick"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Product_Small.svg}" />
                         <accordion:FmAccordionItem Header="انبار"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Inventory_Small.svg}" />
@@ -160,6 +160,9 @@
                         <accordion:FmAccordionItem Header="شرایط پرداخت"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
                                                    MouseDoubleClick="PaymentTermOnMouseDoubleClick" />
+                        <accordion:FmAccordionItem Header="نوع هزینه مرتبط با محصول"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   MouseDoubleClick="ProductAssociatedPriceTypeOnMouseDoubleClick" />
                     </accordion:FmAccordionItem.Items>
                 </accordion:FmAccordionItem>
             </accordion:FmAccordionControl.Items>

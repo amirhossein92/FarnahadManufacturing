@@ -31,7 +31,7 @@ namespace FarnahadManufacturing.UI
         {
             var exception = e.Exception;
             if (exception != null)
-                MessageBox.Show("Error", $"{e.Exception.Message}");
+                MessageBox.Show($"{e.Exception.Message}", "Error");
             e.Handled = true;
         }
     }

@@ -396,7 +396,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CreatedDateLabel.Text = part.CreatedDateTime.ToLongTimeString();
             LastChangedDateLabel.Text = part.LastChangedDateTime.ToLongTimeString();
             LastUserLabel.Text = part.LastChangedByUser?.UserName;
-            LengthSpinEdit.EditValue = part.Width;
+            LengthSpinEdit.EditValue = part.Length;
             WidthSpinEdit.EditValue = part.Width;
             HeightSpinEdit.EditValue = part.Height;
             DistanceUomComboBoxEdit.EditValue = part.DistanceUomId;

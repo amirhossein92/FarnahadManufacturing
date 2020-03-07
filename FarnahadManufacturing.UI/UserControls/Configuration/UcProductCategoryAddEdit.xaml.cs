@@ -29,20 +29,25 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
     {
         private ProductCategory _productCategory;
 
-        public UcProductCategoryAddEdit()
+        private UcProductCategoryAddEdit()
         {
             InitializeComponent();
-            UserControlTitle = "اضافه کردن دسته بندی محصولات";
-            _productCategory = new ProductCategory();
-            LoadProductCategories();
         }
 
-        public UcProductCategoryAddEdit(int productCategoryId) : this()
+        public UcProductCategoryAddEdit(int? productCategoryId = null) : this()
         {
-            UserControlTitle = "ویرایش دسته بندی محصولات";
-            _productCategory = GetProductCategory(productCategoryId);
-            var parentProductCategories = ParentProductCategoryComboBoxEdit.ItemsSource as List<FmComboModel<int>>;
-            FillData(_productCategory);
+            if (productCategoryId != null)
+            {
+                UserControlTitle = "ویرایش دسته بندی محصولات";
+                _productCategory = GetProductCategory(productCategoryId.Value);
+                var parentProductCategories = ParentProductCategoryComboBoxEdit.ItemsSource as List<FmComboModel<int>>;
+                FillData(_productCategory);
+            }
+            else
+            {
+                UserControlTitle = "اضافه کردن دسته بندی محصولات";
+                _productCategory = new ProductCategory();
+            }
             LoadProductCategories();
         }
 

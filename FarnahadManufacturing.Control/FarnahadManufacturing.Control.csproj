@@ -100,6 +100,7 @@
     <Compile Include="Base\GridControl\Columns\FmComboBoxEditSettings.cs" />
     <Compile Include="Base\GridControl\Columns\FmComboBoxGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmCurrencySpinEditGridColumn.cs" />
+    <Compile Include="Base\GridControl\Columns\FmDateGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmIntSpinEditGridColumn.cs" />
     <Compile Include="Base\GridControl\Columns\FmPercentageSpinEditGridColumn.cs" />

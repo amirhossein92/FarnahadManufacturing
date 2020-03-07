@@ -1,4 +1,4 @@
-﻿<userControl:FilterUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcAddressType"
+﻿<userControl:FilterUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcProductAssociatedPriceType"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -45,10 +45,13 @@
             </layout:FmFilterLayoutPanel>
             <layout:FmDocumentPanel ItemWidth="4*">
                 <layout:FmLayoutControl Orientation="Vertical">
-                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="نوع آدرس" />
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="نوع هزینه مرتبط با محصول" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
                         <layout:FmLayoutItem Label="نام">
                             <input:FmTextEdit x:Name="NameTextEdit" />
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem>
+                            <input:FmCheckEdit Content="مشمول مالیات" x:Name="IsTaxableCheckEdit"/>
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />

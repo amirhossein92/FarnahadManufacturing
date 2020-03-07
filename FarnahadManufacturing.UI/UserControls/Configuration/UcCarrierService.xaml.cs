@@ -40,12 +40,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             }
         }
 
-        private void FillData(CarrierService carrierService)
-        {
-            TitleTextEdit.Text = carrierService.Title;
-            CodeTextEdit.Text = carrierService.Code;
-        }
-
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
         {
             ReadData(_activeCarrierService);
@@ -55,23 +49,24 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 _activeCarrierService.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
             }
             ApplicationDataStore.SendData("CarrierService", _activeCarrierService);
-            CloseWindow();
+            WindowService.CloseUserControlDialogWindow(this);
+        }
+
+        private void CancelButtonOnClick(object sender, RoutedEventArgs e)
+        {
+            WindowService.CloseUserControlDialogWindow(this);
+        }
+
+        private void FillData(CarrierService carrierService)
+        {
+            TitleTextEdit.Text = carrierService.Title;
+            CodeTextEdit.Text = carrierService.Code;
         }
 
         private void ReadData(CarrierService carrierService)
         {
             carrierService.Title = TitleTextEdit.Text;
             carrierService.Code = CodeTextEdit.Text;
-        }
-
-        private void CancelButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            CloseWindow();
-        }
-
-        private void CloseWindow()
-        {
-            WindowService.CloseUserControlDialogWindow(this);
         }
     }
 }

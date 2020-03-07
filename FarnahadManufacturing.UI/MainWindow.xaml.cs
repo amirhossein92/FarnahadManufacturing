@@ -57,6 +57,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcPart>("کالا ها");
         }
 
+        private void ProductOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcProduct>("محصولات");
+        }
+
         private void VendorOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcVendor>("فروشنده ها");
@@ -150,6 +155,11 @@ namespace FarnahadManufacturing.UI
         private void PaymentTermOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             OpenUserControlInNewTab<UcPaymentTerm>("شرایط پرداخت");
+        }
+
+        private void ProductAssociatedPriceTypeOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcProductAssociatedPriceType>("نوع هزینه مرتبط با محصول ها");
         }
 
         private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase

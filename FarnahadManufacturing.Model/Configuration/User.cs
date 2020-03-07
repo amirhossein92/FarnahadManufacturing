@@ -24,6 +24,7 @@ namespace FarnahadManufacturing.Model.Configuration
             FobTypes = new List<FobType>();
             PaymentMethods = new List<PaymentMethod>();
             PaymentTerms = new List<PaymentTerm>();
+            ProductAssociatedPriceTypes = new List<ProductAssociatedPriceType>();
             Provinces = new List<Province>();
             ShippingTerms = new List<ShippingTerm>();
             Trackings = new List<Tracking>();
@@ -43,6 +44,8 @@ namespace FarnahadManufacturing.Model.Configuration
             Products = new List<Product>();
             ProductCategories = new List<ProductCategory>();
             ProductPrices = new List<ProductPrice>();
+            ProductSubstitutes = new List<ProductSubstitute>();
+            ProductAssociatePrices = new List<ProductAssociatePrice>();
             TaxRates = new List<TaxRate>();
             TrackingParts = new List<TrackingPart>();
             Uoms = new List<Uom>();
@@ -281,6 +284,17 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
+        private List<ProductAssociatedPriceType> _productAssociatedPriceTypes;
+        public List<ProductAssociatedPriceType> ProductAssociatedPriceTypes
+        {
+            get => _productAssociatedPriceTypes;
+            set
+            {
+                _productAssociatedPriceTypes = value;
+                OnPropertyChanged();
+            }
+        }
+
         private List<Province> _provinces;
         public List<Province> Provinces
         {
@@ -475,6 +489,28 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _productPrices = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<ProductSubstitute> _productSubstitutes;
+        public List<ProductSubstitute> ProductSubstitutes
+        {
+            get => _productSubstitutes;
+            set
+            {
+                _productSubstitutes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<ProductAssociatePrice> _productAssociatePrices;
+        public List<ProductAssociatePrice> ProductAssociatePrices
+        {
+            get => _productAssociatePrices;
+            set
+            {
+                _productAssociatePrices = value;
                 OnPropertyChanged();
             }
         }

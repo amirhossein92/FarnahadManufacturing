@@ -17,6 +17,9 @@ namespace FarnahadManufacturing.Model.Configuration
         {
             ProductPrices = new List<ProductPrice>();
             ProductCategories = new List<ProductCategory>();
+            ProductSubstitutes = new List<ProductSubstitute>();
+            ProductProductSubstitutes = new List<ProductSubstitute>();
+            ProductAssociatePrices = new List<ProductAssociatePrice>();
         }
 
         private int _id;
@@ -240,7 +243,33 @@ namespace FarnahadManufacturing.Model.Configuration
             }
         }
 
-        // TODO: SO ITEM TYPE
+        /// <summary>
+        /// یادداشت اخطار
+        /// </summary>
+        private string _alertNote;
+        public string AlertNote
+        {
+            get => _alertNote;
+            set
+            {
+                _alertNote = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// نوع محصول در فاکتور فروش
+        /// </summary>
+        private SaleOrderItemType _saleOrderItemType;
+        public SaleOrderItemType SaleOrderItemType
+        {
+            get => _saleOrderItemType;
+            set
+            {
+                _saleOrderItemType = value;
+                OnPropertyChanged();
+            }
+        }
 
         /// <summary>
         /// طول
@@ -386,6 +415,39 @@ namespace FarnahadManufacturing.Model.Configuration
             set
             {
                 _productCategories = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<ProductSubstitute> _productSubstitutes;
+        public List<ProductSubstitute> ProductSubstitutes
+        {
+            get => _productSubstitutes;
+            set
+            {
+                _productSubstitutes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<ProductSubstitute> _productProductSubstitutes;
+        public List<ProductSubstitute> ProductProductSubstitutes
+        {
+            get => _productProductSubstitutes;
+            set
+            {
+                _productProductSubstitutes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<ProductAssociatePrice> _productAssociatePrices;
+        public List<ProductAssociatePrice> ProductAssociatePrices
+        {
+            get => _productAssociatePrices;
+            set
+            {
+                _productAssociatePrices = value;
                 OnPropertyChanged();
             }
         }

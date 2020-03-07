@@ -15,7 +15,7 @@ namespace FarnahadManufacturing.Control.Common
         public static void OpenUserControlDialog<T>(T userControl) where T : DialogUserControlBase
         {
             var newWindow = new FmDialogWindow();
-            newWindow.Title = userControl.UserControlTitle;
+            newWindow.Title = userControl.UserControlTitle ?? "صفحه جدید";
             newWindow.Content = userControl;
             _openDialogWindows.Add(userControl, newWindow);
             newWindow.ShowDialog();

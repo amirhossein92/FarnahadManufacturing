@@ -25,6 +25,7 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<FobType> FobTypes { get; set; }
         public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
         public virtual DbSet<PaymentTerm> PaymentTerms { get; set; }
+        public virtual DbSet<ProductAssociatedPriceType> ProductAssociatedPriceTypes { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<ShippingTerm> ShippingTerms { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
@@ -44,8 +45,10 @@ namespace FarnahadManufacturing.Data
         public virtual DbSet<PartDefaultLocation> PartDefaultLocations { get; set; }
         public virtual DbSet<PartReorderInformation> PartReorderInformations { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductAssociatePrice> ProductAssociatePrices { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<ProductPrice> ProductPrices { get; set; }
+        public virtual DbSet<ProductSubstitute> ProductSubstitutes { get; set; }
         public virtual DbSet<TaxRate> TaxRates { get; set; }
         public virtual DbSet<TrackingPart> TrackingParts { get; set; }
         public virtual DbSet<Uom> Uoms { get; set; }
@@ -64,6 +67,7 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new FobTypeConfiguration());
             modelBuilder.Configurations.Add(new PaymentMethodConfiguration());
             modelBuilder.Configurations.Add(new PaymentTermConfiguration());
+            modelBuilder.Configurations.Add(new ProductAssociatedPriceTypeConfiguration());
             modelBuilder.Configurations.Add(new ProvinceConfiguration());
             modelBuilder.Configurations.Add(new ShippingTermConfiguration());
             modelBuilder.Configurations.Add(new TrackingConfiguration());
@@ -82,9 +86,11 @@ namespace FarnahadManufacturing.Data
             modelBuilder.Configurations.Add(new PartCostConfiguration());
             modelBuilder.Configurations.Add(new PartDefaultLocationConfiguration());
             modelBuilder.Configurations.Add(new PartReorderInformationConfiguration());
+            modelBuilder.Configurations.Add(new ProductAssociatePriceConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
             modelBuilder.Configurations.Add(new ProductPriceConfiguration());
+            modelBuilder.Configurations.Add(new ProductSubstituteConfiguration());
             modelBuilder.Configurations.Add(new TaxRateConfiguration());
             modelBuilder.Configurations.Add(new TrackingPartConfiguration());
             modelBuilder.Configurations.Add(new UomConfiguration());

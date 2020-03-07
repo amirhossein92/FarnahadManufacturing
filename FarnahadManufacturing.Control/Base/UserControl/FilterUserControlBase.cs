@@ -21,9 +21,11 @@ namespace FarnahadManufacturing.Control.Base.UserControl
             saveButton.ItemClick += SaveButtonOnToolBarItemClick;
             var deleteButton = new FmDeleteBarButtonItem();
             deleteButton.ItemClick += DeleteButtonOnToolBarItemClick;
+            var separatorButton = new BarItemSeparator();
             ToolBarItems.Add(addButton.Name, addButton);
             ToolBarItems.Add(saveButton.Name, saveButton);
             ToolBarItems.Add(deleteButton.Name, deleteButton);
+            ToolBarItems.Add("FirstSeparator", separatorButton);
         }
 
         public abstract void LoadSearchGridControl();

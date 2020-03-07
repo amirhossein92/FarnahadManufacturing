@@ -1,0 +1,27 @@
+﻿<userControl:DialogUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcProductAssociatePrice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FarnahadManufacturing.UI.UserControls.Configuration"
+             xmlns:userControl="clr-namespace:FarnahadManufacturing.Control.Base.UserControl;assembly=FarnahadManufacturing.Control"
+             xmlns:layout="clr-namespace:FarnahadManufacturing.Control.Base.Layout;assembly=FarnahadManufacturing.Control"
+             xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
+             mc:Ignorable="d" 
+             Height="200" Width="350">
+    <layout:FmLayoutControl>
+        <layout:FmVerticalLayoutGroup>
+            <layout:FmHeaderLayoutGroup HeaderTitle="هزینه مرتبط با محصول"/>
+            <layout:FmLayoutItem Label="نوع هزینه مرتبط">
+                <input:FmComboBoxEdit x:Name="ProductAssociatePriceTypeComboBoxEdit"
+                                      ValueMember="Value" DisplayMember="Title"/>
+            </layout:FmLayoutItem>
+            <layout:FmLayoutItem Label="قیمت">
+                <input:FmCurrencySpinEdit x:Name="PriceSpinEdit"/>
+            </layout:FmLayoutItem>
+            <userControl:SaveCancelUserControl
+                ClickOnSave="ClickOnSave"
+                ClickOnCancel="ClickOnCancel"/>
+        </layout:FmVerticalLayoutGroup>
+    </layout:FmLayoutControl>
+</userControl:DialogUserControlBase>

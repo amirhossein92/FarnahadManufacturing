@@ -53,8 +53,10 @@
     <Compile Include="BaseConfiguration\PaymentMethod.cs" />
     <Compile Include="BaseConfiguration\PaymentTerm.cs" />
     <Compile Include="BaseConfiguration\PaymentType.cs" />
+    <Compile Include="BaseConfiguration\ProductAssociatedPriceType.cs" />
     <Compile Include="BaseConfiguration\Province.cs" />
     <Compile Include="BaseConfiguration\PurchaseOrderStatus.cs" />
+    <Compile Include="BaseConfiguration\SaleOrderItemType.cs" />
     <Compile Include="BaseConfiguration\ShippingTerm.cs" />
     <Compile Include="BaseConfiguration\Tracking.cs" />
     <Compile Include="BaseConfiguration\TrackingValueType.cs" />
@@ -74,8 +76,10 @@
     <Compile Include="Configuration\PartDefaultLocation.cs" />
     <Compile Include="Configuration\PartReorderInformation.cs" />
     <Compile Include="Configuration\Product.cs" />
+    <Compile Include="Configuration\ProductAssociatePrice.cs" />
     <Compile Include="Configuration\ProductCategory.cs" />
     <Compile Include="Configuration\ProductPrice.cs" />
+    <Compile Include="Configuration\ProductSubstitute.cs" />
     <Compile Include="Configuration\TaxRate.cs" />
     <Compile Include="Configuration\TrackingPart.cs" />
     <Compile Include="Configuration\Uom.cs" />

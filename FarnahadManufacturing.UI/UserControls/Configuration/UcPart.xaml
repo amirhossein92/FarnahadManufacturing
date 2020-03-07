@@ -36,7 +36,7 @@
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem VerticalAlignment="Stretch">
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
-                                                         MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
+                                                             MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
                                     <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
                                     <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
@@ -153,12 +153,9 @@
                                             <columns:FmTextGridColumn Header="مخفف" ReadOnly="True" FieldName="Tracking.Abbreviation" FmGridColumnWidth="XXSmall"/>
                                             <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="Small"/>
                                             <columns:FmComboBoxGridColumn Header="نوع" ReadOnly="True" FieldName="Tracking.TrackingValueType" 
-                                                                          FmGridColumnWidth="Small">
-                                                <columns:FmComboBoxGridColumn.EditSettings>
-                                                    <columns:FmComboBoxEditSettings x:Name="TrackingTypeComboBox"
-                                                                                    ValueMember="Value" DisplayMember="Title"/>
-                                                </columns:FmComboBoxGridColumn.EditSettings>
-                                            </columns:FmComboBoxGridColumn>
+                                                                          FmGridColumnWidth="Small"
+                                                                          x:Name="TrackingTypeComboBox"
+                                                                          ValueMember="Value" DisplayMember="Title"/>
                                             <columns:FmTextGridColumn Header="مقدار بعدی" FieldName="NextValue" FmGridColumnWidth="Small"/>
                                             <columns:FmCheckBoxGridColumn Header="اصلی" FieldName="IsPrimary" FmGridColumnWidth="XXSmall"/>
                                         </gridControl:FmEditModeGridControl.Columns>
@@ -212,12 +209,9 @@
                                 <layout:FmLayoutItem VerticalAlignment="Stretch">
                                     <gridControl:FmEditModeGridControl x:Name="ReorderInformationGridControl">
                                         <gridControl:FmEditModeGridControl.Columns>
-                                            <columns:FmComboBoxGridColumn Header="گروه موقعیت" FieldName="LocationGroupId">
-                                                <columns:FmComboBoxGridColumn.EditSettings>
-                                                    <columns:FmComboBoxEditSettings x:Name="LocationGroupComboBox"
-                                                                                    ValueMember="Value" DisplayMember="Title"/>
-                                                </columns:FmComboBoxGridColumn.EditSettings>
-                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmComboBoxGridColumn Header="گروه موقعیت" FieldName="LocationGroupId"
+                                                                          x:Name="LocationGroupComboBox"
+                                                                          ValueMember="Value" DisplayMember="Title"/>
                                             <columns:FmSpinEditGridColumn Header="حداکثر مقدار" FieldName="OrderUpToLevel"/>
                                             <columns:FmSpinEditGridColumn Header="حداقل مقدار" FieldName="ReorderPoint"/>
                                         </gridControl:FmEditModeGridControl.Columns>
@@ -233,20 +227,13 @@
                             <layout:FmLayoutItem VerticalAlignment="Stretch">
                                 <gridControl:FmEditModeGridControl x:Name="DefaultLocationGridControl">
                                     <gridControl:FmEditModeGridControl.Columns>
-                                        <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId">
-                                            <columns:FmComboBoxGridColumn.EditSettings>
-                                                <columns:FmComboBoxEditSettings x:Name="DefaultLocationGroupComboBox" 
-                                                                                ValueMember="Value" DisplayMember="Title"/>
-                                            </columns:FmComboBoxGridColumn.EditSettings>
-                                        </columns:FmComboBoxGridColumn>
-                                        <columns:FmComboBoxGridColumn Header="محل پیش فرض" FieldName="DefaultLocationId">
-                                            <columns:FmComboBoxGridColumn.EditSettings>
-                                                <!--TODO: FILTER THE COMBO BASED ON LOCATION GROUP VALUE-->
-                                                <columns:FmComboBoxEditSettings x:Name="DefaultLocationComboBox"
-                                                                                ValueMember="Value" DisplayMember="Title">
-                                                </columns:FmComboBoxEditSettings>
-                                            </columns:FmComboBoxGridColumn.EditSettings>
-                                        </columns:FmComboBoxGridColumn>
+                                        <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId"
+                                                                      x:Name="DefaultLocationGroupComboBox" 
+                                                                      ValueMember="Value" DisplayMember="Title"/>
+                                        <!--TODO: FILTER THE COMBO BASED ON LOCATION GROUP VALUE-->
+                                        <columns:FmComboBoxGridColumn Header="محل پیش فرض" FieldName="DefaultLocationId"
+                                                                      x:Name="DefaultLocationComboBox"
+                                                                      ValueMember="Value" DisplayMember="Title"/>
                                     </gridControl:FmEditModeGridControl.Columns>
                                 </gridControl:FmEditModeGridControl>
                             </layout:FmLayoutItem>

@@ -89,12 +89,9 @@
                                         <gridControl:FmReadOnlyGridControl.Columns>
                                             <columns:FmTextGridColumn Header="نام" FieldName="Title" FmGridColumnWidth="Normal"/>
                                             <columns:FmTextGridColumn Header="مقدار" FieldName="Value" FmGridColumnWidth="x"/>
-                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal">
-                                                <columns:FmComboBoxGridColumn.EditSettings>
-                                                    <columns:FmComboBoxEditSettings x:Name="DefaultContactInformationContactTypeComboBox"
-                                                                                    ValueMember="Value" DisplayMember="Title"/>
-                                                </columns:FmComboBoxGridColumn.EditSettings>
-                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal"
+                                                                          x:Name="DefaultContactInformationContactTypeComboBox"
+                                                                          ValueMember="Value" DisplayMember="Title"/>
                                             <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmGridColumnWidth="XXSmall"
                                                                           Width="100"/>
                                         </gridControl:FmReadOnlyGridControl.Columns>
@@ -141,24 +138,15 @@
                                                                        SelectedItemChanged="AddressesGridControlOnSelectedItemChanged">
                                         <gridControl:FmReadOnlyGridControl.Columns>
                                             <columns:FmTextGridColumn Header="آدرس" FieldName="Title" FmGridColumnWidth="x"/>
-                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="AddressTypeId" FmGridColumnWidth="XXSmall">
-                                                <columns:FmComboBoxGridColumn.EditSettings>
-                                                    <columns:FmComboBoxEditSettings x:Name="AddressesAddressTypeComboBox"
-                                                                                    ValueMember="Id" DisplayMember="Title"/>
-                                                </columns:FmComboBoxGridColumn.EditSettings>
-                                            </columns:FmComboBoxGridColumn>
-                                            <columns:FmComboBoxGridColumn Header="شهر" FieldName="CityId" FmGridColumnWidth="XXSmall">
-                                                <columns:FmComboBoxGridColumn.EditSettings>
-                                                    <columns:FmComboBoxEditSettings x:Name="AddressesCityComboBox"
-                                                                                    ValueMember="Id" DisplayMember="Title"/>
-                                                </columns:FmComboBoxGridColumn.EditSettings>
-                                            </columns:FmComboBoxGridColumn>
-                                            <columns:FmComboBoxGridColumn Header="استان" FieldName="ProvinceId" FmGridColumnWidth="XXSmall">
-                                                <columns:FmComboBoxGridColumn.EditSettings>
-                                                    <columns:FmComboBoxEditSettings x:Name="AddressesProvinceComboBox"
-                                                                                    ValueMember="Id" DisplayMember="Title"/>
-                                                </columns:FmComboBoxGridColumn.EditSettings>
-                                            </columns:FmComboBoxGridColumn>
+                                            <columns:FmComboBoxGridColumn Header="نوع" FieldName="AddressTypeId" FmGridColumnWidth="XXSmall"
+                                                                          x:Name="AddressesAddressTypeComboBox"
+                                                                          ValueMember="Id" DisplayMember="Title"/>
+                                            <columns:FmComboBoxGridColumn Header="شهر" FieldName="CityId" FmGridColumnWidth="XXSmall"
+                                                                          x:Name="AddressesCityComboBox"
+                                                                          ValueMember="Id" DisplayMember="Title"/>
+                                            <columns:FmComboBoxGridColumn Header="استان" FieldName="ProvinceId" FmGridColumnWidth="XXSmall"
+                                                                          x:Name="AddressesProvinceComboBox"
+                                                                          ValueMember="Id" DisplayMember="Title"/>
                                         </gridControl:FmReadOnlyGridControl.Columns>
                                     </gridControl:FmReadOnlyGridControl>
                                 </layout:FmLayoutItem>
@@ -217,12 +205,9 @@
                                                 <gridControl:FmEditModeGridControl.Columns>
                                                     <columns:FmTextGridColumn Header="نام" FieldName="Title" FmGridColumnWidth="Normal"/>
                                                     <columns:FmTextGridColumn Header="مقدار" FieldName="Value" FmGridColumnWidth="x"/>
-                                                    <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal">
-                                                        <columns:FmComboBoxGridColumn.EditSettings>
-                                                            <columns:FmComboBoxEditSettings x:Name="CurrentContactInformationContactTypeComboBox" 
-                                                                                            ValueMember="Value" DisplayMember="Title"/>
-                                                        </columns:FmComboBoxGridColumn.EditSettings>
-                                                    </columns:FmComboBoxGridColumn>
+                                                    <columns:FmComboBoxGridColumn Header="نوع" FieldName="ContactType" FmGridColumnWidth="Normal"
+                                                                                  x:Name="CurrentContactInformationContactTypeComboBox"
+                                                                                  ValueMember="Value" DisplayMember="Title"/>
                                                     <columns:FmCheckBoxGridColumn Header="پیش فرض" FieldName="IsDefault" FmGridColumnWidth="XXSmall"/>
                                                 </gridControl:FmEditModeGridControl.Columns>
                                             </gridControl:FmEditModeGridControl>

@@ -109,6 +109,9 @@
     <Compile Include="UserControls\BaseConfiguration\UcPaymentTerm.xaml.cs">
       <DependentUpon>UcPaymentTerm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\BaseConfiguration\UcProductAssociatedPriceType.xaml.cs">
+      <DependentUpon>UcProductAssociatedPriceType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\BaseConfiguration\UcProvince.xaml.cs">
       <DependentUpon>UcProvince.xaml</DependentUpon>
     </Compile>
@@ -139,11 +142,20 @@
     <Compile Include="UserControls\Configuration\UcPartReorderInformation.xaml.cs">
       <DependentUpon>UcPartReorderInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Configuration\UcProduct.xaml.cs">
+      <DependentUpon>UcProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Configuration\UcProductAssociatePrice.xaml.cs">
+      <DependentUpon>UcProductAssociatePrice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Configuration\UcProductCategory.xaml.cs">
       <DependentUpon>UcProductCategory.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Configuration\UcProductCategoryAddEdit.xaml.cs">
       <DependentUpon>UcProductCategoryAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Configuration\UcProductSubstitute.xaml.cs">
+      <DependentUpon>UcProductSubstitute.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Configuration\UcSetPassword.xaml.cs">
       <DependentUpon>UcSetPassword.xaml</DependentUpon>
@@ -210,6 +222,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\BaseConfiguration\UcProductAssociatedPriceType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\BaseConfiguration\UcProvince.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,11 +266,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Configuration\UcProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcProductAssociatePrice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Configuration\UcProductCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Configuration\UcProductCategoryAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Configuration\UcProductSubstitute.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -383,6 +411,9 @@
     <Resource Include="Icons\Button\add_small.svg" />
     <Resource Include="Icons\Button\edit_small.svg" />
     <Resource Include="Icons\Button\remove_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\NavigationBar\ProductCategory_Large.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

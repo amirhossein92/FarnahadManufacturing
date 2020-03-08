@@ -172,6 +172,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
+            PaginationUserControl.CurrentPage = 1;
             LoadSearchGridControl();
         }
 

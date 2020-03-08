@@ -207,15 +207,15 @@
                             </layout:FmVerticalLayoutGroupBox>
                             <layout:FmHorizontalLayoutGroupBox Header="اطلاعات سفارش دوباره">
                                 <layout:FmLayoutItem VerticalAlignment="Stretch">
-                                    <gridControl:FmEditModeGridControl x:Name="ReorderInformationGridControl">
-                                        <gridControl:FmEditModeGridControl.Columns>
+                                    <gridControl:FmReadOnlyGridControl x:Name="ReorderInformationGridControl">
+                                        <gridControl:FmReadOnlyGridControl.Columns>
                                             <columns:FmComboBoxGridColumn Header="گروه موقعیت" FieldName="LocationGroupId"
                                                                           x:Name="LocationGroupComboBox"
                                                                           ValueMember="Value" DisplayMember="Title"/>
                                             <columns:FmSpinEditGridColumn Header="حداکثر مقدار" FieldName="OrderUpToLevel"/>
                                             <columns:FmSpinEditGridColumn Header="حداقل مقدار" FieldName="ReorderPoint"/>
-                                        </gridControl:FmEditModeGridControl.Columns>
-                                    </gridControl:FmEditModeGridControl>
+                                        </gridControl:FmReadOnlyGridControl.Columns>
+                                    </gridControl:FmReadOnlyGridControl>
                                 </layout:FmLayoutItem>
                                 <userControl:AddEditDeleteListUserControl 
                                     ClickOnAddItem="AddEditDeleteListUserControlOnClickOnAddItem"

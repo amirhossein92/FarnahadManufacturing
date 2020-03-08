@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using DevExpress.Xpf.Core;
+using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Assets;
 using FarnahadManufacturing.UI.UserControls.Login;
 using MessageBox = System.Windows.Forms.MessageBox;
@@ -31,7 +32,7 @@ namespace FarnahadManufacturing.UI
         {
             var exception = e.Exception;
             if (exception != null)
-                MessageBox.Show($"{e.Exception.Message}", "Error");
+                MessageBoxService.ShowError($"{e.Exception.Message}", "Error");
             e.Handled = true;
         }
     }

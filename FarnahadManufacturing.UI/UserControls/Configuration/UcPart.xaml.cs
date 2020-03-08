@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
+using System.ServiceModel.Activation.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -199,7 +200,9 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
                 using (var dbContext = new FarnahadManufacturingDbContext())
                 {
-                    var partInDb = dbContext.Parts.First(item => item.Id == _activePart.Id);
+                    var partInDb = dbContext.Parts
+                        .Include(item => item.PartReorderInformations)
+                        .First(item => item.Id == _activePart.Id);
                     var newCost = _activePart.PartCosts.FirstOrDefault(item => item.CreatedByUserId == 0);
                     if (newCost != null)
                     {
@@ -212,11 +215,19 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     foreach (var defaultLocation in _activePart.PartDefaultLocations)
                     {
                         if (defaultLocation.PartId == 0)
+                        {
                             defaultLocation.PartId = _activePart.Id;
+                            partInDb.PartDefaultLocations.Add(defaultLocation);
+                        }
                         else
-                            dbContext.Entry(defaultLocation).State = EntityState.Modified;
+                        {
+                            var defaultLocationInDb = dbContext.PartDefaultLocations
+                                .First(item => item.Id == defaultLocation.Id);
+                            defaultLocationInDb.LocationGroupId = defaultLocation.LocationGroupId;
+                            defaultLocationInDb.DefaultLocationId = defaultLocation.DefaultLocationId;
+                            defaultLocationInDb.Part = partInDb;
+                        }
                     }
-                    partInDb.PartDefaultLocations = _activePart.PartDefaultLocations;
 
                     foreach (var trackingPart in _activePart.TrackingParts)
                     {
@@ -225,11 +236,20 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                             trackingPart.PartId = _activePart.Id;
                             trackingPart.CreatedByUserId = activeUserId;
                             trackingPart.CreatedDateTime = creationDate;
+                            partInDb.TrackingParts.Add(trackingPart);
                         }
                         else
-                            dbContext.Entry(trackingPart).State = EntityState.Modified;
+                        {
+                            var trackingPartInDb = dbContext.TrackingParts
+                                .First(item => item.Id == trackingPart.Id);
+                            trackingPartInDb.Description = trackingPart.Description;
+                            trackingPartInDb.IsPrimary = trackingPart.IsPrimary;
+                            trackingPartInDb.IsSelected = trackingPart.IsSelected;
+                            trackingPartInDb.NextValue = trackingPart.NextValue;
+                            trackingPartInDb.TrackingId = trackingPart.TrackingId;
+                            trackingPartInDb.Part = partInDb;
+                        }
                     }
-                    partInDb.TrackingParts = _activePart.TrackingParts;
 
                     foreach (var partReorderInformation in _activePart.PartReorderInformations)
                     {
@@ -238,13 +258,24 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                             partReorderInformation.PartId = _activePart.Id;
                             partReorderInformation.CreatedByUserId = activeUserId;
                             partReorderInformation.CreatedDateTime = creationDate;
+                            partInDb.PartReorderInformations.Add(partReorderInformation);
                         }
-                        else if (partInDb.PartReorderInformations.Any(item => item.Id == partReorderInformation.Id))
-                            dbContext.Entry(partReorderInformation).State = EntityState.Deleted;
                         else
-                            dbContext.Entry(partReorderInformation).State = EntityState.Modified;
+                        {
+                            var partReorderInformationInDb = dbContext.PartReorderInformations
+                                .First(item => item.Id == partReorderInformation.Id);
+                            partReorderInformationInDb.LocationGroupId = partReorderInformation.LocationGroupId;
+                            partReorderInformationInDb.OrderUpToLevel = partReorderInformation.OrderUpToLevel;
+                            partReorderInformationInDb.ReorderPoint = partReorderInformation.ReorderPoint;
+                            partReorderInformationInDb.Part = partInDb;
+                        }
                     }
-                    partInDb.PartReorderInformations = _activePart.PartReorderInformations;
+
+                    foreach (var partReorderInformation in partInDb.PartReorderInformations.ToList())
+                    {
+                        if (_activePart.PartReorderInformations.All(item => item.Id != partReorderInformation.Id))
+                            dbContext.Entry(partReorderInformation).State = EntityState.Deleted;
+                    }
 
                     //_activePart.Products;
 
@@ -406,8 +437,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             UpcTextEdit.Text = part.Upc;
             CostSpinEdit.EditValue = part.PartCosts.OrderByDescending(item => item.CreatedDateTime).FirstOrDefault()?.Cost;
             AlertNoteTextEdit.Text = part.AlertNote;
-            CreatedDateLabel.Text = part.CreatedDateTime.ToLongTimeString();
-            LastChangedDateLabel.Text = part.LastChangedDateTime.ToLongTimeString();
+            CreatedDateLabel.Text = part.CreatedDateTime.ToString();
+            LastChangedDateLabel.Text = part.LastChangedDateTime.ToString();
             LastUserLabel.Text = part.LastChangedByUser?.UserName;
             LengthSpinEdit.EditValue = part.Length;
             WidthSpinEdit.EditValue = part.Width;
@@ -584,7 +615,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             if (ReorderInformationGridControl.SelectedItem is PartReorderInformation partReorderInformation)
             {
                 if (MessageBoxService.AskForDelete() == true)
+                {
                     _activePart.PartReorderInformations.Remove(partReorderInformation);
+                    ReorderInformationGridControl.ItemsSource =
+                        new ObservableCollection<PartReorderInformation>(_activePart.PartReorderInformations);
+                }
             }
         }
     }

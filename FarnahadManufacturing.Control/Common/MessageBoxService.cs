@@ -47,6 +47,11 @@ namespace FarnahadManufacturing.Control.Common
             ShowWarningMessageBox(msg, "غیر قابل حذف");
         }
 
+        public static void ShowError(string message, string title)
+        {
+            ShowErrorMessageBox(message, title);
+        }
+
         private static bool? ShowQuestionYesNoCancelMessageBox(string message, string title)
         {
             bool? result = null;
@@ -91,6 +96,16 @@ namespace FarnahadManufacturing.Control.Common
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Warning,
+                MessageBoxResult.OK);
+        }
+
+        private static void ShowErrorMessageBox(string message, string title)
+        {
+            _messageBoxService.Show(
+                message,
+                title,
+                MessageBoxButton.OK,
+                MessageBoxImage.Error,
                 MessageBoxResult.OK);
         }
     }

@@ -109,6 +109,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     }
 
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
             }
             else
@@ -121,13 +123,13 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                         dbContext.Users.Attach(user);
                     dbContext.UsersGroups.Add(_activeUserGroup);
                     dbContext.SaveChanges();
+
+                    OnAddToolBarItem();
                 }
             }
 
-
             MessageBoxService.SaveConfirmation(_activeUserGroup.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -155,6 +157,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnEditing()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeUserGroup.Title);
@@ -162,6 +165,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnNotEditingAndAdding()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = false;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateInactiveHeaderTitle(UserControlTitle);
         }

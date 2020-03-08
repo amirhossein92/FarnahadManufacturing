@@ -157,6 +157,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 {
                     dbContext.Entry(_activeLocation).State = EntityState.Modified;
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
             }
             else
@@ -168,11 +170,12 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     dbContext.Locations.Add(_activeLocation);
                     dbContext.SaveChanges();
                 }
+
+                OnAddToolBarItem();
             }
 
             MessageBoxService.SaveConfirmation(_activeLocation.Title);
             LoadSearchGridControl();
-            OnAddToolBarItem();
         }
 
         protected override void OnDeleteToolBarItem()

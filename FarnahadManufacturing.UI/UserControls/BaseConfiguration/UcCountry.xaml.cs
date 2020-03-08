@@ -71,6 +71,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.Entry(_activeCountry).State = EntityState.Modified;
                     dbContext.SaveChanges();
                 }
+
+                IsEditing();
             }
             else
             {
@@ -81,11 +83,12 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.Countries.Add(_activeCountry);
                     dbContext.SaveChanges();
                 }
+
+                OnAddToolBarItem();
             }
 
             MessageBoxService.SaveConfirmation(_activeCountry.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -165,12 +168,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnAdding()
         {
+            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
+            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeCountry.Title);

@@ -65,7 +65,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 var totalRecordsCount = provincesQueryable.Count();
                 _provinces = provincesQueryable.Paginate(PaginationUserControl.CurrentPage);
                 SearchGridControl.ItemsSource = _provinces;
-                PaginationUserControl.UpdateRecordsDetail( _provinces.Count, totalRecordsCount);
+                PaginationUserControl.UpdateRecordsDetail(_provinces.Count, totalRecordsCount);
             }
         }
 
@@ -97,6 +97,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 if (_activeProvince.Id > 0)
                 {
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
                 else
                 {
@@ -104,12 +106,13 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     _activeProvince.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                     dbContext.Provinces.Add(_activeProvince);
                     dbContext.SaveChanges();
+
+                    OnAddToolBarItem();
                 }
             }
 
             MessageBoxService.SaveConfirmation(_activeProvince.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -131,6 +134,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnAdding()
         {
+            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateAddHeaderTitle(UserControlTitle);
@@ -138,6 +142,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnEditing()
         {
+            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeProvince.Title);

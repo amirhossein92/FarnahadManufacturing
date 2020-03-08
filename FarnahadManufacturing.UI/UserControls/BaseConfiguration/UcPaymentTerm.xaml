@@ -49,7 +49,7 @@
             </layout:FmFilterLayoutPanel>
             <layout:FmDocumentPanel ItemWidth="4*">
                 <layout:FmLayoutControl Orientation="Vertical">
-                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="ردیابی" />
+                    <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="شرایط پرداخت" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
                         <layout:FmLayoutItem Label="نام">
                             <input:FmTextEdit x:Name="NameTextEdit" />

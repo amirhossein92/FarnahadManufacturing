@@ -107,6 +107,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 {
                     dbContext.Entry(_activeTaxRate).State = EntityState.Modified;
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
             }
             else
@@ -117,12 +119,13 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     _activeTaxRate.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                     dbContext.TaxRates.Add(_activeTaxRate);
                     dbContext.SaveChanges();
+
+                    OnAddToolBarItem();
                 }
             }
 
             MessageBoxService.SaveConfirmation(_activeTaxRate.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -144,12 +147,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeTaxRate.Title);
         }

@@ -112,6 +112,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                         activeUomInDb.IsActive = _activeUom.IsActive;
                         activeUomInDb.UomType = _activeUom.UomType;
                         dbContext.SaveChanges();
+
+                        IsEditing();
                     }
                 }
                 else
@@ -120,13 +122,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     _activeUom.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
                     dbContext.Uoms.Add(_activeUom);
                     dbContext.SaveChanges();
+
+                    OnAddToolBarItem();
                 }
 
                 if (isSaved)
                 {
                     MessageBoxService.SaveConfirmation(_activeUom.Title);
                     LoadSearchGridControl();
-                    IsEditing();
                 }
             }
         }
@@ -150,12 +153,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
+            AbbreviationTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
+            AbbreviationTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeUom.Title);
         }

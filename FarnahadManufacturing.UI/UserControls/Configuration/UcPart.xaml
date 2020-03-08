@@ -32,7 +32,7 @@
                                                   ValueMember="Id" DisplayMember = "Title"/>
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem HorizontalContentAlignment="Right">
-                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
+                            <buttons:FmSearchSimpleButton Click="SearchButtonOnClick"/>
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem VerticalAlignment="Stretch">
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"

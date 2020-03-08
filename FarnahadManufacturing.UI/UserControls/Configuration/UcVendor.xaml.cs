@@ -306,6 +306,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                         vendorInDb.Addresses.Add(address);
                     }
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
                 else
                 {
@@ -325,13 +327,13 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     dbContext.Vendors.Add(_activeVendor);
 
                     dbContext.SaveChanges();
+
+                    OnAddToolBarItem();
                 }
             }
 
             MessageBoxService.SaveConfirmation(_activeVendor.Title);
-            _activeVendor = new Vendor();
             LoadSearchGridControl();
-            IsNotEditingAndAdding();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -359,6 +361,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateAddHeaderTitle(UserControlTitle);
@@ -366,6 +369,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnEditing()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeVendor.Title);

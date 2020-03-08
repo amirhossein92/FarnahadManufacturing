@@ -292,6 +292,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     productInDb.WeightUomId = _activeProduct.WeightUomId;
 
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
             }
             else
@@ -321,12 +323,13 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
                     dbContext.Products.Add(_activeProduct);
                     dbContext.SaveChanges();
+
+                    OnAddToolBarItem();
                 }
             }
 
             MessageBoxService.SaveConfirmation(_activeProduct.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -348,12 +351,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
+            ProductTitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
+            ProductTitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeProduct.Title);

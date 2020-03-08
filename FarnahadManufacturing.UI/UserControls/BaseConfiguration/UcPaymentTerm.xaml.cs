@@ -94,6 +94,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.Entry(_activePaymentTerm).State = EntityState.Modified;
                     dbContext.SaveChanges();
                 }
+
+                IsEditing();
             }
             else
             {
@@ -105,11 +107,12 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                     dbContext.PaymentTerms.Add(_activePaymentTerm);
                     dbContext.SaveChanges();
                 }
+
+                OnAddToolBarItem();
             }
 
             MessageBoxService.SaveConfirmation(_activePaymentTerm.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -131,12 +134,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnAdding()
         {
+            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
+            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activePaymentTerm.Title);
         }

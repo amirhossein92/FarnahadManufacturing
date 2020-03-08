@@ -123,6 +123,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     carrier.Description = _activeCarrier.Description;
                     carrier.IsActive = _activeCarrier.IsActive;
                     dbContext.SaveChanges();
+
+                    IsEditing();
                 }
             }
             else
@@ -135,11 +137,12 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     dbContext.Carriers.Add(_activeCarrier);
                     dbContext.SaveChanges();
                 }
+
+                OnAddToolBarItem();
             }
 
             MessageBoxService.SaveConfirmation(_activeCarrier.Title);
             LoadSearchGridControl();
-            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()
@@ -250,12 +253,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
         }
 
         protected override void OnEditing()
         {
+            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeCarrier.Title);

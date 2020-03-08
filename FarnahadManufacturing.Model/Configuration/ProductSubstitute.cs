@@ -7,7 +7,6 @@ using FarnahadManufacturing.Base;
 
 namespace FarnahadManufacturing.Model.Configuration
 {
-    // TODO: New Model
     /// <summary>
     /// محصول جایگزین
     /// </summary>

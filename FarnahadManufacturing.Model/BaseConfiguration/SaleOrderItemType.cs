@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
-    // TODO: NEW MODEL
     public enum SaleOrderItemType
     {
         CreditReturn = 10,

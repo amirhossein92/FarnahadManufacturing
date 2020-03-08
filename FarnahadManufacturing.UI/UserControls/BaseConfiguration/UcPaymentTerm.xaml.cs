@@ -177,7 +177,10 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         {
             _activePaymentTerm = paymentTerm;
             FillData(_activePaymentTerm);
-            IsEditing();
+            if (_activePaymentTerm.ReadOnly)
+                IsNotEditingAndAdding();
+            else
+                IsEditing();
         }
 
         private void FillData(PaymentTerm paymentTerm)
@@ -190,14 +193,21 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 NetNetDaysSpinEdit.EditValue = paymentTerm.NetNetDays;
                 NetDiscountPercentageSpinEdit.EditValue = paymentTerm.NetDiscountPercentage;
                 NetDiscountDaysSpinEdit.EditValue = paymentTerm.NetDiscountDays;
+                DateDrivenDueDateSpinEdit.EditValue = null;
+                DateDrivenDiscountDateSpinEdit.EditValue = null;
+                DateDrivenDiscountPercentageSpinEdit.EditValue = null;
+                DateDrivenNextMonthIfWithinSpinEdit.EditValue = null;
             }
             else
             {
                 DueDateRadioButton.IsChecked = true;
-                DateDrivenDueDateDateEdit.EditValue = paymentTerm.DateDrivenDueDate;
-                DateDrivenDiscountDateDateEdit.EditValue = paymentTerm.DateDrivenDiscountDate;
+                DateDrivenDueDateSpinEdit.EditValue = paymentTerm.DateDrivenDueDate;
+                DateDrivenDiscountDateSpinEdit.EditValue = paymentTerm.DateDrivenDiscountDate;
                 DateDrivenDiscountPercentageSpinEdit.EditValue = paymentTerm.DateDrivenDiscountPercentage;
                 DateDrivenNextMonthIfWithinSpinEdit.EditValue = paymentTerm.DateDrivenNextMonthIfWithin;
+                NetNetDaysSpinEdit.EditValue = null;
+                NetDiscountPercentageSpinEdit.EditValue = null;
+                NetDiscountDaysSpinEdit.EditValue = null;
             }
             IsActiveCheckEdit.EditValue = paymentTerm.IsActive;
         }
@@ -211,13 +221,14 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
                 paymentTerm.IsNet = true;
                 paymentTerm.NetNetDays = (int?)NetNetDaysSpinEdit.EditValue;
                 paymentTerm.NetDiscountPercentage = (double?)NetDiscountPercentageSpinEdit.EditValue;
-                paymentTerm.NetDiscountDays = (double?)NetDiscountDaysSpinEdit.EditValue;
+                paymentTerm.NetDiscountDays = (int?)NetDiscountDaysSpinEdit.EditValue;
             }
             else
             {
                 paymentTerm.IsNet = false;
-                paymentTerm.DateDrivenDueDate = DateDrivenDueDateDateEdit.DateTime;
-                paymentTerm.DateDrivenDiscountDate = DateDrivenDiscountDateDateEdit.DateTime;
+                // TODO: VALIDATION (CANNOT BE GREATER THAN 31 and Less than 1)
+                paymentTerm.DateDrivenDueDate = (int?)DateDrivenDueDateSpinEdit.EditValue;
+                paymentTerm.DateDrivenDiscountDate = (int?)DateDrivenDiscountDateSpinEdit.EditValue;
                 paymentTerm.DateDrivenDiscountPercentage = (double?)DateDrivenDiscountPercentageSpinEdit.EditValue;
                 paymentTerm.DateDrivenNextMonthIfWithin = (int?)DateDrivenNextMonthIfWithinSpinEdit.EditValue;
             }
@@ -240,16 +251,16 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void DueDateRadioButtonOnChecked(object sender, RoutedEventArgs e)
         {
-            DateDrivenDueDateDateEdit.IsEnabled = true;
-            DateDrivenDiscountDateDateEdit.IsEnabled = true;
+            DateDrivenDueDateSpinEdit.IsEnabled = true;
+            DateDrivenDiscountDateSpinEdit.IsEnabled = true;
             DateDrivenDiscountPercentageSpinEdit.IsEnabled = true;
             DateDrivenNextMonthIfWithinSpinEdit.IsEnabled = true;
         }
 
         private void DueDateRadioButtonOnUnchecked(object sender, RoutedEventArgs e)
         {
-            DateDrivenDueDateDateEdit.IsEnabled = false;
-            DateDrivenDiscountDateDateEdit.IsEnabled = false;
+            DateDrivenDueDateSpinEdit.IsEnabled = false;
+            DateDrivenDiscountDateSpinEdit.IsEnabled = false;
             DateDrivenDiscountPercentageSpinEdit.IsEnabled = false;
             DateDrivenNextMonthIfWithinSpinEdit.IsEnabled = false;
         }

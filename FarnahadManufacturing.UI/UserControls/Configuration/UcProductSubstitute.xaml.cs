@@ -19,9 +19,6 @@ using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.Configuration;
 
-// TODO: COMMENT ON ALL OF NAMESPACES
-// TODO: CLEAN THE CODE AND DO THE REST
-// TODO: CHECK ENUM WITH ONE TABLE
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
     public partial class UcProductSubstitute : DialogUserControlBase

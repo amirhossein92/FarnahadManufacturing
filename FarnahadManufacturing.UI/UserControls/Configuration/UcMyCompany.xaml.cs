@@ -234,7 +234,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                // TODO: ADD ONE MY COMPANY IN SEED
                 _myCompany = dbContext.MyCompanies
                     .Include(item => item.Addresses)
                     .Include("Addresses.ContactInformations")

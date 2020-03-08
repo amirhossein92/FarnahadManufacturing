@@ -100,9 +100,12 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void LoadTrackingValueTypeComboBox()
         {
-            // TODO: Complete enum list
             var trackingValueTypes = new List<FmComboModel<TrackingValueType>>
             {
+                new FmComboModel<TrackingValueType>(TrackingValueType.SerialNumber, "شماره سریال"),
+                new FmComboModel<TrackingValueType>(TrackingValueType.ExpirationDate, "تاریخ انقضا"),
+                new FmComboModel<TrackingValueType>(TrackingValueType.Date, "تاریخ"),
+                new FmComboModel<TrackingValueType>(TrackingValueType.Checkbox, "چک باکس"),
                 new FmComboModel<TrackingValueType>(TrackingValueType.Text, "متن"),
                 new FmComboModel<TrackingValueType>(TrackingValueType.Count, "شمارش"),
                 new FmComboModel<TrackingValueType>(TrackingValueType.Quantity, "تعداد"),
@@ -135,14 +138,18 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         private void LoadPartTypes()
         {
-            // TODO: complete the list
             var partTypes = new List<FmComboModel<PartType>>
             {
-                new FmComboModel<PartType>(PartType.CapitalEquipment, "CapitalEquipment"),
-                new FmComboModel<PartType>(PartType.InternalUse, "InternalUse"),
-                new FmComboModel<PartType>(PartType.Inventory, "Inventory"),
-                new FmComboModel<PartType>(PartType.Labor, "Labor"),
-                new FmComboModel<PartType>(PartType.Service, "Service"),
+                new FmComboModel<PartType>(PartType.Inventory, "کالای قابل ذخیره در انبار"),
+                new FmComboModel<PartType>(PartType.NonInventory, "کالای غیر قابل ذخیره در انبار"),
+                new FmComboModel<PartType>(PartType.CapitalEquipment, "تجهیزات سرمایه ای"),
+                new FmComboModel<PartType>(PartType.InternalUse, "استفاده داخلی"),
+                new FmComboModel<PartType>(PartType.Labor, "فعالیت"),
+                new FmComboModel<PartType>(PartType.Service, "خدمت"),
+                new FmComboModel<PartType>(PartType.Overhead, "هزینه سربار"),
+                new FmComboModel<PartType>(PartType.Shipping, "ترابری"),
+                new FmComboModel<PartType>(PartType.Misc, "متفرقه"),
+                //new FmComboModel<PartType>(PartType.Tax, "مالیات"),
             };
             PartTypeComboBoxEdit.ItemsSource = partTypes;
             SearchPartTypeComboBoxEdit.ItemsSource = partTypes;
@@ -256,6 +263,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     partInDb.AlertNote = _activePart.AlertNote;
                     partInDb.Length = _activePart.Length;
                     partInDb.Width = _activePart.Width;
+                    partInDb.Height = _activePart.Height;
                     partInDb.DistanceUomId = _activePart.DistanceUomId;
                     partInDb.Weight = _activePart.Weight;
                     partInDb.WeightUomId = _activePart.WeightUomId;

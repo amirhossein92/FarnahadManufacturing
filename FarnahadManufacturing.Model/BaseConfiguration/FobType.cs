@@ -8,6 +8,8 @@ using FarnahadManufacturing.Model.Configuration;
 
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    // TODO: I THINK THE NAME SHOULD BE CHANGED => It is only stated as FOB in North America (http://petalpolymer.com/fa/node/37)
+    // https://en.wikipedia.org/wiki/FOB_(shipping)
     /// <summary>
     /// فوب: قیمت تا لحظه تحویل روی کشتی
     /// </summary>

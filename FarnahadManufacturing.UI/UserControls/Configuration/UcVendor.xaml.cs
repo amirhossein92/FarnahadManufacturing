@@ -408,6 +408,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CreatedUserTextEdit.Text = vendor.CreatedByUser?.UserName;
             CreatedDateTextEdit.Text = vendor.CreatedDateTime.ToLongTimeString();
             DefaultContactInformationsGridControl.ItemsSource = vendor.Addresses.FirstOrDefault(item => item.IsDefaultAddress)?.ContactInformations;
+            IsActiveCheckEdit.EditValue = vendor.IsActive;
 
             DefaultTermComboBoxEdit.EditValue = vendor.DefaultPaymentTermId;
             DefaultCarrierComboBoxEdit.EditValue = vendor.DefaultCarrierId;
@@ -424,6 +425,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         private void ReadData(Vendor vendor)
         {
             vendor.Title = TitleTextEdit.Text;
+            vendor.IsActive = (bool)IsActiveCheckEdit.EditValue;
 
             vendor.DefaultPaymentTermId = DefaultTermComboBoxEdit.EditValue as int?;
             vendor.DefaultCarrierId = DefaultCarrierComboBoxEdit.EditValue as int?;

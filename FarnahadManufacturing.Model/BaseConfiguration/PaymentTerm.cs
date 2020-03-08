@@ -117,8 +117,8 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
         /// <summary>
         /// تاریخ موعد پرداخت
         /// </summary>
-        private DateTime? _dateDrivenDueDate;
-        public DateTime? DateDrivenDueDate
+        private int? _dateDrivenDueDate;
+        public int? DateDrivenDueDate
         {
             get => _dateDrivenDueDate;
             set
@@ -159,8 +159,8 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
         /// <summary>
         /// تخفیف در صورت پرداخت پیش از
         /// </summary>
-        private DateTime? _dateDrivenDiscountDate;
-        public DateTime? DateDrivenDiscountDate
+        private int? _dateDrivenDiscountDate;
+        public int? DateDrivenDiscountDate
         {
             get => _dateDrivenDiscountDate;
             set

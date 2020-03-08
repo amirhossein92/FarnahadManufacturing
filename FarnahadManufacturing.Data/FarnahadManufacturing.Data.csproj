@@ -169,6 +169,22 @@
     <Compile Include="Migrations\202003072134363_added_associatedPriceType.designer.cs">
       <DependentUpon>202003072134363_added_associatedPriceType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003081022224_added_seed.cs" />
+    <Compile Include="Migrations\202003081022224_added_seed.designer.cs">
+      <DependentUpon>202003081022224_added_seed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003081032410_added_seed1.cs" />
+    <Compile Include="Migrations\202003081032410_added_seed1.designer.cs">
+      <DependentUpon>202003081032410_added_seed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003081242433_changed_in_paymentTerm.cs" />
+    <Compile Include="Migrations\202003081242433_changed_in_paymentTerm.designer.cs">
+      <DependentUpon>202003081242433_changed_in_paymentTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003081550437_added_prop_in_vendor.cs" />
+    <Compile Include="Migrations\202003081550437_added_prop_in_vendor.designer.cs">
+      <DependentUpon>202003081550437_added_prop_in_vendor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,6 +193,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FarnahadManufacturing.Base\FarnahadManufacturing.Base.csproj">
+      <Project>{c5478796-7e68-4e8e-bf98-daa95a1a2c06}</Project>
+      <Name>FarnahadManufacturing.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FarnahadManufacturing.Model\FarnahadManufacturing.Model.csproj">
       <Project>{1F3ED6B0-F750-4879-8E25-F6A0322C5435}</Project>
       <Name>FarnahadManufacturing.Model</Name>
@@ -242,6 +262,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003072134363_added_associatedPriceType.resx">
       <DependentUpon>202003072134363_added_associatedPriceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081022224_added_seed.resx">
+      <DependentUpon>202003081022224_added_seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081032410_added_seed1.resx">
+      <DependentUpon>202003081032410_added_seed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081242433_changed_in_paymentTerm.resx">
+      <DependentUpon>202003081242433_changed_in_paymentTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003081550437_added_prop_in_vendor.resx">
+      <DependentUpon>202003081550437_added_prop_in_vendor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

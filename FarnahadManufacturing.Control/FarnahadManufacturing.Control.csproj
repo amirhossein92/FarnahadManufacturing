@@ -114,6 +114,8 @@
     <Compile Include="Base\Input\FmComboBoxEdit.cs" />
     <Compile Include="Base\Input\FmCurrencySpinEdit.cs" />
     <Compile Include="Base\Input\FmDateEdit.cs" />
+    <Compile Include="Base\Input\FmDaySpinEdit.cs" />
+    <Compile Include="Base\Input\FmLimitedDaySpinEdit.cs" />
     <Compile Include="Base\Input\FmEmailTextEdit.cs" />
     <Compile Include="Base\Input\FmIntSpinEdit.cs" />
     <Compile Include="Base\Input\FmMultiLineTextEdit.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Base\Input\FmTextEdit.cs" />
     <Compile Include="Base\Label\FmHeaderLabel.cs" />
     <Compile Include="Base\Label\FmLabel.cs" />
+    <Compile Include="Base\Layout\FmDockLayoutPanel.cs" />
     <Compile Include="Base\Layout\FmDocumentPanel.cs" />
     <Compile Include="Base\Layout\FmFilterLayoutPanel.cs" />
     <Compile Include="Base\Layout\FmGrid.cs" />

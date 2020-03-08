@@ -211,7 +211,88 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             ReadData(_activeProduct);
             if (_activeProduct.Id > 0)
             {
+                var activeUserId = ApplicationSessionService.GetActiveUserId();
+                var creationDate = ApplicationSessionService.GetNowDateTime();
 
+                using (var dbContext = new FarnahadManufacturingDbContext())
+                {
+                    var productInDb = dbContext.Products
+                        .Include(item => item.ProductPrices)
+                        .Include(item => item.ProductSubstitutes)
+                        .Include(item => item.ProductAssociatePrices)
+                        .First(item => item.Id == _activeProduct.Id);
+                    var newPrice = _activeProduct.ProductPrices.FirstOrDefault(item => item.CreatedByUserId == 0);
+                    if (newPrice != null)
+                    {
+                        newPrice.CreatedByUserId = activeUserId;
+                        newPrice.CreatedDateTime = creationDate;
+                        newPrice.ProductId = productInDb.Id;
+                        productInDb.ProductPrices.Add(newPrice);
+                    }
+
+                    foreach (var productAssociatePrice in _activeProduct.ProductAssociatePrices)
+                    {
+                        if (productAssociatePrice.ProductId == 0)
+                        {
+                            productAssociatePrice.ProductId = _activeProduct.Id;
+                            productAssociatePrice.CreatedByUserId = activeUserId;
+                            productAssociatePrice.CreatedDateTime = creationDate;
+                        }
+                        else
+                        {
+                            var productAssociatePriceInDb = dbContext.ProductAssociatePrices.Find(productAssociatePrice.Id);
+                            productAssociatePriceInDb.ProductAssociatedPriceTypeId = productAssociatePrice.ProductAssociatedPriceTypeId;
+                            productAssociatePriceInDb.Price = productAssociatePrice.Price;
+                        }
+                    }
+                    productInDb.ProductAssociatePrices = _activeProduct.ProductAssociatePrices;
+
+                    //foreach (var productSubstitute in _activeProduct.ProductSubstitutes)
+                    //{
+                    //    if (productSubstitute.ProductId == 0)
+                    //    {
+                    //        productSubstitute.ProductId = _activeProduct.Id;
+                    //        productSubstitute.CreatedByUserId = activeUserId;
+                    //        productSubstitute.CreatedDateTime = creationDate;
+                    //    }
+                    //    else
+                    //    {
+                    //        //var productSubstituteInDb = dbContext.ProductSubstitutes.Find(productSubstitute.Id);
+                    //        //productSubstituteInDb.Note = productSubstitute.Note;
+                    //        //productSubstituteInDb.SubstituteProductId = productSubstitute.SubstituteProductId;
+                    //        //var a = dbContext.Entry(productSubstitute).State;
+                    //        //dbContext.ProductSubstitutes.Attach(productSubstitute);
+                    //        //var b = dbContext.Entry(productSubstitute).State;
+
+                    //    }
+                    //}
+                    //productInDb.ProductSubstitutes = _activeProduct.ProductSubstitutes;
+
+                    productInDb.Title = _activeProduct.Title;
+                    productInDb.PartId = _activeProduct.PartId;
+                    productInDb.UomId = _activeProduct.UomId;
+                    productInDb.Description = _activeProduct.Description;
+                    productInDb.Detail = _activeProduct.Detail;
+                    productInDb.IsActive = _activeProduct.IsActive;
+                    productInDb.AllowToSellInOtherUom = _activeProduct.AllowToSellInOtherUom;
+                    productInDb.CategoryId = _activeProduct.CategoryId;
+                    productInDb.IsTaxable = _activeProduct.IsTaxable;
+                    productInDb.ShowOnSaleOrder = _activeProduct.ShowOnSaleOrder;
+                    productInDb.Picture = _activeProduct.Picture;
+
+                    productInDb.Sku = _activeProduct.Sku;
+                    productInDb.Upc = _activeProduct.Upc;
+                    productInDb.AlertNote = _activeProduct.AlertNote;
+                    productInDb.SaleOrderItemType = _activeProduct.SaleOrderItemType;
+                    productInDb.Length = _activeProduct.Length;
+                    productInDb.Width = _activeProduct.Width;
+                    productInDb.Height = _activeProduct.Height;
+                    productInDb.DistanceUomId = _activeProduct.DistanceUomId;
+                    productInDb.Weight = _activeProduct.Weight;
+                    productInDb.WeightUomId = _activeProduct.WeightUomId;
+
+                    dbContext.SaveChanges();
+                }
             }
             else
             {
@@ -242,6 +323,10 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                     dbContext.SaveChanges();
                 }
             }
+
+            MessageBoxService.SaveConfirmation(_activeProduct.Title);
+            LoadSearchGridControl();
+            IsEditing();
         }
 
         protected override void OnDeleteToolBarItem()

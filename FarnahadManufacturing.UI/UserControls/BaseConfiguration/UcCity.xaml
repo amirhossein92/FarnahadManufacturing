@@ -27,12 +27,12 @@
                         <layout:FmLayoutItem Label="عنوان">
                             <input:FmTextEdit x:Name="SearchTitleTextEdit" />
                         </layout:FmLayoutItem>
-                        <dxlc:LayoutItem Label="استان">
+                        <layout:FmLayoutItem Label="استان">
                             <input:FmTextEdit x:Name="SearchProvinceTextEdit" />
-                        </dxlc:LayoutItem>
-                        <dxlc:LayoutItem Label="کشور">
+                        </layout:FmLayoutItem>
+                        <layout:FmLayoutItem Label="کشور">
                             <input:FmTextEdit x:Name="SearchCountryTextEdit" />
-                        </dxlc:LayoutItem>
+                        </layout:FmLayoutItem>
                         <layout:FmLayoutItem HorizontalContentAlignment="Right">
                             <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
                         </layout:FmLayoutItem>
@@ -40,7 +40,7 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" MinWidth="75"/>
                                     <columns:FmTextGridColumn Header="استان" FieldName="Province.Title" ReadOnly="True" FmGridColumnWidth="XXSmall" />
                                     <columns:FmTextGridColumn Header="کشور" FieldName="Province.Country.Title" ReadOnly="True" FmGridColumnWidth="XXSmall" />
                                     <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall" />

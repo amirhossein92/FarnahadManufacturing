@@ -1,9 +1,13 @@
 ﻿using System.Windows;
+using DevExpress.Mvvm;
+using DevExpress.Xpf.Core;
 
 namespace FarnahadManufacturing.Control.Common
 {
     public static class MessageBoxService
     {
+        private static IMessageBoxService _messageBoxService = new DXMessageBoxService();
+
         public static bool AskForClose()
         {
             var msg = "آیا از بسته شدن برنامه اطمینان دارید؟";
@@ -47,13 +51,12 @@ namespace FarnahadManufacturing.Control.Common
         {
             bool? result = null;
 
-            var msgResult = MessageBox.Show(
+            var msgResult = _messageBoxService.Show(
                 message,
                 title,
                 MessageBoxButton.YesNoCancel,
                 MessageBoxImage.Warning,
-                MessageBoxResult.Cancel,
-                MessageBoxOptions.RtlReading);
+                MessageBoxResult.Cancel);
 
             if ((msgResult == MessageBoxResult.Cancel) == false)
                 result = msgResult == MessageBoxResult.Yes;
@@ -63,35 +66,32 @@ namespace FarnahadManufacturing.Control.Common
 
         private static bool ShowQuestionYesNoMessageBox(string message, string title)
         {
-            return MessageBox.Show(
+            return _messageBoxService.Show(
                        message,
                        title,
                        MessageBoxButton.YesNo,
                        MessageBoxImage.Warning,
-                       MessageBoxResult.No,
-                       MessageBoxOptions.RtlReading) == MessageBoxResult.Yes;
+                       MessageBoxResult.No) == MessageBoxResult.Yes;
         }
 
         private static void ShowInfoMessageBox(string message, string title)
         {
-            MessageBox.Show(
+            _messageBoxService.Show(
                 message,
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Information,
-                MessageBoxResult.OK,
-                MessageBoxOptions.RtlReading);
+                MessageBoxResult.OK);
         }
 
         private static void ShowWarningMessageBox(string message, string title)
         {
-            MessageBox.Show(
+            _messageBoxService.Show(
                 message,
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Warning,
-                MessageBoxResult.OK,
-                MessageBoxOptions.RtlReading);
+                MessageBoxResult.OK);
         }
     }
 }

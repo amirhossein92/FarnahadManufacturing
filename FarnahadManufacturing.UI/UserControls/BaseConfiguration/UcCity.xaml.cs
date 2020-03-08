@@ -129,7 +129,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
             MessageBoxService.SaveConfirmation(_activeCity.Title);
             LoadSearchGridControl();
-            IsEditing();
+            OnAddToolBarItem();
         }
 
         protected override void OnDeleteToolBarItem()

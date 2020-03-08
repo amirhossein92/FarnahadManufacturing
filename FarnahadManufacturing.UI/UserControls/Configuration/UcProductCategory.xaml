@@ -25,7 +25,7 @@
                     <layout:FmLayoutItem VerticalAlignment="Stretch">
                         <treeList:FmTreeListControl x:Name="ProductCategoriesTreeListControl">
                             <treeList:FmTreeListControl.Columns>
-                                <treeList:FmTreeListColumn FieldName="Title"/>
+                                <treeList:FmTreeListColumn FieldName="Title" Header="عنوان"/>
                             </treeList:FmTreeListControl.Columns>
                             <treeList:FmTreeListControl.View>
                                 <treeList:FmTreeListView x:Name="ProductCategoriesTreeListView"/>
@@ -40,10 +40,10 @@
                 </layout:FmVerticalLayoutGroupBox>
                 <layout:FmVerticalLayoutGroup VerticalAlignment="Center" Width="50">
                     <layout:FmLayoutItem>
-                        <buttons:FmSimpleButton Content="Add" Click="AddProductButtonOnClick"/>
+                        <buttons:FmMiniSimpleButton Content="+" Click="AddProductButtonOnClick"/>
                     </layout:FmLayoutItem>
                     <layout:FmLayoutItem>
-                        <buttons:FmSimpleButton Content="Remove" Click="RemoveProductButtonOnClick"/>
+                        <buttons:FmMiniSimpleButton Content="-" Click="RemoveProductButtonOnClick"/>
                     </layout:FmLayoutItem>
                 </layout:FmVerticalLayoutGroup>
                 <layout:FmVerticalLayoutGroupBox Header="جست و جوی محصول">

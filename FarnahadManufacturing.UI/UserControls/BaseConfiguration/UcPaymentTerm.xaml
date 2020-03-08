@@ -66,13 +66,13 @@
                                                      Unchecked="NetDaysRadioButtonOnUnchecked"/>
                             </layout:FmVerticalLayoutGroupBox.Header>
                             <layout:FmLayoutItem Label="موعد پرداخت بعد از">
-                                <input:FmIntSpinEdit x:Name="NetNetDaysSpinEdit"/>
+                                <input:FmDaySpinEdit x:Name="NetNetDaysSpinEdit"/>
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="درصد تخفیف پرداخت پیش از موعد">
                                 <input:FmPercentageSpinEdit x:Name="NetDiscountPercentageSpinEdit"/>
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="تخفیف در صورت پرداخت پیش از">
-                                <input:FmIntSpinEdit x:Name="NetDiscountDaysSpinEdit"/>
+                                <input:FmDaySpinEdit x:Name="NetDiscountDaysSpinEdit"/>
                             </layout:FmLayoutItem>
                         </layout:FmVerticalLayoutGroupBox>
                         <layout:FmVerticalLayoutGroupBox>
@@ -84,7 +84,7 @@
                                                      Unchecked="DueDateRadioButtonOnUnchecked"/>
                             </layout:FmVerticalLayoutGroupBox.Header>
                             <layout:FmLayoutItem Label="تاریخ موعد پرداخت">
-                                <input:FmDateEdit x:Name="DateDrivenDueDateDateEdit"/>
+                                <input:FmLimitedDaySpinEdit x:Name="DateDrivenDueDateSpinEdit"/>
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="پرداخت در ماه بعد در صورت خرید پس از">
                                 <input:FmIntSpinEdit x:Name="DateDrivenNextMonthIfWithinSpinEdit"/>
@@ -93,7 +93,7 @@
                                 <input:FmPercentageSpinEdit x:Name="DateDrivenDiscountPercentageSpinEdit"/>
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="تخفیف در صورت پرداخت پیش از">
-                                <input:FmDateEdit x:Name="DateDrivenDiscountDateDateEdit"/>
+                                <input:FmLimitedDaySpinEdit x:Name="DateDrivenDiscountDateSpinEdit"/>
                             </layout:FmLayoutItem>
                         </layout:FmVerticalLayoutGroupBox>
                         <layout:FmLayoutItem>

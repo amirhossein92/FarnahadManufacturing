@@ -11,7 +11,6 @@ namespace FarnahadManufacturing.Model.Configuration
     /// <summary>
     /// هزینه مرتبط محصول
     /// </summary>
-    /// TODO: NEW MODEL
     public class ProductAssociatePrice : FmModelBase
     {
         private int _id;

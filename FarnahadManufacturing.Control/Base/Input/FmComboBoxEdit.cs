@@ -8,7 +8,6 @@ namespace FarnahadManufacturing.Control.Base.Input
     {
         public FmComboBoxEdit()
         {
-            // TODO: Create LookUpEdit
             AllowNullInput = true;
             NullValue = null;
             NullValueButtonPlacement = EditorPlacement.EditBox;

@@ -24,15 +24,15 @@ namespace FarnahadManufacturing.UI.UserControls.Login
             InitializeComponent();
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
-                var parts = dbContext.Parts.Count();
+                dbContext.Database.Initialize(true);
             }
             this.Loaded += OnLoaded;
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-
             DXSplashScreen.Close();
+            this.Activate();
         }
 
         private void ExitButtonOnClick(object sender, RoutedEventArgs e)

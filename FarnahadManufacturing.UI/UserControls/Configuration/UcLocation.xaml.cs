@@ -115,9 +115,15 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             var locationTypes = new ObservableCollection<FmComboModel<LocationType>>
             {
                 new FmComboModel<LocationType>(LocationType.Consignment,"Consignment"),
+                new FmComboModel<LocationType>(LocationType.Inspection,"بررسی"),
+                new FmComboModel<LocationType>(LocationType.Locked,"انبار ایمن"),
+                new FmComboModel<LocationType>(LocationType.Manufacturing,"کارخانه (محل تولید)"),
+                new FmComboModel<LocationType>(LocationType.Picking,"انبار محصولات آماده برداشتن"),
+                new FmComboModel<LocationType>(LocationType.Receiving,"انبار قطعات و کالای خریداری شده"),
+                new FmComboModel<LocationType>(LocationType.Shipping,"انبار محصولات آماده ارسال"),
                 new FmComboModel<LocationType>(LocationType.Stock,"انبار"),
-                new FmComboModel<LocationType>(LocationType.Vendor,"فروشنده"),
-                new FmComboModel<LocationType>(LocationType.Shipping,"Shipping"),
+                new FmComboModel<LocationType>(LocationType.StoreFront,"فروشگاه"),
+                new FmComboModel<LocationType>(LocationType.Vendor,"انبار محصولات فروخته شده"),
             };
 
             LocationTypeComboBoxEdit.ItemsSource = locationTypes;
@@ -166,7 +172,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
             MessageBoxService.SaveConfirmation(_activeLocation.Title);
             LoadSearchGridControl();
-            IsEditing();
+            OnAddToolBarItem();
         }
 
         protected override void OnDeleteToolBarItem()

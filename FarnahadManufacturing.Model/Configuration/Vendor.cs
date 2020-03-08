@@ -74,7 +74,20 @@ namespace FarnahadManufacturing.Model.Configuration
         }
 
         // TODO: What is status?
-        // TODO: Add isActive
+
+        /// <summary>
+        /// فعال
+        /// </summary>
+        private bool _isActive;
+        public bool IsActive
+        {
+            get => _isActive;
+            set
+            {
+                _isActive = value;
+                OnPropertyChanged();
+            }
+        }
 
         private List<Part> _parts;
         public List<Part> Parts

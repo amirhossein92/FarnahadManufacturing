@@ -21,7 +21,11 @@ namespace FarnahadManufacturing.UI.Common
 
         public static int GetActiveUserId()
         {
-            return 3;
+            using (var dbContext = new FarnahadManufacturingDbContext())
+            {
+                var user = dbContext.Users.FirstOrDefault();
+                return user.Id;
+            }
         }
     }
 }

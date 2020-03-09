@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,9 +20,11 @@ using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Docking.Base;
+using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.Window;
 using FarnahadManufacturing.Control.Common;
+using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.UI.Common;
 using FarnahadManufacturing.UI.UserControls;
@@ -39,10 +42,37 @@ namespace FarnahadManufacturing.UI
             Loaded += OnLoaded;
         }
 
+        private System.Windows.Forms.Timer timer;
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             //DXSplashScreen.Close();
             this.Activate();
+            UserNameBarButtonItem.Content = ApplicationSessionService.GetActiveUserName();
+            LoginDateBarButtonItem.Content = $"زمان ورود: {DateTime.Now.ToShortTimeString()}";
+            TodayDateStatusBarButtonItem.Content = DateTime.Now.ToShamsi();
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 25000;
+            timer.Tick += TimerOnElapsed;
+            timer.Enabled = true;
+        }
+
+        private void TimerOnElapsed(object sender, EventArgs e)
+        {
+            using (var dbContext = new FarnahadManufacturingDbContext())
+            {
+                var dbIsAlive = dbContext.Database.Exists();
+                if (dbIsAlive)
+                    ConnectionStatusBarButtonItem.Glyph =
+                        ImageUtility.CreateSvgImage("Icons/ToolBar/connection_green_small.svg");
+                else
+                    ConnectionStatusBarButtonItem.Glyph =
+                        ImageUtility.CreateSvgImage("Icons/ToolBar/connection_red_small.svg");
+            }
+        }
+
+        private void TimerOnElapsed(object sender, ElapsedEventArgs e)
+        {
+
         }
 
         private void SetToolBar(Dictionary<string, IBarItem> toolBarItems)

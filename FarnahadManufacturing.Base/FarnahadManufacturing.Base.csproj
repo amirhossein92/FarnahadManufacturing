@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Common\ApplicationDataStore.cs" />
     <Compile Include="Common\ApplicationSetting.cs" />
+    <Compile Include="Common\DateUtility.cs" />
     <Compile Include="Common\EncryptionUtility.cs" />
     <Compile Include="Common\HeaderService.cs" />
     <Compile Include="Common\PaginationUtility.cs" />

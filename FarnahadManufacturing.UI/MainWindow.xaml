@@ -171,6 +171,14 @@
             </dock:FmDockLayoutGroup>
         </dock:FmDockLayoutManager>
         <mainPage:FmStatusBarControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <dxb:BarStaticItem x:Name="UserNameBarButtonItem" Content="نام کاربری"/>
+            <dxb:BarItemSeparator/>
+            <dxb:BarStaticItem x:Name="LoginDateBarButtonItem" Content="زمان ورود"/>
+            <dxb:BarStaticItem x:Name="TodayDateStatusBarButtonItem" 
+                               Content="امروز" Alignment="Far"/>
+            <dxb:BarStaticItem x:Name="ConnectionStatusBarButtonItem" Alignment="Far"
+                               Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/connection_green_small.svg}"/>
+        </mainPage:FmStatusBarControl>
     </layout:FmGrid>
 </window:FmWindow>

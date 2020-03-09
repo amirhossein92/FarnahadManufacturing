@@ -413,6 +413,12 @@
   <ItemGroup>
     <Resource Include="Icons\NavigationBar\ProductCategory_Large.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\ToolBar\connection_green_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\ToolBar\connection_red_small.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

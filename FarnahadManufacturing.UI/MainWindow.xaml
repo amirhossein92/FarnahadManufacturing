@@ -167,17 +167,18 @@
                     </accordion:FmAccordionControl>
                 </layout:FmDockLayoutPanel>
                 <dock:FmDockDocumentGroup x:Name="MyDocumentGroup" ClosingBehavior="ImmediatelyRemove"
-                                          DestroyOnClosingChildren="False" />
+                                          DestroyOnClosingChildren="False" 
+                                          ClosePageButtonShowMode="InActiveTabPageHeader"/>
             </dock:FmDockLayoutGroup>
         </dock:FmDockLayoutManager>
         <mainPage:FmStatusBarControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <dxb:BarStaticItem x:Name="UserNameBarButtonItem" Content="نام کاربری"/>
-            <dxb:BarItemSeparator/>
-            <dxb:BarStaticItem x:Name="LoginDateBarButtonItem" Content="زمان ورود"/>
-            <dxb:BarStaticItem x:Name="TodayDateStatusBarButtonItem" 
+            <mainPage:FmBarStaticItem x:Name="UserNameBarButtonItem" Content="نام کاربری"/>
+            <toolBar:FmBarItemSeparator/>
+            <mainPage:FmBarStaticItem x:Name="LoginDateBarButtonItem" Content="زمان ورود"/>
+            <mainPage:FmBarStaticItem x:Name="TodayDateStatusBarButtonItem" 
                                Content="امروز" Alignment="Far"/>
-            <dxb:BarStaticItem x:Name="ConnectionStatusBarButtonItem" Alignment="Far"
+            <mainPage:FmBarStaticItem x:Name="ConnectionStatusBarButtonItem" Alignment="Far"
                                Glyph="{dx:SvgImageSource Uri=Icons/ToolBar/connection_green_small.svg}"/>
         </mainPage:FmStatusBarControl>
     </layout:FmGrid>

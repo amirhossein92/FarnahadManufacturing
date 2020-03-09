@@ -21,6 +21,7 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Docking.Base;
 using FarnahadManufacturing.Base.Common;
+using FarnahadManufacturing.Control.Base.Layout;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.Window;
 using FarnahadManufacturing.Control.Common;
@@ -191,10 +192,8 @@ namespace FarnahadManufacturing.UI
         {
             if (!UserControlIsAlreadyOpen<T>())
             {
-                var panel = new DocumentPanel();
+                var panel = new FmDocumentPanel();
                 panel.TabCaption = tabHeader;
-                panel.AllowClose = true;
-                panel.ShowCloseButton = true;
                 panel.Content = Activator.CreateInstance<T>();
                 panel.IsVisibleChanged += PanelOnIsVisibleChanged;
                 MyDocumentGroup.Add(panel);

@@ -1,4 +1,5 @@
-﻿namespace FarnahadManufacturing.Base.Common
+﻿// CHECK
+namespace FarnahadManufacturing.Base.Common
 {
     public class HeaderService
     {

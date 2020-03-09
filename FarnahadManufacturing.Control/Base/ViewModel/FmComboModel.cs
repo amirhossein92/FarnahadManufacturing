@@ -1,4 +1,5 @@
-﻿namespace FarnahadManufacturing.Control.Base.ViewModel
+﻿// CHECK
+namespace FarnahadManufacturing.Control.Base.ViewModel
 {
     public class FmComboModel<T>
     {

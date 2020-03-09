@@ -3,6 +3,7 @@ using DevExpress.Xpf.Bars;
 using FarnahadManufacturing.Control.Base.ToolBar.Buttons;
 using FarnahadManufacturing.Control.Common;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public abstract class FilterUserControlBase : UserControlBase

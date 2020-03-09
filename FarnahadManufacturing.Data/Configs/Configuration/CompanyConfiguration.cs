@@ -3,6 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class CompanyConfiguration : EntityTypeConfiguration<Company>

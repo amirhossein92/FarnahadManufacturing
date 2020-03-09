@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class CustomerGroupConfiguration : EntityTypeConfiguration<CustomerGroup>

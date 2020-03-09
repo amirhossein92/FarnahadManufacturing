@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Data;
 
+// CHECK
 namespace FarnahadManufacturing.UI.Common
 {
     public static class ApplicationSessionService

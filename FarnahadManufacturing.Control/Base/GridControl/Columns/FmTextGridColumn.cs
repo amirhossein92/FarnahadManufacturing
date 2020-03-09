@@ -1,4 +1,5 @@
-﻿namespace FarnahadManufacturing.Control.Base.GridControl.Columns
+﻿// CHECK
+namespace FarnahadManufacturing.Control.Base.GridControl.Columns
 {
     public class FmTextGridColumn : FmGridColumn
     {

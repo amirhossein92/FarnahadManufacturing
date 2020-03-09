@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DevExpress.Xpf.Bars;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Common
 {
     public static class ToolBarUtility

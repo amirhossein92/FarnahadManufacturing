@@ -2,6 +2,7 @@
 using System.Windows;
 using DevExpress.Xpf.Bars;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public abstract class UserControlBase : System.Windows.Controls.UserControl

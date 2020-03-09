@@ -2,6 +2,7 @@
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
 {
     public class TrackingConfiguration : EntityTypeConfiguration<Tracking>

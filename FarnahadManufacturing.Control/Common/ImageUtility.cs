@@ -3,6 +3,7 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Core.Native;
 using ImageSource = System.Windows.Media.ImageSource;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Common
 {
     public static class ImageUtility

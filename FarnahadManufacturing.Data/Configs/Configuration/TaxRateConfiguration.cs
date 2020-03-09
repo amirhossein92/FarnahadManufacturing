@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class TaxRateConfiguration : EntityTypeConfiguration<TaxRate>

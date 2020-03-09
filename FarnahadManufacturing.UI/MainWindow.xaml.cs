@@ -32,6 +32,7 @@ using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
 using FarnahadManufacturing.UI.UserControls.Configuration;
 using MessageBox = System.Windows.Forms.MessageBox;
 
+// CHECK
 namespace FarnahadManufacturing.UI
 {
     public partial class MainWindow : FmWindow
@@ -45,7 +46,6 @@ namespace FarnahadManufacturing.UI
         private System.Windows.Forms.Timer timer;
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            //DXSplashScreen.Close();
             this.Activate();
             UserNameBarButtonItem.Content = ApplicationSessionService.GetActiveUserName();
             LoginDateBarButtonItem.Content = $"زمان ورود: {DateTime.Now.ToShortTimeString()}";
@@ -68,11 +68,6 @@ namespace FarnahadManufacturing.UI
                     ConnectionStatusBarButtonItem.Glyph =
                         ImageUtility.CreateSvgImage("Icons/ToolBar/connection_red_small.svg");
             }
-        }
-
-        private void TimerOnElapsed(object sender, ElapsedEventArgs e)
-        {
-
         }
 
         private void SetToolBar(Dictionary<string, IBarItem> toolBarItems)

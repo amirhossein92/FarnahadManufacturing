@@ -3,6 +3,7 @@ using System.Windows;
 using DevExpress.Xpf.Editors;
 using FarnahadManufacturing.Control.Base.Size;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.Input
 {
     public class FmTextEdit : TextEdit

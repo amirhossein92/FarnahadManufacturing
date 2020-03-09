@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     // TODO: I THINK THE NAME SHOULD BE CHANGED => It is only stated as FOB in North America (http://petalpolymer.com/fa/node/37)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     public enum PartAbcCode

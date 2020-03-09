@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     public class Province : FmModelBase

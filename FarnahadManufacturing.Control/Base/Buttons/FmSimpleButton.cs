@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using DevExpress.Xpf.Core;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.Buttons
 {
     public class FmSimpleButton : SimpleButton

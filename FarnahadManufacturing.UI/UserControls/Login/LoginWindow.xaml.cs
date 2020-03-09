@@ -15,6 +15,7 @@ using DevExpress.Xpf.Core;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.UI.Assets;
 
+// CHECK
 namespace FarnahadManufacturing.UI.UserControls.Login
 {
     public partial class LoginWindow : Window

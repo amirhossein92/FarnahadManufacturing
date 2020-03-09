@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+// CHECK
 namespace FarnahadManufacturing.Base.Common
 {
     public static class ApplicationDataStore

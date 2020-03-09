@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public partial class AddEditDeleteListUserControl : System.Windows.Controls.UserControl

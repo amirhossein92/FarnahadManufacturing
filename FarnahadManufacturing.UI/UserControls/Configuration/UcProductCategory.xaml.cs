@@ -23,6 +23,7 @@ using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
     public partial class UcProductCategory : DialogUserControlBase

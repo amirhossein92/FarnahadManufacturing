@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public class DialogUserControlBase : System.Windows.Controls.UserControl

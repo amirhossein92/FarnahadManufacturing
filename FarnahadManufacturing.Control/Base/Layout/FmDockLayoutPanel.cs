@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Xpf.Docking;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.Layout
 {
     public class FmDockLayoutPanel : LayoutPanel

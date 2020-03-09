@@ -1,4 +1,5 @@
-﻿namespace FarnahadManufacturing.Control.Base.GridControl
+﻿// CHECK
+namespace FarnahadManufacturing.Control.Base.GridControl
 {
     public class FmSearchGridControl : FmReadOnlyGridControl
     {

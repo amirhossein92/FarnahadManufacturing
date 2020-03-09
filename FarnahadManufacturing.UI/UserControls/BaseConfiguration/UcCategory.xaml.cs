@@ -21,6 +21,7 @@ using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.Model.BaseConfiguration;
 
+// CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
     public partial class UcCategory : UserControlBase

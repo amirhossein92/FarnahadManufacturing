@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class CarrierConfiguration : EntityTypeConfiguration<Carrier>

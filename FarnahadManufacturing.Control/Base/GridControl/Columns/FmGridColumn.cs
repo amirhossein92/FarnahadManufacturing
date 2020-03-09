@@ -3,6 +3,7 @@ using System.Windows;
 using DevExpress.Xpf.Grid;
 using FarnahadManufacturing.Control.Base.Size;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.GridControl.Columns
 {
     public class FmGridColumn : GridColumn

@@ -11,6 +11,7 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 using AddressTypeConfiguration = FarnahadManufacturing.Data.Configs.BaseConfiguration.AddressTypeConfiguration;
 
+// CHECK
 namespace FarnahadManufacturing.Data
 {
     public class FarnahadManufacturingDbContext : DbContext

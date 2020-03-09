@@ -3,6 +3,7 @@ using System.Windows;
 using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.Layout;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public partial class PaginationUserControl : FmHorizontalLayoutGroup

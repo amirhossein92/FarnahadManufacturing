@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Base;
 
+// CHECK
 namespace FarnahadManufacturing.Model.Configuration
 {
     /// <summary>

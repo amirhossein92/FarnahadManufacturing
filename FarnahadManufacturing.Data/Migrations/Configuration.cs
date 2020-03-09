@@ -1,6 +1,7 @@
 ﻿using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Migrations
 {
     using System;

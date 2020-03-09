@@ -26,6 +26,7 @@ using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Common;
 using MessageBox = System.Windows.MessageBox;
 
+// CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
     public partial class UcUser : FilterUserControlBase

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FarnahadManufacturing.Model.BaseConfiguration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
 {
     public class CityConfiguration : EntityTypeConfiguration<City>

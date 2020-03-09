@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using FarnahadManufacturing.Model.BaseConfiguration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.BaseConfiguration
 {
     public class PaymentTermConfiguration : EntityTypeConfiguration<PaymentTerm>

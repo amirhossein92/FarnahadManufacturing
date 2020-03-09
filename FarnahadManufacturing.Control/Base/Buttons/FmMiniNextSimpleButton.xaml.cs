@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.Buttons
 {
     public partial class FmMiniNextSimpleButton : FmMiniSimpleButton

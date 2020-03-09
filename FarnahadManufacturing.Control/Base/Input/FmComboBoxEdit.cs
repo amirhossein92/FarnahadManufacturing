@@ -2,6 +2,7 @@
 using DevExpress.Xpf.Core.HandleDecorator;
 using DevExpress.Xpf.Editors;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.Input
 {
     public class FmComboBoxEdit : ComboBoxEdit

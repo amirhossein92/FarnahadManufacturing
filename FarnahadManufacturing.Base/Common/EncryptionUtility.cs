@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
+// CHECK
 namespace FarnahadManufacturing.Base.Common
 {
     public static class EncryptionUtility

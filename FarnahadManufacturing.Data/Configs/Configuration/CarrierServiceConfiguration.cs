@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 
+// CHECK
 namespace FarnahadManufacturing.Data.Configs.Configuration
 {
     public class CarrierServiceConfiguration : EntityTypeConfiguration<CarrierService>

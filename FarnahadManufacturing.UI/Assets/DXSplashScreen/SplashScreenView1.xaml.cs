@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
 
+// CHECK
 namespace FarnahadManufacturing.UI.Assets
 {
     /// <summary>

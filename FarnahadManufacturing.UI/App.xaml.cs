@@ -12,6 +12,7 @@ using FarnahadManufacturing.UI.Assets;
 using FarnahadManufacturing.UI.UserControls.Login;
 using MessageBox = System.Windows.Forms.MessageBox;
 
+// CHECK
 namespace FarnahadManufacturing.UI
 {
     /// <summary>

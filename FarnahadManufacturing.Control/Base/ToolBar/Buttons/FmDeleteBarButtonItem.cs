@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DevExpress.Xpf.Bars;
 using FarnahadManufacturing.Control.Common;
 
+// CHECK
 namespace FarnahadManufacturing.Control.Base.ToolBar.Buttons
 {
     public class FmDeleteBarButtonItem : BarButtonItem

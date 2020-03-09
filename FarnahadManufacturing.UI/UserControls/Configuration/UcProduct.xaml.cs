@@ -237,36 +237,47 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                             productAssociatePrice.ProductId = _activeProduct.Id;
                             productAssociatePrice.CreatedByUserId = activeUserId;
                             productAssociatePrice.CreatedDateTime = creationDate;
+                            productInDb.ProductAssociatePrices.Add(productAssociatePrice);
                         }
                         else
                         {
-                            var productAssociatePriceInDb = dbContext.ProductAssociatePrices.Find(productAssociatePrice.Id);
+                            var productAssociatePriceInDb = dbContext.ProductAssociatePrices
+                                .First(item => item.Id == productAssociatePrice.Id);
                             productAssociatePriceInDb.ProductAssociatedPriceTypeId = productAssociatePrice.ProductAssociatedPriceTypeId;
                             productAssociatePriceInDb.Price = productAssociatePrice.Price;
+                            productAssociatePriceInDb.Product = productInDb;
                         }
                     }
-                    productInDb.ProductAssociatePrices = _activeProduct.ProductAssociatePrices;
 
-                    //foreach (var productSubstitute in _activeProduct.ProductSubstitutes)
-                    //{
-                    //    if (productSubstitute.ProductId == 0)
-                    //    {
-                    //        productSubstitute.ProductId = _activeProduct.Id;
-                    //        productSubstitute.CreatedByUserId = activeUserId;
-                    //        productSubstitute.CreatedDateTime = creationDate;
-                    //    }
-                    //    else
-                    //    {
-                    //        //var productSubstituteInDb = dbContext.ProductSubstitutes.Find(productSubstitute.Id);
-                    //        //productSubstituteInDb.Note = productSubstitute.Note;
-                    //        //productSubstituteInDb.SubstituteProductId = productSubstitute.SubstituteProductId;
-                    //        //var a = dbContext.Entry(productSubstitute).State;
-                    //        //dbContext.ProductSubstitutes.Attach(productSubstitute);
-                    //        //var b = dbContext.Entry(productSubstitute).State;
+                    foreach (var productAssociatePrice in productInDb.ProductAssociatePrices.ToList())
+                    {
+                        if (_activeProduct.ProductAssociatePrices.All(item => item.Id != productAssociatePrice.Id))
+                            dbContext.Entry(productAssociatePrice).State = EntityState.Deleted;
+                    }
 
-                    //    }
-                    //}
-                    //productInDb.ProductSubstitutes = _activeProduct.ProductSubstitutes;
+                    foreach (var productSubstitute in _activeProduct.ProductSubstitutes)
+                    {
+                        if (productSubstitute.ProductId == 0)
+                        {
+                            productSubstitute.ProductId = _activeProduct.Id;
+                            productSubstitute.CreatedByUserId = activeUserId;
+                            productSubstitute.CreatedDateTime = creationDate;
+                            productInDb.ProductSubstitutes.Add(productSubstitute);
+                        }
+                        else
+                        {
+                            var productSubstituteInDb = dbContext.ProductSubstitutes.First(item => item.Id == productSubstitute.Id);
+                            productSubstituteInDb.SubstituteProductId = productSubstitute.SubstituteProductId;
+                            productSubstituteInDb.Note = productSubstitute.Note;
+                            productSubstituteInDb.Product = productInDb;
+                        }
+                    }
+
+                    foreach (var productSubstitute in productInDb.ProductSubstitutes.ToList())
+                    {
+                        if (_activeProduct.ProductSubstitutes.All(item => item.Id != productSubstitute.Id))
+                            dbContext.Entry(productSubstitute).State = EntityState.Deleted;
+                    }
 
                     productInDb.Title = _activeProduct.Title;
                     productInDb.PartId = _activeProduct.PartId;
@@ -557,9 +568,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 if (MessageBoxService.AskForDelete() == true)
                 {
-                    _activeProduct.ProductSubstitutes.Remove(productSubstitute);
-                    ProductSubstituteGridControl.ItemsSource =
-                        new ObservableCollection<ProductSubstitute>(_activeProduct.ProductSubstitutes);
+                    if (ProductSubstituteGridControl.ItemsSource is ObservableCollection<ProductSubstitute> productSubstitutes)
+                        productSubstitutes.Remove(productSubstitute);
                 }
             }
         }
@@ -572,8 +582,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 var dataIsChanged = ApplicationDataStore.GetData<bool>("IsAddedOrChanged");
                 if (dataIsChanged)
                 {
-                    ProductSubstituteGridControl.ItemsSource =
-                        new ObservableCollection<ProductSubstitute>(_activeProduct.ProductSubstitutes);
+                    // Do anything?
                 }
             }
         }
@@ -599,8 +608,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 var dataIsChanged = ApplicationDataStore.GetData<bool>("IsAddedOrChanged");
                 if (dataIsChanged)
                 {
-                    ProductAssociatePriceGridControl.ItemsSource =
-                        new ObservableCollection<ProductAssociatePrice>(_activeProduct.ProductAssociatePrices);
+                    // Do anything?
                 }
             }
         }
@@ -611,9 +619,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 if (MessageBoxService.AskForDelete() == true)
                 {
-                    _activeProduct.ProductAssociatePrices.Remove(productAssociatePrice);
-                    ProductAssociatePriceGridControl.ItemsSource =
-                        new ObservableCollection<ProductAssociatePrice>(_activeProduct.ProductAssociatePrices);
+                    if (ProductAssociatePriceGridControl.ItemsSource is ObservableCollection<ProductAssociatePrice> productAssociatePrices)
+                        productAssociatePrices.Remove(productAssociatePrice);
                 }
             }
         }

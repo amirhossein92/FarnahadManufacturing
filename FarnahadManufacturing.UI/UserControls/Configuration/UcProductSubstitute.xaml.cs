@@ -48,7 +48,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             using (var dbContext = new FarnahadManufacturingDbContext())
             {
                 var productsQueryable = dbContext.Products.AsQueryable();
-                if (_productSubstitute.Id > 0)
+                if (_productSubstitute.ProductId > 0)
                     productsQueryable =
                         productsQueryable.Where(item => item.Id != _productSubstitute.ProductId);
                 var products = productsQueryable

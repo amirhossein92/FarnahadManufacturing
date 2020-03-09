@@ -604,8 +604,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 var dataIsChanged = ApplicationDataStore.GetData<bool>("IsAddedOrChanged");
                 if (dataIsChanged)
                 {
-                    ReorderInformationGridControl.ItemsSource =
-                        new ObservableCollection<PartReorderInformation>(_activePart.PartReorderInformations);
+                    // Do anything?
                 }
             }
         }
@@ -616,9 +615,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 if (MessageBoxService.AskForDelete() == true)
                 {
-                    _activePart.PartReorderInformations.Remove(partReorderInformation);
-                    ReorderInformationGridControl.ItemsSource =
-                        new ObservableCollection<PartReorderInformation>(_activePart.PartReorderInformations);
+                    if (ReorderInformationGridControl.ItemsSource is ObservableCollection<PartReorderInformation> partReorderInformations)
+                        partReorderInformations.Remove(partReorderInformation);
                 }
             }
         }

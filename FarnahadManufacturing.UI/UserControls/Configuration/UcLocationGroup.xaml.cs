@@ -36,6 +36,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             InitializeComponent();
 
             UserControlTitle = "گروه محل ها";
+            ImagePath = "Icons/NavigationBar/LocationGroup_Small.svg";
             InitialData();
         }
 

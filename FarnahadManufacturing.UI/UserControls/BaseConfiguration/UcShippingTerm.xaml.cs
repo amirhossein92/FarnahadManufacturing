@@ -35,6 +35,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "شرایط تحویل کالا";
+            ImagePath = "Icons/NavigationBar/ShippingTerm_Small.svg";
             InitialData();
         }
 

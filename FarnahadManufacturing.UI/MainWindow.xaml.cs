@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
+using System.ServiceModel.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -192,9 +193,12 @@ namespace FarnahadManufacturing.UI
         {
             if (!UserControlIsAlreadyOpen<T>())
             {
+                var userControl = (UserControlBase)Activator.CreateInstance<T>();
                 var panel = new FmDocumentPanel();
                 panel.TabCaption = tabHeader;
-                panel.Content = Activator.CreateInstance<T>();
+                panel.Content = userControl;
+                if (!string.IsNullOrEmpty(userControl.ImagePath))
+                    panel.CaptionImage = ImageUtility.CreateSvgImage(userControl.ImagePath);
                 panel.IsVisibleChanged += PanelOnIsVisibleChanged;
                 MyDocumentGroup.Add(panel);
                 panel.IsActive = true;

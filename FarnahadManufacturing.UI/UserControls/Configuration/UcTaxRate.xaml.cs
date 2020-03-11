@@ -38,6 +38,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             InitializeComponent();
 
             UserControlTitle = "نرخ مالیاتی";
+            ImagePath = "Icons/NavigationBar/TaxRate_Small.svg";
             InitialData();
         }
 

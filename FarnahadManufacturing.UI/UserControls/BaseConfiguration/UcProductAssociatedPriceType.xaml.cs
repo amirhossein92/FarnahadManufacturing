@@ -35,6 +35,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "نوع هزینه مرتبط با محصول";
+            ImagePath = "Icons/NavigationBar/ProductAssociatedPrice_Small.svg";
             InitialData();
         }
 

@@ -39,6 +39,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             InitializeComponent();
 
             UserControlTitle = "محصولات";
+            ImagePath = "Icons/NavigationBar/Product_Small.svg";
             AddCustomToolBarItems();
             InitialData();
         }

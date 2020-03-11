@@ -46,6 +46,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             InitializeComponent();
 
             UserControlTitle = "فروشنده";
+            ImagePath = "Icons/NavigationBar/Vendor_Small.svg";
             InitialData();
         }
 

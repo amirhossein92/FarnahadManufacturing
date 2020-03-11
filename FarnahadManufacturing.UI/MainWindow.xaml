@@ -76,7 +76,7 @@
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Large.svg}">
                                 <accordion:FmAccordionItem.Items>
                                     <accordion:FmAccordionItem Header="فروشنده ها" MouseDoubleClick="VendorOnMouseDoubleClick"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Store_Small.svg}" />
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Vendor_Small.svg}" />
                                     <accordion:FmAccordionItem Header="سفارش خرید"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Small.svg}" />
                                     <accordion:FmAccordionItem Header="دریافت کالا"
@@ -96,7 +96,7 @@
                                            Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Accounting_Large.svg}">
                                 <accordion:FmAccordionItem.Items>
                                     <accordion:FmAccordionItem Header="تقسیم بندی" MouseDoubleClick="CategoryOnMouseDoubleClick"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Locations_Small.svg}" />
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Category_Small.svg}" />
                                 </accordion:FmAccordionItem.Items>
                             </accordion:FmAccordionItem>
                             <accordion:FmAccordionItem Header="تنظیمات"
@@ -138,28 +138,28 @@
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
                                                    MouseDoubleClick="City_OnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="استان"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Province_Small.svg}"
                                                    MouseDoubleClick="ProvinceOnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="کشور"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
                                                    MouseDoubleClick="Country_OnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="ردیابی"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Tracking_Small.svg}"
                                                    MouseDoubleClick="TrackingOnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="شرایط تحویل کالا"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ShippingTerm_Small.svg}"
                                                    MouseDoubleClick="ShippingTermOnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="فوب"
                                                    Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
                                                    MouseDoubleClick="FobTypeOnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="نوع آدرس"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/AddressType_Small.svg}"
                                                    MouseDoubleClick="AddressTypeOnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="شرایط پرداخت"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Payment_Small.svg}"
                                                    MouseDoubleClick="PaymentTermOnMouseDoubleClick" />
                                     <accordion:FmAccordionItem Header="نوع هزینه مرتبط با محصول"
-                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"
+                                                   Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductAssociatedPrice_Small.svg}"
                                                    MouseDoubleClick="ProductAssociatedPriceTypeOnMouseDoubleClick" />
                                 </accordion:FmAccordionItem.Items>
                             </accordion:FmAccordionItem>

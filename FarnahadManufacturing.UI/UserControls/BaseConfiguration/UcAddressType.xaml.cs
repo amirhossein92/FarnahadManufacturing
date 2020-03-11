@@ -36,6 +36,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "نوع آدرس";
+            ImagePath = "Icons/NavigationBar/AddressType_Small.svg";
             InitialData();
         }
 

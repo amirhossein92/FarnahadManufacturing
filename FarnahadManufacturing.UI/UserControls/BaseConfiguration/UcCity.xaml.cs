@@ -35,6 +35,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             Loaded += OnLoaded;
 
             UserControlTitle = "شهر";
+            ImagePath = "Icons/NavigationBar/City_Small.svg";
             InitialData();
         }
 

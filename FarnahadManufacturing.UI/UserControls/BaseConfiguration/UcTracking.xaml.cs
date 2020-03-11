@@ -38,6 +38,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "ردیابی";
+            ImagePath = "Icons/NavigationBar/Tracking_Small.svg";
             InitialData();
         }
 

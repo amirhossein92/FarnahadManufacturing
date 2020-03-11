@@ -390,7 +390,7 @@
     <Resource Include="Icons\NavigationBar\Purchase_Small.svg" />
     <Resource Include="Icons\NavigationBar\Sale_Small.svg" />
     <Resource Include="Icons\NavigationBar\Sale_Large.svg" />
-    <Resource Include="Icons\NavigationBar\Store_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Vendor_Small.svg" />
     <Resource Include="Icons\NavigationBar\Uom_Small.svg" />
     <Resource Include="Icons\NavigationBar\TransferOrder_Small.svg" />
     <Resource Include="Icons\NavigationBar\Users_Small.svg" />
@@ -418,6 +418,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\ToolBar\connection_red_small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\NavigationBar\AddressType_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Category_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Payment_Small.svg" />
+    <Resource Include="Icons\NavigationBar\ProductAssociatedPrice_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Province_Small.svg" />
+    <Resource Include="Icons\NavigationBar\ShippingTerm_Small.svg" />
+    <Resource Include="Icons\NavigationBar\Tracking_Small.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

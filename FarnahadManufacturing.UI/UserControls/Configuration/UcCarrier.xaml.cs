@@ -39,6 +39,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             InitializeComponent();
 
             UserControlTitle = "پیک";
+            ImagePath = "Icons/NavigationBar/Carrier_Small.svg";
             InitialData();
         }
 

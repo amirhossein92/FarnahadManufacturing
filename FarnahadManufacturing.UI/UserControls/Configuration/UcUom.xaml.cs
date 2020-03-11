@@ -37,6 +37,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             InitializeComponent();
 
             UserControlTitle = "واحد اندازه گیری";
+            ImagePath = "Icons/NavigationBar/Uom_Small.svg";
             InitialData();
         }
 

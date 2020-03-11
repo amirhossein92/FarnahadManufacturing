@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+  <g id="icon">
+    <line x1="5.3" y1="6.5" x2="12" y2="6.5" fill="none" stroke="#6D6E71" stroke-width="1" stroke-linecap="round" stroke-miterlimit="1" stroke-linejoin="round"/>
+    <polyline points="11.8,12.5 7.5,12.5 7.5,6.6" fill="none" stroke="#6D6E71" stroke-width="1" stroke-linecap="round" stroke-miterlimit="1" stroke-linejoin="round"/>
+    <path d="M9.313,3.613L3.574,9.416c-0.104,0.105,-0.273,0.105,-0.378,0L0.078,6.263c-0.104,-0.105,-0.104,-0.276,0,-0.382L5.818,0.079c0.104,-0.105,0.273,-0.105,0.378,0l3.118,3.152C9.417,3.337,9.417,3.508,9.313,3.613z" fill-rule="evenodd" fill="#EAB765"/>
+    <path d="M15.905,6.284l-3.71,3.768c-0.104,0.105,-0.272,0.105,-0.376,0L9.861,8.062c-0.104,-0.105,-0.104,-0.276,0,-0.382l3.71,-3.768c0.104,-0.105,0.272,-0.105,0.376,0l1.959,1.989C16.009,6.008,16.009,6.178,15.905,6.284z" fill-rule="evenodd" fill="#8C53A1"/>
+    <path d="M15.905,12.153l-3.71,3.768c-0.104,0.105,-0.272,0.105,-0.376,0l-1.959,-1.989c-0.104,-0.105,-0.104,-0.276,0,-0.382l3.71,-3.768c0.104,-0.105,0.272,-0.105,0.376,0l1.959,1.989C16.009,11.877,16.009,12.048,15.905,12.153z" fill-rule="evenodd" fill="#3E79B4"/>
+  </g>
+</svg>

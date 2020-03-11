@@ -36,6 +36,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "شرایط پرداخت";
+            ImagePath = "Icons/NavigationBar/Payment_Small.svg";
             InitialData();
         }
 

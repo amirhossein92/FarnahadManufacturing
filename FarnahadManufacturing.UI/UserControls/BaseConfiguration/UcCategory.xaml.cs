@@ -33,6 +33,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "تقسیم بندی فعالیت ها";
+            ImagePath = "Icons/NavigationBar/Category_Small.svg";
             SetToolBarItems();
             InitialData();
         }

@@ -41,6 +41,9 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            UserControlTitle = "شرکت";
+            ImagePath = "Icons/NavigationBar/Company_Small.svg";
+
             SetToolBarItems();
             InitialData();
         }

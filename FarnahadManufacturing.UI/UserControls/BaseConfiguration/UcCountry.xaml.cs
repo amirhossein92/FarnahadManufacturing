@@ -36,6 +36,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             this.Loaded += UserControlOnLoaded;
 
             UserControlTitle = "کشور";
+            ImagePath = "Icons/NavigationBar/Country_Small.svg";
             InitialData();
         }
 

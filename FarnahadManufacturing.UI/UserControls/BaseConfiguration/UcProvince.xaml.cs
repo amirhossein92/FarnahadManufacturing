@@ -37,6 +37,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             InitializeComponent();
 
             UserControlTitle = "استان";
+            ImagePath = "Icons/NavigationBar/Province_Small.svg";
             InitialData();
         }
 

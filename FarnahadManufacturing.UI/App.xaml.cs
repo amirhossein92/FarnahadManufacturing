@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using DevExpress.Utils.Localization;
 using DevExpress.Xpf.Core;
 using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Assets;
@@ -27,6 +28,9 @@ namespace FarnahadManufacturing.UI
             DXSplashScreen.Show<SplashScreenView>();
             var loginWindow = new LoginWindow();
             loginWindow.ShowDialog();
+
+            // LOCALIZATION
+            DXMessageBoxLocalizer.Active = new MessageBoxLocalizer();
         }
 
         private void App_OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
@@ -36,5 +40,18 @@ namespace FarnahadManufacturing.UI
                 MessageBoxService.ShowError($"{e.Exception.Message}", "Error");
             e.Handled = true;
         }
+    }
+
+    public class MessageBoxLocalizer : DXMessageBoxLocalizer
+    {
+        protected override void PopulateStringTable()
+        {
+            base.PopulateStringTable();
+            AddString(DXMessageBoxStringId.Ok, "تایید");
+            AddString(DXMessageBoxStringId.No, "خیر");
+            AddString(DXMessageBoxStringId.Cancel, "لغو");
+            AddString(DXMessageBoxStringId.Yes, "بله");
+        }
+
     }
 }

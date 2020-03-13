@@ -37,6 +37,80 @@
                     <toolBar:FmBarButtonItem Content="کپی" />
                     <toolBar:FmBarButtonItem Content="انتخاب همه" />
                 </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="مواد">
+                    <toolBar:FmBarButtonItem Content="کالا" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="محصولات"
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Product_Small.svg}" />
+                    <toolBar:FmBarButtonItem Content="انبار"
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Inventory_Small.svg}" />
+                    <toolBar:FmBarButtonItem Content="سفارش خرید" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/PurchaseOrder_Small.svg}"/>
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="خرید">
+                    <toolBar:FmBarButtonItem Content="فروشنده ها"
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Vendor_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="سفارش خرید"
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Sale_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="دریافت کالا"
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/TransferOrder_Small.svg}"/>
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="ساخت و تولید">
+                    <toolBar:FmBarButtonItem Content="دستورالعمل تولید" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/BillOfItem_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="سفارش ساخت" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ManufacturingOrder_Small.svg}"/>
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="فروش">
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="حسابداری">
+                    <toolBar:FmBarButtonItem Content="تقسیم بندی" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Category_Small.svg}"/>
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="تنظیمات">
+                    <mainPage:FmBarSubItem Content="موقعیت">
+                        <toolBar:FmBarButtonItem Content="موقعیت ها"
+                                                 Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Location_Small.svg}"/>
+                        <toolBar:FmBarButtonItem Content="گروه موقعیت ها"
+                                                 Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/LocationGroup_Small.svg}"/>
+                    </mainPage:FmBarSubItem>
+                    <toolBar:FmBarButtonItem Content="شرکت" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Company_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="واحد اندازه گیری" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Uom_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="پیک ها" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Carrier_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="دسته بندی محصولات" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductCategory_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="نرخ های مالیاتی" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/TaxRate_Small.svg}"/>
+                    <mainPage:FmBarSubItem Content="کاربر">
+                        <toolBar:FmBarButtonItem Content="کاربران" 
+                                                 Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/User_Small.svg}"/>
+                        <toolBar:FmBarButtonItem Content="گروه کاربران" 
+                                                 Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/UserGroup_Small.svg}"/>
+                    </mainPage:FmBarSubItem>
+                </mainPage:FmBarSubItem>
+                <mainPage:FmBarSubItem Content="تنظیمات پایه">
+                    <toolBar:FmBarButtonItem Content="شهر" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/City_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="استان" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Province_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="کشور" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="ردیابی" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Tracking_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="شرایط تحویل کالا" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ShippingTerm_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="فوب" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Country_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="نوع آدرس" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/AddressType_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="شرایط پرداخت" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Payment_Small.svg}"/>
+                    <toolBar:FmBarButtonItem Content="نوع هزینه مرتبط با محصول" 
+                                             Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/ProductAssociatedPrice_Small.svg}"/>
+                </mainPage:FmBarSubItem>
             </mainPage:FmMainMenuControl.Items>
         </mainPage:FmMainMenuControl>
         <toolBar:FmToolBarControl x:Name="ToolBarControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"

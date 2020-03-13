@@ -7,8 +7,6 @@ namespace FarnahadManufacturing.Control.Common
 {
     public static class MessageBoxService
     {
-        private static IMessageBoxService _messageBoxService = new DXMessageBoxService();
-
         public static bool AskForClose()
         {
             var msg = "آیا از بسته شدن برنامه اطمینان دارید؟";
@@ -57,12 +55,13 @@ namespace FarnahadManufacturing.Control.Common
         {
             bool? result = null;
 
-            var msgResult = _messageBoxService.Show(
+            var msgResult = DXMessageBox.Show(
                 message,
                 title,
                 MessageBoxButton.YesNoCancel,
                 MessageBoxImage.Warning,
-                MessageBoxResult.Cancel);
+                MessageBoxResult.Cancel,
+                MessageBoxOptions.RtlReading);
 
             if ((msgResult == MessageBoxResult.Cancel) == false)
                 result = msgResult == MessageBoxResult.Yes;
@@ -72,42 +71,46 @@ namespace FarnahadManufacturing.Control.Common
 
         private static bool ShowQuestionYesNoMessageBox(string message, string title)
         {
-            return _messageBoxService.Show(
+            return DXMessageBox.Show(
                        message,
                        title,
                        MessageBoxButton.YesNo,
                        MessageBoxImage.Warning,
-                       MessageBoxResult.No) == MessageBoxResult.Yes;
+                       MessageBoxResult.No,
+                       MessageBoxOptions.RtlReading) == MessageBoxResult.Yes;
         }
 
         private static void ShowInfoMessageBox(string message, string title)
         {
-            _messageBoxService.Show(
+            DXMessageBox.Show(
                 message,
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Information,
-                MessageBoxResult.OK);
+                MessageBoxResult.OK,
+                MessageBoxOptions.RtlReading);
         }
 
         private static void ShowWarningMessageBox(string message, string title)
         {
-            _messageBoxService.Show(
+            DXMessageBox.Show(
                 message,
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Warning,
-                MessageBoxResult.OK);
+                MessageBoxResult.OK,
+                MessageBoxOptions.RtlReading);
         }
 
         private static void ShowErrorMessageBox(string message, string title)
         {
-            _messageBoxService.Show(
+            DXMessageBox.Show(
                 message,
                 title,
                 MessageBoxButton.OK,
                 MessageBoxImage.Error,
-                MessageBoxResult.OK);
+                MessageBoxResult.OK,
+                MessageBoxOptions.RtlReading);
         }
     }
 }

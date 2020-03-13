@@ -10,6 +10,7 @@ namespace FarnahadManufacturing.Control.Base.Layout
             Caption = "فیلتر";
             AllowDrag = false;
             AllowMove = false;
+            AllowClose = false;
         }
     }
 }

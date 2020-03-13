@@ -1,7 +1,6 @@
 ﻿using System;
 using FarnahadManufacturing.Base;
 
-// CHECK
 namespace FarnahadManufacturing.Model.Configuration
 {
     public class PartReorderInformation : FmModelBase

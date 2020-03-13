@@ -3,6 +3,6 @@ namespace FarnahadManufacturing.Base.Common
 {
     public static class ApplicationSetting
     {
-        public static int PageRecordNumber = 10;
+        public static int PageRecordNumber = 2;
     }
 }

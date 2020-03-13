@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using FarnahadManufacturing.Base;
 
-// CHECK
 namespace FarnahadManufacturing.Model.Configuration
 {
     /// <summary>

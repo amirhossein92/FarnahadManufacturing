@@ -1,7 +1,4 @@
-﻿
-
-// CHECK
-namespace FarnahadManufacturing.Model.Configuration
+﻿namespace FarnahadManufacturing.Model.Configuration
 {
     public class MyCompany : Company
     {

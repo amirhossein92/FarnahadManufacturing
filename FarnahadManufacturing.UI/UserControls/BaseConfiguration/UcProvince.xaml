@@ -20,7 +20,7 @@
                 <layout:FmLayoutControl>
                     <layout:FmVerticalLayoutGroup>
                         <layout:FmLayoutItem Label="عنوان">
-                            <input:FmTextEdit x:Name="SearchTitleTextEdit" />
+                            <input:FmTextEdit x:Name="SearchTitleTextEdit"/>
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="کشور">
                             <input:FmTextEdit x:Name="SearchCountryTextEdit" />
@@ -54,10 +54,10 @@
                         <layout:FmLayoutItem Label="نام" IsRequired="True">
                             <input:FmTextEdit x:Name="NameTextEdit" />
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="مخفف">
+                        <layout:FmLayoutItem Label="مخفف" IsRequired="True">
                             <input:FmTextEdit x:Name="AbbreviationTextEdit" />
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="کشور">
+                        <layout:FmLayoutItem Label="کشور" IsRequired="True">
                             <input:FmComboBoxEdit x:Name="CountryComboBoxEdit"
                                                   ValueMember="Value" DisplayMember="Title" />
                         </layout:FmLayoutItem>

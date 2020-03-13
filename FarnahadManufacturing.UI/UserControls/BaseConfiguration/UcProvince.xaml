@@ -51,7 +51,7 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="استان" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
-                        <layout:FmLayoutItem Label="نام">
+                        <layout:FmLayoutItem Label="نام" IsRequired="True">
                             <input:FmTextEdit x:Name="NameTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="مخفف">
@@ -59,7 +59,7 @@
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="کشور">
                             <input:FmComboBoxEdit x:Name="CountryComboBoxEdit"
-                                                  ValueMember="Value" DisplayMember="Title"/>
+                                                  ValueMember="Value" DisplayMember="Title" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />

@@ -92,6 +92,7 @@ namespace FarnahadManufacturing.Control.Common
 
         private static void ShowWarningMessageBox(string message, string title)
         {
+            //DXMessageBox.Show("", "", "", "", MessageBoxImage.Asterisk, MessageBoxOptions.)
             _messageBoxService.Show(
                 message,
                 title,

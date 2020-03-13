@@ -1,5 +1,6 @@
 ﻿using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf.Bars;
+using DevExpress.Xpf.Core;
 using FarnahadManufacturing.Control.Base.ToolBar.Buttons;
 using FarnahadManufacturing.Control.Common;
 
@@ -12,6 +13,8 @@ namespace FarnahadManufacturing.Control.Base.UserControl
         {
             if (!this.IsInDesignMode())
                 SetToolBarItems();
+            else
+                ThemeManager.SetTheme(this, Theme.VS2017Light);
         }
 
         protected sealed override void SetToolBarItems()

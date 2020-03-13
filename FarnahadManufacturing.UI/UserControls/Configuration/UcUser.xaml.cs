@@ -98,7 +98,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeUser = new User();
+            _activeUser = new User { IsActive = true };
             FillData(_activeUser);
             IsAdding();
         }

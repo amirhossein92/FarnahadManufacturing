@@ -95,7 +95,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeTaxRate = new TaxRate();
+            _activeTaxRate = new TaxRate { IsActive = true };
             FillData(_activeTaxRate);
             IsAdding();
         }

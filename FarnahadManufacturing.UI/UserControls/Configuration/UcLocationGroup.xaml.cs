@@ -111,7 +111,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeLocationGroup = new LocationGroup();
+            _activeLocationGroup = new LocationGroup { IsActive = true };
             FillData(_activeLocationGroup);
             IsAdding();
         }

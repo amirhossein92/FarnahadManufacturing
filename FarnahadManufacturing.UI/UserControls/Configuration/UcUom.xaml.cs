@@ -85,7 +85,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeUom = new Uom();
+            _activeUom = new Uom { IsActive = true };
             FillData(_activeUom);
             IsAdding();
         }

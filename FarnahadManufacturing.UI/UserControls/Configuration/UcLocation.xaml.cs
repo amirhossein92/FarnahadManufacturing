@@ -144,7 +144,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeLocation = new Location();
+            _activeLocation = new Location { IsActive = true };
             FillData(_activeLocation);
             IsAdding();
         }

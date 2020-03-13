@@ -84,7 +84,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeCarrier = new Carrier();
+            _activeCarrier = new Carrier { IsActive = true };
             EditData(_activeCarrier);
             IsAdding();
         }

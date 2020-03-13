@@ -81,7 +81,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnAddToolBarItem()
         {
-            _activePaymentTerm = new PaymentTerm();
+            _activePaymentTerm = new PaymentTerm { IsActive = true, IsNet = true };
             FillData(_activePaymentTerm);
             IsAdding();
         }

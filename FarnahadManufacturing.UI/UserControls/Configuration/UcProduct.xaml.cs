@@ -203,7 +203,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeProduct = new Product();
+            _activeProduct = new Product { IsActive = true };
             FillData(_activeProduct);
             IsAdding();
         }

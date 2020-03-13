@@ -187,7 +187,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activePart = new Part();
+            _activePart = new Part { IsActive = true };
             FillData(_activePart);
             IsAdding();
         }

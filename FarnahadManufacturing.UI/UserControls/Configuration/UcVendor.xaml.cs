@@ -222,7 +222,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAddToolBarItem()
         {
-            _activeVendor = new Vendor();
+            _activeVendor = new Vendor { IsActive = true };
             _addresses = new ObservableCollection<Address>();
             _activeAddress = new Address();
             _contactInformations = new ObservableCollection<ContactInformation>();

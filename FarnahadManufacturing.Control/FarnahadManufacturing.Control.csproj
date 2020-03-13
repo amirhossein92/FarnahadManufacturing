@@ -63,6 +63,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Devexpress19.1\DevExpress.Xpf.LayoutControl.v19.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Light.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Devexpress19.1\DevExpress.Xpf.Themes.VS2017Light.v19.1.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />

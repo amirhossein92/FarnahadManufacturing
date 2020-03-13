@@ -1,8 +1,8 @@
-﻿
-
-// CHECK
-namespace FarnahadManufacturing.Model.BaseConfiguration
+﻿namespace FarnahadManufacturing.Model.BaseConfiguration
 {
+    /// <summary>
+    /// میزان فروش کالا
+    /// </summary>
     public enum PartAbcCode
     {
         // Top 85% Sale

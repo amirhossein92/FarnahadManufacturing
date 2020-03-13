@@ -1,7 +1,4 @@
-﻿
-
-// CHECK
-namespace FarnahadManufacturing.Model.BaseConfiguration
+﻿namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     /// <summary>
     /// نوع محل مثلا انبار، فروشگاه و غیره

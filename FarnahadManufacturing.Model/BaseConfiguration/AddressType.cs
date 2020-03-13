@@ -14,11 +14,7 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
         {
             Addresses = new List<Address>();
         }
-        // Bill To
-        // Home
-        // Main Office
-        // Remit To
-        // Ship To
+
         private int _id;
         public int Id
         {

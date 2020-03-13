@@ -1,6 +1,5 @@
 ﻿using FarnahadManufacturing.Base;
 
-// CHECK
 namespace FarnahadManufacturing.Model.Configuration
 {
     public class PartDefaultLocation : FmModelBase

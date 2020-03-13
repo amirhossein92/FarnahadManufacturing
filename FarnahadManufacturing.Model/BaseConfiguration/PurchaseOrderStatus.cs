@@ -1,6 +1,4 @@
-﻿
-
-// CHECK
+﻿// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     /// <summary>

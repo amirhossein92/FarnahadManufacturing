@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.Configuration;
 
-// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     /// <summary>
@@ -11,11 +10,6 @@ namespace FarnahadManufacturing.Model.BaseConfiguration
     /// </summary>
     public class Tracking : FmModelBase
     {
-        // 4 Default Tracking Types =>
-        // LOT Numbers : text
-        // Revision Level : text
-        // Expiration Date : datetime
-        // Serial Number : serial number
         public Tracking()
         {
             TrackingParts = new List<TrackingPart>();

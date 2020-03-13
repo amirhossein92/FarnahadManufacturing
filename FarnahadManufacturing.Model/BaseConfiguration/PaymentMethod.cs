@@ -2,7 +2,6 @@
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.Configuration;
 
-// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     /// <summary>

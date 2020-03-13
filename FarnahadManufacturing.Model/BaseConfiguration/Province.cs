@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using FarnahadManufacturing.Base;
 using FarnahadManufacturing.Model.Configuration;
 
-// CHECK
 namespace FarnahadManufacturing.Model.BaseConfiguration
 {
     public class Province : FmModelBase

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Control", "FarnahadManufacturing.Control\FarnahadManufacturing.Control.csproj", "{FF9F6EF1-B6D3-42CA-BA35-1927BE1B81BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Test", "FarnahadManufacturing.Test\FarnahadManufacturing.Test.csproj", "{A9F73213-0DBF-4E63-8740-3BB4C74B8327}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FF9F6EF1-B6D3-42CA-BA35-1927BE1B81BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF9F6EF1-B6D3-42CA-BA35-1927BE1B81BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF9F6EF1-B6D3-42CA-BA35-1927BE1B81BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,6 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Core.Native;
 using ImageSource = System.Windows.Media.ImageSource;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Common
 {
     public static class ImageUtility
@@ -14,6 +13,5 @@ namespace FarnahadManufacturing.Control.Common
             var svgHelper = SvgImageHelper.CreateImage(uri);
             return WpfSvgRenderer.CreateImageSource(svgHelper, 1d, null, null, true);
         }
-
     }
 }

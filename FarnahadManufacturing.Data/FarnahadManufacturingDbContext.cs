@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using FarnahadManufacturing.Data.Configs.BaseConfiguration;
 using FarnahadManufacturing.Data.Configs.Configuration;
+using FarnahadManufacturing.Data.Migrations;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
-using AddressTypeConfiguration = FarnahadManufacturing.Data.Configs.BaseConfiguration.AddressTypeConfiguration;
 
 // CHECK
 namespace FarnahadManufacturing.Data
@@ -12,7 +12,7 @@ namespace FarnahadManufacturing.Data
     {
         public FarnahadManufacturingDbContext() : base("FarnahadManufacturingConnectionString")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<FarnahadManufacturingDbContext, Configuration>());
         }
 
         public virtual DbSet<AddressType> AddressTypes { get; set; }

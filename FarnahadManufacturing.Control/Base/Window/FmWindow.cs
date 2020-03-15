@@ -1,7 +1,6 @@
 ﻿using System.Windows.Media;
 using DevExpress.Xpf.Core;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.Window
 {
     public class FmWindow : DXWindow
@@ -9,7 +8,7 @@ namespace FarnahadManufacturing.Control.Base.Window
         public FmWindow()
         {
             FontFamily = new FontFamily("Segoe UI");
-            FontSize = 13;
+            FontSize = 14;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace FarnahadManufacturing.Control.Base.UserControl
         {
             FlowDirection = FlowDirection.RightToLeft;
             ToolBarItems = new Dictionary<string, IBarItem>();
+            FontSize = 14;
         }
 
         public Dictionary<string, IBarItem> ToolBarItems { get; set; }

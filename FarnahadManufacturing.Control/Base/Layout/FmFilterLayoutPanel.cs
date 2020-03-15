@@ -11,6 +11,7 @@ namespace FarnahadManufacturing.Control.Base.Layout
             AllowDrag = false;
             AllowMove = false;
             AllowClose = false;
+            MinWidth = 100;
         }
     }
 }

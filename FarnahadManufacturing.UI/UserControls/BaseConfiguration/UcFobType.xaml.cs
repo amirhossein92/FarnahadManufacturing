@@ -14,7 +14,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcFobType : FilterUserControlBase
+    public partial class UcFobType : FilterUserControlPage
     {
         private ObservableCollection<FobType> _fobTypes;
         private FobType _activeFobType;

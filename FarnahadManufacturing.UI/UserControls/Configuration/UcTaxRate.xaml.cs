@@ -16,7 +16,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcTaxRate : FilterUserControlBase
+    public partial class UcTaxRate : FilterUserControlPage
     {
         private ObservableCollection<TaxRate> _taxRates;
         private TaxRate _activeTaxRate;

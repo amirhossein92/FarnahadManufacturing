@@ -15,7 +15,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcUserGroup : FilterUserControlBase
+    public partial class UcUserGroup : FilterUserControlPage
     {
         private ObservableCollection<UserGroup> _userGroups;
         private UserGroup _activeUserGroup;

@@ -14,7 +14,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcProductAssociatedPriceType : FilterUserControlBase
+    public partial class UcProductAssociatedPriceType : FilterUserControlPage
     {
         private ObservableCollection<ProductAssociatedPriceType> _productAssociatedPriceTypes;
         private ProductAssociatedPriceType _activeProductAssociatedPriceType;

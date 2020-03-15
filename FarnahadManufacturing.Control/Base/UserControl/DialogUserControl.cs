@@ -3,13 +3,11 @@
 // CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public class DialogUserControlBase : System.Windows.Controls.UserControl
+    public class DialogUserControl : UserControlBase
     {
-        public DialogUserControlBase()
+        public DialogUserControl()
         {
             FlowDirection = FlowDirection.RightToLeft;
         }
-
-        public string UserControlTitle { get; set; }
     }
 }

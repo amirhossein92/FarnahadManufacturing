@@ -10,6 +10,8 @@ namespace FarnahadManufacturing.Control.Base.Window
         {
             FontFamily = new FontFamily("Segoe UI");
             FontSize = 13;
+            MinWidth = 600;
+            MinHeight = 400;
         }
     }
 }

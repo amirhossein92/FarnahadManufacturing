@@ -35,7 +35,7 @@ namespace FarnahadManufacturing.Control.Base.UserControl
 
         private void NextPageButtonOnClick(object sender, RoutedEventArgs e)
         {
-            if (_currentPage <= PaginationUtility.MaximumPageNumber(_totalRecordsCount))
+            if (_currentPage < PaginationUtility.MaximumPageNumber(_totalRecordsCount))
             {
                 _currentPage++;
                 RefreshData?.Invoke(sender, e);

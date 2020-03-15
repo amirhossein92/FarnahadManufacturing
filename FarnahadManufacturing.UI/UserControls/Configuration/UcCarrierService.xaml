@@ -1,4 +1,4 @@
-﻿<userControl:DialogUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcCarrierService"
+﻿<userControl:DialogUserControl x:Class="FarnahadManufacturing.UI.UserControls.Configuration.UcCarrierService"
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -27,4 +27,4 @@
                 ClickOnCancel="CancelButtonOnClick"/>
         </layout:FmVerticalLayoutGroup>
     </layout:FmLayoutControl>
-</userControl:DialogUserControlBase>
+</userControl:DialogUserControl>

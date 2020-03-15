@@ -7,9 +7,9 @@ using FarnahadManufacturing.Control.Common;
 // CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public abstract class FilterUserControlBase : UserControlBase
+    public abstract class FilterUserControlPage : UserControlPage
     {
-        public FilterUserControlBase()
+        public FilterUserControlPage()
         {
             if (!this.IsInDesignMode())
                 SetToolBarItems();

@@ -10,7 +10,7 @@ using FarnahadManufacturing.Model.Configuration;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcPartReorderInformation : DialogUserControlBase
+    public partial class UcPartReorderInformation : DialogUserControl
     {
         private PartReorderInformation _partReorderInformation;
 

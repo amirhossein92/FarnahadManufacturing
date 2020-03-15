@@ -12,7 +12,8 @@
                  xmlns:toolBar="clr-namespace:FarnahadManufacturing.Control.Base.ToolBar;assembly=FarnahadManufacturing.Control"
                  mc:Ignorable="d"
                  Title="سیستم مدیریت کالا" Height="450" Width="800"
-                 Closing="MainWindowOnClosing">
+                 Closing="MainWindowOnClosing" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+                 >
     <layout:FmGrid FlowDirection="RightToLeft">
         <layout:FmGrid.RowDefinitions>
             <RowDefinition Height="Auto" />

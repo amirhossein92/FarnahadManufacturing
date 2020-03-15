@@ -16,7 +16,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcLocationGroup : FilterUserControlBase
+    public partial class UcLocationGroup : FilterUserControlPage
     {
         private ObservableCollection<LocationGroup> _locationGroups;
         private LocationGroup _activeLocationGroup;

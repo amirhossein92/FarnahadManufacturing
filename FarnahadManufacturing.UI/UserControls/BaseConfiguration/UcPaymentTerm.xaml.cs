@@ -15,7 +15,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcPaymentTerm : FilterUserControlBase
+    public partial class UcPaymentTerm : FilterUserControlPage
     {
         private ObservableCollection<PaymentTerm> _paymentTerms;
         private PaymentTerm _activePaymentTerm;

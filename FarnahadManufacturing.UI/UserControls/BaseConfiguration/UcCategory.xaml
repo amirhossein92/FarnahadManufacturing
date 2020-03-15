@@ -1,4 +1,4 @@
-﻿<userControl:UserControlBase x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCategory"
+﻿<userControl:UserControlPage x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCategory"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -26,4 +26,4 @@
             </layout:FmLayoutItem>
         </layout:FmVerticalLayoutGroup>
     </layout:FmLayoutControl>
-</userControl:UserControlBase>
+</userControl:UserControlPage>

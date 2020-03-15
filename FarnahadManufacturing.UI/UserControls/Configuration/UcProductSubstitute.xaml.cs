@@ -10,7 +10,7 @@ using FarnahadManufacturing.Model.Configuration;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcProductSubstitute : DialogUserControlBase
+    public partial class UcProductSubstitute : DialogUserControl
     {
         private ProductSubstitute _productSubstitute;
 

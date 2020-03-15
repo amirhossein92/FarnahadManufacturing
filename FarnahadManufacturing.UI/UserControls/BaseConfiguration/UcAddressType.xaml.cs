@@ -14,7 +14,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcAddressType : FilterUserControlBase
+    public partial class UcAddressType : FilterUserControlPage
     {
         private ObservableCollection<AddressType> _addressTypes;
         private AddressType _activeAddressType;

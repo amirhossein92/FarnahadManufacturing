@@ -14,7 +14,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcShippingTerm : FilterUserControlBase
+    public partial class UcShippingTerm : FilterUserControlPage
     {
         private ObservableCollection<ShippingTerm> _shippingTerms;
         private ShippingTerm _activeShippingTerm;

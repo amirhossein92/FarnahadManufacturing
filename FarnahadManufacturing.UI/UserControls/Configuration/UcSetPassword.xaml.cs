@@ -8,7 +8,7 @@ using FarnahadManufacturing.Control.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcSetPassword : DialogUserControlBase
+    public partial class UcSetPassword : DialogUserControl
     {
         public UcSetPassword()
         {

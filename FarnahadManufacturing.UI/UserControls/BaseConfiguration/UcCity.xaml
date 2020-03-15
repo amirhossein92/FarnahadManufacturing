@@ -1,4 +1,4 @@
-﻿<userControl1:FilterUserControlBase x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCity"
+﻿<userControl1:FilterUserControlPage x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCity"
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -40,10 +40,10 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" MinWidth="75"/>
-                                    <columns:FmTextGridColumn Header="استان" FieldName="Province.Title" ReadOnly="True" FmGridColumnWidth="XXSmall" />
-                                    <columns:FmTextGridColumn Header="کشور" FieldName="Province.Country.Title" ReadOnly="True" FmGridColumnWidth="XXSmall" />
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall" />
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x2" MinWidth="75"/>
+                                    <columns:FmTextGridColumn Header="استان" FieldName="Province.Title" ReadOnly="True" FmGridColumnWidth="x" MinWidth="25"/>
+                                    <columns:FmTextGridColumn Header="کشور" FieldName="Province.Country.Title" ReadOnly="True" FmGridColumnWidth="x" MinWidth="25"/>
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="x" MinWidth="25"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -78,4 +78,4 @@
             </layout:FmDocumentPanel>
         </dock:FmDockLayoutGroup>
     </dock:FmDockLayoutManager>
-</userControl1:FilterUserControlBase>
+</userControl1:FilterUserControlPage>

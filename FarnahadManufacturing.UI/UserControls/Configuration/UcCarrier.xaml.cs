@@ -16,7 +16,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcCarrier : FilterUserControlBase
+    public partial class UcCarrier : FilterUserControlPage
     {
         private ObservableCollection<Carrier> _carriers;
         private ObservableCollection<CarrierService> _carrierServices;

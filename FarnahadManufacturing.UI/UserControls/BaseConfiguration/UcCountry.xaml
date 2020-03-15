@@ -1,4 +1,4 @@
-﻿<userControl1:FilterUserControlBase xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+﻿<userControl1:FilterUserControlPage xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
                                    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
                                    x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCountry"
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -64,4 +64,4 @@
             </layout:FmDocumentPanel>
         </dock:FmDockLayoutGroup>
     </dock1:FmDockLayoutManager>
-</userControl1:FilterUserControlBase>
+</userControl1:FilterUserControlPage>

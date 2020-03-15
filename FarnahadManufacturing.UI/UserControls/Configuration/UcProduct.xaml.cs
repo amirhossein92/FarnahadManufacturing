@@ -20,7 +20,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcProduct : FilterUserControlBase
+    public partial class UcProduct : FilterUserControlPage
     {
         private ObservableCollection<Product> _products;
         private Product _activeProduct;

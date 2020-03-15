@@ -16,7 +16,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcProvince : FilterUserControlBase
+    public partial class UcProvince : FilterUserControlPage
     {
         private ObservableCollection<Province> _provinces;
         private Province _activeProvince;

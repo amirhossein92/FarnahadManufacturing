@@ -170,11 +170,11 @@ namespace FarnahadManufacturing.UI
             OpenUserControlInNewTab<UcProductAssociatedPriceType>("نوع هزینه مرتبط با محصول ها");
         }
 
-        private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlBase
+        private void OpenUserControlInNewTab<T>(string tabHeader) where T : UserControlPage
         {
             if (!UserControlIsAlreadyOpen<T>())
             {
-                var userControl = (UserControlBase)Activator.CreateInstance<T>();
+                var userControl = (UserControlPage)Activator.CreateInstance<T>();
                 var panel = new FmDocumentPanel();
                 panel.TabCaption = tabHeader;
                 panel.Content = userControl;
@@ -197,12 +197,12 @@ namespace FarnahadManufacturing.UI
             if ((bool)e.OldValue != (bool)e.NewValue && (bool)e.NewValue)
             {
                 _activeDocumentPanel = sender as DocumentPanel;
-                if (_activeDocumentPanel.Content is UserControlBase userControlBase)
+                if (_activeDocumentPanel.Content is UserControlPage userControlBase)
                     SetToolBar(userControlBase.ToolBarItems);
             }
         }
 
-        private bool UserControlIsAlreadyOpen<T>() where T : UserControlBase
+        private bool UserControlIsAlreadyOpen<T>() where T : UserControlPage
         {
             foreach (var item in MyDocumentGroup.Items)
             {
@@ -212,7 +212,7 @@ namespace FarnahadManufacturing.UI
             return false;
         }
 
-        private void ActivateTheUserControl<T>() where T : UserControlBase
+        private void ActivateTheUserControl<T>() where T : UserControlPage
         {
             foreach (var item in MyDocumentGroup.Items)
             {

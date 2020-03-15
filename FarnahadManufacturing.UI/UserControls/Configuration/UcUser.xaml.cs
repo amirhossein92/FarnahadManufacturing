@@ -16,7 +16,7 @@ using MessageBox = System.Windows.MessageBox;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcUser : FilterUserControlBase
+    public partial class UcUser : FilterUserControlPage
     {
         private ObservableCollection<User> _users;
         private User _activeUser;

@@ -15,7 +15,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcTracking : FilterUserControlBase
+    public partial class UcTracking : FilterUserControlPage
     {
         private ObservableCollection<Tracking> _trackings;
         private Tracking _activeTracking;

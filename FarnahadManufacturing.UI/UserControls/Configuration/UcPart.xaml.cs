@@ -22,7 +22,7 @@ using WindowService = FarnahadManufacturing.Control.Common.WindowService;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcPart : FilterUserControlBase
+    public partial class UcPart : FilterUserControlPage
     {
         private ObservableCollection<Part> _parts;
         private Part _activePart;

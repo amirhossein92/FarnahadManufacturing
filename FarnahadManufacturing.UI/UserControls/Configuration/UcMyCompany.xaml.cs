@@ -18,7 +18,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcMyCompany : UserControlBase
+    public partial class UcMyCompany : UserControlPage
     {
         private MyCompany _myCompany;
         private ObservableCollection<Address> _addresses;

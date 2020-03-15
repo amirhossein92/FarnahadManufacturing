@@ -12,7 +12,7 @@ using FarnahadManufacturing.Model.Configuration;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcProductCategory : DialogUserControlBase
+    public partial class UcProductCategory : DialogUserControl
     {
         private ObservableCollection<ProductCategory> _productCategories;
 

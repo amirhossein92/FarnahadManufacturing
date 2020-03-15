@@ -7,10 +7,10 @@ namespace FarnahadManufacturing.Control.Common
 {
     public class WindowService
     {
-        private static Dictionary<DialogUserControlBase, FmDialogWindow> _openDialogWindows =
-            new Dictionary<DialogUserControlBase, FmDialogWindow>();
+        private static Dictionary<DialogUserControl, FmDialogWindow> _openDialogWindows =
+            new Dictionary<DialogUserControl, FmDialogWindow>();
 
-        public static void OpenUserControlDialog<T>(T userControl) where T : DialogUserControlBase
+        public static void OpenUserControlDialog<T>(T userControl) where T : DialogUserControl
         {
             var newWindow = new FmDialogWindow();
             newWindow.Title = userControl.UserControlTitle ?? "صفحه جدید";
@@ -19,7 +19,7 @@ namespace FarnahadManufacturing.Control.Common
             newWindow.ShowDialog();
         }
 
-        public static void CloseUserControlDialogWindow(DialogUserControlBase userControl)
+        public static void CloseUserControlDialogWindow(DialogUserControl userControl)
         {
             if (_openDialogWindows.ContainsKey(userControl))
             {

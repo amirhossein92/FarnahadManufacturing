@@ -11,7 +11,7 @@ using FarnahadManufacturing.Model.BaseConfiguration;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcCategory : UserControlBase
+    public partial class UcCategory : UserControlPage
     {
         private ObservableCollection<Category> _categories;
 

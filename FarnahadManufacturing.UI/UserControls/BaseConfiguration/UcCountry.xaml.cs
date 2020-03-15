@@ -14,7 +14,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcCountry : FilterUserControlBase
+    public partial class UcCountry : FilterUserControlPage
     {
         private ObservableCollection<Country> _countries;
         private Country _activeCountry;

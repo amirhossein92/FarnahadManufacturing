@@ -1,4 +1,4 @@
-﻿<userControl:DialogUserControlBase 
+﻿<userControl:DialogUserControl 
     x:Class="FarnahadManufacturing.UI.UserControls.BaseConfiguration.UcCategoryAddEdit"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -29,4 +29,4 @@
                 ClickOnCancel="ClickOnCancel"/>
         </layout:FmVerticalLayoutGroup>
     </layout:FmLayoutControl>
-</userControl:DialogUserControlBase>
+</userControl:DialogUserControl>

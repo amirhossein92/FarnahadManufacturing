@@ -8,7 +8,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.Configuration
 {
-    public partial class UcCarrierService : DialogUserControlBase
+    public partial class UcCarrierService : DialogUserControl
     {
         private CarrierService _activeCarrierService;
 

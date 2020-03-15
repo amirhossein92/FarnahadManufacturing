@@ -191,8 +191,8 @@
     <Compile Include="Base\UserControl\AddEditDeleteRefreshButtonListUserControl.xaml.cs">
       <DependentUpon>AddEditDeleteRefreshButtonListUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Base\UserControl\DialogUserControlBase.cs" />
-    <Compile Include="Base\UserControl\FilterUserControlBase.cs" />
+    <Compile Include="Base\UserControl\DialogUserControl.cs" />
+    <Compile Include="Base\UserControl\FilterUserControlPage.cs" />
     <Compile Include="Base\UserControl\ListBoxButtonsUserControl.xaml.cs">
       <DependentUpon>ListBoxButtonsUserControl.xaml</DependentUpon>
     </Compile>
@@ -206,6 +206,7 @@
       <DependentUpon>ShowAddressUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base\UserControl\UserControlBase.cs" />
+    <Compile Include="Base\UserControl\UserControlPage.cs" />
     <Compile Include="Base\ViewModel\FmComboModel.cs" />
     <Compile Include="Base\Window\FmDialogWindow.cs" />
     <Compile Include="Base\Window\FmWindow.cs" />

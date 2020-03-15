@@ -12,7 +12,7 @@ using FarnahadManufacturing.UI.Common;
 // CHECK
 namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 {
-    public partial class UcCategoryAddEdit : DialogUserControlBase
+    public partial class UcCategoryAddEdit : DialogUserControl
     {
         private Category _category;
 

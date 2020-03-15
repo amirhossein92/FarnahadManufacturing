@@ -1,10 +1,6 @@
-﻿
-
-// CHECK
-namespace FarnahadManufacturing.Control.Common
+﻿namespace FarnahadManufacturing.Control.Common
 {
     public static class EnumUtility
     {
-    
     }
 }

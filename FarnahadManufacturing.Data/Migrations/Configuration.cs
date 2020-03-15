@@ -7,7 +7,7 @@ namespace FarnahadManufacturing.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<FarnahadManufacturing.Data.FarnahadManufacturingDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<FarnahadManufacturingDbContext>
     {
         public Configuration()
         {

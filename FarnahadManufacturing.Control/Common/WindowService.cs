@@ -2,7 +2,6 @@
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.Window;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Common
 {
     public class WindowService

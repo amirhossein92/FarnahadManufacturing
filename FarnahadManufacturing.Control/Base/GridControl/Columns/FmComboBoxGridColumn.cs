@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using DevExpress.Xpf.Editors;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.GridControl.Columns
 {
     public class FmComboBoxGridColumn : FmGridColumn

@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using DevExpress.Xpf.Core;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Common
 {
     public static class MessageBoxService

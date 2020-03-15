@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using DevExpress.Xpf.Editors;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.Input
 {
     public class FmComboBoxEdit : ComboBoxEdit
@@ -23,6 +22,5 @@ namespace FarnahadManufacturing.Control.Base.Input
             else if (!enabled && string.IsNullOrEmpty(comboBoxEdit.Text))
                 Text = ControlDefaultValue.ControlIsDisable;
         }
-
     }
 }

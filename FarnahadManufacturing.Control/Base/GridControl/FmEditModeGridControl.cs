@@ -1,6 +1,5 @@
 ﻿using DevExpress.Xpf.Grid;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.GridControl
 {
     public class FmEditModeGridControl : DevExpress.Xpf.Grid.GridControl

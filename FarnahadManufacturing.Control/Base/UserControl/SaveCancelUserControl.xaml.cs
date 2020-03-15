@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
     public partial class SaveCancelUserControl : System.Windows.Controls.UserControl

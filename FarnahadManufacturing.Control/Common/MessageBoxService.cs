@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using DevExpress.Mvvm;
 using DevExpress.Xpf.Core;
 
 // CHECK

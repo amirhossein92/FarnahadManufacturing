@@ -1,6 +1,5 @@
 ﻿namespace FarnahadManufacturing.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
     public partial class changed_address_default_prop_to_bool : DbMigration

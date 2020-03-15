@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Threading;
-using DevExpress.Utils.Localization;
 using DevExpress.Xpf.Core;
 using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.UI.Assets;
 using FarnahadManufacturing.UI.UserControls.Login;
-using MessageBox = System.Windows.Forms.MessageBox;
 
 // CHECK
 namespace FarnahadManufacturing.UI

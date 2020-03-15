@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using FarnahadManufacturing.Base.Common;
 using FarnahadManufacturing.Control.Base.Layout;
 

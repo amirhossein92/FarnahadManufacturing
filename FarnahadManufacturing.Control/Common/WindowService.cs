@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Windows.Documents;
-using FarnahadManufacturing.Control.Base.Layout;
+﻿using System.Collections.Generic;
 using FarnahadManufacturing.Control.Base.UserControl;
 using FarnahadManufacturing.Control.Base.Window;
 

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using FarnahadManufacturing.Test.Base;
 using FarnahadManufacturing.Test.Services;
-using Microsoft.Win32;
 
 namespace FarnahadManufacturing.Test.Person
 {

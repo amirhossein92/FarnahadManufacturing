@@ -1,6 +1,5 @@
 ﻿namespace FarnahadManufacturing.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
     public partial class changed_locationType_to_enum : DbMigration

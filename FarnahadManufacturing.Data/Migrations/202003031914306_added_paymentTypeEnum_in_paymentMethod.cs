@@ -1,6 +1,5 @@
 ﻿namespace FarnahadManufacturing.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
     public partial class added_paymentTypeEnum_in_paymentMethod : DbMigration

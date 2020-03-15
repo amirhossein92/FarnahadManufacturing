@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Media;
 using DevExpress.Xpf.Bars;
-using FarnahadManufacturing.Control.Common;
 
 // CHECK
 namespace FarnahadManufacturing.Control.Base.UserControl

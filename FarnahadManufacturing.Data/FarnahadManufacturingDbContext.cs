@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using FarnahadManufacturing.Data.Configs.BaseConfiguration;
 using FarnahadManufacturing.Data.Configs.Configuration;
-using FarnahadManufacturing.Data.Migrations;
 using FarnahadManufacturing.Model.BaseConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 using AddressTypeConfiguration = FarnahadManufacturing.Data.Configs.BaseConfiguration.AddressTypeConfiguration;

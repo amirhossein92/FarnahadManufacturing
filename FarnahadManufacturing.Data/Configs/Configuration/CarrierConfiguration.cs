@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using System.Runtime.CompilerServices;
 using FarnahadManufacturing.Model.Configuration;
 
 // CHECK

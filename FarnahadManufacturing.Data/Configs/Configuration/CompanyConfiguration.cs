@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
-using FarnahadManufacturing.Model.BaseConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 using FarnahadManufacturing.Model.Configuration;
 
 // CHECK

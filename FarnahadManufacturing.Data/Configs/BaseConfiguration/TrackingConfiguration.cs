@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using FarnahadManufacturing.Model.BaseConfiguration;
-using FarnahadManufacturing.Model.Configuration;
 
 // CHECK
 namespace FarnahadManufacturing.Data.Configs.BaseConfiguration

@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using DevExpress.Xpf.Core.HandleDecorator;
 using DevExpress.Xpf.Editors;
 
 // CHECK

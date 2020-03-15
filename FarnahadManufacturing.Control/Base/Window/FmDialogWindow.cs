@@ -1,8 +1,5 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using DevExpress.Xpf.Core;
-using FarnahadManufacturing.Control.Common;
 
 // CHECK
 namespace FarnahadManufacturing.Control.Base.Window

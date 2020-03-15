@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using DevExpress.Xpf.LayoutControl;
-using FarnahadManufacturing.Control.Base.Input;
 using FarnahadManufacturing.Control.Base.Label;
 
 // CHECK

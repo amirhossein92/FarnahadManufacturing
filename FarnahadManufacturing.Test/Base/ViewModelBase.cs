@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.Xpf.Grid;
-
-namespace FarnahadManufacturing.Test.Base
+﻿namespace FarnahadManufacturing.Test.Base
 {
     public abstract class ViewModelBase : BindableBase
     {

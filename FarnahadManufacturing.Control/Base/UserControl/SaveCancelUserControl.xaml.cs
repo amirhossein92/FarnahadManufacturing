@@ -2,7 +2,7 @@
 
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public partial class SaveCancelUserControl : System.Windows.Controls.UserControl
+    public partial class SaveCancelUserControl : UserControlBase
     {
         public SaveCancelUserControl()
         {

@@ -51,8 +51,10 @@
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
-                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
-                                                           RefreshData="PaginationUserControlOnRefreshData"/>
+                        <layout:FmLayoutItem>
+                            <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                               RefreshData="PaginationUserControlOnRefreshData" />
+                        </layout:FmLayoutItem>
                         <layout:FmLayoutItem x:Name="ProductImageEditLayoutItem" Height="125">
                             <image:FmImageEdit x:Name="SearchProductImageEdit" IsReadOnly="True"/>
                         </layout:FmLayoutItem>

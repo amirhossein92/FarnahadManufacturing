@@ -10,7 +10,7 @@
              xmlns:input="clr-namespace:FarnahadManufacturing.Control.Base.Input;assembly=FarnahadManufacturing.Control"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-    Height="200" Width="350">
+    Height="250" Width="350">
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup HeaderTitle="تقسیم بندی فعالیت ها"/>
@@ -25,8 +25,8 @@
                 <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit"/>
             </layout:FmLayoutItem>
             <userControl:SaveCancelUserControl
-                ClickOnSave="ClickOnSave"
-                ClickOnCancel="ClickOnCancel"/>
+                    ClickOnSave="ClickOnSave"
+                    ClickOnCancel="ClickOnCancel"/>
         </layout:FmVerticalLayoutGroup>
     </layout:FmLayoutControl>
 </userControl:DialogUserControl>

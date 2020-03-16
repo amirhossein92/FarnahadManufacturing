@@ -38,8 +38,10 @@
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
-                        <userControl:PaginationUserControl x:Name="PaginationUserControl"
-                                                           RefreshData="PaginationUserControlOnRefreshData" />
+                        <layout:FmLayoutItem>
+                            <userControl:PaginationUserControl x:Name="PaginationUserControl"
+                                                               RefreshData="PaginationUserControlOnRefreshData" />
+                        </layout:FmLayoutItem>
                         <layout:FmLayoutItem HorizontalContentAlignment="Right">
                             <buttons:FmViewSimpleButton Click="ViewButtonOnClick" />
                         </layout:FmLayoutItem>

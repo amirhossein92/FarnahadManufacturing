@@ -3,7 +3,7 @@ using FarnahadManufacturing.Control.Base.Layout;
 
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public partial class ShowAddressUserControl : FmGroupBox
+    public partial class ShowAddressUserControl : UserControlBase
     {
         public ShowAddressUserControl()
         {

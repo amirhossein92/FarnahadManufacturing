@@ -3,7 +3,7 @@ using FarnahadManufacturing.Control.Base.Layout;
 
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public partial class ListBoxButtonsUserControl : FmVerticalLayoutGroup
+    public partial class ListBoxButtonsUserControl : UserControlBase
     {
         public ListBoxButtonsUserControl()
         {

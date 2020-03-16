@@ -4,7 +4,7 @@ using FarnahadManufacturing.Control.Base.Layout;
 
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public partial class PaginationUserControl : FmHorizontalLayoutGroup
+    public partial class PaginationUserControl : UserControlBase
     {
         private int _currentPage = 1;
         private int _currentPageCount;

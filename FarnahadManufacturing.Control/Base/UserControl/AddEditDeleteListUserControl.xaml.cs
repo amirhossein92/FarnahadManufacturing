@@ -2,7 +2,7 @@
 
 namespace FarnahadManufacturing.Control.Base.UserControl
 {
-    public partial class AddEditDeleteListUserControl : System.Windows.Controls.UserControl
+    public partial class AddEditDeleteListUserControl : UserControlBase
     {
         public AddEditDeleteListUserControl()
         {

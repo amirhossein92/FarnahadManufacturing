@@ -1,5 +1,4 @@
-﻿// CHECK
-namespace FarnahadManufacturing.Control.Base.Size
+﻿namespace FarnahadManufacturing.Control.Base.Size
 {
     public enum FmControlWidth
     {

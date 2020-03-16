@@ -1,7 +1,4 @@
-﻿
-
-// CHECK
-namespace FarnahadManufacturing.Control.Base.Buttons
+﻿namespace FarnahadManufacturing.Control.Base.Buttons
 {
     public partial class FmMiniRefreshSimpleButton : FmMiniSimpleButton
     {

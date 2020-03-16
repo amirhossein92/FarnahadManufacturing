@@ -1,7 +1,4 @@
-﻿
-
-// CHECK
-namespace FarnahadManufacturing.Control.Base.Input
+﻿namespace FarnahadManufacturing.Control.Base.Input
 {
     public class FmLimitedDaySpinEdit : FmIntSpinEdit
     {

@@ -4,7 +4,6 @@ using System.Windows.Media;
 using DevExpress.Xpf.LayoutControl;
 using FarnahadManufacturing.Control.Base.Label;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.Layout
 {
     public class FmLayoutItem : LayoutItem

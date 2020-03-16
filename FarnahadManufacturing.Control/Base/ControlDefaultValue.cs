@@ -1,5 +1,4 @@
-﻿// CHECK
-namespace FarnahadManufacturing.Control.Base
+﻿namespace FarnahadManufacturing.Control.Base
 {
     public static class ControlDefaultValue
     {

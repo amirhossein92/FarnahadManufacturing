@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 
-// CHECK
 namespace FarnahadManufacturing.Control.Base.Buttons
 {
     public class FmMiniSimpleButton : FmSimpleButton

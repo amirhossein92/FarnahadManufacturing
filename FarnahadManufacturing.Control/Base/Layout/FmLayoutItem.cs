@@ -29,7 +29,7 @@ namespace FarnahadManufacturing.Control.Base.Layout
         private bool _isRequiredPropFlag;
         private void AddPropertyIsRequiredInLabel()
         {
-            if (this.IsActuallyRequired && this.IsEnabled && !_isRequiredPropFlag)
+            if (this.IsActuallyRequired && this.IsEnabled && !_isRequiredPropFlag && this.LabelElement != null)
             {
                 var redStyle = new Style
                 { Setters = { new Setter(ForegroundProperty, Brushes.Red) } };

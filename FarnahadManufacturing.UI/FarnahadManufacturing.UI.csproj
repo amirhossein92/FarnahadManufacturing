@@ -223,6 +223,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="UserControls\UcHome.xaml.cs">
+      <DependentUpon>UcHome.xaml</DependentUpon>
+    </Compile>
     <Page Include="Assets\DXSplashScreen\SplashScreenView1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -355,6 +358,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UcHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -470,6 +477,12 @@
     <Resource Include="Icons\NavigationBar\Province_Small.svg" />
     <Resource Include="Icons\NavigationBar\ShippingTerm_Small.svg" />
     <Resource Include="Icons\NavigationBar\Tracking_Small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\NavigationBar\Home_Small.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\NavigationBar\Home_Large.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

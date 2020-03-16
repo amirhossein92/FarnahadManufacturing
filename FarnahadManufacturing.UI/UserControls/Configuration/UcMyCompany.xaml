@@ -20,7 +20,7 @@
         <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
             <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
                 <layout:FmHorizontalLayoutGroup>
-                    <layout:FmLayoutItem Label="نام">
+                    <layout:FmLayoutItem Label="نام" IsRequired="True">
                         <input:FmTextEdit x:Name="TitleTextEdit" />
                     </layout:FmLayoutItem>
                 </layout:FmHorizontalLayoutGroup>

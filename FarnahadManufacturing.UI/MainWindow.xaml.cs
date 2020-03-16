@@ -12,6 +12,7 @@ using FarnahadManufacturing.Control.Base.Window;
 using FarnahadManufacturing.Control.Common;
 using FarnahadManufacturing.Data;
 using FarnahadManufacturing.UI.Common;
+using FarnahadManufacturing.UI.UserControls;
 using FarnahadManufacturing.UI.UserControls.BaseConfiguration;
 using FarnahadManufacturing.UI.UserControls.Configuration;
 
@@ -37,6 +38,7 @@ namespace FarnahadManufacturing.UI
             timer.Interval = 25000;
             timer.Tick += TimerOnElapsed;
             timer.Enabled = true;
+            OpenUserControlInNewTab<UcHome>("خانه");
         }
 
         private void TimerOnElapsed(object sender, EventArgs e)
@@ -58,6 +60,11 @@ namespace FarnahadManufacturing.UI
             ToolBarControl.Items.Clear();
             foreach (var item in toolBarItems)
                 ToolBarControl.Items.Add(item.Value);
+        }
+
+        private void HomeOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenUserControlInNewTab<UcHome>("خانه");
         }
 
         private void PartOnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -219,12 +226,6 @@ namespace FarnahadManufacturing.UI
                 if (item is DocumentPanel documentPanel && documentPanel.Content is T)
                     documentPanel.IsActive = true;
             }
-        }
-
-        private void MainWindowOnClosing(object sender, CancelEventArgs e)
-        {
-            if (!MessageBoxService.AskForClose())
-                e.Cancel = true;
         }
     }
 }

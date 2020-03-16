@@ -24,9 +24,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "گروه کاربر";
             ImagePath = "Icons/NavigationBar/UserGroup_Small.svg";
             InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
         }
 
         protected sealed override void InitialData()

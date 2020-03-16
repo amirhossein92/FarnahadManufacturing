@@ -33,8 +33,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="FilterSub"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -50,11 +50,11 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کشور"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
-                        <layout:FmLayoutItem Label="نام">
+                        <layout:FmLayoutItem Label="نام" IsRequired="True">
                             <input:FmTextEdit x:Name="NameTextEdit" />
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="مخفف">
-                            <input:FmTextEdit x:Name="AbbreviationTextEdit" />
+                        <layout:FmLayoutItem Label="مخفف" IsRequired="True">
+                            <input:FmAbbreviationTextEdit x:Name="AbbreviationTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="توضیحات" LabelPosition="Top">
                             <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />

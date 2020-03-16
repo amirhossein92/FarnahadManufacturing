@@ -25,16 +25,20 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "استان";
             ImagePath = "Icons/NavigationBar/Province_Small.svg";
             InitialData();
         }
 
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            LoadCountryComboBox();
+        }
+
         protected sealed override void InitialData()
         {
             LoadSearchGridControl();
-
-            LoadCountryComboBox();
         }
 
         public override void LoadSearchGridControl()

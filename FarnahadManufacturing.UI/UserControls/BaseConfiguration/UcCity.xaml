@@ -40,10 +40,10 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x2" MinWidth="75"/>
-                                    <columns:FmTextGridColumn Header="استان" FieldName="Province.Title" ReadOnly="True" FmGridColumnWidth="x" MinWidth="25"/>
-                                    <columns:FmTextGridColumn Header="کشور" FieldName="Province.Country.Title" ReadOnly="True" FmGridColumnWidth="x" MinWidth="25"/>
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="x" MinWidth="25"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain"/>
+                                    <columns:FmTextGridColumn Header="استان" FieldName="Province.Title" FmGridColumnWidth="FilterSub"/>
+                                    <columns:FmTextGridColumn Header="کشور" FieldName="Province.Country.Title" FmGridColumnWidth="FilterSub" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="FilterSub" />
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -59,14 +59,14 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="شهر"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" Orientation="Vertical" IsEnabled="False">
-                        <layout:FmLayoutItem Label="نام">
+                        <layout:FmLayoutItem Label="نام" IsRequired="True">
                             <input:FmTextEdit x:Name="TitleTextEdit"/>
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="کشور">
+                        <layout:FmLayoutItem Label="کشور" IsRequired="True">
                             <input:FmComboBoxEdit x:Name="CountryComboBox"
                                                   ValueMember="Id" DisplayMember = "Title"/>
                         </layout:FmLayoutItem>
-                        <layout:FmLayoutItem Label="استان">
+                        <layout:FmLayoutItem Label="استان" IsRequired="True">
                             <input:FmComboBoxEdit x:Name="ProvinceComboBox"
                                                   ValueMember="Id" DisplayMember = "Title"/>
                         </layout:FmLayoutItem>

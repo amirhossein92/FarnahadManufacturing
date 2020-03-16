@@ -32,6 +32,8 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            LoadCountryComboBox();
+            LoadProvinceComboBox(Convert.ToInt32(CountryComboBox.EditValue));
             CountryComboBox.SelectedIndexChanged += CountryComboBoxOnSelectedIndexChanged;
         }
 
@@ -39,7 +41,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
         {
             _cities = new ObservableCollection<City>();
             LoadSearchGridControlData();
-            LoadCountryComboBox();
+            //LoadCountryComboBox();
             IsNotEditingAndAdding();
         }
 
@@ -190,17 +192,17 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnAdding()
         {
-            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
+            TitleTextEdit.Focus();
         }
 
         protected override void OnEditing()
         {
-            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeCity.Title);
+            TitleTextEdit.Focus();
         }
 
         protected override void OnNotEditingAndAdding()

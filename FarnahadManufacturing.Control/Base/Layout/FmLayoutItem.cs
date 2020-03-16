@@ -26,16 +26,18 @@ namespace FarnahadManufacturing.Control.Base.Layout
             AddPropertyIsRequiredInLabel();
         }
 
+        private bool _isRequiredPropFlag;
         private void AddPropertyIsRequiredInLabel()
         {
-            if (this.IsActuallyRequired && this.IsEnabled)
+            if (this.IsActuallyRequired && this.IsEnabled && !_isRequiredPropFlag)
             {
                 var redStyle = new Style
                 { Setters = { new Setter(ForegroundProperty, Brushes.Red) } };
                 var stackPanel = new StackPanel { Orientation = Orientation.Horizontal };
                 stackPanel.Children.Add(new LayoutItemLabel { Content = this.LabelElement.Content });
-                stackPanel.Children.Add(new FmLabel { Text = "(ضروری)", Style = redStyle });
+                stackPanel.Children.Add(new FmLabel { Text = "(*)", Style = redStyle });
                 this.Label = stackPanel;
+                _isRequiredPropFlag = true;
             }
         }
 

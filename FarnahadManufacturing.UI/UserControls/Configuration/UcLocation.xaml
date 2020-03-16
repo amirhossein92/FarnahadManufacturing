@@ -44,16 +44,12 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True"
-                                                              FmGridColumnWidth="XSmall" />
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall" />
-                                    <columns:FmIntSpinEditGridColumn Header="شماره" FieldName="Number" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall" />
-                                    <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall"
-                                                              x:Name="LocationGroupComboBoxColumn"
-                                                              ValueMember="Value" DisplayMember="Title"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="FilterSub" />
+                                    <columns:FmIntSpinEditGridColumn Header="شماره" FieldName="Number" FmGridColumnWidth="FilterSub" />
+                                    <columns:FmComboBoxGridColumn Header="گروه" FieldName="LocationGroupId" FmGridColumnWidth="FilterSub"
+                                                                  x:Name="LocationGroupComboBoxColumn"
+                                                                  ValueMember="Value" DisplayMember="Title"/>
 
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
@@ -71,13 +67,13 @@
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="محل" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
-                            <layout:FmLayoutItem Label="نام">
+                            <layout:FmLayoutItem Label="نام" IsRequired="True">
                                 <input:FmTextEdit x:Name="NameTextEdit" />
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="توضیحات">
                                 <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
                             </layout:FmLayoutItem>
-                            <layout:FmLayoutItem Label="نوع">
+                            <layout:FmLayoutItem Label="نوع" IsRequired="True">
                                 <input:FmComboBoxEdit x:Name="LocationTypeComboBoxEdit"
                                                   ValueMember="Value" DisplayMember="Title"/>
                             </layout:FmLayoutItem>
@@ -90,7 +86,8 @@
                                                   ValueMember="Value" DisplayMember="Title"/>
                             </layout:FmLayoutItem>
                             <layout:FmHorizontalLayoutGroup>
-                                <layout:FmLayoutItem Label="شماره" HorizontalContentAlignment="Left" Width="200">
+                                <layout:FmLayoutItem Label="شماره" IsRequired="True"
+                                                     HorizontalContentAlignment="Left" Width="200">
                                     <input:FmIntSpinEdit x:Name="LocationNumberSpinEdit" FmControlWidth="Small"/>
                                 </layout:FmLayoutItem>
                                 <layout:FmLayoutItem HorizontalContentAlignment="Left">

@@ -12,7 +12,7 @@
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup HeaderTitle="محصول جایگزین"/>
-            <layout:FmLayoutItem Label="محصول جایگزین">
+            <layout:FmLayoutItem Label="محصول جایگزین" IsRequired="True">
                 <input:FmComboBoxEdit x:Name="ProductSubstituteComboBoxEdit"
                                       ValueMember="Value" DisplayMember="Title"/>
             </layout:FmLayoutItem>

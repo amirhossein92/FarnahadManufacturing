@@ -11,10 +11,8 @@
                  xmlns:window="clr-namespace:FarnahadManufacturing.Control.Base.Window;assembly=FarnahadManufacturing.Control"
                  xmlns:toolBar="clr-namespace:FarnahadManufacturing.Control.Base.ToolBar;assembly=FarnahadManufacturing.Control"
                  mc:Ignorable="d" FontSize="14"
-                 Title="سیستم مدیریت کالا" Height="450" Width="800"
-                 Closing="MainWindowOnClosing" WindowStartupLocation="CenterScreen" WindowState="Maximized"
-                 >
-    <layout:FmGrid FlowDirection="RightToLeft">
+                 Title="سیستم مدیریت کالا" Height="450" Width="800">
+    <layout:FmGrid>
         <layout:FmGrid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -125,9 +123,13 @@
         <dock:FmDockLayoutManager x:Name="DockLayoutManager" Grid.Row="2" Grid.Column="1"
                                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <dock:FmDockLayoutGroup AllowClose="True">
-                <layout:FmDockLayoutPanel ItemWidth="175" Caption="بخش های نرم افزار">
+                <layout:FmDockLayoutPanel ItemWidth="175" Caption="بخش های نرم افزار" 
+                                          MinWidth="100" MaxWidth="300">
                     <accordion:FmAccordionControl Grid.Row="2" Grid.Column="0">
                         <accordion:FmAccordionControl.Items>
+                            <accordion:FmAccordionItem Header="خانه"
+                                                       Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Home_Large.svg}"
+                                                       MouseDoubleClick="HomeOnMouseDoubleClick" />
                             <accordion:FmAccordionItem Header="مواد"
                                                        Glyph="{dx:SvgImageSource Uri=Icons/NavigationBar/Part_Large.svg}">
                                 <accordion:FmAccordionItem.Items>

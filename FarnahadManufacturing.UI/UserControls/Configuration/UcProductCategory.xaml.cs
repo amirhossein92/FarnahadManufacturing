@@ -19,6 +19,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         public UcProductCategory()
         {
             InitializeComponent();
+            
             UserControlTitle = "دسته بندی محصولات";
 
             InitialData();

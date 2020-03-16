@@ -14,14 +14,14 @@
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="سفارش دوباره" />
-            <layout:FmLayoutItem Label="گروه موقعیت">
+            <layout:FmLayoutItem Label="گروه موقعیت" IsRequired="True">
                 <input:FmComboBoxEdit x:Name="LocationGroupComboBoxEdit" 
                                       ValueMember="Value" DisplayMember="Title"/>
             </layout:FmLayoutItem>
-            <layout:FmLayoutItem Label="حداکثر مقدار">
+            <layout:FmLayoutItem Label="حداکثر مقدار" IsRequired="True">
                 <input:FmSpinEdit x:Name="OrderUpToLevelSpinEdit" />
             </layout:FmLayoutItem>
-            <layout:FmLayoutItem Label="حداقل مقدار">
+            <layout:FmLayoutItem Label="حداقل مقدار" IsRequired="True">
                 <input:FmSpinEdit x:Name="ReorderPointSpinEdit" />
             </layout:FmLayoutItem>
             <userControl:SaveCancelUserControl 

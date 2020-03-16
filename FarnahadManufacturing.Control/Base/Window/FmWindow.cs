@@ -1,5 +1,8 @@
-﻿using System.Windows.Media;
+﻿using System.ComponentModel;
+using System.Windows;
+using System.Windows.Media;
 using DevExpress.Xpf.Core;
+using FarnahadManufacturing.Control.Common;
 
 // CHECK
 namespace FarnahadManufacturing.Control.Base.Window
@@ -12,6 +15,16 @@ namespace FarnahadManufacturing.Control.Base.Window
             FontSize = 13;
             MinWidth = 600;
             MinHeight = 400;
+
+            Closing += OnClosing;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            WindowState = WindowState.Maximized;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs e)
+        {
+            if (!MessageBoxService.AskForClose())
+                e.Cancel = true;
         }
     }
 }

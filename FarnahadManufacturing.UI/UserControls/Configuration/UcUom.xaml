@@ -22,7 +22,7 @@
                             <input:FmTextEdit x:Name="SearchTitleTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="مخفف">
-                            <input:FmTextEdit x:Name="SearchAbbreviationTitleTextEdit" />
+                            <input:FmAbbreviationTextEdit x:Name="SearchAbbreviationTitleTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem HorizontalContentAlignment="Right">
                             <buttons:FmSearchSimpleButton Click="SearchButtonOnClick" />
@@ -31,10 +31,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True"
-                                                              FmGridColumnWidth="XSmall" />
-                                    <columns:FmTextGridColumn Header="مخفف" FieldName="Abbreviation" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall" />
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="مخفف" FieldName="Abbreviation" FmGridColumnWidth="FilterSub" />
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -51,16 +49,16 @@
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="واحد" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
-                            <layout:FmLayoutItem Label="مخفف">
-                                <input:FmTextEdit x:Name="AbbreviationTextEdit" />
+                            <layout:FmLayoutItem Label="مخفف" IsRequired="True">
+                                <input:FmAbbreviationTextEdit x:Name="AbbreviationTextEdit" />
                             </layout:FmLayoutItem>
-                            <layout:FmLayoutItem Label="عنوان">
+                            <layout:FmLayoutItem Label="عنوان" IsRequired="True">
                                 <input:FmTextEdit x:Name="TitleTextEdit" />
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="توضیحات">
                                 <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />
                             </layout:FmLayoutItem>
-                            <layout:FmLayoutItem Label="نوع">
+                            <layout:FmLayoutItem Label="نوع" IsRequired="True">
                                 <input:FmComboBoxEdit x:Name="UomTypeComboBoxEdit"
                                                   ValueMember="Value" DisplayMember="Title"/>
                             </layout:FmLayoutItem>

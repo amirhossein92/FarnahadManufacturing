@@ -14,7 +14,7 @@
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup HeaderTitle="تقسیم بندی فعالیت ها"/>
-            <layout:FmLayoutItem Label="نام">
+            <layout:FmLayoutItem Label="نام" IsRequired="True">
                 <input:FmTextEdit x:Name="TitleTextEdit"/>
             </layout:FmLayoutItem>
             <layout:FmLayoutItem Label="شاخه اصلی">

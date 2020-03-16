@@ -11,6 +11,7 @@ namespace FarnahadManufacturing.Control.Base.Input
             NullValue = null;
             NullValueButtonPlacement = EditorPlacement.EditBox;
             IsEnabledChanged += OnIsEnabledChanged;
+            AutoComplete = true;
         }
 
         private void OnIsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)

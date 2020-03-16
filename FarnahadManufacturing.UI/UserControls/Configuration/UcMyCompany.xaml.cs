@@ -30,11 +30,23 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "شرکت";
             ImagePath = "Icons/NavigationBar/Company_Small.svg";
 
             SetToolBarItems();
             InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            LoadContactTypeComboBox();
+            LoadAddressTypeComboBox();
+            LoadCarrierComboBox();
+            LoadCarrierServiceComboBox();
+            LoadCountryComboBox();
+            LoadProvinceComboBox();
+            LoadCityComboBox();
         }
 
         protected sealed override void SetToolBarItems()
@@ -44,94 +56,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             ToolBarItems.Add(saveButton.Name, saveButton);
         }
 
-        private void SaveButtonOnItemClick(object sender, ItemClickEventArgs e)
-        {
-            ReadData(_myCompany);
-            ReadData(_activeAddress);
-            using (var dbContext = new FarnahadManufacturingDbContext())
-            {
-                var myCompanyInDb = dbContext.MyCompanies.Find(_myCompany.Id);
-
-                myCompanyInDb.Title = _myCompany.Title;
-                myCompanyInDb.IsTaxExempt = _myCompany.IsTaxExempt;
-                myCompanyInDb.DefaultCarrierId = _myCompany.DefaultCarrierId;
-                myCompanyInDb.DefaultCarrierServiceId = _myCompany.DefaultCarrierServiceId;
-                myCompanyInDb.Logo = _myCompany.Logo;
-
-                var addressesInDbs = dbContext.Addresses.Where(item => item.CompanyId == _myCompany.Id).ToList();
-                foreach (var addressInDb in addressesInDbs)
-                {
-                    var address = _myCompany.Addresses.FirstOrDefault(item => item.Id == addressInDb.Id);
-                    if (address != null)
-                    {
-                        addressInDb.Title = address.Title;
-                        addressInDb.AddressDetail = address.AddressDetail;
-                        addressInDb.IsDefaultAddress = address.IsDefaultAddress;
-                        addressInDb.ProvinceId = address.ProvinceId;
-                        addressInDb.AddressTypeId = address.AddressTypeId;
-                        addressInDb.CityId = address.CityId;
-                        addressInDb.CountryId = address.CountryId;
-                        addressInDb.IsResidentialAddress = address.IsResidentialAddress;
-                        addressInDb.Latitude = address.Latitude;
-                        addressInDb.Longitude = address.Longitude;
-                        addressInDb.ZipCode = address.ZipCode;
-
-                        var contactInformationsInDbs = dbContext.ContactInformations.Where(item => item.AddressId == addressInDb.Id).ToList();
-                        foreach (var contactInformationInDb in contactInformationsInDbs)
-                        {
-                            var contactInformation = address.ContactInformations.FirstOrDefault(item => item.Id == contactInformationInDb.Id);
-                            if (contactInformation != null)
-                            {
-                                contactInformationInDb.Title = contactInformation.Title;
-                                contactInformationInDb.IsDefault = contactInformation.IsDefault;
-                                contactInformationInDb.ContactType = contactInformation.ContactType;
-                                contactInformationInDb.Value = contactInformation.Value;
-                            }
-                            else
-                                dbContext.ContactInformations.Remove(contactInformationInDb);
-                        }
-                        foreach (var contactInformation in address.ContactInformations.Where(item => item.Id <= 0))
-                        {
-                            contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
-                            contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
-                            addressInDb.ContactInformations.Add(contactInformation);
-                        }
-                    }
-                    else
-                    {
-                        dbContext.ContactInformations.RemoveRange(addressInDb.ContactInformations);
-                        dbContext.Addresses.Remove(addressInDb);
-                    }
-                }
-
-                foreach (var address in _myCompany.Addresses.Where(item => item.Id <= 0))
-                {
-                    address.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
-                    address.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
-                    foreach (var contactInformation in address.ContactInformations)
-                    {
-                        contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
-                        contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
-                    }
-                    myCompanyInDb.Addresses.Add(address);
-                }
-                dbContext.SaveChanges();
-            }
-
-            MessageBoxService.SaveConfirmation(_myCompany.Title);
-            LoadMyCompany();
-        }
-
         protected sealed override void InitialData()
         {
-            LoadContactTypeComboBox();
-            LoadAddressTypeComboBox();
-            LoadCarrierComboBox();
-            LoadCarrierServiceComboBox();
-            LoadCountryComboBox();
-            LoadProvinceComboBox();
-            LoadCityComboBox();
-
             LoadMyCompany();
         }
 
@@ -242,6 +168,84 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             _addresses.Add(newAddress);
             _activeAddress = newAddress;
             AddressesGridControl.SelectedItem = _activeAddress;
+        }
+
+        private void SaveButtonOnItemClick(object sender, ItemClickEventArgs e)
+        {
+            ReadData(_myCompany);
+            ReadData(_activeAddress);
+            using (var dbContext = new FarnahadManufacturingDbContext())
+            {
+                var myCompanyInDb = dbContext.MyCompanies.Find(_myCompany.Id);
+
+                myCompanyInDb.Title = _myCompany.Title;
+                myCompanyInDb.IsTaxExempt = _myCompany.IsTaxExempt;
+                myCompanyInDb.DefaultCarrierId = _myCompany.DefaultCarrierId;
+                myCompanyInDb.DefaultCarrierServiceId = _myCompany.DefaultCarrierServiceId;
+                myCompanyInDb.Logo = _myCompany.Logo;
+
+                var addressesInDbs = dbContext.Addresses.Where(item => item.CompanyId == _myCompany.Id).ToList();
+                foreach (var addressInDb in addressesInDbs)
+                {
+                    var address = _myCompany.Addresses.FirstOrDefault(item => item.Id == addressInDb.Id);
+                    if (address != null)
+                    {
+                        addressInDb.Title = address.Title;
+                        addressInDb.AddressDetail = address.AddressDetail;
+                        addressInDb.IsDefaultAddress = address.IsDefaultAddress;
+                        addressInDb.ProvinceId = address.ProvinceId;
+                        addressInDb.AddressTypeId = address.AddressTypeId;
+                        addressInDb.CityId = address.CityId;
+                        addressInDb.CountryId = address.CountryId;
+                        addressInDb.IsResidentialAddress = address.IsResidentialAddress;
+                        addressInDb.Latitude = address.Latitude;
+                        addressInDb.Longitude = address.Longitude;
+                        addressInDb.ZipCode = address.ZipCode;
+
+                        var contactInformationsInDbs = dbContext.ContactInformations.Where(item => item.AddressId == addressInDb.Id).ToList();
+                        foreach (var contactInformationInDb in contactInformationsInDbs)
+                        {
+                            var contactInformation = address.ContactInformations.FirstOrDefault(item => item.Id == contactInformationInDb.Id);
+                            if (contactInformation != null)
+                            {
+                                contactInformationInDb.Title = contactInformation.Title;
+                                contactInformationInDb.IsDefault = contactInformation.IsDefault;
+                                contactInformationInDb.ContactType = contactInformation.ContactType;
+                                contactInformationInDb.Value = contactInformation.Value;
+                            }
+                            else
+                                dbContext.ContactInformations.Remove(contactInformationInDb);
+                        }
+                        foreach (var contactInformation in address.ContactInformations.Where(item => item.Id <= 0))
+                        {
+                            contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                            contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                            addressInDb.ContactInformations.Add(contactInformation);
+                        }
+                    }
+                    else
+                    {
+                        dbContext.ContactInformations.RemoveRange(addressInDb.ContactInformations);
+                        dbContext.Addresses.Remove(addressInDb);
+                    }
+                }
+
+                foreach (var address in _myCompany.Addresses.Where(item => item.Id <= 0))
+                {
+                    address.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                    address.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                    foreach (var contactInformation in address.ContactInformations)
+                    {
+                        contactInformation.CreatedByUserId = ApplicationSessionService.GetActiveUserId();
+                        contactInformation.CreatedDateTime = ApplicationSessionService.GetNowDateTime();
+                    }
+                    myCompanyInDb.Addresses.Add(address);
+                }
+                dbContext.SaveChanges();
+            }
+
+            MessageBoxService.SaveConfirmation(_myCompany.Title);
+            LoadMyCompany();
         }
 
         private void DeleteAddressButtonOnClick(object sender, RoutedEventArgs e)

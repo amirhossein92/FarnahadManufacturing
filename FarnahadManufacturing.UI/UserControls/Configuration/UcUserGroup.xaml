@@ -29,8 +29,7 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True"
-                                                              FmGridColumnWidth="XSmall" />
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -47,7 +46,7 @@
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="گروه کاربر" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
-                            <layout:FmLayoutItem Label="عنوان">
+                            <layout:FmLayoutItem Label="عنوان" IsRequired="True">
                                 <input:FmTextEdit x:Name="TitleTextEdit" />
                             </layout:FmLayoutItem>
                             <layout:FmHorizontalLayoutGroup>

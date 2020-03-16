@@ -9,6 +9,7 @@ namespace FarnahadManufacturing.Control.Base.Buttons
         {
             BorderBrush = Brushes.Transparent;
             BorderThickness = new Thickness(0);
+            MinWidth = 0;
             Width = 30;
         }
     }

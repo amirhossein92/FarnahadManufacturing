@@ -39,8 +39,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="نام کاربری" FieldName="UserName" ReadOnly="True" FmGridColumnWidth="x" />
-                                    <columns:FmTextGridColumn Header="نام خانوادگی" FieldName="LastName" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="نام کاربری" FieldName="UserName" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="نام خانوادگی" FieldName="LastName" FmGridColumnWidth="FilterSub"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -59,15 +59,15 @@
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
                             <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
                                 <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Label="نام">
+                                    <layout:FmLayoutItem Label="نام" IsRequired="True">
                                         <input:FmTextEdit x:Name="FirstNameTextEdit" />
                                     </layout:FmLayoutItem>
-                                    <layout:FmLayoutItem Label="نام خانوادگی">
+                                    <layout:FmLayoutItem Label="نام خانوادگی" IsRequired="True">
                                         <input:FmTextEdit x:Name="LastNameTextEdit" />
                                     </layout:FmLayoutItem>
                                 </layout:FmHorizontalLayoutGroup>
                                 <layout:FmHorizontalLayoutGroup>
-                                    <layout:FmLayoutItem Label="نام کاربری">
+                                    <layout:FmLayoutItem Label="نام کاربری" IsRequired="True">
                                         <input:FmTextEdit x:Name="UserNameTextEdit" />
                                     </layout:FmLayoutItem>
                                     <layout:FmLayoutItem Label="مخفف">
@@ -79,7 +79,7 @@
                                         <input:FmEmailTextEdit x:Name="EmailTextEdit"/>
                                     </layout:FmLayoutItem>
                                     <layout:FmLayoutItem Label="شماره تلفن">
-                                        <input:FmTextEdit x:Name="PhoneNumberTextEdit" />
+                                        <input:FmPhoneNumberTextEdit x:Name="PhoneNumberTextEdit" />
                                     </layout:FmLayoutItem>
                                 </layout:FmHorizontalLayoutGroup>
                                 <layout:FmHorizontalLayoutGroup>

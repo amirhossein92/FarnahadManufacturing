@@ -32,16 +32,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "فروشنده";
             ImagePath = "Icons/NavigationBar/Vendor_Small.svg";
             InitialData();
         }
 
-        protected sealed override void InitialData()
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            _vendors = new ObservableCollection<Vendor>();
-            LoadSearchGridControlData();
-
             LoadContactTypeComboBox();
             LoadCityComboBox();
             LoadProvinceComboBox();
@@ -51,6 +49,12 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             LoadCarrierServiceComboBoxEdit();
             LoadShippingTermComboBoxEdit();
             LoadTermComboBoxEdit();
+        }
+
+        protected sealed override void InitialData()
+        {
+            _vendors = new ObservableCollection<Vendor>();
+            LoadSearchGridControlData();
 
             LoadGridControls();
         }

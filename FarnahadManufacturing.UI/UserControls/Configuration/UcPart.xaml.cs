@@ -31,15 +31,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "کالا";
             ImagePath = "Icons/NavigationBar/Part_Small.svg";
             InitialData();
         }
 
-        protected sealed override void InitialData()
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            LoadSearchGridControl();
-
             LoadUomComboBox();
             LoadDistanceUomComboBox();
             LoadWeightUomComboBox();
@@ -48,6 +47,11 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             LoadLocationGroupComboBox();
             LoadLocationComboBox();
             LoadPartTypes();
+        }
+
+        protected sealed override void InitialData()
+        {
+            LoadSearchGridControl();
         }
 
         private void LoadUomComboBox()

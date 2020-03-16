@@ -35,6 +35,14 @@ namespace FarnahadManufacturing.Control.Base.GridControl.Columns
                     case FmGridColumnWidth.x3:
                         column.Width = new GridColumnWidth(3, GridColumnUnitType.Star);
                         break;
+                    case FmGridColumnWidth.FilterMain:
+                        column.Width = new GridColumnWidth(2, GridColumnUnitType.Star);
+                        column.MinWidth = 75;
+                        break;
+                    case FmGridColumnWidth.FilterSub:
+                        column.Width = new GridColumnWidth(1, GridColumnUnitType.Star);
+                        column.MinWidth = 50;
+                        break;
                     default:
                         var value = Convert.ToDouble(e.NewValue);
                         column.Width = new GridColumnWidth(value, GridColumnUnitType.Pixel);

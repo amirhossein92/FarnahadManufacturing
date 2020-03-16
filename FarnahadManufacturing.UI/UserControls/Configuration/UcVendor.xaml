@@ -43,8 +43,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                          MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
-                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="شماره" FieldName="Number" FmGridColumnWidth="FilterSub"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -62,7 +62,7 @@
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
                             <layout:FmHorizontalLayoutGroup>
-                                <layout:FmLayoutItem Label="نام">
+                                <layout:FmLayoutItem Label="نام" IsRequired="True">
                                     <input:FmTextEdit x:Name="TitleTextEdit" />
                                 </layout:FmLayoutItem>
                                 <layout:FmLayoutItem HorizontalAlignment="Right">

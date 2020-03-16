@@ -13,7 +13,7 @@
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup HeaderTitle="دسته بندی محصولات"/>
-            <layout:FmLayoutItem Label="نام گروه">
+            <layout:FmLayoutItem Label="نام گروه" IsRequired="True">
                 <input:FmTextEdit x:Name="GroupNameTextEdit"/>
             </layout:FmLayoutItem>
             <layout:FmLayoutItem Label="شاخه اصلی">

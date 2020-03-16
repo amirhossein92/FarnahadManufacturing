@@ -17,5 +17,7 @@ namespace FarnahadManufacturing.Control.Base.Size
         Large = 200,
         XLarge = 250,
         XXLarge = 300,
+        FilterMain,
+        FilterSub
     }
 }

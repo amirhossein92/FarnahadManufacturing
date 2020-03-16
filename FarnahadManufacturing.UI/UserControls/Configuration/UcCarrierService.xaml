@@ -16,10 +16,10 @@
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="خدمات پیک" />
-            <layout:FmLayoutItem Label="عنوان">
+            <layout:FmLayoutItem Label="عنوان" IsRequired="True">
                 <input:FmTextEdit x:Name="TitleTextEdit" />
             </layout:FmLayoutItem>
-            <layout:FmLayoutItem Label="کد">
+            <layout:FmLayoutItem Label="کد" IsRequired="True">
                 <input:FmTextEdit x:Name="CodeTextEdit" />
             </layout:FmLayoutItem>
             <userControl:SaveCancelUserControl 

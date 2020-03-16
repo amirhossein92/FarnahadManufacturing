@@ -25,9 +25,14 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "نرخ مالیاتی";
             ImagePath = "Icons/NavigationBar/TaxRate_Small.svg";
             InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
         }
 
         protected sealed override void InitialData()

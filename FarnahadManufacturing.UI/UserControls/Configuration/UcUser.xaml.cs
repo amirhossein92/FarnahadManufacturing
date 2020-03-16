@@ -25,16 +25,21 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "کاربر";
             ImagePath = "Icons/NavigationBar/User_Small.svg";
             InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            LoadCustomerGroups();
         }
 
         protected sealed override void InitialData()
         {
             _users = new ObservableCollection<User>();
             LoadSearchGridControlData();
-            LoadCustomerGroups();
         }
 
         private void LoadSearchGridControlData(string userName = null, string name = null)
@@ -234,6 +239,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             user.Initial = InitialTextEdit.Text;
             user.Email = EmailTextEdit.Text;
             user.PhoneNumber = PhoneNumberTextEdit.Text;
+            user.IsActive = (bool)IsActiveCheckEdit.EditValue;
+
             //user.CustomerGroups = CurrentUserGroupsListBoxEdit.ItemsSource as ObservableCollection<CustomerGroup>;
             if (CurrentLocationGroupListBoxEdit.ItemsSource is ObservableCollection<LocationGroup> currentLocationGroups)
                 user.LocationGroupMembers = currentLocationGroups.ToList();
@@ -250,6 +257,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             CurrentUserGroupsListBoxEdit.ItemsSource = new ObservableCollection<CustomerGroup>(user.CustomerGroups);
             CurrentLocationGroupListBoxEdit.ItemsSource = new ObservableCollection<LocationGroup>(user.LocationGroupMembers);
             AvailableLocationGroupListBoxEdit.ItemsSource = new ObservableCollection<LocationGroup>(GetAvailableLocationGroups());
+            IsActiveCheckEdit.EditValue = user.IsActive;
         }
 
         private void AddSelectedLocationGroupToCurrentLocationGroupsOnClick(object sender, RoutedEventArgs e)

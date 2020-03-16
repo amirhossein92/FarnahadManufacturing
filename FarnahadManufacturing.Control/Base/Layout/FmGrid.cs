@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace FarnahadManufacturing.Control.Base.Layout
 {
@@ -6,7 +7,7 @@ namespace FarnahadManufacturing.Control.Base.Layout
     {
         public FmGrid()
         {
-
+            FlowDirection = FlowDirection.RightToLeft;
         }
     }
 }

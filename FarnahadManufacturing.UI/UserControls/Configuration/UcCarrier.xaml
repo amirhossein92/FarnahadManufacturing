@@ -38,8 +38,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="FilterSub"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -55,7 +55,7 @@
                 <layout:FmLayoutControl Orientation="Vertical">
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="پیک"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
-                        <layout:FmLayoutItem Label="عنوان">
+                        <layout:FmLayoutItem Label="عنوان" IsRequired="True">
                             <input:FmTextEdit x:Name="TitleTextEdit" />
                         </layout:FmLayoutItem>
                         <layout:FmLayoutItem Label="کد استاندارد پیک">

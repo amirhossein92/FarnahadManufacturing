@@ -38,8 +38,8 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
-                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="XXSmall"/>
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="FilterSub"/>
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -56,18 +56,18 @@
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="کالا"/>
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False" View="Tabs">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
-                            <layout:FmLayoutItem Label="نام کالا">
+                            <layout:FmLayoutItem Label="نام کالا" IsRequired="True">
                                 <input:FmTextEdit x:Name="PartTitleTextEdit" />
                             </layout:FmLayoutItem>
                             <layout:FmHorizontalLayoutGroup>
-                                <layout:FmLayoutItem Label="شماره کالا">
+                                <layout:FmLayoutItem Label="شماره کالا" IsRequired="True">
                                     <input:FmTextEdit x:Name="PartNumberTextEdit" />
                                 </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="واحد اندازه گیری">
+                                <layout:FmLayoutItem Label="واحد اندازه گیری"  IsRequired="True">
                                     <input:FmComboBoxEdit x:Name="UomComboBoxEdit" 
                                                           ValueMember="Id" DisplayMember="Title"/>
                                 </layout:FmLayoutItem>
-                                <layout:FmLayoutItem Label="نوع کالا">
+                                <layout:FmLayoutItem Label="نوع کالا" IsRequired="True">
                                     <input:FmComboBoxEdit x:Name="PartTypeComboBoxEdit" 
                                                           ValueMember="Value" DisplayMember="Title"/>
                                 </layout:FmLayoutItem>

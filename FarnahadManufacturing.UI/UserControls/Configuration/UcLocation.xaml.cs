@@ -26,19 +26,23 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "محل";
             ImagePath = "Icons/NavigationBar/Location_Small.svg";
             InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            LoadLocationGroupComboBox();
+            LoadLocationTypeComboBox();
+            LoadCustomerComboBox();
         }
 
         protected sealed override void InitialData()
         {
             LoadSearchStatusComboBox();
             LoadSearchGridControl();
-
-            LoadLocationGroupComboBox();
-            LoadLocationTypeComboBox();
-            LoadCustomerComboBox();
         }
 
         public override void LoadSearchGridControl()

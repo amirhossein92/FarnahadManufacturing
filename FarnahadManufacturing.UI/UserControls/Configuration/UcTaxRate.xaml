@@ -36,14 +36,10 @@
                             <gridControl:FmSearchGridControl x:Name="SearchGridControl"
                                                              MouseDoubleClick="SearchGridControlOnMouseDoubleClick">
                                 <gridControl:FmSearchGridControl.Columns>
-                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" ReadOnly="True"
-                                                              FmGridColumnWidth="XSmall" />
-                                    <columns:FmTextGridColumn Header="مخفف" FieldName="Abbreviation" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall" />
-                                    <columns:FmPercentageSpinEditGridColumn Header="درصد" FieldName="Percentage" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall" />
-                                    <columns:FmSpinEditGridColumn Header="مقدار" FieldName="FlatRate" ReadOnly="True"
-                                                              FmGridColumnWidth="XXSmall" />
+                                    <columns:FmTextGridColumn Header="عنوان" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                    <columns:FmTextGridColumn Header="مخفف" FieldName="Abbreviation" FmGridColumnWidth="FilterSub" />
+                                    <columns:FmPercentageSpinEditGridColumn Header="درصد" FieldName="Percentage" FmGridColumnWidth="FilterSub" />
+                                    <columns:FmSpinEditGridColumn Header="مقدار" FieldName="FlatRate" FmGridColumnWidth="FilterSub" />
                                 </gridControl:FmSearchGridControl.Columns>
                             </gridControl:FmSearchGridControl>
                         </layout:FmLayoutItem>
@@ -60,11 +56,11 @@
                     <layout:FmHeaderLayoutGroup x:Name="FmHeaderLayoutGroup" HeaderTitle="نرخ مالیاتی" />
                     <layout:FmVerticalLayoutGroup x:Name="MainLayoutGroup" IsEnabled="False">
                         <layout:FmVerticalLayoutGroup Header="اطلاعات کلی">
-                            <layout:FmLayoutItem Label="عنوان">
+                            <layout:FmLayoutItem Label="عنوان" IsRequired="True">
                                 <input:FmTextEdit x:Name="TitleTextEdit" />
                             </layout:FmLayoutItem>
-                            <layout:FmLayoutItem Label="مخفف">
-                                <input:FmTextEdit x:Name="AbbreviationTextEdit" />
+                            <layout:FmLayoutItem Label="مخفف" IsRequired="True">
+                                <input:FmAbbreviationTextEdit x:Name="AbbreviationTextEdit" />
                             </layout:FmLayoutItem>
                             <layout:FmLayoutItem Label="توضیحات">
                                 <input:FmMultiLineTextEdit x:Name="DescriptionTextEdit" />

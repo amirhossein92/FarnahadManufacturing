@@ -29,10 +29,23 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         {
             InitializeComponent();
 
+            this.Loaded += OnLoaded;
             UserControlTitle = "محصولات";
             ImagePath = "Icons/NavigationBar/Product_Small.svg";
             AddCustomToolBarItems();
             InitialData();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            LoadParts();
+            LoadUoms();
+            LoadDistanceUoms();
+            LoadWeightUoms();
+            LoadCategories();
+            LoadSaleOrders();
+            LoadProductSubstitute();
+            LoadProductAssociatePriceTypes();
         }
 
         private void AddCustomToolBarItems()
@@ -55,15 +68,6 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
         protected sealed override void InitialData()
         {
             LoadSearchGridControl();
-
-            LoadParts();
-            LoadUoms();
-            LoadDistanceUoms();
-            LoadWeightUoms();
-            LoadCategories();
-            LoadSaleOrders();
-            LoadProductSubstitute();
-            LoadProductAssociatePriceTypes();
         }
 
         private void LoadParts()

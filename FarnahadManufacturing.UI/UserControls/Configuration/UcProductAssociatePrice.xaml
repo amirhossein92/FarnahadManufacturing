@@ -12,11 +12,11 @@
     <layout:FmLayoutControl>
         <layout:FmVerticalLayoutGroup>
             <layout:FmHeaderLayoutGroup HeaderTitle="هزینه مرتبط با محصول"/>
-            <layout:FmLayoutItem Label="نوع هزینه مرتبط">
+            <layout:FmLayoutItem Label="نوع هزینه مرتبط" IsRequired="True">
                 <input:FmComboBoxEdit x:Name="ProductAssociatePriceTypeComboBoxEdit"
                                       ValueMember="Value" DisplayMember="Title"/>
             </layout:FmLayoutItem>
-            <layout:FmLayoutItem Label="قیمت">
+            <layout:FmLayoutItem Label="قیمت" IsRequired="True">
                 <input:FmCurrencySpinEdit x:Name="PriceSpinEdit"/>
             </layout:FmLayoutItem>
             <userControl:SaveCancelUserControl

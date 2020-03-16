@@ -25,7 +25,7 @@
                     <layout:FmLayoutItem VerticalAlignment="Stretch">
                         <treeList:FmTreeListControl x:Name="ProductCategoriesTreeListControl">
                             <treeList:FmTreeListControl.Columns>
-                                <treeList:FmTreeListColumn FieldName="Title" Header="عنوان"/>
+                                <treeList:FmTreeListColumn FieldName="Title" Header="عنوان" Width="Auto"/>
                             </treeList:FmTreeListControl.Columns>
                             <treeList:FmTreeListControl.View>
                                 <treeList:FmTreeListView x:Name="ProductCategoriesTreeListView"/>
@@ -70,8 +70,8 @@
                     <layout:FmLayoutItem VerticalAlignment="Stretch" Height="125">
                         <gridControl:FmSearchGridControl x:Name="SearchGridControl">
                             <gridControl:FmSearchGridControl.Columns>
-                                <columns:FmTextGridColumn Header="شماره" FieldName="Title" ReadOnly="True" FmGridColumnWidth="x" />
-                                <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" ReadOnly="True" FmGridColumnWidth="Small"/>
+                                <columns:FmTextGridColumn Header="شماره" FieldName="Title" FmGridColumnWidth="FilterMain" />
+                                <columns:FmTextGridColumn Header="توضیحات" FieldName="Description" FmGridColumnWidth="FilterMain"/>
                             </gridControl:FmSearchGridControl.Columns>
                         </gridControl:FmSearchGridControl>
                     </layout:FmLayoutItem>

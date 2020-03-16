@@ -36,6 +36,7 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 _productCategory = new ProductCategory();
             }
             LoadProductCategories();
+            GroupNameTextEdit.Focus();
         }
 
         private ProductCategory GetProductCategory(int productCategoryId)

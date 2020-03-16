@@ -142,16 +142,16 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
-            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
+            TitleTextEdit.Focus();
         }
 
         protected override void OnEditing()
         {
-            TitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeTaxRate.Title);
+            TitleTextEdit.Focus();
         }
 
         protected override void OnNotEditingAndAdding()

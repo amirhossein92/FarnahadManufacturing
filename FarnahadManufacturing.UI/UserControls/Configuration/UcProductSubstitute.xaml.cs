@@ -30,6 +30,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 UserControlTitle = "اضافه کردن محصول جایگزین";
 
             LoadSubstituteProducts();
+
+            ProductSubstituteComboBoxEdit.Focus();
         }
 
         private void LoadSubstituteProducts()

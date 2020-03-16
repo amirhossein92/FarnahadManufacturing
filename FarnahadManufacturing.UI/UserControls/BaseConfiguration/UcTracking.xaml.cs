@@ -126,16 +126,16 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnAdding()
         {
-            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
+            NameTextEdit.Focus();
         }
 
         protected override void OnEditing()
         {
-            NameTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeTracking.Title);
+            NameTextEdit.Focus();
         }
 
         protected override void OnNotEditingAndAdding()

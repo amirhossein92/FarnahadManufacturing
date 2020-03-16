@@ -25,6 +25,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 FillData(_activeCarrierService);
             }
+
+            TitleTextEdit.Focus();
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)

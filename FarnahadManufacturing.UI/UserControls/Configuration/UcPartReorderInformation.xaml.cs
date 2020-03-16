@@ -29,6 +29,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 UserControlTitle = "ویرایش سفارش دوباره";
             else
                 UserControlTitle = "اضافه کردن سفارش دوباره";
+
+            LocationGroupComboBoxEdit.Focus();
         }
 
         private void LoadLocationGroups()

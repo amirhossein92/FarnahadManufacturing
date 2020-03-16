@@ -363,17 +363,19 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
 
         protected override void OnAdding()
         {
-            PartTitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle = HeaderService.GenerateAddHeaderTitle(UserControlTitle);
+            MainLayoutGroup.SelectedTabIndex = 0;
+            PartTitleTextEdit.Focus();
         }
 
         protected override void OnEditing()
         {
-            PartTitleTextEdit.Focus();
             MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activePart.Title);
+            MainLayoutGroup.SelectedTabIndex = 0;
+            PartTitleTextEdit.Focus();
         }
 
         protected override void OnNotEditingAndAdding()

@@ -199,7 +199,6 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
 
         protected override void OnEditing()
         {
-            MainLayoutGroup.IsEnabled = true;
             FmHeaderLayoutGroup.HeaderTitle =
                 HeaderService.GenerateEditHeaderTitle(UserControlTitle, _activeCity.Title);
             TitleTextEdit.Focus();

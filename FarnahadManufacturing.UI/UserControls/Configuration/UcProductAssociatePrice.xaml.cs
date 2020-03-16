@@ -29,6 +29,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
                 UserControlTitle = "ویرایش هزینه مرتبط با محصول";
             else
                 UserControlTitle = "اضافه کردن هزینه مرتبط با محصول";
+
+            ProductAssociatePriceTypeComboBoxEdit.Focus();
         }
 
         private void LoadAssociatePriceTypes()

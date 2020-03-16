@@ -25,6 +25,8 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             {
                 CurrentPasswordTextEdit.IsEnabled = false;
             }
+
+            CurrentPasswordTextEdit.Focus();
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)

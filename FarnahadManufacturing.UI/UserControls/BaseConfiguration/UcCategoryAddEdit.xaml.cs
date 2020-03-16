@@ -32,6 +32,7 @@ namespace FarnahadManufacturing.UI.UserControls.BaseConfiguration
             var parentProductCategories = ParentCategoryComboBoxEdit.ItemsSource as List<FmComboModel<int>>;
             FillData(_category);
             LoadCategories();
+            TitleTextEdit.Focus();
         }
 
         private Category GetCategory(int categoryId)

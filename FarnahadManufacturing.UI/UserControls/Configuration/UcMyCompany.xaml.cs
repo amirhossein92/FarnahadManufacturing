@@ -47,6 +47,9 @@ namespace FarnahadManufacturing.UI.UserControls.Configuration
             LoadCountryComboBox();
             LoadProvinceComboBox();
             LoadCityComboBox();
+
+            MainLayoutGroup.SelectedTabIndex = 0;
+            TitleTextEdit.Focus();
         }
 
         protected sealed override void SetToolBarItems()

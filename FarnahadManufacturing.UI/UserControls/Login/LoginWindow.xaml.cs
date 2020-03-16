@@ -21,6 +21,7 @@ namespace FarnahadManufacturing.UI.UserControls.Login
         {
             DXSplashScreen.Close();
             this.Activate();
+            UserNameTextEdit.Focus();
         }
 
         private void ExitButtonOnClick(object sender, RoutedEventArgs e)

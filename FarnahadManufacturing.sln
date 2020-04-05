@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Test", "FarnahadManufacturing.Test\FarnahadManufacturing.Test.csproj", "{A9F73213-0DBF-4E63-8740-3BB4C74B8327}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarnahadManufacturing.Mvvm", "FarnahadManufacturing.Mvvm\FarnahadManufacturing.Mvvm.csproj", "{50DDB84D-35A0-40BD-B3D2-C2AAA6D5C296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmTest", "MvvmTest\MvvmTest.csproj", "{36F43196-2559-4046-8987-4E54D900F894}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{ED30EC54-8E72-4D6E-ACC7-2462FE1A64D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +51,21 @@ Global
 		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9F73213-0DBF-4E63-8740-3BB4C74B8327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DDB84D-35A0-40BD-B3D2-C2AAA6D5C296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DDB84D-35A0-40BD-B3D2-C2AAA6D5C296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DDB84D-35A0-40BD-B3D2-C2AAA6D5C296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DDB84D-35A0-40BD-B3D2-C2AAA6D5C296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F43196-2559-4046-8987-4E54D900F894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F43196-2559-4046-8987-4E54D900F894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F43196-2559-4046-8987-4E54D900F894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F43196-2559-4046-8987-4E54D900F894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9F73213-0DBF-4E63-8740-3BB4C74B8327} = {ED30EC54-8E72-4D6E-ACC7-2462FE1A64D8}
+		{36F43196-2559-4046-8987-4E54D900F894} = {ED30EC54-8E72-4D6E-ACC7-2462FE1A64D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BD8AF23-3674-4FD8-9631-2C2778E49357}

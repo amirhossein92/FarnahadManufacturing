@@ -57,8 +57,12 @@
     </ApplicationDefinition>
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TestUserControlViewModel.cs" />
+    <Compile Include="ViewModels\TestWithDataUserControlViewModel.cs" />
     <Compile Include="View\TestUserControl.xaml.cs">
       <DependentUpon>TestUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TestWithDataUserControlView.xaml.cs">
+      <DependentUpon>TestWithDataUserControlView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -73,6 +77,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\TestUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TestWithDataUserControlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

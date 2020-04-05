@@ -10,8 +10,8 @@ namespace FarnahadManufacturing.Mvvm.Utility.Window
     public interface IWindowService
     {
         void SetMainWindowViewModel(MainViewModelBase mainWindowViewModel);
-        void OpenNewPage<T>(ViewModelBase currentViewModel, T viewModel = null) where T : ViewModelBase;
-        void OpenNewPageWithConstructor<T, Tparameter>(ViewModelBase currentViewModel, Tparameter parameter, T viewModel = null) where T : ViewModelBase<Tparameter>;
+        void OpenNewPage<TViewModel>(ViewModelBase currentViewModel, TViewModel viewModel = null) where TViewModel : ViewModelBase;
+        void OpenNewPageWithConstructor<TViewModel, Tparameter>(ViewModelBase currentViewModel, Tparameter parameter, TViewModel viewModel = null) where TViewModel : ViewModelBase<Tparameter>;
         void ClosePage(ViewModelBase currentViewModel);
 
         MainViewModelBase MainViewModel { get; }

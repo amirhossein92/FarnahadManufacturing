@@ -23,13 +23,13 @@ namespace FarnahadManufacturing.Mvvm.Utility.Window
             _mainViewModel.CurrentUserViewModels.Remove(currentViewModel);
         }
 
-        public void OpenNewPage<T>(ViewModelBase currentViewModel, T viewModel = null) where T : ViewModelBase
+        public void OpenNewPage<TViewModel>(ViewModelBase currentViewModel, TViewModel viewModel = null) where TViewModel : ViewModelBase
         {
-            viewModel = MyCreator.ViewModelCreator<T>(viewModel);
+            viewModel = MyCreator.ViewModelCreator<TViewModel>(viewModel);
 
-            if (_mainViewModel.CurrentUserViewModels.OfType<T>().Any())
+            if (_mainViewModel.CurrentUserViewModels.OfType<TViewModel>().Any())
             {
-                var vm = _mainViewModel.CurrentUserViewModels.OfType<T>().First();
+                var vm = _mainViewModel.CurrentUserViewModels.OfType<TViewModel>().First();
                 _mainViewModel.CurrentUserViewModelIndex = _mainViewModel.CurrentUserViewModels.IndexOf(vm);
             }
             else
@@ -40,14 +40,14 @@ namespace FarnahadManufacturing.Mvvm.Utility.Window
             }
         }
 
-        public void OpenNewPageWithConstructor<T, Tparameter>(ViewModelBase currentViewModel, Tparameter parameter, T viewModel = null) where T : ViewModelBase<Tparameter>
+        public void OpenNewPageWithConstructor<TViewModel, Tparameter>(ViewModelBase currentViewModel, Tparameter parameter, TViewModel viewModel = null) where TViewModel : ViewModelBase<Tparameter>
         {
-            viewModel = MyCreator.ViewModelCreator<T>(viewModel);
+            viewModel = MyCreator.ViewModelCreator<TViewModel>(viewModel);
             MyCreator.PassParemeterToViewModel(viewModel, parameter);
 
-            if (_mainViewModel.CurrentUserViewModels.OfType<T>().Any())
+            if (_mainViewModel.CurrentUserViewModels.OfType<TViewModel>().Any())
             {
-                var vm = _mainViewModel.CurrentUserViewModels.OfType<T>().First();
+                var vm = _mainViewModel.CurrentUserViewModels.OfType<TViewModel>().First();
                 _mainViewModel.CurrentUserViewModelIndex = _mainViewModel.CurrentUserViewModels.IndexOf(vm);
             }
             else

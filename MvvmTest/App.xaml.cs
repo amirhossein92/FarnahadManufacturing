@@ -22,6 +22,7 @@ namespace MvvmTest
         {
             var resources = new List<KeyValuePair<object, object>>();
             resources.Add(MyViewLocator.BindViewModelToView<TestUserControlViewModel, TestUserControl>());
+            resources.Add(MyViewLocator.BindViewModelToView<TestWithDataUserControlViewModel, TestWithDataUserControlView>());
 
             foreach (var resource in resources)
                 this.Resources.Add(resource.Key, resource.Value);
